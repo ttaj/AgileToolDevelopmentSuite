@@ -38,38 +38,6 @@
       menuNumUrgentTasks = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
-      // menuGroupNameLabel
-      // 
-      this.menuGroupNameLabel.AutoSize = true;
-      this.menuGroupNameLabel.BackColor = System.Drawing.Color.Transparent;
-      this.menuGroupNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.menuGroupNameLabel.Location = new System.Drawing.Point(12, 9);
-      this.menuGroupNameLabel.Name = "menuGroupNameLabel";
-      this.menuGroupNameLabel.Size = new System.Drawing.Size(113, 19);
-      this.menuGroupNameLabel.TabIndex = 0;
-      this.menuGroupNameLabel.Text = "Group Profile:";
-      // 
-      // menuGroupNameTxt
-      // 
-      this.menuGroupNameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
-      this.menuGroupNameTxt.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.menuGroupNameTxt.Location = new System.Drawing.Point(131, 8);
-      this.menuGroupNameTxt.Name = "menuGroupNameTxt";
-      this.menuGroupNameTxt.ReadOnly = true;
-      this.menuGroupNameTxt.Size = new System.Drawing.Size(307, 22);
-      this.menuGroupNameTxt.TabIndex = 1;
-      // 
-      // menuSelfNameLabel
-      // 
-      this.menuSelfNameLabel.AutoSize = true;
-      this.menuSelfNameLabel.BackColor = System.Drawing.Color.Transparent;
-      this.menuSelfNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.menuSelfNameLabel.Location = new System.Drawing.Point(689, 9);
-      this.menuSelfNameLabel.Name = "menuSelfNameLabel";
-      this.menuSelfNameLabel.Size = new System.Drawing.Size(108, 19);
-      this.menuSelfNameLabel.TabIndex = 2;
-      this.menuSelfNameLabel.Text = "Logged in as:";
-      // 
       // menuSelfNameTxt
       // 
       menuSelfNameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -94,6 +62,39 @@
       menuNumUrgentTasks.Text = "(# of Urgent Tasks Clickable)";
       menuNumUrgentTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       menuNumUrgentTasks.TextChanged += new System.EventHandler(this.menuNumUrgentTasks_TextChanged);
+      // 
+      // menuGroupNameLabel
+      // 
+      this.menuGroupNameLabel.AutoSize = true;
+      this.menuGroupNameLabel.BackColor = System.Drawing.Color.Transparent;
+      this.menuGroupNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.menuGroupNameLabel.Location = new System.Drawing.Point(12, 9);
+      this.menuGroupNameLabel.Name = "menuGroupNameLabel";
+      this.menuGroupNameLabel.Size = new System.Drawing.Size(113, 19);
+      this.menuGroupNameLabel.TabIndex = 0;
+      this.menuGroupNameLabel.Text = "Group Profile:";
+      // 
+      // menuGroupNameTxt
+      // 
+      this.menuGroupNameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
+      this.menuGroupNameTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.menuGroupNameTxt.Location = new System.Drawing.Point(131, 8);
+      this.menuGroupNameTxt.Name = "menuGroupNameTxt";
+      this.menuGroupNameTxt.ReadOnly = true;
+      this.menuGroupNameTxt.Size = new System.Drawing.Size(307, 22);
+      this.menuGroupNameTxt.TabIndex = 1;
+      this.menuGroupNameTxt.TextChanged += new System.EventHandler(this.menuGroupNameTxt_TextChanged);
+      // 
+      // menuSelfNameLabel
+      // 
+      this.menuSelfNameLabel.AutoSize = true;
+      this.menuSelfNameLabel.BackColor = System.Drawing.Color.Transparent;
+      this.menuSelfNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.menuSelfNameLabel.Location = new System.Drawing.Point(689, 9);
+      this.menuSelfNameLabel.Name = "menuSelfNameLabel";
+      this.menuSelfNameLabel.Size = new System.Drawing.Size(108, 19);
+      this.menuSelfNameLabel.TabIndex = 2;
+      this.menuSelfNameLabel.Text = "Logged in as:";
       // 
       // MainMenuForm
       // 

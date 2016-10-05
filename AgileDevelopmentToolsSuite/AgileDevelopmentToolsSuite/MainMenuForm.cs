@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AgileDevelopmentToolsSuite
 {
   public partial class MainMenuForm : Form
@@ -26,5 +27,14 @@ namespace AgileDevelopmentToolsSuite
     {
 
     }
+
+    private void menuGroupNameTxt_TextChanged(object sender, EventArgs e)
+    {
+      this.Hide();
+      LoginForm loginForm = new LoginForm();
+      loginForm.Show();
+    }
+
+
   }
 }

@@ -83,6 +83,7 @@
       this.backButton.TabIndex = 2;
       this.backButton.Text = "Back to Menu";
       this.backButton.UseVisualStyleBackColor = true;
+      this.backButton.Click += new System.EventHandler(this.backButton_Click);
       // 
       // curTasksLabel
       // 
@@ -97,11 +98,17 @@
       // 
       // curTasksComboBox
       // 
+      this.curTasksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.curTasksComboBox.FormattingEnabled = true;
-      this.curTasksComboBox.Location = new System.Drawing.Point(328, 78);
+      this.curTasksComboBox.Items.AddRange(new object[] {
+            "Date Issued",
+            "Importance",
+            "Name"});
+      this.curTasksComboBox.Location = new System.Drawing.Point(338, 78);
       this.curTasksComboBox.Name = "curTasksComboBox";
-      this.curTasksComboBox.Size = new System.Drawing.Size(160, 24);
+      this.curTasksComboBox.Size = new System.Drawing.Size(150, 24);
       this.curTasksComboBox.TabIndex = 4;
+      this.curTasksComboBox.SelectedIndexChanged += new System.EventHandler(this.curTasksComboBox_SelectedIndexChanged);
       // 
       // curTasksSortLabel
       // 
@@ -109,7 +116,7 @@
       this.curTasksSortLabel.BackColor = System.Drawing.Color.Transparent;
       this.curTasksSortLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.curTasksSortLabel.ForeColor = System.Drawing.SystemColors.Control;
-      this.curTasksSortLabel.Location = new System.Drawing.Point(250, 76);
+      this.curTasksSortLabel.Location = new System.Drawing.Point(255, 76);
       this.curTasksSortLabel.Name = "curTasksSortLabel";
       this.curTasksSortLabel.Size = new System.Drawing.Size(77, 24);
       this.curTasksSortLabel.TabIndex = 5;
@@ -120,6 +127,8 @@
       // 
       this.curTaskDescriptions.BackColor = System.Drawing.Color.Gray;
       this.curTaskDescriptions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.curTaskDescriptions.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.curTaskDescriptions.ForeColor = System.Drawing.Color.Snow;
       this.curTaskDescriptions.Location = new System.Drawing.Point(555, 123);
       this.curTaskDescriptions.Name = "curTaskDescriptions";
       this.curTaskDescriptions.Size = new System.Drawing.Size(478, 545);
@@ -149,6 +158,7 @@
       this.curTasksSaveButton.TabIndex = 8;
       this.curTasksSaveButton.Text = "Save Changes";
       this.curTasksSaveButton.UseVisualStyleBackColor = true;
+      this.curTasksSaveButton.Click += new System.EventHandler(this.curTasksSaveButton_Click);
       // 
       // curTasksRadio1
       // 
@@ -168,7 +178,7 @@
       // 
       this.curTasksRadio2.AutoSize = true;
       this.curTasksRadio2.ForeColor = System.Drawing.Color.Snow;
-      this.curTasksRadio2.Location = new System.Drawing.Point(87, 10);
+      this.curTasksRadio2.Location = new System.Drawing.Point(91, 10);
       this.curTasksRadio2.Name = "curTasksRadio2";
       this.curTasksRadio2.Size = new System.Drawing.Size(75, 21);
       this.curTasksRadio2.TabIndex = 10;
@@ -180,7 +190,7 @@
       // 
       this.curTasksRadio3.AutoSize = true;
       this.curTasksRadio3.ForeColor = System.Drawing.Color.Snow;
-      this.curTasksRadio3.Location = new System.Drawing.Point(162, 10);
+      this.curTasksRadio3.Location = new System.Drawing.Point(172, 10);
       this.curTasksRadio3.Name = "curTasksRadio3";
       this.curTasksRadio3.Size = new System.Drawing.Size(96, 21);
       this.curTasksRadio3.TabIndex = 11;
@@ -196,7 +206,7 @@
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio2);
       this.curTasksRadioGroup.Location = new System.Drawing.Point(555, 87);
       this.curTasksRadioGroup.Name = "curTasksRadioGroup";
-      this.curTasksRadioGroup.Size = new System.Drawing.Size(263, 36);
+      this.curTasksRadioGroup.Size = new System.Drawing.Size(274, 36);
       this.curTasksRadioGroup.TabIndex = 12;
       this.curTasksRadioGroup.TabStop = false;
       // 

@@ -16,6 +16,8 @@ namespace AgileDevelopmentToolsSuite
     public TaskForm()
     {
       InitializeComponent();
+
+      this.curTasksComboBox.SelectedIndex = 1;
     }
 
     private void label1_Click(object sender, EventArgs e)
@@ -59,6 +61,23 @@ namespace AgileDevelopmentToolsSuite
     }
 
     private void curTasksRadio3_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void backButton_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+      MainMenuForm menuForm = new MainMenuForm();
+      menuForm.Show();
+    }
+
+    private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void curTasksSaveButton_Click(object sender, EventArgs e)
     {
 
     }

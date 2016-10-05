@@ -31,3 +31,4 @@ C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelo
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.WelcomeForm.resources
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.csproj.GenerateResource.Cache
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.TaskForm.resources
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.MainMenuForm.resources

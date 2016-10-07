@@ -16,5 +16,12 @@ namespace AgileDevelopmentToolsSuite
         {
             InitializeComponent();
         }
+
+        private void SkillSetForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //MessageBox.Show(" bye Skill SetForm ");
+            Application.Exit();
+
+        }
     }
 }

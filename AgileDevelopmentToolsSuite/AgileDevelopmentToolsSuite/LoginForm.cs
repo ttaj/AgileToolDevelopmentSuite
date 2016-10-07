@@ -24,9 +24,24 @@ namespace AgileDevelopmentToolsSuite
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             PositionForm registrationForm = new PositionForm();
+
+
+            registrationForm.Width = this.Width;
+            registrationForm.Height = this.Height;
+
+            registrationForm.StartPosition = FormStartPosition.Manual;
+            registrationForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
             registrationForm.Show();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // MessageBox.Show("bye login");
+            Application.Exit();
+
         }
     }
 }

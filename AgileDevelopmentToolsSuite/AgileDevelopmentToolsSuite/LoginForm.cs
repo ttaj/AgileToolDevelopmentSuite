@@ -43,5 +43,30 @@ namespace AgileDevelopmentToolsSuite
             Application.Exit();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C: \Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\ADTSDatabase.mdf';Integrated Security=True";
+
+            string username = usernameBox.Text;
+            string password = passwordBox.Text;
+            if ((username == "" || password == ""))
+            {
+                MessageBox.Show("please enter the username and password");
+            }
+            else  
+            {
+
+                MainMenuForm mainmenuform = new MainMenuForm();
+                mainmenuform.Width = this.Width;
+                mainmenuform.Height = this.Height;
+
+                mainmenuform.StartPosition = FormStartPosition.Manual;
+                mainmenuform.Location = new Point(this.Location.X, this.Location.Y);
+
+                this.Hide();
+                mainmenuform.Show();
+            }
+        }
     }
 }

@@ -35,6 +35,10 @@ namespace AgileDevelopmentToolsSuite
       loginForm.Show();
     }
 
-
-  }
+        private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // MessageBox.Show("bye main menu Form");
+            Application.Exit();
+        }
+    }
 }

@@ -229,10 +229,10 @@
       <DependentUpon>ADTSDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="ADTSDLoginInfo.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ADTSDLoginInfo_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>ADTSDLoginInfo.mdf</DependentUpon>
     </Content>
     <None Include="Resources\%24this.BackgroundImage.jpg" />

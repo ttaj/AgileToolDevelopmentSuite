@@ -15,3 +15,6 @@ C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelo
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\x64\Release\AgileDevelopmentToolsSuite.csproj.GenerateResource.Cache
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\x64\Release\AgileDevelopmentToolsSuite.exe
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\x64\Release\AgileDevelopmentToolsSuite.pdb
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\x64\Release\ADTSDLoginInfo.mdf
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\x64\Release\ADTSDLoginInfo_log.ldf
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\x64\Release\AgileDevelopmentToolsSuite.csprojResolveAssemblyReference.cache

@@ -31,11 +31,6 @@ namespace AgileDevelopmentToolsSuite
             loginForm.Show();
         }
 
-        private void WelcomeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
 
@@ -45,5 +40,10 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
-    }
+
+        private void WelcomeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+  }
 }

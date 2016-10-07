@@ -16,12 +16,5 @@ namespace AgileDevelopmentToolsSuite
         {
             InitializeComponent();
         }
-
-        private void SkillSetForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        //need to add skills and functionality
     }
 }

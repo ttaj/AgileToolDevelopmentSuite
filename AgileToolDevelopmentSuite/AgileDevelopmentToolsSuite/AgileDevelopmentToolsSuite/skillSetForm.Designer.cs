@@ -94,7 +94,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "SkillSetForm";
             this.Text = "skillSetForm";
-            this.Load += new System.EventHandler(this.SkillSetForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,6 +18,12 @@ namespace AgileDevelopmentToolsSuite
       InitializeComponent();
     }
 
+    private void DeveloperForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        // MessageBox.Show("bye login");
+        Application.Exit();
+    }
+
     private void yesProfileButton_CheckedChanged(object sender, EventArgs e)
     {
       profileLinkLabel.Visible = true;
@@ -29,8 +35,6 @@ namespace AgileDevelopmentToolsSuite
       profileLinkLabel.Visible = false;
       profileLinkBox.Visible = false;
     }
-
-    
 
     private void continueButton_Click(object sender, EventArgs e)
     {
@@ -83,7 +87,7 @@ namespace AgileDevelopmentToolsSuite
                     this.Hide();
                     mainMenuForm.Show();
 
-                    }
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);

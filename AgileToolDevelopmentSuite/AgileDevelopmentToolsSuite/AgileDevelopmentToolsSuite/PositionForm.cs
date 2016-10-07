@@ -32,11 +32,5 @@ namespace AgileDevelopmentToolsSuite
                 projectMangerForm.Show();
             }
         }
-
-        private void PositionForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // MessageBox.Show("bye position form");
-            Application.Exit();
-        }
     }
 }

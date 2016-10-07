@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,45 +31,50 @@ namespace AgileDevelopmentToolsSuite
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C: \Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\ADTSDatabase.mdf';Integrated Security=True";
+            SqlConnection db;
+            String version = "MSSQLLocalDB";
+            String fileName = "ADTSDLoginInfo.mdf";
+            String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+            db = new SqlConnection(connectionString);
 
             //need to do the query for login
 
-            string username = usernameBox.Text;
-            string password = passwordBox.Text;
-            if ((username == "" || password == ""))
+            if (String.Compare(usernameBox.Text, "") == 0)
             {
-                MessageBox.Show("please enter the username and password");
+                MessageBox.Show("Please input a username.");
+                return;
             }
-            else
+
+            if (String.Compare(passwordBox.Text, "") == 0)
             {
-
-                MainMenuForm mainmenuform = new MainMenuForm();
-                mainmenuform.Width = this.Width;
-                mainmenuform.Height = this.Height;
-
-                mainmenuform.StartPosition = FormStartPosition.Manual;
-                mainmenuform.Location = new Point(this.Location.X, this.Location.Y);
-
-                this.Hide();
-                mainmenuform.Show();
+                MessageBox.Show("Please input a password.");
+                return;
             }
+
+            MainMenuForm mainmenuform = new MainMenuForm();
+            mainmenuform.Width = this.Width;
+            mainmenuform.Height = this.Height;
+
+            mainmenuform.StartPosition = FormStartPosition.Manual;
+            mainmenuform.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
+            mainmenuform.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PositionForm registrationForm = new PositionForm();
+            PositionForm positionForm = new PositionForm();
 
+            positionForm.Width = this.Width;
+            positionForm.Height = this.Height;
 
-            registrationForm.Width = this.Width;
-            registrationForm.Height = this.Height;
-
-            registrationForm.StartPosition = FormStartPosition.Manual;
-            registrationForm.Location = new Point(this.Location.X, this.Location.Y);
+            positionForm.StartPosition = FormStartPosition.Manual;
+            positionForm.Location = new Point(this.Location.X, this.Location.Y);
 
             this.Hide();
-            registrationForm.Show();
+            positionForm.Show();
         }
-
     }
 }

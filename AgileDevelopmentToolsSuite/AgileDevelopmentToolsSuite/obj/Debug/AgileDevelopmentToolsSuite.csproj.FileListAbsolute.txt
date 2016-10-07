@@ -14,3 +14,6 @@ C:\Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\
 C:\Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.exe
 C:\Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.pdb
 C:\Users\natha\Documents\Visual Studio 2015\Projects\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.SkillSetForm.resources
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Second try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Debug\AgileDevelopmentToolsSuite.exe.config
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Second try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.exe
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Second try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Debug\AgileDevelopmentToolsSuite.pdb

@@ -19,8 +19,15 @@ namespace AgileDevelopmentToolsSuite
     //
         private void startButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             LoginForm loginForm = new LoginForm();
+
+            loginForm.Width = this.Width;
+            loginForm.Height = this.Height;
+
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
             loginForm.Show();
         }
 

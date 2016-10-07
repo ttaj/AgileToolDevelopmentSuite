@@ -54,6 +54,8 @@ namespace AgileDevelopmentToolsSuite
                     this.Hide();
                     SkillSetForm skillSetForm = new SkillSetForm();
                     skillSetForm.Show();
+
+                    conn.Close();
                 }
                 catch
                 {
@@ -64,6 +66,17 @@ namespace AgileDevelopmentToolsSuite
             {
 
             }
+        }
+
+        private void DeveloperForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeveloperForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // MessageBox.Show("bye developer Form");
+            Application.Exit();
         }
     }
 }

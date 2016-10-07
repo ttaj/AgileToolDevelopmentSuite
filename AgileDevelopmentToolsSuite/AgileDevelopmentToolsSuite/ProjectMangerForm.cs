@@ -22,26 +22,14 @@ namespace AgileDevelopmentToolsSuite
         {
             if (yesProfileButton.Checked == true)
             {
-                SkillSetForm skillSetForm = new SkillSetForm();
-                skillSetForm.Width = this.Width;
-                skillSetForm.Height = this.Height;
-
-                skillSetForm.StartPosition = FormStartPosition.Manual;
-                skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
-
                 this.Hide();
+                SkillSetForm skillSetForm = new SkillSetForm();
                 skillSetForm.Show();
             }
             else
             {
 
             }
-        }
-
-        private void ProjectMangerForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // MessageBox.Show("bye projectManager form");
-            Application.Exit();
         }
     }
 }

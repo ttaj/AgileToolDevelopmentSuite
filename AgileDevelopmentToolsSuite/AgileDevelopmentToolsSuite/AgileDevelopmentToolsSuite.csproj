@@ -113,6 +113,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ADTSDLoginInfoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTaskForm.Designer.cs">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeveloperForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +174,9 @@
     <Compile Include="WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateTaskForm.resx">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeveloperForm.resx">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +221,18 @@
     <None Include="ADTSDatabaseDataSet.xss">
       <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ADTSDLoginInfoDataSet.xsc">
+      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ADTSDLoginInfoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ADTSDLoginInfoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADTSDLoginInfoDataSet.xss">
+      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +258,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ADTSDLoginInfo_log.ldf">
+      <DependentUpon>ADTSDLoginInfo.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\%24this.BackgroundImage.jpg" />

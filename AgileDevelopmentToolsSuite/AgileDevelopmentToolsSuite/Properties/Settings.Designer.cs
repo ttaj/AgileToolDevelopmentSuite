@@ -33,5 +33,16 @@ namespace AgileDevelopmentToolsSuite.Properties {
                 return ((string)(this["ADTSDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ADTSDLoginInf" +
+            "o.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string ADTSDLoginInfoConnectionString {
+            get {
+                return ((string)(this["ADTSDLoginInfoConnectionString"]));
+            }
+        }
     }
 }

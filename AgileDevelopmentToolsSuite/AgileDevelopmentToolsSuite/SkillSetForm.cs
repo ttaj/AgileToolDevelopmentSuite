@@ -19,5 +19,12 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //grab all skills, insert into database
+            //grab all proficiencies, insert into database
+            //set form to main menu form
+        }
     }
 }

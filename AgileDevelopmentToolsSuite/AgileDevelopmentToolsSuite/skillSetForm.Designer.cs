@@ -731,7 +731,7 @@
             this.Controls.Add(this.skillsetHeaderLabel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SkillSetForm";
-            this.Text = "skillSetForm";
+            this.Text = "Agile Development Tools Suite";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.radioButtonPanel1.ResumeLayout(false);
             this.radioButtonPanel1.PerformLayout();

@@ -108,8 +108,6 @@ namespace AgileDevelopmentToolsSuite
 
                                 if (capital == true && number == true)
                                 {
-                                    //check for an adminstrators approval somehow?
-
                                     MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
                                     insert.Parameters.AddWithValue("@Username", usernameBox.Text);
                                     insert.Parameters.AddWithValue("@Password", passwordBox.Text);
@@ -157,7 +155,6 @@ namespace AgileDevelopmentToolsSuite
                 catch (Exception ex)
                 {
                     MessageBox.Show("Connection unsuccessful, please try again. ");
-                    return;
                 }
             }
             else
@@ -203,8 +200,6 @@ namespace AgileDevelopmentToolsSuite
 
                                 if (capital == true && number == true)
                                 {
-                                    //check for an adminstrators approval somehow?
-
                                     MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
                                     insert.Parameters.AddWithValue("@Username", usernameBox.Text);
                                     insert.Parameters.AddWithValue("@Password", passwordBox.Text);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using AgileDevelopmentToolsSuite;
 
 namespace AgileDevelopmentToolsSuite
 {
@@ -31,6 +32,7 @@ namespace AgileDevelopmentToolsSuite
     }
 
     char importance = 'T';
+    String userName = "[Not specified]";
 
     private void submitButton_Click(object sender, EventArgs e)
     {
@@ -46,13 +48,16 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-        MessageBox.Show("Connection Successful! ");
+        MessageBox.Show("Task uploaded database! ");
         try
         {
           SqlCommand cmd = new SqlCommand("INSERT INTO [Tasks] ([TaskName] ,[UserAssigned], [DateSubmitted], [Importance], [TaskDescription]) VALUES (@TaskName, @UserAssigned, @DateSubmitted, @Importance, @TaskDescription)");
           cmd.Connection = db;
           cmd.Parameters.AddWithValue("@TaskName", taskNameTxtBox.Text);
+          if(userDesigTxtBox.Text != "")
           cmd.Parameters.AddWithValue("@UserAssigned", userDesigTxtBox.Text);
+          else
+            cmd.Parameters.AddWithValue("@UserAssigned", userName);
           cmd.Parameters.AddWithValue("@Importance", importance);
           cmd.Parameters.AddWithValue("@DateSubmitted", DateTime.Now);
           cmd.Parameters.AddWithValue("@TaskDescription", taskDescTxtBox.Text);
@@ -70,9 +75,6 @@ namespace AgileDevelopmentToolsSuite
         return;
       }
 
-
-      var reset = new TaskForm();
-      reset.resetListView();
       this.Close();
     }
 

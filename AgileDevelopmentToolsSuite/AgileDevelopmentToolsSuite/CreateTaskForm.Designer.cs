@@ -57,7 +57,7 @@
       // taskNameLbl
       // 
       this.taskNameLbl.AutoSize = true;
-      this.taskNameLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+      this.taskNameLbl.BackColor = System.Drawing.Color.GreenYellow;
       this.taskNameLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.taskNameLbl.Location = new System.Drawing.Point(12, 120);
       this.taskNameLbl.Name = "taskNameLbl";
@@ -68,7 +68,7 @@
       // importanceLbl
       // 
       this.importanceLbl.AutoSize = true;
-      this.importanceLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+      this.importanceLbl.BackColor = System.Drawing.Color.GreenYellow;
       this.importanceLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.importanceLbl.Location = new System.Drawing.Point(14, 169);
       this.importanceLbl.Name = "importanceLbl";
@@ -79,7 +79,7 @@
       // taskDescriptionLbl
       // 
       this.taskDescriptionLbl.AutoSize = true;
-      this.taskDescriptionLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+      this.taskDescriptionLbl.BackColor = System.Drawing.Color.GreenYellow;
       this.taskDescriptionLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.taskDescriptionLbl.Location = new System.Drawing.Point(12, 264);
       this.taskDescriptionLbl.Name = "taskDescriptionLbl";
@@ -117,7 +117,6 @@
       this.curTasksRadio1.Name = "curTasksRadio1";
       this.curTasksRadio1.Size = new System.Drawing.Size(78, 21);
       this.curTasksRadio1.TabIndex = 9;
-      this.curTasksRadio1.TabStop = true;
       this.curTasksRadio1.Text = "Urgent";
       this.curTasksRadio1.UseVisualStyleBackColor = true;
       this.curTasksRadio1.CheckedChanged += new System.EventHandler(this.curTasksRadio1_CheckedChanged);
@@ -130,7 +129,6 @@
       this.curTasksRadio3.Name = "curTasksRadio3";
       this.curTasksRadio3.Size = new System.Drawing.Size(96, 21);
       this.curTasksRadio3.TabIndex = 11;
-      this.curTasksRadio3.TabStop = true;
       this.curTasksRadio3.Text = "Completed";
       this.curTasksRadio3.UseVisualStyleBackColor = true;
       this.curTasksRadio3.CheckedChanged += new System.EventHandler(this.curTasksRadio3_CheckedChanged);
@@ -138,6 +136,7 @@
       // curTasksRadio2
       // 
       this.curTasksRadio2.AutoSize = true;
+      this.curTasksRadio2.Checked = true;
       this.curTasksRadio2.ForeColor = System.Drawing.Color.Snow;
       this.curTasksRadio2.Location = new System.Drawing.Point(91, 10);
       this.curTasksRadio2.Name = "curTasksRadio2";
@@ -160,7 +159,7 @@
       // userDesigLbl
       // 
       this.userDesigLbl.AutoSize = true;
-      this.userDesigLbl.BackColor = System.Drawing.SystemColors.ButtonFace;
+      this.userDesigLbl.BackColor = System.Drawing.Color.GreenYellow;
       this.userDesigLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.userDesigLbl.Location = new System.Drawing.Point(14, 217);
       this.userDesigLbl.Name = "userDesigLbl";

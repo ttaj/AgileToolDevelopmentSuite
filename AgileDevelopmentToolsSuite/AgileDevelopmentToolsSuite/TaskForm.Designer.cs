@@ -36,19 +36,19 @@
       this.curTasksComboBox = new System.Windows.Forms.ComboBox();
       this.curTasksSortLabel = new System.Windows.Forms.Label();
       this.curTaskDescriptions = new System.Windows.Forms.RichTextBox();
-      this.rightArrow = new System.Windows.Forms.Label();
       this.curTasksSaveButton = new System.Windows.Forms.Button();
       this.curTasksRadio1 = new System.Windows.Forms.RadioButton();
       this.curTasksRadio2 = new System.Windows.Forms.RadioButton();
       this.curTasksRadio3 = new System.Windows.Forms.RadioButton();
       this.curTasksRadioGroup = new System.Windows.Forms.GroupBox();
       this.curTaskDescLabel = new System.Windows.Forms.Label();
-      this.curTaskDescVScroll = new System.Windows.Forms.VScrollBar();
       this.createTaskButton = new System.Windows.Forms.Button();
       this.aDTSDLoginInfoDataSet = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSet();
       this.tasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.tasksTableAdapter = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter();
       this.listView1 = new System.Windows.Forms.ListView();
+      this.selectedIDLbl = new System.Windows.Forms.Label();
+      this.instructionsButton = new System.Windows.Forms.Button();
       this.curTasksRadioGroup.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.aDTSDLoginInfoDataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource)).BeginInit();
@@ -57,10 +57,10 @@
       // taskFormLabel
       // 
       this.taskFormLabel.AutoSize = true;
-      this.taskFormLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+      this.taskFormLabel.BackColor = System.Drawing.Color.YellowGreen;
       this.taskFormLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.taskFormLabel.Font = new System.Drawing.Font("Perpetua Titling MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.taskFormLabel.Location = new System.Drawing.Point(321, 12);
+      this.taskFormLabel.Location = new System.Drawing.Point(275, 12);
       this.taskFormLabel.Name = "taskFormLabel";
       this.taskFormLabel.Size = new System.Drawing.Size(482, 35);
       this.taskFormLabel.TabIndex = 1;
@@ -84,6 +84,7 @@
       // curTasksLabel
       // 
       this.curTasksLabel.AutoSize = true;
+      this.curTasksLabel.BackColor = System.Drawing.Color.YellowGreen;
       this.curTasksLabel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.curTasksLabel.Location = new System.Drawing.Point(13, 73);
       this.curTasksLabel.Name = "curTasksLabel";
@@ -99,8 +100,11 @@
       this.curTasksComboBox.Items.AddRange(new object[] {
             "Date Issued",
             "Importance",
-            "Name"});
-      this.curTasksComboBox.Location = new System.Drawing.Point(338, 78);
+            "Task Name",
+            "ID",
+            "Date Modified",
+            "User Assigned"});
+      this.curTasksComboBox.Location = new System.Drawing.Point(275, 76);
       this.curTasksComboBox.Name = "curTasksComboBox";
       this.curTasksComboBox.Size = new System.Drawing.Size(150, 24);
       this.curTasksComboBox.TabIndex = 4;
@@ -112,7 +116,7 @@
       this.curTasksSortLabel.BackColor = System.Drawing.Color.Transparent;
       this.curTasksSortLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.curTasksSortLabel.ForeColor = System.Drawing.SystemColors.Control;
-      this.curTasksSortLabel.Location = new System.Drawing.Point(255, 76);
+      this.curTasksSortLabel.Location = new System.Drawing.Point(179, 76);
       this.curTasksSortLabel.Name = "curTasksSortLabel";
       this.curTasksSortLabel.Size = new System.Drawing.Size(77, 24);
       this.curTasksSortLabel.TabIndex = 5;
@@ -121,39 +125,26 @@
       // 
       // curTaskDescriptions
       // 
-      this.curTaskDescriptions.BackColor = System.Drawing.Color.Gray;
+      this.curTaskDescriptions.BackColor = System.Drawing.Color.YellowGreen;
       this.curTaskDescriptions.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.curTaskDescriptions.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.curTaskDescriptions.ForeColor = System.Drawing.Color.Snow;
-      this.curTaskDescriptions.Location = new System.Drawing.Point(582, 123);
+      this.curTaskDescriptions.ForeColor = System.Drawing.Color.Black;
+      this.curTaskDescriptions.Location = new System.Drawing.Point(12, 460);
       this.curTaskDescriptions.Name = "curTaskDescriptions";
-      this.curTaskDescriptions.Size = new System.Drawing.Size(451, 545);
+      this.curTaskDescriptions.Size = new System.Drawing.Size(1021, 218);
       this.curTaskDescriptions.TabIndex = 6;
       this.curTaskDescriptions.Text = "";
       this.curTaskDescriptions.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
       // 
-      // rightArrow
-      // 
-      this.rightArrow.AutoSize = true;
-      this.rightArrow.BackColor = System.Drawing.Color.Transparent;
-      this.rightArrow.Font = new System.Drawing.Font("Microsoft YaHei", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.rightArrow.ForeColor = System.Drawing.Color.Snow;
-      this.rightArrow.Location = new System.Drawing.Point(516, 386);
-      this.rightArrow.Name = "rightArrow";
-      this.rightArrow.Size = new System.Drawing.Size(60, 50);
-      this.rightArrow.TabIndex = 7;
-      this.rightArrow.Text = "→";
-      this.rightArrow.Click += new System.EventHandler(this.rightArrow_Click);
-      // 
       // curTasksSaveButton
       // 
-      this.curTasksSaveButton.BackColor = System.Drawing.Color.LightGreen;
+      this.curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
       this.curTasksSaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-      this.curTasksSaveButton.Location = new System.Drawing.Point(871, 71);
+      this.curTasksSaveButton.Location = new System.Drawing.Point(714, 428);
       this.curTasksSaveButton.Name = "curTasksSaveButton";
-      this.curTasksSaveButton.Size = new System.Drawing.Size(162, 29);
+      this.curTasksSaveButton.Size = new System.Drawing.Size(319, 29);
       this.curTasksSaveButton.TabIndex = 8;
-      this.curTasksSaveButton.Text = "Save Changes";
+      this.curTasksSaveButton.Text = "Save Changes to: ";
       this.curTasksSaveButton.UseVisualStyleBackColor = false;
       this.curTasksSaveButton.Click += new System.EventHandler(this.curTasksSaveButton_Click);
       // 
@@ -182,6 +173,7 @@
       this.curTasksRadio2.TabStop = true;
       this.curTasksRadio2.Text = "TO-DO";
       this.curTasksRadio2.UseVisualStyleBackColor = true;
+      this.curTasksRadio2.CheckedChanged += new System.EventHandler(this.curTasksRadio2_CheckedChanged_1);
       // 
       // curTasksRadio3
       // 
@@ -194,6 +186,7 @@
       this.curTasksRadio3.TabStop = true;
       this.curTasksRadio3.Text = "Completed";
       this.curTasksRadio3.UseVisualStyleBackColor = true;
+      this.curTasksRadio3.CheckedChanged += new System.EventHandler(this.curTasksRadio3_CheckedChanged_1);
       // 
       // curTasksRadioGroup
       // 
@@ -201,7 +194,7 @@
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio1);
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio3);
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio2);
-      this.curTasksRadioGroup.Location = new System.Drawing.Point(555, 87);
+      this.curTasksRadioGroup.Location = new System.Drawing.Point(24, 418);
       this.curTasksRadioGroup.Name = "curTasksRadioGroup";
       this.curTasksRadioGroup.Size = new System.Drawing.Size(274, 36);
       this.curTasksRadioGroup.TabIndex = 12;
@@ -210,29 +203,22 @@
       // curTaskDescLabel
       // 
       this.curTaskDescLabel.AutoSize = true;
-      this.curTaskDescLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+      this.curTaskDescLabel.BackColor = System.Drawing.Color.YellowGreen;
       this.curTaskDescLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.curTaskDescLabel.Location = new System.Drawing.Point(553, 58);
+      this.curTaskDescLabel.Location = new System.Drawing.Point(304, 428);
       this.curTaskDescLabel.Name = "curTaskDescLabel";
-      this.curTaskDescLabel.Size = new System.Drawing.Size(241, 26);
+      this.curTaskDescLabel.Size = new System.Drawing.Size(273, 26);
       this.curTaskDescLabel.TabIndex = 13;
-      this.curTaskDescLabel.Text = "Modify task description";
-      // 
-      // curTaskDescVScroll
-      // 
-      this.curTaskDescVScroll.Location = new System.Drawing.Point(1015, 123);
-      this.curTaskDescVScroll.Name = "curTaskDescVScroll";
-      this.curTaskDescVScroll.Size = new System.Drawing.Size(17, 548);
-      this.curTaskDescVScroll.TabIndex = 14;
+      this.curTaskDescLabel.Text = "↓ Modify task description ↓";
       // 
       // createTaskButton
       // 
       this.createTaskButton.BackColor = System.Drawing.Color.GreenYellow;
       this.createTaskButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.createTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-      this.createTaskButton.Location = new System.Drawing.Point(871, 12);
+      this.createTaskButton.Location = new System.Drawing.Point(829, 12);
       this.createTaskButton.Name = "createTaskButton";
-      this.createTaskButton.Size = new System.Drawing.Size(162, 53);
+      this.createTaskButton.Size = new System.Drawing.Size(204, 88);
       this.createTaskButton.TabIndex = 15;
       this.createTaskButton.Text = "Create Task";
       this.createTaskButton.UseVisualStyleBackColor = false;
@@ -256,12 +242,37 @@
       // 
       this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
       this.listView1.Cursor = System.Windows.Forms.Cursors.Hand;
-      this.listView1.Location = new System.Drawing.Point(12, 123);
+      this.listView1.Location = new System.Drawing.Point(12, 108);
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(498, 548);
+      this.listView1.Size = new System.Drawing.Size(1021, 314);
       this.listView1.TabIndex = 0;
       this.listView1.UseCompatibleStateImageBehavior = false;
+      this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
       this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+      // 
+      // selectedIDLbl
+      // 
+      this.selectedIDLbl.AutoSize = true;
+      this.selectedIDLbl.BackColor = System.Drawing.Color.YellowGreen;
+      this.selectedIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.selectedIDLbl.Location = new System.Drawing.Point(12, 661);
+      this.selectedIDLbl.Name = "selectedIDLbl";
+      this.selectedIDLbl.Size = new System.Drawing.Size(150, 17);
+      this.selectedIDLbl.TabIndex = 16;
+      this.selectedIDLbl.Text = "Selected FORM ID: ";
+      this.selectedIDLbl.Click += new System.EventHandler(this.label1_Click_1);
+      // 
+      // instructionsButton
+      // 
+      this.instructionsButton.BackColor = System.Drawing.Color.LightSeaGreen;
+      this.instructionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.instructionsButton.Location = new System.Drawing.Point(467, 62);
+      this.instructionsButton.Name = "instructionsButton";
+      this.instructionsButton.Size = new System.Drawing.Size(274, 38);
+      this.instructionsButton.TabIndex = 17;
+      this.instructionsButton.Text = "?      Click for Instructions      ?";
+      this.instructionsButton.UseVisualStyleBackColor = false;
+      this.instructionsButton.Click += new System.EventHandler(this.instructionsButton_Click);
       // 
       // TaskForm
       // 
@@ -270,13 +281,13 @@
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(1045, 690);
+      this.Controls.Add(this.instructionsButton);
+      this.Controls.Add(this.selectedIDLbl);
       this.Controls.Add(this.listView1);
       this.Controls.Add(this.createTaskButton);
-      this.Controls.Add(this.curTaskDescVScroll);
       this.Controls.Add(this.curTaskDescLabel);
       this.Controls.Add(this.curTasksRadioGroup);
       this.Controls.Add(this.curTasksSaveButton);
-      this.Controls.Add(this.rightArrow);
       this.Controls.Add(this.curTaskDescriptions);
       this.Controls.Add(this.curTasksSortLabel);
       this.Controls.Add(this.curTasksComboBox);
@@ -302,18 +313,18 @@
     private System.Windows.Forms.ComboBox curTasksComboBox;
     private System.Windows.Forms.Label curTasksSortLabel;
     private System.Windows.Forms.RichTextBox curTaskDescriptions;
-    private System.Windows.Forms.Label rightArrow;
     private System.Windows.Forms.Button curTasksSaveButton;
     private System.Windows.Forms.RadioButton curTasksRadio1;
     private System.Windows.Forms.RadioButton curTasksRadio2;
     private System.Windows.Forms.RadioButton curTasksRadio3;
     private System.Windows.Forms.GroupBox curTasksRadioGroup;
     private System.Windows.Forms.Label curTaskDescLabel;
-    private System.Windows.Forms.VScrollBar curTaskDescVScroll;
     private System.Windows.Forms.Button createTaskButton;
     private ADTSDLoginInfoDataSet aDTSDLoginInfoDataSet;
     private System.Windows.Forms.BindingSource tasksBindingSource;
     private ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter tasksTableAdapter;
     private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.Label selectedIDLbl;
+    private System.Windows.Forms.Button instructionsButton;
   }
 }

@@ -34,6 +34,7 @@
             this.menuGroupNameLabel = new System.Windows.Forms.Label();
             this.menuGroupNameTxt = new System.Windows.Forms.TextBox();
             this.menuSelfNameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             menuSelfNameTxt = new System.Windows.Forms.TextBox();
             menuNumUrgentTasks = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -43,7 +44,7 @@
             menuSelfNameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
             menuSelfNameTxt.Cursor = System.Windows.Forms.Cursors.Hand;
             menuSelfNameTxt.Location = new System.Drawing.Point(606, 6);
-            menuSelfNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            menuSelfNameTxt.Margin = new System.Windows.Forms.Padding(2);
             menuSelfNameTxt.Name = "menuSelfNameTxt";
             menuSelfNameTxt.ReadOnly = true;
             menuSelfNameTxt.Size = new System.Drawing.Size(174, 20);
@@ -56,7 +57,7 @@
             menuNumUrgentTasks.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             menuNumUrgentTasks.ForeColor = System.Drawing.Color.Snow;
             menuNumUrgentTasks.Location = new System.Drawing.Point(290, 95);
-            menuNumUrgentTasks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            menuNumUrgentTasks.Margin = new System.Windows.Forms.Padding(2);
             menuNumUrgentTasks.Name = "menuNumUrgentTasks";
             menuNumUrgentTasks.ReadOnly = true;
             menuNumUrgentTasks.Size = new System.Drawing.Size(218, 25);
@@ -82,7 +83,7 @@
             this.menuGroupNameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuGroupNameTxt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuGroupNameTxt.Location = new System.Drawing.Point(98, 6);
-            this.menuGroupNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuGroupNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.menuGroupNameTxt.Name = "menuGroupNameTxt";
             this.menuGroupNameTxt.ReadOnly = true;
             this.menuGroupNameTxt.Size = new System.Drawing.Size(231, 20);
@@ -101,6 +102,17 @@
             this.menuSelfNameLabel.TabIndex = 2;
             this.menuSelfNameLabel.Text = "Logged in as:";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.Location = new System.Drawing.Point(660, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "View Profile";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,12 +120,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(menuNumUrgentTasks);
             this.Controls.Add(menuSelfNameTxt);
             this.Controls.Add(this.menuSelfNameLabel);
             this.Controls.Add(this.menuGroupNameTxt);
             this.Controls.Add(this.menuGroupNameLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "Agile Development Tools Suite";
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
@@ -127,5 +140,6 @@
     private System.Windows.Forms.Label menuGroupNameLabel;
     private System.Windows.Forms.TextBox menuGroupNameTxt;
     private System.Windows.Forms.Label menuSelfNameLabel;
+    private System.Windows.Forms.Button button1;
   }
 }

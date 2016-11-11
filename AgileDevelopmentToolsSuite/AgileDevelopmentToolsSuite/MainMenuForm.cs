@@ -47,6 +47,20 @@ namespace AgileDevelopmentToolsSuite
         loginForm.Show();
     }
 
+    private void button1_Click(object sender, EventArgs e)
+    {
+        ProfileForm profileForm = new ProfileForm();
+
+        profileForm.Width = this.Width;
+        profileForm.Height = this.Height;
+
+        profileForm.StartPosition = FormStartPosition.Manual;
+        profileForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        this.Hide();
+        profileForm.Show();
+    }
+
 
   }
 }

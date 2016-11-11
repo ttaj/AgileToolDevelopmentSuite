@@ -95,6 +95,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "PositionForm";
             this.Text = "Agile Development Tools Suite";
+            this.Load += new System.EventHandler(this.PositionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

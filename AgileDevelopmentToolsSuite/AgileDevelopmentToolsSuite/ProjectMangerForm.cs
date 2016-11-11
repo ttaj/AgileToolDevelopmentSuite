@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace AgileDevelopmentToolsSuite
 {
     public partial class ProjectMangerForm : Form
@@ -21,7 +20,6 @@ namespace AgileDevelopmentToolsSuite
 
         private void ProjectMangerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // MessageBox.Show("bye login");
             Application.Exit();
         }
 
@@ -59,34 +57,96 @@ namespace AgileDevelopmentToolsSuite
                 return;
             }
 
+            object queryResult;
+
+            SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
+            SqlCommand insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Nickname], [ProfileLink]) VALUES (@Username, @Password, @Nickname, @ProfileLink)");
+
+            insert.Connection = db;
+            userCheck.Connection = db;
+
             if (yesProfileButton.Checked == true)
             {
                 try
                 {
                     db.Open();
-                    MessageBox.Show("Connection Successful! ");
 
                     try
                     {
-                        //need to add profile link, cant see table values currently
-                        //need to add query to check for duplicate username
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [Users] ([Username], [Password], [Nickname]) VALUES (@Username, @Password, @Nickname)");
-                        cmd.Connection = db;
-                        cmd.Parameters.AddWithValue("@Username", usernameBox.Text);
-                        cmd.Parameters.AddWithValue("@Password", passwordBox.Text);
-                        cmd.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-                        cmd.ExecuteNonQuery();
+                        userCheck.Parameters.AddWithValue("@Username", usernameBox.Text);
+                        queryResult = userCheck.ExecuteScalar();
+                        String res = "Not Found";
+
+                        res = Convert.ToString(queryResult);
+                        if (!res.Equals(""))
+                        {
+                            MessageBox.Show("Username already exists!");
+                        }
+                        else
+                        {
+                            if (usernameBox.Text.Length >= 8 && passwordBox.Text.Length >= 8)
+                            {
+                                bool capital = false;
+                                bool number = false;
+
+                                int passwordCounter = 0;
+
+                                String password = passwordBox.Text;
+
+                                while (passwordCounter < passwordBox.Text.Length)
+                                {
+                                    if (password[passwordCounter] >= 65 && password[passwordCounter] <= 90)
+                                    {
+                                        capital = true;
+                                    }
+
+                                    if (password[passwordCounter] >= 48 && password[passwordCounter] <= 57)
+                                    {
+                                        number = true;
+                                    }
+                                }
+
+                                if (capital == true && number == true)
+                                {
+                                    //check for an adminstrators approval somehow?
+
+                                    MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
+                                    insert.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                    insert.Parameters.AddWithValue("@Password", passwordBox.Text);
+                                    insert.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
+                                    insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+                                    insert.ExecuteNonQuery();
+
+                                    MainMenuForm mainMenuForm = new MainMenuForm();
+                                    mainMenuForm.Width = this.Width;
+                                    mainMenuForm.Height = this.Height;
+
+                                    mainMenuForm.StartPosition = FormStartPosition.Manual;
+                                    mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+
+                                    this.Hide();
+                                    mainMenuForm.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Username or password was incorrect!");
+                                }
+                            }
+                            else
+                            {
+                                if (usernameBox.Text.Length <= 8)
+                                {
+                                    MessageBox.Show("Error, username is less than 8 characters.");
+                                }
+
+                                if (passwordBox.Text.Length <= 8)
+                                {
+                                    MessageBox.Show("Error, password is less than 8 characters.");
+                                }
+                            }
+                        }
+
                         db.Close();
-
-                        /*MainMenuForm mainMenuForm = new MainMenuForm();
-                        mainMenuForm.Width = this.Width;
-                        mainMenuForm.Height = this.Height;
-
-                        mainMenuForm.StartPosition = FormStartPosition.Manual;
-                        mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
-
-                        this.Hide();
-                        mainMenuForm.Show();*/
 
                     }
                     catch (Exception ex)
@@ -105,27 +165,83 @@ namespace AgileDevelopmentToolsSuite
                 try
                 {
                     db.Open();
-                    MessageBox.Show("Connection Successful! ");
 
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [Users] ([Username], [Password], [Nickname]) VALUES (@Username, @Password, @Nickname)");
-                        cmd.Connection = db;
-                        cmd.Parameters.AddWithValue("@Username", usernameBox.Text);
-                        cmd.Parameters.AddWithValue("@Password", passwordBox.Text);
-                        cmd.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-                        cmd.ExecuteNonQuery();
+                        userCheck.Parameters.AddWithValue("@Username", usernameBox.Text);
+                        queryResult = userCheck.ExecuteScalar();
+                        String res = "Not Found";
+
+                        res = Convert.ToString(queryResult);
+                        if (!res.Equals(""))
+                        {
+                            MessageBox.Show("Name already exists!");
+                        }
+                        else
+                        {
+                            if (usernameBox.Text.Length >= 8 && passwordBox.Text.Length >= 8)
+                            {
+                                bool capital = false;
+                                bool number = false;
+
+                                int passwordCounter = 0;
+
+                                String password = passwordBox.Text;
+
+                                while (passwordCounter < passwordBox.Text.Length)
+                                {
+                                    if (password[passwordCounter] >= 65 && password[passwordCounter] <= 90)
+                                    {
+                                        capital = true;
+                                    }
+
+                                    if (password[passwordCounter] >= 48 && password[passwordCounter] <= 57)
+                                    {
+                                        number = true;
+                                    }
+                                }
+
+                                if (capital == true && number == true)
+                                {
+                                    //check for an adminstrators approval somehow?
+
+                                    MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
+                                    insert.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                    insert.Parameters.AddWithValue("@Password", passwordBox.Text);
+                                    insert.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
+                                    insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+                                    insert.ExecuteNonQuery();
+
+                                    SkillSetForm skillSetForm = new SkillSetForm();
+                                    skillSetForm.Width = this.Width;
+                                    skillSetForm.Height = this.Height;
+
+                                    skillSetForm.StartPosition = FormStartPosition.Manual;
+                                    skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
+
+                                    this.Hide();
+                                    skillSetForm.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Username or password was incorrect!");
+                                }
+                            }
+                            else
+                            {
+                                if (usernameBox.Text.Length <= 8)
+                                {
+                                    MessageBox.Show("Error, username is less than 8 characters.");
+                                }
+
+                                if (passwordBox.Text.Length <= 8)
+                                {
+                                    MessageBox.Show("Error, password is less than 8 characters.");
+                                }
+                            }
+                        }
+
                         db.Close();
-
-                        SkillSetForm skillSetForm = new SkillSetForm();
-                        skillSetForm.Width = this.Width;
-                        skillSetForm.Height = this.Height;
-
-                        skillSetForm.StartPosition = FormStartPosition.Manual;
-                        skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
-
-                        this.Hide();
-                        skillSetForm.Show();
                     }
                     catch (Exception ex)
                     {
@@ -135,9 +251,13 @@ namespace AgileDevelopmentToolsSuite
                 catch (Exception ex)
                 {
                     MessageBox.Show("Connection unsuccessful, please try again. ");
-                    return;
                 }
             }
+        }
+
+        private void usernameBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

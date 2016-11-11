@@ -73,28 +73,28 @@
             this.radioButton37 = new System.Windows.Forms.RadioButton();
             this.radioButton38 = new System.Windows.Forms.RadioButton();
             this.radioButton39 = new System.Windows.Forms.RadioButton();
-            this.radioButtonpPanel1 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel2 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel1 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel2 = new System.Windows.Forms.Panel();
             this.skill4 = new System.Windows.Forms.TextBox();
-            this.radioButtonpPanel3 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel4 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel5 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel6 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel7 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel8 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel10 = new System.Windows.Forms.Panel();
-            this.radioButtonpPanel9 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel3 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel4 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel5 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel6 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel7 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel8 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel10 = new System.Windows.Forms.Panel();
+            this.radioButtonPanel9 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.radioButtonpPanel1.SuspendLayout();
-            this.radioButtonpPanel2.SuspendLayout();
-            this.radioButtonpPanel3.SuspendLayout();
-            this.radioButtonpPanel4.SuspendLayout();
-            this.radioButtonpPanel5.SuspendLayout();
-            this.radioButtonpPanel6.SuspendLayout();
-            this.radioButtonpPanel7.SuspendLayout();
-            this.radioButtonpPanel8.SuspendLayout();
-            this.radioButtonpPanel10.SuspendLayout();
-            this.radioButtonpPanel9.SuspendLayout();
+            this.radioButtonPanel1.SuspendLayout();
+            this.radioButtonPanel2.SuspendLayout();
+            this.radioButtonPanel3.SuspendLayout();
+            this.radioButtonPanel4.SuspendLayout();
+            this.radioButtonPanel5.SuspendLayout();
+            this.radioButtonPanel6.SuspendLayout();
+            this.radioButtonPanel7.SuspendLayout();
+            this.radioButtonPanel8.SuspendLayout();
+            this.radioButtonPanel10.SuspendLayout();
+            this.radioButtonPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -580,28 +580,28 @@
             this.radioButton39.Text = "Beginner";
             this.radioButton39.UseVisualStyleBackColor = true;
             // 
-            // radioButtonpPanel1
+            // radioButtonPanel1
             // 
-            this.radioButtonpPanel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.radioButtonpPanel1.Controls.Add(this.radioButton1);
-            this.radioButtonpPanel1.Controls.Add(this.radioButton3);
-            this.radioButtonpPanel1.Controls.Add(this.radioButton2);
-            this.radioButtonpPanel1.Location = new System.Drawing.Point(420, 170);
-            this.radioButtonpPanel1.Name = "radioButtonpPanel1";
-            this.radioButtonpPanel1.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel1.TabIndex = 67;
+            this.radioButtonPanel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radioButtonPanel1.Controls.Add(this.radioButton1);
+            this.radioButtonPanel1.Controls.Add(this.radioButton3);
+            this.radioButtonPanel1.Controls.Add(this.radioButton2);
+            this.radioButtonPanel1.Location = new System.Drawing.Point(420, 170);
+            this.radioButtonPanel1.Name = "radioButtonPanel1";
+            this.radioButtonPanel1.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel1.TabIndex = 67;
             // 
-            // radioButtonpPanel2
+            // radioButtonPanel2
             // 
-            this.radioButtonpPanel2.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel2.Controls.Add(this.radioButton5);
-            this.radioButtonpPanel2.Controls.Add(this.radioButton6);
-            this.radioButtonpPanel2.Controls.Add(this.radioButton7);
-            this.radioButtonpPanel2.Location = new System.Drawing.Point(420, 200);
-            this.radioButtonpPanel2.Name = "radioButtonpPanel2";
-            this.radioButtonpPanel2.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel2.TabIndex = 68;
+            this.radioButtonPanel2.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel2.Controls.Add(this.radioButton5);
+            this.radioButtonPanel2.Controls.Add(this.radioButton6);
+            this.radioButtonPanel2.Controls.Add(this.radioButton7);
+            this.radioButtonPanel2.Location = new System.Drawing.Point(420, 200);
+            this.radioButtonPanel2.Name = "radioButtonPanel2";
+            this.radioButtonPanel2.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel2.TabIndex = 68;
             // 
             // skill4
             // 
@@ -610,93 +610,93 @@
             this.skill4.Size = new System.Drawing.Size(252, 20);
             this.skill4.TabIndex = 28;
             // 
-            // radioButtonpPanel3
+            // radioButtonPanel3
             // 
-            this.radioButtonpPanel3.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel3.Controls.Add(this.radioButton9);
-            this.radioButtonpPanel3.Controls.Add(this.radioButton10);
-            this.radioButtonpPanel3.Controls.Add(this.radioButton11);
-            this.radioButtonpPanel3.Location = new System.Drawing.Point(420, 230);
-            this.radioButtonpPanel3.Name = "radioButtonpPanel3";
-            this.radioButtonpPanel3.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel3.TabIndex = 69;
+            this.radioButtonPanel3.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel3.Controls.Add(this.radioButton9);
+            this.radioButtonPanel3.Controls.Add(this.radioButton10);
+            this.radioButtonPanel3.Controls.Add(this.radioButton11);
+            this.radioButtonPanel3.Location = new System.Drawing.Point(420, 230);
+            this.radioButtonPanel3.Name = "radioButtonPanel3";
+            this.radioButtonPanel3.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel3.TabIndex = 69;
             // 
-            // radioButtonpPanel4
+            // radioButtonPanel4
             // 
-            this.radioButtonpPanel4.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel4.Controls.Add(this.radioButton13);
-            this.radioButtonpPanel4.Controls.Add(this.radioButton14);
-            this.radioButtonpPanel4.Controls.Add(this.radioButton15);
-            this.radioButtonpPanel4.Location = new System.Drawing.Point(420, 260);
-            this.radioButtonpPanel4.Name = "radioButtonpPanel4";
-            this.radioButtonpPanel4.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel4.TabIndex = 70;
+            this.radioButtonPanel4.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel4.Controls.Add(this.radioButton13);
+            this.radioButtonPanel4.Controls.Add(this.radioButton14);
+            this.radioButtonPanel4.Controls.Add(this.radioButton15);
+            this.radioButtonPanel4.Location = new System.Drawing.Point(420, 260);
+            this.radioButtonPanel4.Name = "radioButtonPanel4";
+            this.radioButtonPanel4.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel4.TabIndex = 70;
             // 
-            // radioButtonpPanel5
+            // radioButtonPanel5
             // 
-            this.radioButtonpPanel5.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel5.Controls.Add(this.radioButton17);
-            this.radioButtonpPanel5.Controls.Add(this.radioButton18);
-            this.radioButtonpPanel5.Controls.Add(this.radioButton19);
-            this.radioButtonpPanel5.Location = new System.Drawing.Point(420, 290);
-            this.radioButtonpPanel5.Name = "radioButtonpPanel5";
-            this.radioButtonpPanel5.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel5.TabIndex = 71;
+            this.radioButtonPanel5.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel5.Controls.Add(this.radioButton17);
+            this.radioButtonPanel5.Controls.Add(this.radioButton18);
+            this.radioButtonPanel5.Controls.Add(this.radioButton19);
+            this.radioButtonPanel5.Location = new System.Drawing.Point(420, 290);
+            this.radioButtonPanel5.Name = "radioButtonPanel5";
+            this.radioButtonPanel5.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel5.TabIndex = 71;
             // 
-            // radioButtonpPanel6
+            // radioButtonPanel6
             // 
-            this.radioButtonpPanel6.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel6.Controls.Add(this.radioButton21);
-            this.radioButtonpPanel6.Controls.Add(this.radioButton22);
-            this.radioButtonpPanel6.Controls.Add(this.radioButton23);
-            this.radioButtonpPanel6.Location = new System.Drawing.Point(420, 320);
-            this.radioButtonpPanel6.Name = "radioButtonpPanel6";
-            this.radioButtonpPanel6.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel6.TabIndex = 72;
+            this.radioButtonPanel6.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel6.Controls.Add(this.radioButton21);
+            this.radioButtonPanel6.Controls.Add(this.radioButton22);
+            this.radioButtonPanel6.Controls.Add(this.radioButton23);
+            this.radioButtonPanel6.Location = new System.Drawing.Point(420, 320);
+            this.radioButtonPanel6.Name = "radioButtonPanel6";
+            this.radioButtonPanel6.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel6.TabIndex = 72;
             // 
-            // radioButtonpPanel7
+            // radioButtonPanel7
             // 
-            this.radioButtonpPanel7.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel7.Controls.Add(this.radioButton25);
-            this.radioButtonpPanel7.Controls.Add(this.radioButton26);
-            this.radioButtonpPanel7.Controls.Add(this.radioButton27);
-            this.radioButtonpPanel7.Location = new System.Drawing.Point(420, 350);
-            this.radioButtonpPanel7.Name = "radioButtonpPanel7";
-            this.radioButtonpPanel7.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel7.TabIndex = 73;
+            this.radioButtonPanel7.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel7.Controls.Add(this.radioButton25);
+            this.radioButtonPanel7.Controls.Add(this.radioButton26);
+            this.radioButtonPanel7.Controls.Add(this.radioButton27);
+            this.radioButtonPanel7.Location = new System.Drawing.Point(420, 350);
+            this.radioButtonPanel7.Name = "radioButtonPanel7";
+            this.radioButtonPanel7.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel7.TabIndex = 73;
             // 
-            // radioButtonpPanel8
+            // radioButtonPanel8
             // 
-            this.radioButtonpPanel8.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel8.Controls.Add(this.radioButton29);
-            this.radioButtonpPanel8.Controls.Add(this.radioButton30);
-            this.radioButtonpPanel8.Controls.Add(this.radioButton31);
-            this.radioButtonpPanel8.Location = new System.Drawing.Point(420, 380);
-            this.radioButtonpPanel8.Name = "radioButtonpPanel8";
-            this.radioButtonpPanel8.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel8.TabIndex = 74;
+            this.radioButtonPanel8.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel8.Controls.Add(this.radioButton29);
+            this.radioButtonPanel8.Controls.Add(this.radioButton30);
+            this.radioButtonPanel8.Controls.Add(this.radioButton31);
+            this.radioButtonPanel8.Location = new System.Drawing.Point(420, 380);
+            this.radioButtonPanel8.Name = "radioButtonPanel8";
+            this.radioButtonPanel8.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel8.TabIndex = 74;
             // 
-            // radioButtonpPanel10
+            // radioButtonPanel10
             // 
-            this.radioButtonpPanel10.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel10.Controls.Add(this.radioButton37);
-            this.radioButtonpPanel10.Controls.Add(this.radioButton38);
-            this.radioButtonpPanel10.Controls.Add(this.radioButton39);
-            this.radioButtonpPanel10.Location = new System.Drawing.Point(420, 440);
-            this.radioButtonpPanel10.Name = "radioButtonpPanel10";
-            this.radioButtonpPanel10.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel10.TabIndex = 75;
+            this.radioButtonPanel10.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel10.Controls.Add(this.radioButton37);
+            this.radioButtonPanel10.Controls.Add(this.radioButton38);
+            this.radioButtonPanel10.Controls.Add(this.radioButton39);
+            this.radioButtonPanel10.Location = new System.Drawing.Point(420, 440);
+            this.radioButtonPanel10.Name = "radioButtonPanel10";
+            this.radioButtonPanel10.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel10.TabIndex = 75;
             // 
-            // radioButtonpPanel9
+            // radioButtonPanel9
             // 
-            this.radioButtonpPanel9.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonpPanel9.Controls.Add(this.radioButton33);
-            this.radioButtonpPanel9.Controls.Add(this.radioButton34);
-            this.radioButtonpPanel9.Controls.Add(this.radioButton35);
-            this.radioButtonpPanel9.Location = new System.Drawing.Point(420, 410);
-            this.radioButtonpPanel9.Name = "radioButtonpPanel9";
-            this.radioButtonpPanel9.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonpPanel9.TabIndex = 76;
+            this.radioButtonPanel9.BackColor = System.Drawing.Color.DarkGreen;
+            this.radioButtonPanel9.Controls.Add(this.radioButton33);
+            this.radioButtonPanel9.Controls.Add(this.radioButton34);
+            this.radioButtonPanel9.Controls.Add(this.radioButton35);
+            this.radioButtonPanel9.Location = new System.Drawing.Point(420, 410);
+            this.radioButtonPanel9.Name = "radioButtonPanel9";
+            this.radioButtonPanel9.Size = new System.Drawing.Size(250, 20);
+            this.radioButtonPanel9.TabIndex = 76;
             // 
             // SkillSetForm
             // 
@@ -705,16 +705,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.radioButtonpPanel9);
-            this.Controls.Add(this.radioButtonpPanel10);
-            this.Controls.Add(this.radioButtonpPanel8);
-            this.Controls.Add(this.radioButtonpPanel7);
-            this.Controls.Add(this.radioButtonpPanel6);
-            this.Controls.Add(this.radioButtonpPanel5);
-            this.Controls.Add(this.radioButtonpPanel4);
-            this.Controls.Add(this.radioButtonpPanel3);
-            this.Controls.Add(this.radioButtonpPanel2);
-            this.Controls.Add(this.radioButtonpPanel1);
+            this.Controls.Add(this.radioButtonPanel9);
+            this.Controls.Add(this.radioButtonPanel10);
+            this.Controls.Add(this.radioButtonPanel8);
+            this.Controls.Add(this.radioButtonPanel7);
+            this.Controls.Add(this.radioButtonPanel6);
+            this.Controls.Add(this.radioButtonPanel5);
+            this.Controls.Add(this.radioButtonPanel4);
+            this.Controls.Add(this.radioButtonPanel3);
+            this.Controls.Add(this.radioButtonPanel2);
+            this.Controls.Add(this.radioButtonPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.skill10);
             this.Controls.Add(this.skill9);
@@ -733,26 +733,26 @@
             this.Name = "SkillSetForm";
             this.Text = "skillSetForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.radioButtonpPanel1.ResumeLayout(false);
-            this.radioButtonpPanel1.PerformLayout();
-            this.radioButtonpPanel2.ResumeLayout(false);
-            this.radioButtonpPanel2.PerformLayout();
-            this.radioButtonpPanel3.ResumeLayout(false);
-            this.radioButtonpPanel3.PerformLayout();
-            this.radioButtonpPanel4.ResumeLayout(false);
-            this.radioButtonpPanel4.PerformLayout();
-            this.radioButtonpPanel5.ResumeLayout(false);
-            this.radioButtonpPanel5.PerformLayout();
-            this.radioButtonpPanel6.ResumeLayout(false);
-            this.radioButtonpPanel6.PerformLayout();
-            this.radioButtonpPanel7.ResumeLayout(false);
-            this.radioButtonpPanel7.PerformLayout();
-            this.radioButtonpPanel8.ResumeLayout(false);
-            this.radioButtonpPanel8.PerformLayout();
-            this.radioButtonpPanel10.ResumeLayout(false);
-            this.radioButtonpPanel10.PerformLayout();
-            this.radioButtonpPanel9.ResumeLayout(false);
-            this.radioButtonpPanel9.PerformLayout();
+            this.radioButtonPanel1.ResumeLayout(false);
+            this.radioButtonPanel1.PerformLayout();
+            this.radioButtonPanel2.ResumeLayout(false);
+            this.radioButtonPanel2.PerformLayout();
+            this.radioButtonPanel3.ResumeLayout(false);
+            this.radioButtonPanel3.PerformLayout();
+            this.radioButtonPanel4.ResumeLayout(false);
+            this.radioButtonPanel4.PerformLayout();
+            this.radioButtonPanel5.ResumeLayout(false);
+            this.radioButtonPanel5.PerformLayout();
+            this.radioButtonPanel6.ResumeLayout(false);
+            this.radioButtonPanel6.PerformLayout();
+            this.radioButtonPanel7.ResumeLayout(false);
+            this.radioButtonPanel7.PerformLayout();
+            this.radioButtonPanel8.ResumeLayout(false);
+            this.radioButtonPanel8.PerformLayout();
+            this.radioButtonPanel10.ResumeLayout(false);
+            this.radioButtonPanel10.PerformLayout();
+            this.radioButtonPanel9.ResumeLayout(false);
+            this.radioButtonPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -804,16 +804,16 @@
         private System.Windows.Forms.RadioButton radioButton37;
         private System.Windows.Forms.RadioButton radioButton38;
         private System.Windows.Forms.RadioButton radioButton39;
-        private System.Windows.Forms.Panel radioButtonpPanel1;
-        private System.Windows.Forms.Panel radioButtonpPanel2;
+        private System.Windows.Forms.Panel radioButtonPanel1;
+        private System.Windows.Forms.Panel radioButtonPanel2;
         private System.Windows.Forms.TextBox skill4;
-        private System.Windows.Forms.Panel radioButtonpPanel3;
-        private System.Windows.Forms.Panel radioButtonpPanel4;
-        private System.Windows.Forms.Panel radioButtonpPanel5;
-        private System.Windows.Forms.Panel radioButtonpPanel6;
-        private System.Windows.Forms.Panel radioButtonpPanel7;
-        private System.Windows.Forms.Panel radioButtonpPanel8;
-        private System.Windows.Forms.Panel radioButtonpPanel10;
-        private System.Windows.Forms.Panel radioButtonpPanel9;
+        private System.Windows.Forms.Panel radioButtonPanel3;
+        private System.Windows.Forms.Panel radioButtonPanel4;
+        private System.Windows.Forms.Panel radioButtonPanel5;
+        private System.Windows.Forms.Panel radioButtonPanel6;
+        private System.Windows.Forms.Panel radioButtonPanel7;
+        private System.Windows.Forms.Panel radioButtonPanel8;
+        private System.Windows.Forms.Panel radioButtonPanel10;
+        private System.Windows.Forms.Panel radioButtonPanel9;
     }
 }

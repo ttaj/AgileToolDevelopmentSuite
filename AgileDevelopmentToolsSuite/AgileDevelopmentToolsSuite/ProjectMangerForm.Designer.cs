@@ -58,10 +58,11 @@
             // usernameBox
             // 
             this.usernameBox.Location = new System.Drawing.Point(352, 161);
-            this.usernameBox.MaxLength = 10;
+            this.usernameBox.MaxLength = 32;
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(123, 20);
             this.usernameBox.TabIndex = 11;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // usernameLabel
             // 
@@ -78,7 +79,7 @@
             // passwordBox
             // 
             this.passwordBox.Location = new System.Drawing.Point(352, 206);
-            this.passwordBox.MaxLength = 10;
+            this.passwordBox.MaxLength = 32;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(123, 20);
             this.passwordBox.TabIndex = 13;
@@ -132,7 +133,7 @@
             // profileLinkBox
             // 
             this.profileLinkBox.Location = new System.Drawing.Point(352, 343);
-            this.profileLinkBox.MaxLength = 40;
+            this.profileLinkBox.MaxLength = 2000;
             this.profileLinkBox.Name = "profileLinkBox";
             this.profileLinkBox.Size = new System.Drawing.Size(123, 20);
             this.profileLinkBox.TabIndex = 22;
@@ -180,6 +181,7 @@
             // 
             this.nickNameTxt.Location = new System.Drawing.Point(352, 249);
             this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.nickNameTxt.MaxLength = 32;
             this.nickNameTxt.Name = "nickNameTxt";
             this.nickNameTxt.Size = new System.Drawing.Size(123, 20);
             this.nickNameTxt.TabIndex = 26;

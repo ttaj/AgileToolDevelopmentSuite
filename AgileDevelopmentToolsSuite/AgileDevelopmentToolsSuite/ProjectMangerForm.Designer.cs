@@ -40,25 +40,29 @@
             this.profileLinkBox = new System.Windows.Forms.TextBox();
             this.profileLinkLabel = new System.Windows.Forms.Label();
             this.continueButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nickNameTxt = new System.Windows.Forms.TextBox();
+            this.nickNameLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox1.Location = new System.Drawing.Point(209, 175);
+            this.pictureBox1.Location = new System.Drawing.Point(209, 142);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(322, 251);
+            this.pictureBox1.Size = new System.Drawing.Size(322, 284);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // usernameBox
             // 
-            this.usernameBox.Location = new System.Drawing.Point(348, 210);
-            this.usernameBox.MaxLength = 10;
+            this.usernameBox.Location = new System.Drawing.Point(352, 161);
+            this.usernameBox.MaxLength = 32;
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(123, 20);
             this.usernameBox.TabIndex = 11;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // usernameLabel
             // 
@@ -66,16 +70,16 @@
             this.usernameLabel.BackColor = System.Drawing.Color.DarkGreen;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(246, 210);
+            this.usernameLabel.Location = new System.Drawing.Point(251, 161);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(96, 20);
+            this.usernameLabel.Size = new System.Drawing.Size(103, 20);
             this.usernameLabel.TabIndex = 12;
-            this.usernameLabel.Text = "Username:";
+            this.usernameLabel.Text = "Username*:";
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(348, 253);
-            this.passwordBox.MaxLength = 10;
+            this.passwordBox.Location = new System.Drawing.Point(352, 206);
+            this.passwordBox.MaxLength = 32;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(123, 20);
             this.passwordBox.TabIndex = 13;
@@ -86,11 +90,11 @@
             this.passwordLabel.BackColor = System.Drawing.Color.DarkGreen;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel.Location = new System.Drawing.Point(251, 253);
+            this.passwordLabel.Location = new System.Drawing.Point(254, 206);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(91, 20);
+            this.passwordLabel.Size = new System.Drawing.Size(98, 20);
             this.passwordLabel.TabIndex = 14;
-            this.passwordLabel.Text = "Password:";
+            this.passwordLabel.Text = "Password*:";
             // 
             // label1
             // 
@@ -128,8 +132,8 @@
             // 
             // profileLinkBox
             // 
-            this.profileLinkBox.Location = new System.Drawing.Point(348, 343);
-            this.profileLinkBox.MaxLength = 40;
+            this.profileLinkBox.Location = new System.Drawing.Point(352, 343);
+            this.profileLinkBox.MaxLength = 2000;
             this.profileLinkBox.Name = "profileLinkBox";
             this.profileLinkBox.Size = new System.Drawing.Size(123, 20);
             this.profileLinkBox.TabIndex = 22;
@@ -141,7 +145,7 @@
             this.profileLinkLabel.BackColor = System.Drawing.Color.DarkGreen;
             this.profileLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileLinkLabel.ForeColor = System.Drawing.Color.White;
-            this.profileLinkLabel.Location = new System.Drawing.Point(239, 343);
+            this.profileLinkLabel.Location = new System.Drawing.Point(251, 343);
             this.profileLinkLabel.Name = "profileLinkLabel";
             this.profileLinkLabel.Size = new System.Drawing.Size(103, 20);
             this.profileLinkLabel.TabIndex = 23;
@@ -161,6 +165,39 @@
             this.continueButton.UseVisualStyleBackColor = false;
             this.continueButton.Click += new System.EventHandler(this.continueButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(417, 429);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "* items are required.";
+            // 
+            // nickNameTxt
+            // 
+            this.nickNameTxt.Location = new System.Drawing.Point(352, 249);
+            this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.nickNameTxt.MaxLength = 32;
+            this.nickNameTxt.Name = "nickNameTxt";
+            this.nickNameTxt.Size = new System.Drawing.Size(123, 20);
+            this.nickNameTxt.TabIndex = 26;
+            // 
+            // nickNameLbl
+            // 
+            this.nickNameLbl.AutoSize = true;
+            this.nickNameLbl.BackColor = System.Drawing.Color.DarkGreen;
+            this.nickNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nickNameLbl.ForeColor = System.Drawing.Color.White;
+            this.nickNameLbl.Location = new System.Drawing.Point(260, 249);
+            this.nickNameLbl.Name = "nickNameLbl";
+            this.nickNameLbl.Size = new System.Drawing.Size(92, 20);
+            this.nickNameLbl.TabIndex = 27;
+            this.nickNameLbl.Text = "Nickname:";
+            // 
             // ProjectMangerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +205,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.nickNameLbl);
+            this.Controls.Add(this.nickNameTxt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.continueButton);
             this.Controls.Add(this.profileLinkLabel);
             this.Controls.Add(this.profileLinkBox);
@@ -200,5 +240,8 @@
         private System.Windows.Forms.TextBox profileLinkBox;
         private System.Windows.Forms.Label profileLinkLabel;
         private System.Windows.Forms.Button continueButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox nickNameTxt;
+        private System.Windows.Forms.Label nickNameLbl;
     }
 }

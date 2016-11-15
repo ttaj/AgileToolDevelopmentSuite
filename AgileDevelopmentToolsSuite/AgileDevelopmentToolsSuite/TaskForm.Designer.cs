@@ -57,12 +57,12 @@
       // taskFormLabel
       // 
       this.taskFormLabel.AutoSize = true;
-      this.taskFormLabel.BackColor = System.Drawing.Color.YellowGreen;
-      this.taskFormLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.taskFormLabel.Font = new System.Drawing.Font("Perpetua Titling MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.taskFormLabel.BackColor = System.Drawing.Color.Transparent;
+      this.taskFormLabel.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.taskFormLabel.ForeColor = System.Drawing.Color.White;
       this.taskFormLabel.Location = new System.Drawing.Point(275, 12);
       this.taskFormLabel.Name = "taskFormLabel";
-      this.taskFormLabel.Size = new System.Drawing.Size(482, 35);
+      this.taskFormLabel.Size = new System.Drawing.Size(411, 37);
       this.taskFormLabel.TabIndex = 1;
       this.taskFormLabel.Text = "List of Current Project Tasks";
       this.taskFormLabel.UseWaitCursor = true;
@@ -70,8 +70,9 @@
       // 
       // backButton
       // 
-      this.backButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+      this.backButton.BackColor = System.Drawing.Color.DarkGray;
       this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.backButton.Location = new System.Drawing.Point(24, 12);
       this.backButton.Name = "backButton";
       this.backButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -84,11 +85,12 @@
       // curTasksLabel
       // 
       this.curTasksLabel.AutoSize = true;
-      this.curTasksLabel.BackColor = System.Drawing.Color.YellowGreen;
-      this.curTasksLabel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.curTasksLabel.BackColor = System.Drawing.Color.Transparent;
+      this.curTasksLabel.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.curTasksLabel.ForeColor = System.Drawing.Color.White;
       this.curTasksLabel.Location = new System.Drawing.Point(13, 73);
       this.curTasksLabel.Name = "curTasksLabel";
-      this.curTasksLabel.Size = new System.Drawing.Size(140, 27);
+      this.curTasksLabel.Size = new System.Drawing.Size(150, 27);
       this.curTasksLabel.TabIndex = 3;
       this.curTasksLabel.Text = "Current Tasks";
       this.curTasksLabel.Click += new System.EventHandler(this.curTasksLabel_Click);
@@ -140,6 +142,7 @@
       // 
       this.curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
       this.curTasksSaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+      this.curTasksSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.curTasksSaveButton.Location = new System.Drawing.Point(714, 428);
       this.curTasksSaveButton.Name = "curTasksSaveButton";
       this.curTasksSaveButton.Size = new System.Drawing.Size(319, 29);
@@ -203,8 +206,9 @@
       // curTaskDescLabel
       // 
       this.curTaskDescLabel.AutoSize = true;
-      this.curTaskDescLabel.BackColor = System.Drawing.Color.YellowGreen;
+      this.curTaskDescLabel.BackColor = System.Drawing.Color.Transparent;
       this.curTaskDescLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.curTaskDescLabel.ForeColor = System.Drawing.Color.White;
       this.curTaskDescLabel.Location = new System.Drawing.Point(304, 428);
       this.curTaskDescLabel.Name = "curTaskDescLabel";
       this.curTaskDescLabel.Size = new System.Drawing.Size(273, 26);
@@ -213,8 +217,9 @@
       // 
       // createTaskButton
       // 
-      this.createTaskButton.BackColor = System.Drawing.Color.GreenYellow;
+      this.createTaskButton.BackColor = System.Drawing.Color.DarkGray;
       this.createTaskButton.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.createTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.createTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
       this.createTaskButton.Location = new System.Drawing.Point(829, 12);
       this.createTaskButton.Name = "createTaskButton";
@@ -264,7 +269,7 @@
       // 
       // instructionsButton
       // 
-      this.instructionsButton.BackColor = System.Drawing.Color.LightSeaGreen;
+      this.instructionsButton.BackColor = System.Drawing.Color.DarkGray;
       this.instructionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.instructionsButton.Location = new System.Drawing.Point(467, 62);
       this.instructionsButton.Name = "instructionsButton";
@@ -295,7 +300,8 @@
       this.Controls.Add(this.backButton);
       this.Controls.Add(this.taskFormLabel);
       this.Name = "TaskForm";
-      this.Text = "TaskForm";
+      this.Text = "Agile Development Tools Suite";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TaskForm_FormClosing);
       this.Load += new System.EventHandler(this.TaskForm_Load);
       this.curTasksRadioGroup.ResumeLayout(false);
       this.curTasksRadioGroup.PerformLayout();

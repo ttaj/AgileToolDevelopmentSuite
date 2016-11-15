@@ -46,6 +46,7 @@
       // 
       // submitButton
       // 
+      this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.submitButton.Location = new System.Drawing.Point(251, 478);
       this.submitButton.Name = "submitButton";
       this.submitButton.Size = new System.Drawing.Size(226, 42);
@@ -57,8 +58,9 @@
       // taskNameLbl
       // 
       this.taskNameLbl.AutoSize = true;
-      this.taskNameLbl.BackColor = System.Drawing.Color.GreenYellow;
+      this.taskNameLbl.BackColor = System.Drawing.Color.Transparent;
       this.taskNameLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.taskNameLbl.ForeColor = System.Drawing.Color.White;
       this.taskNameLbl.Location = new System.Drawing.Point(12, 120);
       this.taskNameLbl.Name = "taskNameLbl";
       this.taskNameLbl.Size = new System.Drawing.Size(110, 24);
@@ -68,8 +70,9 @@
       // importanceLbl
       // 
       this.importanceLbl.AutoSize = true;
-      this.importanceLbl.BackColor = System.Drawing.Color.GreenYellow;
+      this.importanceLbl.BackColor = System.Drawing.Color.Transparent;
       this.importanceLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.importanceLbl.ForeColor = System.Drawing.Color.White;
       this.importanceLbl.Location = new System.Drawing.Point(14, 169);
       this.importanceLbl.Name = "importanceLbl";
       this.importanceLbl.Size = new System.Drawing.Size(114, 24);
@@ -79,8 +82,9 @@
       // taskDescriptionLbl
       // 
       this.taskDescriptionLbl.AutoSize = true;
-      this.taskDescriptionLbl.BackColor = System.Drawing.Color.GreenYellow;
+      this.taskDescriptionLbl.BackColor = System.Drawing.Color.Transparent;
       this.taskDescriptionLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.taskDescriptionLbl.ForeColor = System.Drawing.Color.White;
       this.taskDescriptionLbl.Location = new System.Drawing.Point(12, 264);
       this.taskDescriptionLbl.Name = "taskDescriptionLbl";
       this.taskDescriptionLbl.Size = new System.Drawing.Size(156, 24);
@@ -159,8 +163,9 @@
       // userDesigLbl
       // 
       this.userDesigLbl.AutoSize = true;
-      this.userDesigLbl.BackColor = System.Drawing.Color.GreenYellow;
+      this.userDesigLbl.BackColor = System.Drawing.Color.Transparent;
       this.userDesigLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.userDesigLbl.ForeColor = System.Drawing.Color.White;
       this.userDesigLbl.Location = new System.Drawing.Point(14, 217);
       this.userDesigLbl.Name = "userDesigLbl";
       this.userDesigLbl.Size = new System.Drawing.Size(160, 24);

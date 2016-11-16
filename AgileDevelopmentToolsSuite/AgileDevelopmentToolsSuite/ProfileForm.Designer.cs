@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nicknameLabel = new System.Windows.Forms.Label();
             this.skillLabel1 = new System.Windows.Forms.Label();
@@ -55,26 +55,27 @@
             this.proficiencyLabel9 = new System.Windows.Forms.Label();
             this.proficiencyLabel10 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.Button();
-            this.editProfileButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.workplaceHeaderLabel = new System.Windows.Forms.Label();
             this.workplaceLabel = new System.Windows.Forms.Label();
             this.emailHeaderLabel = new System.Windows.Forms.Label();
-            this.groupContactLabel = new System.Windows.Forms.Label();
+            this.phoneHeaderLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.groupHeaderLabel = new System.Windows.Forms.Label();
             this.groupListBox = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // profilePictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.profilePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.profilePictureBox.Location = new System.Drawing.Point(25, 25);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(100, 100);
+            this.profilePictureBox.TabIndex = 0;
+            this.profilePictureBox.TabStop = false;
+            this.profilePictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // nameLabel
             // 
@@ -368,9 +369,11 @@
             // menuButton
             // 
             this.menuButton.BackColor = System.Drawing.Color.DarkGray;
-            this.menuButton.Location = new System.Drawing.Point(676, 25);
+            this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton.ForeColor = System.Drawing.Color.White;
+            this.menuButton.Location = new System.Drawing.Point(661, 25);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(96, 23);
+            this.menuButton.Size = new System.Drawing.Size(111, 23);
             this.menuButton.TabIndex = 25;
             this.menuButton.Text = "Back To Menu";
             this.menuButton.UseVisualStyleBackColor = false;
@@ -378,14 +381,16 @@
             // 
             // button2
             // 
-            this.editProfileButton.BackColor = System.Drawing.Color.DarkGray;
-            this.editProfileButton.Location = new System.Drawing.Point(576, 25);
-            this.editProfileButton.Name = "button2";
-            this.editProfileButton.Size = new System.Drawing.Size(94, 23);
-            this.editProfileButton.TabIndex = 26;
-            this.editProfileButton.Text = "Edit Profile";
-            this.editProfileButton.UseVisualStyleBackColor = false;
-            this.editProfileButton.Click += new System.EventHandler(this.button2_Click);
+            this.button2.BackColor = System.Drawing.Color.DarkGray;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(561, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Edit Profile";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // workplaceHeaderLabel
             // 
@@ -425,15 +430,15 @@
             // 
             // phoneHeaderLabel
             // 
-            this.groupContactLabel.AutoSize = true;
-            this.groupContactLabel.BackColor = System.Drawing.Color.Transparent;
-            this.groupContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupContactLabel.ForeColor = System.Drawing.Color.White;
-            this.groupContactLabel.Location = new System.Drawing.Point(396, 185);
-            this.groupContactLabel.Name = "phoneHeaderLabel";
-            this.groupContactLabel.Size = new System.Drawing.Size(174, 25);
-            this.groupContactLabel.TabIndex = 30;
-            this.groupContactLabel.Text = "Phone Number:";
+            this.phoneHeaderLabel.AutoSize = true;
+            this.phoneHeaderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.phoneHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.phoneHeaderLabel.Location = new System.Drawing.Point(396, 185);
+            this.phoneHeaderLabel.Name = "phoneHeaderLabel";
+            this.phoneHeaderLabel.Size = new System.Drawing.Size(174, 25);
+            this.phoneHeaderLabel.TabIndex = 30;
+            this.phoneHeaderLabel.Text = "Phone Number:";
             // 
             // phoneLabel
             // 
@@ -491,11 +496,11 @@
             this.Controls.Add(this.groupHeaderLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.phoneLabel);
-            this.Controls.Add(this.groupContactLabel);
+            this.Controls.Add(this.phoneHeaderLabel);
             this.Controls.Add(this.emailHeaderLabel);
             this.Controls.Add(this.workplaceLabel);
             this.Controls.Add(this.workplaceHeaderLabel);
-            this.Controls.Add(this.editProfileButton);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.proficiencyLabel10);
             this.Controls.Add(this.proficiencyLabel9);
@@ -521,10 +526,10 @@
             this.Controls.Add(this.skillLabel1);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.profilePictureBox);
             this.Name = "ProfileForm";
             this.Text = "Agile Development Tools Suite";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,7 +537,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label nicknameLabel;
         private System.Windows.Forms.Label skillLabel1;

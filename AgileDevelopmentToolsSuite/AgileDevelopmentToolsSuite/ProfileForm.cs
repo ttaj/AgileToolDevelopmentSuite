@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,5 +40,16 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+    {
+      var request = WebRequest.Create("https://lh3.googleusercontent.com/-VnHUvY7m-CE/AAAAAAAAAAI/AAAAAAAAAAA/jrf-MIpUPAM/s96-k-no/photo.jpg");
+
+      using (var response = request.GetResponse())
+      using (var stream = response.GetResponseStream())
+      {
+        profilePictureBox.Image = Bitmap.FromStream(stream);
+      }
     }
+  }
 }

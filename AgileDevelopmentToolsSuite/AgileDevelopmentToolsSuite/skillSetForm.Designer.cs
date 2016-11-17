@@ -146,6 +146,7 @@
             // skill1
             // 
             this.skill1.Location = new System.Drawing.Point(138, 170);
+            this.skill1.MaxLength = 50;
             this.skill1.Name = "skill1";
             this.skill1.Size = new System.Drawing.Size(252, 20);
             this.skill1.TabIndex = 16;
@@ -153,6 +154,7 @@
             // skill2
             // 
             this.skill2.Location = new System.Drawing.Point(138, 200);
+            this.skill2.MaxLength = 50;
             this.skill2.Name = "skill2";
             this.skill2.Size = new System.Drawing.Size(252, 20);
             this.skill2.TabIndex = 17;
@@ -160,6 +162,7 @@
             // skill3
             // 
             this.skill3.Location = new System.Drawing.Point(138, 230);
+            this.skill3.MaxLength = 50;
             this.skill3.Name = "skill3";
             this.skill3.Size = new System.Drawing.Size(252, 20);
             this.skill3.TabIndex = 18;
@@ -251,6 +254,7 @@
             // skill5
             // 
             this.skill5.Location = new System.Drawing.Point(138, 290);
+            this.skill5.MaxLength = 50;
             this.skill5.Name = "skill5";
             this.skill5.Size = new System.Drawing.Size(252, 20);
             this.skill5.TabIndex = 29;
@@ -258,6 +262,7 @@
             // skill6
             // 
             this.skill6.Location = new System.Drawing.Point(138, 320);
+            this.skill6.MaxLength = 50;
             this.skill6.Name = "skill6";
             this.skill6.Size = new System.Drawing.Size(252, 20);
             this.skill6.TabIndex = 30;
@@ -265,6 +270,7 @@
             // skill7
             // 
             this.skill7.Location = new System.Drawing.Point(138, 350);
+            this.skill7.MaxLength = 50;
             this.skill7.Name = "skill7";
             this.skill7.Size = new System.Drawing.Size(252, 20);
             this.skill7.TabIndex = 31;
@@ -272,6 +278,7 @@
             // skill8
             // 
             this.skill8.Location = new System.Drawing.Point(138, 380);
+            this.skill8.MaxLength = 50;
             this.skill8.Name = "skill8";
             this.skill8.Size = new System.Drawing.Size(252, 20);
             this.skill8.TabIndex = 32;
@@ -279,6 +286,7 @@
             // skill9
             // 
             this.skill9.Location = new System.Drawing.Point(138, 410);
+            this.skill9.MaxLength = 50;
             this.skill9.Name = "skill9";
             this.skill9.Size = new System.Drawing.Size(252, 20);
             this.skill9.TabIndex = 33;
@@ -286,6 +294,7 @@
             // skill10
             // 
             this.skill10.Location = new System.Drawing.Point(138, 440);
+            this.skill10.MaxLength = 50;
             this.skill10.Name = "skill10";
             this.skill10.Size = new System.Drawing.Size(252, 20);
             this.skill10.TabIndex = 34;
@@ -606,6 +615,7 @@
             // skill4
             // 
             this.skill4.Location = new System.Drawing.Point(138, 260);
+            this.skill4.MaxLength = 50;
             this.skill4.Name = "skill4";
             this.skill4.Size = new System.Drawing.Size(252, 20);
             this.skill4.TabIndex = 28;

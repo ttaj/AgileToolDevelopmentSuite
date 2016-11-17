@@ -54,10 +54,14 @@ namespace AgileDevelopmentToolsSuite
         object queryResult;
 
         SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
-        SqlCommand insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Nickname], [ProfileLink]) VALUES (@Username, @Password, @Nickname, @ProfileLink)");
-        
-        insert.Connection = db;
+        SqlCommand insertUsers = new SqlCommand("INSERT INTO Users ([Username], [Password], [Developer]) VALUES (@Username, @Password, @Developer)");
+        SqlCommand insertUsersInformation = new SqlCommand("INSERT INTO Users ([Username], [Nickname], [ProfileLink]) VALUES (@Username, @Nickname, @ProfileLink)");
+        SqlCommand insertUserSkills = new SqlCommand("INSERT INTO UserSkills ([Username]) VALUES (@Username)");
+
         userCheck.Connection = db;
+        insertUsers.Connection = db;
+        insertUsersInformation.Connection = db;
+        insertUserSkills.Connection = db;
 
         if (yesProfileButton.Checked == true)
         {
@@ -102,12 +106,19 @@ namespace AgileDevelopmentToolsSuite
 
                             if( capital == true && number == true)
                             {
-                                MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
-                                insert.Parameters.AddWithValue("@Username", usernameBox.Text);
-                                insert.Parameters.AddWithValue("@Password", passwordBox.Text);
-                                insert.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-                                insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
-                                insert.ExecuteNonQuery();
+                                insertUsers.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                insertUsers.Parameters.AddWithValue("@Password", passwordBox.Text);
+                                insertUsers.Parameters.AddWithValue("@Developer", 1);
+
+                                insertUsersInformation.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                insertUsersInformation.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
+                                insertUsersInformation.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+
+                                insertUserSkills.Parameters.AddWithValue("@Username", usernameBox.Text);
+
+                                insertUsers.ExecuteNonQuery();
+                                insertUsersInformation.ExecuteNonQuery();
+                                insertUserSkills.ExecuteNonQuery();
 
                                 MainMenuForm mainMenuForm = new MainMenuForm();
                                 mainMenuForm.Width = this.Width;
@@ -194,12 +205,19 @@ namespace AgileDevelopmentToolsSuite
 
                             if( capital == true && number == true)
                             {
-                                MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
-                                insert.Parameters.AddWithValue("@Username", usernameBox.Text);
-                                insert.Parameters.AddWithValue("@Password", passwordBox.Text);
-                                insert.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-                                insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
-                                insert.ExecuteNonQuery();
+                                insertUsers.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                insertUsers.Parameters.AddWithValue("@Password", passwordBox.Text);
+                                insertUsers.Parameters.AddWithValue("@Developer", 1);
+
+                                insertUsersInformation.Parameters.AddWithValue("@Username", usernameBox.Text);
+                                insertUsersInformation.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
+                                insertUsersInformation.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+
+                                insertUserSkills.Parameters.AddWithValue("@Username", usernameBox.Text);
+
+                                insertUsers.ExecuteNonQuery();
+                                insertUsersInformation.ExecuteNonQuery();
+                                insertUserSkills.ExecuteNonQuery();
 
                                 SkillSetForm skillSetForm = new SkillSetForm();
                                 skillSetForm.Width = this.Width;

@@ -64,6 +64,7 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.groupHeaderLabel = new System.Windows.Forms.Label();
             this.groupListBox = new System.Windows.Forms.ListBox();
+            this.profileLinkLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(131, 64);
+            this.nameLabel.Location = new System.Drawing.Point(131, 25);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(72, 25);
             this.nameLabel.TabIndex = 1;
@@ -95,7 +96,7 @@
             this.nicknameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nicknameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nicknameLabel.ForeColor = System.Drawing.Color.White;
-            this.nicknameLabel.Location = new System.Drawing.Point(131, 100);
+            this.nicknameLabel.Location = new System.Drawing.Point(131, 64);
             this.nicknameLabel.Name = "nicknameLabel";
             this.nicknameLabel.Size = new System.Drawing.Size(131, 25);
             this.nicknameLabel.TabIndex = 2;
@@ -485,6 +486,18 @@
             this.groupListBox.Size = new System.Drawing.Size(342, 251);
             this.groupListBox.TabIndex = 34;
             // 
+            // profileLinkLabel
+            // 
+            this.profileLinkLabel.AutoSize = true;
+            this.profileLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileLinkLabel.ForeColor = System.Drawing.Color.White;
+            this.profileLinkLabel.Location = new System.Drawing.Point(131, 100);
+            this.profileLinkLabel.Name = "profileLinkLabel";
+            this.profileLinkLabel.Size = new System.Drawing.Size(131, 25);
+            this.profileLinkLabel.TabIndex = 35;
+            this.profileLinkLabel.Text = "Profile Link";
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,6 +505,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.profileLinkLabel);
             this.Controls.Add(this.groupListBox);
             this.Controls.Add(this.groupHeaderLabel);
             this.Controls.Add(this.emailLabel);
@@ -572,5 +586,6 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label groupHeaderLabel;
         private System.Windows.Forms.ListBox groupListBox;
+        private System.Windows.Forms.Label profileLinkLabel;
     }
 }

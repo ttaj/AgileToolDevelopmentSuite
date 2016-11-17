@@ -144,6 +144,12 @@
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectManagerApprovalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectManagerApprovalForm.Designer.cs">
+      <DependentUpon>ProjectManagerApprovalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectMangerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectManagerApprovalForm.resx">
+      <DependentUpon>ProjectManagerApprovalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectMangerForm.resx">
       <DependentUpon>ProjectMangerForm.cs</DependentUpon>

@@ -32,8 +32,9 @@ namespace AgileDevelopmentToolsSuite
 
             db = new SqlConnection(connectionString);
 
-            SqlCommand insertSkills = new SqlCommand("INSERT INTO Users ([Skill1], [Skill2], [Skill3], [Skill4], [Skill5], [Skill6], [Skill7], [Skill8], [Skill9], [Skill10]) VALUES (@s1, @s2, @s3, @s4, @s5, @s6, @s7, @s8, @s9, @s10)");
-            SqlCommand insertProficiencies = new SqlCommand("INSERT INTO Users ([SkillProficiency1], [SkillProficiency2], [SkillProficiency3], [SkillProficiency4], [SkillProficiency5], [SkillProficiency6], [SkillProficiency7], [SkillProficiency8], [SkillProficiency9], [SkillProficiency10]) VALUES (@sp1, @sp2, @sp3, @sp4, @sp5, @sp6, @sp7, @sp8, @sp9, @sp10)");
+            //Figure out a way to make sure that the correct user is having their skills inserted (current user table?)
+            SqlCommand insertSkills = new SqlCommand("INSERT INTO UserSkills ([Skill1], [Skill2], [Skill3], [Skill4], [Skill5], [Skill6], [Skill7], [Skill8], [Skill9], [Skill10]) VALUES (@s1, @s2, @s3, @s4, @s5, @s6, @s7, @s8, @s9, @s10) WHERE [Username] = @Username");
+            SqlCommand insertProficiencies = new SqlCommand("INSERT INTO UserSkills ([SkillProficiency1], [SkillProficiency2], [SkillProficiency3], [SkillProficiency4], [SkillProficiency5], [SkillProficiency6], [SkillProficiency7], [SkillProficiency8], [SkillProficiency9], [SkillProficiency10]) VALUES (@sp1, @sp2, @sp3, @sp4, @sp5, @sp6, @sp7, @sp8, @sp9, @sp10) WHERE [Username] = @Username");
 
             insertSkills.Connection = db;
             insertProficiencies.Connection = db;

@@ -43,9 +43,9 @@
             this.curTasksRadioGroup = new System.Windows.Forms.GroupBox();
             this.curTaskDescLabel = new System.Windows.Forms.Label();
             this.createTaskButton = new System.Windows.Forms.Button();
-            this.aDTSDLoginInfoDataSet = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSet();
+            this.aDTSDLoginInfoDataSet = new AgileDevelopmentToolsSuite.ADTSDInfoDataSet();
             this.tasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tasksTableAdapter = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter();
+            this.tasksTableAdapter = new AgileDevelopmentToolsSuite.ADTSDInfoDataSetTableAdapters.TasksTableAdapter();
             this.listView1 = new System.Windows.Forms.ListView();
             this.selectedIDLbl = new System.Windows.Forms.Label();
             this.instructionsButton = new System.Windows.Forms.Button();
@@ -348,9 +348,9 @@
     private System.Windows.Forms.GroupBox curTasksRadioGroup;
     private System.Windows.Forms.Label curTaskDescLabel;
     private System.Windows.Forms.Button createTaskButton;
-    private ADTSDLoginInfoDataSet aDTSDLoginInfoDataSet;
+    private ADTSDInfoDataSet aDTSDLoginInfoDataSet;
     private System.Windows.Forms.BindingSource tasksBindingSource;
-    private ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter tasksTableAdapter;
+    private ADTSDInfoDataSetTableAdapters.TasksTableAdapter tasksTableAdapter;
     private System.Windows.Forms.ListView listView1;
     private System.Windows.Forms.Label selectedIDLbl;
     private System.Windows.Forms.Button instructionsButton;

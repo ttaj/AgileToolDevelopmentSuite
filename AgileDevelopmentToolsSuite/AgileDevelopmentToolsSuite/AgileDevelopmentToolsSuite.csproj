@@ -95,6 +95,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NetworkCommsDotNetComplete">
+      <HintPath>..\..\NetworkCommsDotNetComplete.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -108,10 +111,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADTSDatabaseDataSet.Designer.cs">
+    <Compile Include="ADTSDInfoDataSet.cs">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADTSDInfoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.Designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectForm.Designer.cs">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTaskForm.Designer.cs">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DeveloperForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +148,12 @@
     </Compile>
     <Compile Include="GroupProfileForm.Designer.cs">
       <DependentUpon>GroupProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HostForm.Designer.cs">
+      <DependentUpon>HostForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
@@ -181,8 +211,20 @@
     <Compile Include="WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectForm.resx">
+      <DependentUpon>ConnectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTaskForm.resx">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeveloperForm.resx">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostForm.resx">
+      <DependentUpon>HostForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -223,16 +265,16 @@
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ADTSDatabaseDataSet.xsc">
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
+    <None Include="ADTSDInfoDataSet.xsc">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ADTSDatabaseDataSet.xsd">
+    <None Include="ADTSDInfoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADTSDatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ADTSDInfoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ADTSDatabaseDataSet.xss">
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
+    <None Include="ADTSDInfoDataSet.xss">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -248,10 +290,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ADTSDLoginInfo.mdf">
+    <Content Include="ADTSDInfo.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ADTSDLoginInfo_log.ldf">
+    <Content Include="ADTSDInfo_log.ldf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\%24this.BackgroundImage.jpg" />

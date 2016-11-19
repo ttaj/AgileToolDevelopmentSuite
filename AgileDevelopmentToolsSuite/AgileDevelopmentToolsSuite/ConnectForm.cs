@@ -23,7 +23,8 @@ namespace AgileDevelopmentToolsSuite
 
 		private void ConnectForm_Load(object sender, EventArgs e)
 		{
-				}
+
+		}
 
 		private void label1_Click(object sender, EventArgs e)
 		{
@@ -69,5 +70,10 @@ namespace AgileDevelopmentToolsSuite
 			ChatForm chatForm = new ChatForm(newTCPConn);
 			chatForm.Show();
 		}
-	}
+
+        private void ConnectForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

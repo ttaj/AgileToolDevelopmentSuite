@@ -41,15 +41,20 @@ namespace AgileDevelopmentToolsSuite
 
         }
 
-    private void pictureBox1_Click(object sender, EventArgs e)
-    {
-      var request = WebRequest.Create("https://lh3.googleusercontent.com/-VnHUvY7m-CE/AAAAAAAAAAI/AAAAAAAAAAA/jrf-MIpUPAM/s96-k-no/photo.jpg");
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var request = WebRequest.Create("https://lh3.googleusercontent.com/-VnHUvY7m-CE/AAAAAAAAAAI/AAAAAAAAAAA/jrf-MIpUPAM/s96-k-no/photo.jpg");
 
-      using (var response = request.GetResponse())
-      using (var stream = response.GetResponseStream())
-      {
-        profilePictureBox.Image = Bitmap.FromStream(stream);
-      }
+            using (var response = request.GetResponse())
+            using (var stream = response.GetResponseStream())
+            {
+                profilePictureBox.Image = Bitmap.FromStream(stream);
+            }
+        }
+
+        private void ProfileForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
-  }
 }

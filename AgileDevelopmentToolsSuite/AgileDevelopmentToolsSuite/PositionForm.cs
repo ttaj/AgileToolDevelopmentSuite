@@ -51,5 +51,10 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
+
+        private void PositionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

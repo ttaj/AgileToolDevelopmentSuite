@@ -233,7 +233,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "Agile Development Tools Suite";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

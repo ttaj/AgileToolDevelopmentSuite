@@ -80,11 +80,6 @@ namespace AgileDevelopmentToolsSuite
         
     }
 
-    private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        Application.Exit();
-    }
-
     private void menuNumUrgentTasks_TextChanged(object sender, EventArgs e)
     {
 
@@ -254,12 +249,6 @@ namespace AgileDevelopmentToolsSuite
       this.Visible = true;
     }
 
-
-    private void MainMenuForm_FormClosing_1(object sender, FormClosingEventArgs e)
-    {
-      Application.Exit();
-    }
-
     private void groupProfileButton_Click(object sender, EventArgs e)
     {
         GroupProfileForm groupProfileForm = new GroupProfileForm();
@@ -273,5 +262,11 @@ namespace AgileDevelopmentToolsSuite
         this.Hide();
         groupProfileForm.Show();
     }
-  }
+
+    private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        Application.Exit();
+    }
+
+    }
 }

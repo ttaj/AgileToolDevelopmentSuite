@@ -12,11 +12,6 @@ namespace AgileDevelopmentToolsSuite
       InitializeComponent();
     }
 
-    private void DeveloperForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        Application.Exit();
-    }
-
     private void yesProfileButton_CheckedChanged(object sender, EventArgs e)
     {
         profileLinkLabel.Visible = true;
@@ -276,5 +271,10 @@ namespace AgileDevelopmentToolsSuite
     {
 
     }
-  }
+
+    private void DeveloperForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        Application.Exit();
+    }
+    }
 }

@@ -45,5 +45,10 @@ namespace AgileDevelopmentToolsSuite
 		{
 
 		}
-	}
+
+        private void HostForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

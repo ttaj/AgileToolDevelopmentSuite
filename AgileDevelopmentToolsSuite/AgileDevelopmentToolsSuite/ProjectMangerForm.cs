@@ -272,5 +272,10 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
+
+        private void ProjectManagerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

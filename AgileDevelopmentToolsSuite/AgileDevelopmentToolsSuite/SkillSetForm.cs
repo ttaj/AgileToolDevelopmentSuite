@@ -183,5 +183,10 @@ namespace AgileDevelopmentToolsSuite
                 MessageBox.Show("Connection unsuccessful, please try again. ");
             }
         }
+
+        private void SkillSetForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

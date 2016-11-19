@@ -23,12 +23,6 @@ namespace AgileDevelopmentToolsSuite
 
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // MessageBox.Show("bye login");
-            Application.Exit();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection db;
@@ -136,6 +130,11 @@ namespace AgileDevelopmentToolsSuite
 
             this.Hide();
             positionForm.Show();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -323,5 +323,10 @@ namespace AgileDevelopmentToolsSuite
 		{
 
 		}
-	}
+
+        private void ChatForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

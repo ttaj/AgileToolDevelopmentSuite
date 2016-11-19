@@ -1,6 +1,6 @@
 ﻿namespace AgileDevelopmentToolsSuite
 {
-  partial class MainMenuForm
+  partial class EditProfileForm
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
             System.Windows.Forms.TextBox menuSelfNameTxt;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfileForm));
             this.menuGroupNameLabel = new System.Windows.Forms.Label();
             this.menuGroupNameTxt = new System.Windows.Forms.TextBox();
             this.menuSelfNameLabel = new System.Windows.Forms.Label();

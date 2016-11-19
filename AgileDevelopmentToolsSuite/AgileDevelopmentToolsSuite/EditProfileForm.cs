@@ -5,24 +5,32 @@ using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
-    public partial class SkillSetForm : Form
+    public partial class w : Form
     {
-        public SkillSetForm()
+        public w()
         {
             InitializeComponent();
         }
 
-        private void radioButton29_CheckedChanged(object sender, EventArgs e)
+        private void menuButton_Click(object sender, EventArgs e)
         {
+            EditProfileForm mainMenuForm = new EditProfileForm();
+            mainMenuForm.Width = this.Width;
+            mainMenuForm.Height = this.Height;
 
+            mainMenuForm.StartPosition = FormStartPosition.Manual;
+            mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
+            mainMenuForm.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void EditProfileForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             SqlConnection db;
 
@@ -141,32 +149,27 @@ namespace AgileDevelopmentToolsSuite
                         insertProficiencies.Parameters.AddWithValue("@sp10", "Beginner");
 
                     insertProficiencies.ExecuteNonQuery();
+                    //after saving changes, change back to normal profile form
+                    ProfileForm profileForm = new ProfileForm();
+                    profileForm.Width = this.Width;
+                    profileForm.Height = this.Height;
 
-                    EditProfileForm mainMenuForm = new EditProfileForm();
-                    mainMenuForm.Width = this.Width;
-                    mainMenuForm.Height = this.Height;
-
-                    mainMenuForm.StartPosition = FormStartPosition.Manual;
-                    mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+                    profileForm.StartPosition = FormStartPosition.Manual;
+                    profileForm.Location = new Point(this.Location.X, this.Location.Y);
 
                     this.Hide();
-                    mainMenuForm.Show();
-
+                    profileForm.Show();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Connection unsuccessful, please try again. ");
-            }
-        }
 
-        private void SkillSetForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            }
         }
     }
+
 }

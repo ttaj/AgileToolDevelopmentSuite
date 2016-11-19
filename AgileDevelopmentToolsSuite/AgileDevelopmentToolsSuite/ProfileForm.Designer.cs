@@ -55,7 +55,7 @@
             this.proficiencyLabel9 = new System.Windows.Forms.Label();
             this.proficiencyLabel10 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.workplaceHeaderLabel = new System.Windows.Forms.Label();
             this.workplaceLabel = new System.Windows.Forms.Label();
             this.emailHeaderLabel = new System.Windows.Forms.Label();
@@ -380,18 +380,18 @@
             this.menuButton.UseVisualStyleBackColor = false;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
-            // button2
+            // editButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(531, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 25);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Edit Profile";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.editButton.BackColor = System.Drawing.Color.DarkGray;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(531, 25);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(118, 25);
+            this.editButton.TabIndex = 26;
+            this.editButton.Text = "Edit Profile";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // workplaceHeaderLabel
             // 
@@ -514,7 +514,7 @@
             this.Controls.Add(this.emailHeaderLabel);
             this.Controls.Add(this.workplaceLabel);
             this.Controls.Add(this.workplaceHeaderLabel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.proficiencyLabel10);
             this.Controls.Add(this.proficiencyLabel9);
@@ -577,7 +577,7 @@
         private System.Windows.Forms.Label proficiencyLabel9;
         private System.Windows.Forms.Label proficiencyLabel10;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label workplaceHeaderLabel;
         private System.Windows.Forms.Label workplaceLabel;
         private System.Windows.Forms.Label emailHeaderLabel;

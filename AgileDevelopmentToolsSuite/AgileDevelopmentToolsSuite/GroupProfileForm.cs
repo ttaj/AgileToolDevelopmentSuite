@@ -13,7 +13,7 @@ namespace AgileDevelopmentToolsSuite
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            MainMenuForm mainMenuForm = new MainMenuForm();
+            EditProfileForm mainMenuForm = new EditProfileForm();
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class MainMenuForm : Form
+  public partial class EditProfileForm : Form
   {
-    public MainMenuForm()
+    public EditProfileForm()
     {
       InitializeComponent();
     }

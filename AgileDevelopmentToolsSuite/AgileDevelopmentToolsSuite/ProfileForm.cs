@@ -20,7 +20,7 @@ namespace AgileDevelopmentToolsSuite
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            MainMenuForm mainMenuForm = new MainMenuForm();
+            EditProfileForm mainMenuForm = new EditProfileForm();
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 
@@ -33,7 +33,15 @@ namespace AgileDevelopmentToolsSuite
 
         private void button2_Click(object sender, EventArgs e)
         {
+            EditProfileForm editProfileForm = new EditProfileForm();
+            editProfileForm.Width = this.Width;
+            editProfileForm.Height = this.Height;
 
+            editProfileForm.StartPosition = FormStartPosition.Manual;
+            editProfileForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
+            editProfileForm.Show();
         }
 
         private void skillLabel1_Click(object sender, EventArgs e)

@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net;
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class TaskForm : Form
+    public partial class TaskForm : Form
   {
     static int selectedItem = 0; //Global variable
     static char importance = 'T'; //Global variable
@@ -80,7 +74,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      MainMenuForm m = new MainMenuForm();
+      EditProfileForm m = new EditProfileForm();
       this.Visible = false;
       m.ShowDialog();
       this.Visible = true;

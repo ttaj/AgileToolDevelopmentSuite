@@ -154,7 +154,7 @@
             // 
             // continueButton
             // 
-            this.continueButton.BackColor = System.Drawing.Color.Gray;
+            this.continueButton.BackColor = System.Drawing.Color.DarkGray;
             this.continueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continueButton.ForeColor = System.Drawing.Color.White;
             this.continueButton.Location = new System.Drawing.Point(357, 380);

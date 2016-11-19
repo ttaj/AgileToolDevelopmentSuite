@@ -92,7 +92,7 @@
             // 
             // approveButton
             // 
-            this.approveButton.BackColor = System.Drawing.Color.Gray;
+            this.approveButton.BackColor = System.Drawing.Color.DarkGray;
             this.approveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.approveButton.ForeColor = System.Drawing.Color.White;
             this.approveButton.Location = new System.Drawing.Point(284, 304);

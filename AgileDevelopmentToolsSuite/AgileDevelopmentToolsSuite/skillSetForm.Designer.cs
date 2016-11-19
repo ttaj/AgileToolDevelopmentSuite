@@ -123,7 +123,7 @@
             // 
             this.skillLabel.AutoSize = true;
             this.skillLabel.BackColor = System.Drawing.Color.DarkGreen;
-            this.skillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skillLabel.ForeColor = System.Drawing.Color.White;
             this.skillLabel.Location = new System.Drawing.Point(234, 135);
             this.skillLabel.Name = "skillLabel";
@@ -135,7 +135,7 @@
             // 
             this.proficiencyLabel.AutoSize = true;
             this.proficiencyLabel.BackColor = System.Drawing.Color.DarkGreen;
-            this.proficiencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proficiencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proficiencyLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.proficiencyLabel.Location = new System.Drawing.Point(497, 135);
             this.proficiencyLabel.Name = "proficiencyLabel";
@@ -301,7 +301,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(349, 481);

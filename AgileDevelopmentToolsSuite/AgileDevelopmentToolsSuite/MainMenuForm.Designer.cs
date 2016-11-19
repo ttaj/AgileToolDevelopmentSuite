@@ -98,7 +98,7 @@
             // profileButton
             // 
             this.profileButton.BackColor = System.Drawing.Color.DarkGray;
-            this.profileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileButton.ForeColor = System.Drawing.Color.White;
             this.profileButton.Location = new System.Drawing.Point(633, 31);
             this.profileButton.Name = "profileButton";
@@ -111,7 +111,7 @@
             // chatButton
             // 
             this.chatButton.BackColor = System.Drawing.Color.DarkGray;
-            this.chatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chatButton.ForeColor = System.Drawing.Color.White;
             this.chatButton.Location = new System.Drawing.Point(12, 520);
             this.chatButton.Margin = new System.Windows.Forms.Padding(2);
@@ -150,7 +150,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(3, 2);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
@@ -202,11 +202,11 @@
             // groupProfileButton
             // 
             this.groupProfileButton.BackColor = System.Drawing.Color.DarkGray;
-            this.groupProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupProfileButton.ForeColor = System.Drawing.Color.White;
-            this.groupProfileButton.Location = new System.Drawing.Point(152, 31);
+            this.groupProfileButton.Location = new System.Drawing.Point(138, 31);
             this.groupProfileButton.Name = "groupProfileButton";
-            this.groupProfileButton.Size = new System.Drawing.Size(135, 23);
+            this.groupProfileButton.Size = new System.Drawing.Size(165, 23);
             this.groupProfileButton.TabIndex = 11;
             this.groupProfileButton.Text = "View Group Profile";
             this.groupProfileButton.UseVisualStyleBackColor = false;

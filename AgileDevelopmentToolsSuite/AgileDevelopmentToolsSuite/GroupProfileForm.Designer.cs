@@ -130,11 +130,11 @@
             // menuButton
             // 
             this.menuButton.BackColor = System.Drawing.Color.DarkGray;
-            this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuButton.ForeColor = System.Drawing.Color.White;
-            this.menuButton.Location = new System.Drawing.Point(661, 25);
+            this.menuButton.Location = new System.Drawing.Point(648, 25);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(111, 23);
+            this.menuButton.Size = new System.Drawing.Size(124, 23);
             this.menuButton.TabIndex = 42;
             this.menuButton.Text = "Back To Menu";
             this.menuButton.UseVisualStyleBackColor = false;
@@ -143,9 +143,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(561, 25);
+            this.button2.Location = new System.Drawing.Point(548, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 23);
             this.button2.TabIndex = 43;

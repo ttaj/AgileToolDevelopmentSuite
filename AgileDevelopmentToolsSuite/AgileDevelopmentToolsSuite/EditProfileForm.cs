@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
-    public partial class w : Form
+    public partial class EditProfileForm : Form
     {
-        public w()
+        public EditProfileForm()
         {
             InitializeComponent();
         }
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            EditProfileForm mainMenuForm = new EditProfileForm();
+            MainMenuForm mainMenuForm = new MainMenuForm();
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 

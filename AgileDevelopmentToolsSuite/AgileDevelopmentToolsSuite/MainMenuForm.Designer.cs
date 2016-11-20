@@ -1,33 +1,33 @@
 ﻿namespace AgileDevelopmentToolsSuite
 {
-  partial class EditProfileForm
-  {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class MainMenuForm
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    #region Windows Form Designer generated code
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent()
-    {
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             System.Windows.Forms.TextBox menuSelfNameTxt;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfileForm));
             this.menuGroupNameLabel = new System.Windows.Forms.Label();
@@ -239,21 +239,21 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label menuGroupNameLabel;
+        private System.Windows.Forms.TextBox menuGroupNameTxt;
+        private System.Windows.Forms.Label menuSelfNameLabel;
+        private System.Windows.Forms.Button profileButton;
+        private System.Windows.Forms.Button chatButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button urgentTaskButton;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button toTaskFormButton;
+        private System.Windows.Forms.Button groupProfileButton;
     }
-
-    #endregion
-
-    private System.Windows.Forms.Label menuGroupNameLabel;
-    private System.Windows.Forms.TextBox menuGroupNameTxt;
-    private System.Windows.Forms.Label menuSelfNameLabel;
-    private System.Windows.Forms.Button profileButton;
-    private System.Windows.Forms.Button chatButton;
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Button button3;
-    private System.Windows.Forms.Button button2;
-    private System.Windows.Forms.Button urgentTaskButton;
-    private System.Windows.Forms.ListView listView1;
-    private System.Windows.Forms.Button toTaskFormButton;
-    private System.Windows.Forms.Button groupProfileButton;
-  }
 }

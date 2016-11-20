@@ -1,6 +1,6 @@
 ﻿namespace AgileDevelopmentToolsSuite
 {
-    partial class w
+    partial class EditProfileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(w));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfileForm));
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.menuButton = new System.Windows.Forms.Button();

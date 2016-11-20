@@ -142,7 +142,7 @@ namespace AgileDevelopmentToolsSuite
 
                     insertProficiencies.ExecuteNonQuery();
 
-                    EditProfileForm mainMenuForm = new EditProfileForm();
+                    MainMenuForm mainMenuForm = new MainMenuForm();
                     mainMenuForm.Width = this.Width;
                     mainMenuForm.Height = this.Height;
 

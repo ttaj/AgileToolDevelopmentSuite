@@ -95,7 +95,7 @@ namespace AgileDevelopmentToolsSuite
                         }
                         else
                         {
-                            EditProfileForm mainmenuform = new EditProfileForm();
+                            MainMenuForm mainmenuform = new MainMenuForm();
                             mainmenuform.Width = this.Width;
                             mainmenuform.Height = this.Height;
 

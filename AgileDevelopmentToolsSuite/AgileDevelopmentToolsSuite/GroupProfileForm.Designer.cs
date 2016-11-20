@@ -101,8 +101,10 @@
             // 
             // groupGoalTextBox
             // 
+            this.groupGoalTextBox.BackColor = System.Drawing.Color.YellowGreen;
             this.groupGoalTextBox.Location = new System.Drawing.Point(25, 166);
             this.groupGoalTextBox.Name = "groupGoalTextBox";
+            this.groupGoalTextBox.ReadOnly = true;
             this.groupGoalTextBox.Size = new System.Drawing.Size(747, 168);
             this.groupGoalTextBox.TabIndex = 39;
             this.groupGoalTextBox.Text = "";
@@ -121,6 +123,7 @@
             // 
             // groupContactListView
             // 
+            this.groupContactListView.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupContactListView.Location = new System.Drawing.Point(25, 376);
             this.groupContactListView.Name = "groupContactListView";
             this.groupContactListView.Size = new System.Drawing.Size(747, 173);
@@ -151,6 +154,7 @@
             this.button2.TabIndex = 43;
             this.button2.Text = "Edit Profile";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GroupProfileForm
             // 

@@ -120,7 +120,7 @@ namespace AgileDevelopmentToolsSuite
                                     insertUsersInformation.ExecuteNonQuery();
                                     insertUserSkills.ExecuteNonQuery();
 
-                                    EditProfileForm mainMenuForm = new EditProfileForm();
+                                    MainMenuForm mainMenuForm = new MainMenuForm();
                                     mainMenuForm.Width = this.Width;
                                     mainMenuForm.Height = this.Height;
 

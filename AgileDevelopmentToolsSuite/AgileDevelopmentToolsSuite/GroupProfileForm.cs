@@ -13,7 +13,7 @@ namespace AgileDevelopmentToolsSuite
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            EditProfileForm mainMenuForm = new EditProfileForm();
+            MainMenuForm mainMenuForm = new MainMenuForm();
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 
@@ -27,6 +27,19 @@ namespace AgileDevelopmentToolsSuite
         private void GroupProfileForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EditGroupProfileForm editGroupProfileForm = new EditGroupProfileForm();
+            editGroupProfileForm.Width = this.Width;
+            editGroupProfileForm.Height = this.Height;
+
+            editGroupProfileForm.StartPosition = FormStartPosition.Manual;
+            editGroupProfileForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
+            editGroupProfileForm.Show();
         }
     }
 }

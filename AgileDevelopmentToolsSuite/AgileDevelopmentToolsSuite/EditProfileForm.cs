@@ -149,6 +149,7 @@ namespace AgileDevelopmentToolsSuite
                         insertProficiencies.Parameters.AddWithValue("@sp10", "Beginner");
 
                     insertProficiencies.ExecuteNonQuery();
+
                     //after saving changes, change back to normal profile form
                     ProfileForm profileForm = new ProfileForm();
                     profileForm.Width = this.Width;

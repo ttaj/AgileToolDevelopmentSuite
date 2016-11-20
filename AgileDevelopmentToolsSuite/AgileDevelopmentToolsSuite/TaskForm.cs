@@ -74,7 +74,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      EditProfileForm m = new EditProfileForm();
+      MainMenuForm m = new MainMenuForm();
       this.Visible = false;
       m.ShowDialog();
       this.Visible = true;

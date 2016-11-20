@@ -143,6 +143,12 @@
     <Compile Include="DeveloperForm.Designer.cs">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditGroupProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGroupProfileForm.Designer.cs">
+      <DependentUpon>EditGroupProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeveloperForm.resx">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditGroupProfileForm.resx">
+      <DependentUpon>EditGroupProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfileForm.resx">
       <DependentUpon>EditProfileForm.cs</DependentUpon>

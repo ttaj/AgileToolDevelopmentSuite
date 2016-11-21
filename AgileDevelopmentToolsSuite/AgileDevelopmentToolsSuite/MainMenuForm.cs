@@ -14,9 +14,17 @@ namespace AgileDevelopmentToolsSuite
 {
   public partial class MainMenuForm : Form
   {
+    String currentUser = "";
     public MainMenuForm()
     {
       InitializeComponent();
+    }
+
+    public MainMenuForm(String curUser)
+    {
+      InitializeComponent();
+      currentUser = curUser;
+      loggedInTextBox.Text = curUser;
     }
 
     string numUrgentTasks = "";
@@ -26,10 +34,12 @@ namespace AgileDevelopmentToolsSuite
       panel1.Hide();
       resetListView();
 
+
+
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -40,14 +50,14 @@ namespace AgileDevelopmentToolsSuite
 
           DataSet ds = new DataSet();
 
-          string saveChanges = @"SELECT COUNT(Importance) FROM [Tasks] Where Importance = 'U'";
+          string saveChanges = @"SELECT COUNT(Importance) FROM [Tasks] Where Importance = 'Urgent'";
 
           SqlCommand cmd = new SqlCommand();
           cmd.Connection = db;
 
           cmd.CommandText = saveChanges;
           var numUrgent = cmd.ExecuteScalar().ToString();
-          
+
           numUrgentTasks = numUrgent;
 
           db.Close();
@@ -62,27 +72,22 @@ namespace AgileDevelopmentToolsSuite
         MessageBox.Show(ex.Message);
       }
 
-      
 
-      if(numUrgentTasks != "0")
+
+      if (numUrgentTasks != "0")
       {
         urgentTaskButton.Text = numUrgentTasks + " Urgent tasks to do!";
         urgentTaskButton.BackColor = System.Drawing.Color.Firebrick;
         urgentTaskButton.ForeColor = System.Drawing.Color.White;
       }
-      
+
       else
       {
         urgentTaskButton.Text = "No urgent tasks available.";
         urgentTaskButton.ForeColor = System.Drawing.Color.Black;
         urgentTaskButton.BackColor = System.Drawing.Color.White;
       }
-        
-    }
 
-    private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        Application.Exit();
     }
 
     private void menuNumUrgentTasks_TextChanged(object sender, EventArgs e)
@@ -92,30 +97,31 @@ namespace AgileDevelopmentToolsSuite
 
     private void menuGroupNameTxt_TextChanged(object sender, EventArgs e)
     {
-        LoginForm loginForm = new LoginForm();
+      LoginForm loginForm = new LoginForm();
 
-        loginForm.Width = this.Width;
-        loginForm.Height = this.Height;
+      loginForm.Width = this.Width;
+      loginForm.Height = this.Height;
 
-        loginForm.StartPosition = FormStartPosition.Manual;
-        loginForm.Location = new Point(this.Location.X, this.Location.Y);
+      loginForm.StartPosition = FormStartPosition.Manual;
+      loginForm.Location = new Point(this.Location.X, this.Location.Y);
 
-        this.Hide();
-        loginForm.Show();
+      this.Hide();
+      loginForm.Show();
     }
 
     private void button1_Click(object sender, EventArgs e)
     {
-        GroupProfileForm profileForm = new GroupProfileForm();
+      this.Hide();
+      ProfileForm profileForm = new ProfileForm(currentUser);
 
-        profileForm.Width = this.Width;
-        profileForm.Height = this.Height;
+      profileForm.Width = this.Width;
+      profileForm.Height = this.Height;
 
-        profileForm.StartPosition = FormStartPosition.Manual;
-        profileForm.Location = new Point(this.Location.X, this.Location.Y);
+      profileForm.StartPosition = FormStartPosition.Manual;
+      profileForm.Location = new Point(this.Location.X, this.Location.Y);
 
-        this.Hide();
-        profileForm.Show();
+      profileForm.Closed += (s, args) => this.Close();
+      profileForm.Show();
     }
 
     private void button2_Click(object sender, EventArgs e)
@@ -152,8 +158,8 @@ namespace AgileDevelopmentToolsSuite
     {
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -166,10 +172,10 @@ namespace AgileDevelopmentToolsSuite
           DataSet ds = new DataSet();
           string listTasksCmd = "";
 
-      
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY Importance Desc";
-          
-          
+
+          listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY Importance Desc";
+
+
 
           SqlCommand cmd = new SqlCommand();
           cmd.Connection = db;
@@ -178,12 +184,14 @@ namespace AgileDevelopmentToolsSuite
           cmd.CommandText = listTasksCmd;
           var reader = cmd.ExecuteReader();
 
-          List<string[]> listTasks = new List<string[]>(); // Use list to generate a display for the listbox (to carry info)
+          // Use list to generate a display for the listbox (to carry info)
+          List<string[]> listTasks = new List<string[]>();
 
+          //Iterate through all the values of listed values from query
           int index = 0;
-          while (reader.Read()) //Iterate through all the values of listed values from query
+          while (reader.Read())
           {
-            // Concatenate years with the number of crimes occurence that year by Group By
+            //Concatenate years with the number of crimes occurence that year by Group By
             //Math round(number, # of decimals)
             String dateModifyTemp;
             if (reader.IsDBNull(6))
@@ -202,12 +210,6 @@ namespace AgileDevelopmentToolsSuite
 
             index++;
           }
-          //listView1.Text = index + " results";
-          //listView1.DataSource = listItems;
-          //this.curTasksListBox.DataSource = ds.Tables[0];
-          //this.curTasksListBox.DisplayMember = "Username";
-
-
 
           // Clear the ListView control
           listView1.Items.Clear();
@@ -223,15 +225,12 @@ namespace AgileDevelopmentToolsSuite
           listView1.Columns.Add("", 0, HorizontalAlignment.Left);
           listView1.Columns.Add("", 0, HorizontalAlignment.Left);
 
-
-
           for (int i = 0; i < listTasks.Count; i++)      //Add items into listView box
           {
             var listViewItem = new ListViewItem(listTasks[i]);
 
             listView1.Items.Add(listViewItem);
           }
-
 
           reader.Close();
           db.Close();
@@ -255,16 +254,48 @@ namespace AgileDevelopmentToolsSuite
 
     private void toTaskFormButton_Click(object sender, EventArgs e)
     {
-      TaskForm t = new TaskForm();
-      this.Visible = false;
-      t.ShowDialog();
-      this.Visible = true;
+      this.Hide();
+      TaskForm t = new TaskForm(currentUser);
+      t.Width = this.Width;
+      t.Height = this.Height;
+
+      t.StartPosition = FormStartPosition.Manual;
+      t.Location = new Point(this.Location.X, this.Location.Y);
+      t.Closed += (s, args) => this.Close();
+      t.Show();
     }
 
+    private void groupProfileButton_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+      GroupProfileForm groupProfileForm = new GroupProfileForm(currentUser);
 
-    private void MainMenuForm_FormClosing_1(object sender, FormClosingEventArgs e)
+      groupProfileForm.Width = this.Width;
+      groupProfileForm.Height = this.Height;
+
+      groupProfileForm.StartPosition = FormStartPosition.Manual;
+      groupProfileForm.Location = new Point(this.Location.X, this.Location.Y);
+
+      groupProfileForm.Closed += (s, args) => this.Close();
+      groupProfileForm.Show();
+    }
+
+    private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
     {
       Application.Exit();
+    }
+
+    private void urgentTaskButton_MouseClick(object sender, MouseEventArgs e)
+    {
+      this.Hide();
+      TaskForm t = new TaskForm(currentUser);
+      t.Width = this.Width;
+      t.Height = this.Height;
+
+      t.StartPosition = FormStartPosition.Manual;
+      t.Location = new Point(this.Location.X, this.Location.Y);
+      t.Closed += (s, args) => this.Close();
+      t.Show();
     }
   }
 }

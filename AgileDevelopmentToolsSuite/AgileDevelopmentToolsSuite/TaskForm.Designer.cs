@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskForm));
       this.taskFormLabel = new System.Windows.Forms.Label();
       this.backButton = new System.Windows.Forms.Button();
@@ -43,15 +42,10 @@
       this.curTasksRadioGroup = new System.Windows.Forms.GroupBox();
       this.curTaskDescLabel = new System.Windows.Forms.Label();
       this.createTaskButton = new System.Windows.Forms.Button();
-      this.aDTSDLoginInfoDataSet = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSet();
-      this.tasksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.tasksTableAdapter = new AgileDevelopmentToolsSuite.ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter();
       this.listView1 = new System.Windows.Forms.ListView();
       this.selectedIDLbl = new System.Windows.Forms.Label();
       this.instructionsButton = new System.Windows.Forms.Button();
       this.curTasksRadioGroup.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.aDTSDLoginInfoDataSet)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // taskFormLabel
@@ -76,7 +70,7 @@
       this.backButton.Location = new System.Drawing.Point(24, 12);
       this.backButton.Name = "backButton";
       this.backButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-      this.backButton.Size = new System.Drawing.Size(120, 35);
+      this.backButton.Size = new System.Drawing.Size(166, 35);
       this.backButton.TabIndex = 2;
       this.backButton.Text = "Back to Menu";
       this.backButton.UseVisualStyleBackColor = false;
@@ -229,20 +223,6 @@
       this.createTaskButton.UseVisualStyleBackColor = false;
       this.createTaskButton.Click += new System.EventHandler(this.createTaskButton_Click);
       // 
-      // aDTSDLoginInfoDataSet
-      // 
-      this.aDTSDLoginInfoDataSet.DataSetName = "ADTSDLoginInfoDataSet";
-      this.aDTSDLoginInfoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // tasksBindingSource
-      // 
-      this.tasksBindingSource.DataMember = "Tasks";
-      this.tasksBindingSource.DataSource = this.aDTSDLoginInfoDataSet;
-      // 
-      // tasksTableAdapter
-      // 
-      this.tasksTableAdapter.ClearBeforeFill = true;
-      // 
       // listView1
       // 
       this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -305,8 +285,6 @@
       this.Load += new System.EventHandler(this.TaskForm_Load);
       this.curTasksRadioGroup.ResumeLayout(false);
       this.curTasksRadioGroup.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.aDTSDLoginInfoDataSet)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.tasksBindingSource)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -326,9 +304,6 @@
     private System.Windows.Forms.GroupBox curTasksRadioGroup;
     private System.Windows.Forms.Label curTaskDescLabel;
     private System.Windows.Forms.Button createTaskButton;
-    private ADTSDLoginInfoDataSet aDTSDLoginInfoDataSet;
-    private System.Windows.Forms.BindingSource tasksBindingSource;
-    private ADTSDLoginInfoDataSetTableAdapters.TasksTableAdapter tasksTableAdapter;
     private System.Windows.Forms.ListView listView1;
     private System.Windows.Forms.Label selectedIDLbl;
     private System.Windows.Forms.Button instructionsButton;

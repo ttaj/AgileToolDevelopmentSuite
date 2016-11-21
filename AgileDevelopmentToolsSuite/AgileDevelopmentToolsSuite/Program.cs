@@ -19,6 +19,7 @@ namespace AgileDevelopmentToolsSuite
       Application.Run(new WelcomeForm());
       //Application.Run(new TaskForm());
       //Application.Run(new MainMenuForm());
+      //Application.Run(new SkillSetForm("Jonathan"));
     }
     }
 }

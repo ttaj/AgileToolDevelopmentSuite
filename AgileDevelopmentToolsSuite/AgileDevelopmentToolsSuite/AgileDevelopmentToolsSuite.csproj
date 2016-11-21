@@ -111,16 +111,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADTSDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ADTSDLoginInfoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +130,18 @@
     </Compile>
     <Compile Include="DeveloperForm.Designer.cs">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfileForm.Designer.cs">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupProfileForm.Designer.cs">
+      <DependentUpon>GroupProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HostForm.cs">
       <SubType>Form</SubType>
@@ -203,6 +205,12 @@
     <EmbeddedResource Include="DeveloperForm.resx">
       <DependentUpon>DeveloperForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProfileForm.resx">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupProfileForm.resx">
+      <DependentUpon>GroupProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HostForm.resx" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -237,28 +245,7 @@
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ADTSDatabaseDataSet.xsc">
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ADTSDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADTSDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADTSDatabaseDataSet.xss">
-      <DependentUpon>ADTSDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ADTSDLoginInfoDataSet.xsc">
-      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ADTSDLoginInfoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADTSDLoginInfoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADTSDLoginInfoDataSet.xss">
-      <DependentUpon>ADTSDLoginInfoDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -273,18 +260,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ADTSDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ADTSDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ADTSDatabase.mdf</DependentUpon>
-    </Content>
-    <Content Include="ADTSDLoginInfo.mdf">
+    <Content Include="ADTSDInfo.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ADTSDLoginInfo_log.ldf">
-      <DependentUpon>ADTSDLoginInfo.mdf</DependentUpon>
+    <Content Include="ADTSDInfo_log.ldf">
+      <DependentUpon>ADTSDInfo.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NetworkCommsDotNetComplete.xml" />

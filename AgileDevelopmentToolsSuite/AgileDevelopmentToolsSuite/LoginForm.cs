@@ -28,14 +28,24 @@ namespace AgileDevelopmentToolsSuite
       // MessageBox.Show("bye login");
       Application.Exit();
     }
+    private void LoginForm_FormClosed(object sender, FormClosingEventArgs e)
+    {
+      // MessageBox.Show("bye login");
+      Application.Exit();
+    }
 
     private void button1_Click(object sender, EventArgs e)
+    {
+      login();
+    }
+
+    private void login()
     {
       SqlConnection db;
 
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
 
@@ -71,7 +81,7 @@ namespace AgileDevelopmentToolsSuite
           String res = "Not Found";
 
           res = Convert.ToString(queryResult);
-          
+
           if (res.Equals(""))
           {
             MessageBox.Show("Username or Password does not exist!");
@@ -104,14 +114,15 @@ namespace AgileDevelopmentToolsSuite
             }
             else
             {
-              MainMenuForm mainmenuform = new MainMenuForm();
+              this.Hide();
+              MainMenuForm mainmenuform = new MainMenuForm(usernameBox.Text);
               mainmenuform.Width = this.Width;
               mainmenuform.Height = this.Height;
 
               mainmenuform.StartPosition = FormStartPosition.Manual;
               mainmenuform.Location = new Point(this.Location.X, this.Location.Y);
 
-              this.Hide();
+              mainmenuform.Closed += (s, args) => this.Close(); //Allow creation of new window before closing the last
               mainmenuform.Show();
             }
           }
@@ -129,6 +140,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void button2_Click(object sender, EventArgs e)
     {
+      this.Hide();
       PositionForm positionForm = new PositionForm();
 
       positionForm.Width = this.Width;
@@ -137,16 +149,43 @@ namespace AgileDevelopmentToolsSuite
       positionForm.StartPosition = FormStartPosition.Manual;
       positionForm.Location = new Point(this.Location.X, this.Location.Y);
 
-      this.Hide();
+      positionForm.Closed += (s, args) => this.Close(); //Allow creation of new window before closing the last
       positionForm.Show();
     }
+
 
     private void usernameBox_TextChanged(object sender, EventArgs e)
     {
 
     }
 
-   
+    private void passwordBox_TextChanged(object sender, EventArgs e)
+    {
 
+    }
+
+    private void passwordBox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+      {
+        login();
+      }
+    }
+
+    private void usernameBox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+      {
+        login();
+      }
+    }
+
+    private void button1_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+      {
+        login();
+      }
+    }
   }
 }

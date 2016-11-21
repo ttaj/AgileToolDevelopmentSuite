@@ -1,6 +1,6 @@
 ﻿namespace AgileDevelopmentToolsSuite
 {
-    partial class GroupProfileForm
+    partial class ProfileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupProfileForm));
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileForm));
+      this.profilePictureBox = new System.Windows.Forms.PictureBox();
       this.nameLabel = new System.Windows.Forms.Label();
       this.nicknameLabel = new System.Windows.Forms.Label();
       this.skillLabel1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
       this.proficiencyLabel9 = new System.Windows.Forms.Label();
       this.proficiencyLabel10 = new System.Windows.Forms.Label();
       this.menuButton = new System.Windows.Forms.Button();
-      this.button2 = new System.Windows.Forms.Button();
+      this.editButton = new System.Windows.Forms.Button();
       this.workplaceHeaderLabel = new System.Windows.Forms.Label();
       this.workplaceLabel = new System.Windows.Forms.Label();
       this.emailHeaderLabel = new System.Windows.Forms.Label();
@@ -64,19 +64,20 @@
       this.emailLabel = new System.Windows.Forms.Label();
       this.groupHeaderLabel = new System.Windows.Forms.Label();
       this.groupListBox = new System.Windows.Forms.ListBox();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      this.profileLinkLabel = new System.Windows.Forms.Label();
+      ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
       this.SuspendLayout();
       // 
-      // pictureBox1
+      // profilePictureBox
       // 
-      this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-      this.pictureBox1.Location = new System.Drawing.Point(33, 31);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(133, 123);
-      this.pictureBox1.TabIndex = 0;
-      this.pictureBox1.TabStop = false;
-      this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+      this.profilePictureBox.BackColor = System.Drawing.Color.Transparent;
+      this.profilePictureBox.Location = new System.Drawing.Point(33, 31);
+      this.profilePictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.profilePictureBox.Name = "profilePictureBox";
+      this.profilePictureBox.Size = new System.Drawing.Size(133, 123);
+      this.profilePictureBox.TabIndex = 0;
+      this.profilePictureBox.TabStop = false;
+      this.profilePictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
       // 
       // nameLabel
       // 
@@ -84,12 +85,13 @@
       this.nameLabel.BackColor = System.Drawing.Color.Transparent;
       this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.nameLabel.ForeColor = System.Drawing.Color.White;
-      this.nameLabel.Location = new System.Drawing.Point(175, 79);
+      this.nameLabel.Location = new System.Drawing.Point(175, 31);
       this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.nameLabel.Name = "nameLabel";
       this.nameLabel.Size = new System.Drawing.Size(90, 31);
       this.nameLabel.TabIndex = 1;
       this.nameLabel.Text = "Name";
+      this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
       // 
       // nicknameLabel
       // 
@@ -97,7 +99,7 @@
       this.nicknameLabel.BackColor = System.Drawing.Color.Transparent;
       this.nicknameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.nicknameLabel.ForeColor = System.Drawing.Color.White;
-      this.nicknameLabel.Location = new System.Drawing.Point(175, 123);
+      this.nicknameLabel.Location = new System.Drawing.Point(175, 79);
       this.nicknameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.nicknameLabel.Name = "nicknameLabel";
       this.nicknameLabel.Size = new System.Drawing.Size(163, 31);
@@ -394,28 +396,30 @@
       // menuButton
       // 
       this.menuButton.BackColor = System.Drawing.Color.DarkGray;
-      this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.menuButton.Location = new System.Drawing.Point(901, 31);
-      this.menuButton.Margin = new System.Windows.Forms.Padding(4);
+      this.menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.menuButton.ForeColor = System.Drawing.Color.White;
+      this.menuButton.Location = new System.Drawing.Point(873, 31);
+      this.menuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.menuButton.Name = "menuButton";
-      this.menuButton.Size = new System.Drawing.Size(128, 28);
+      this.menuButton.Size = new System.Drawing.Size(156, 31);
       this.menuButton.TabIndex = 25;
       this.menuButton.Text = "Back To Menu";
       this.menuButton.UseVisualStyleBackColor = false;
       this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
       // 
-      // button2
+      // editButton
       // 
-      this.button2.BackColor = System.Drawing.Color.DarkGray;
-      this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.button2.Location = new System.Drawing.Point(768, 31);
-      this.button2.Margin = new System.Windows.Forms.Padding(4);
-      this.button2.Name = "button2";
-      this.button2.Size = new System.Drawing.Size(125, 28);
-      this.button2.TabIndex = 26;
-      this.button2.Text = "Edit Profile";
-      this.button2.UseVisualStyleBackColor = false;
-      this.button2.Click += new System.EventHandler(this.button2_Click);
+      this.editButton.BackColor = System.Drawing.Color.DarkGray;
+      this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.editButton.ForeColor = System.Drawing.Color.White;
+      this.editButton.Location = new System.Drawing.Point(708, 31);
+      this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.editButton.Name = "editButton";
+      this.editButton.Size = new System.Drawing.Size(157, 31);
+      this.editButton.TabIndex = 26;
+      this.editButton.Text = "Edit Profile";
+      this.editButton.UseVisualStyleBackColor = false;
+      this.editButton.Click += new System.EventHandler(this.button2_Click);
       // 
       // workplaceHeaderLabel
       // 
@@ -514,18 +518,32 @@
       this.groupListBox.FormattingEnabled = true;
       this.groupListBox.ItemHeight = 16;
       this.groupListBox.Location = new System.Drawing.Point(535, 364);
-      this.groupListBox.Margin = new System.Windows.Forms.Padding(4);
+      this.groupListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.groupListBox.Name = "groupListBox";
       this.groupListBox.Size = new System.Drawing.Size(455, 308);
       this.groupListBox.TabIndex = 34;
       // 
-      // GroupProfileForm
+      // profileLinkLabel
+      // 
+      this.profileLinkLabel.AutoSize = true;
+      this.profileLinkLabel.BackColor = System.Drawing.Color.Transparent;
+      this.profileLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.profileLinkLabel.ForeColor = System.Drawing.Color.White;
+      this.profileLinkLabel.Location = new System.Drawing.Point(175, 123);
+      this.profileLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.profileLinkLabel.Name = "profileLinkLabel";
+      this.profileLinkLabel.Size = new System.Drawing.Size(160, 31);
+      this.profileLinkLabel.TabIndex = 35;
+      this.profileLinkLabel.Text = "Profile Link";
+      // 
+      // ProfileForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(1045, 690);
+      this.Controls.Add(this.profileLinkLabel);
       this.Controls.Add(this.groupListBox);
       this.Controls.Add(this.groupHeaderLabel);
       this.Controls.Add(this.emailLabel);
@@ -534,7 +552,7 @@
       this.Controls.Add(this.emailHeaderLabel);
       this.Controls.Add(this.workplaceLabel);
       this.Controls.Add(this.workplaceHeaderLabel);
-      this.Controls.Add(this.button2);
+      this.Controls.Add(this.editButton);
       this.Controls.Add(this.menuButton);
       this.Controls.Add(this.proficiencyLabel10);
       this.Controls.Add(this.proficiencyLabel9);
@@ -560,11 +578,12 @@
       this.Controls.Add(this.skillLabel1);
       this.Controls.Add(this.nicknameLabel);
       this.Controls.Add(this.nameLabel);
-      this.Controls.Add(this.pictureBox1);
-      this.Margin = new System.Windows.Forms.Padding(4);
-      this.Name = "GroupProfileForm";
+      this.Controls.Add(this.profilePictureBox);
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Name = "ProfileForm";
       this.Text = "Agile Development Tools Suite";
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      this.Load += new System.EventHandler(this.ProfileForm_Load);
+      ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -572,7 +591,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label nicknameLabel;
         private System.Windows.Forms.Label skillLabel1;
@@ -598,7 +617,7 @@
         private System.Windows.Forms.Label proficiencyLabel9;
         private System.Windows.Forms.Label proficiencyLabel10;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label workplaceHeaderLabel;
         private System.Windows.Forms.Label workplaceLabel;
         private System.Windows.Forms.Label emailHeaderLabel;
@@ -607,5 +626,6 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label groupHeaderLabel;
         private System.Windows.Forms.ListBox groupListBox;
+        private System.Windows.Forms.Label profileLinkLabel;
     }
 }

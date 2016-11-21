@@ -1,819 +1,886 @@
 ﻿namespace AgileDevelopmentToolsSuite
 {
-    partial class SkillSetForm
+  partial class SkillSetForm
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkillSetForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.skillsetHeaderLabel = new System.Windows.Forms.Label();
-            this.skillLabel = new System.Windows.Forms.Label();
-            this.proficiencyLabel = new System.Windows.Forms.Label();
-            this.skill1 = new System.Windows.Forms.TextBox();
-            this.skill2 = new System.Windows.Forms.TextBox();
-            this.skill3 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.skill5 = new System.Windows.Forms.TextBox();
-            this.skill6 = new System.Windows.Forms.TextBox();
-            this.skill7 = new System.Windows.Forms.TextBox();
-            this.skill8 = new System.Windows.Forms.TextBox();
-            this.skill9 = new System.Windows.Forms.TextBox();
-            this.skill10 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.radioButton22 = new System.Windows.Forms.RadioButton();
-            this.radioButton23 = new System.Windows.Forms.RadioButton();
-            this.radioButton25 = new System.Windows.Forms.RadioButton();
-            this.radioButton26 = new System.Windows.Forms.RadioButton();
-            this.radioButton27 = new System.Windows.Forms.RadioButton();
-            this.radioButton29 = new System.Windows.Forms.RadioButton();
-            this.radioButton30 = new System.Windows.Forms.RadioButton();
-            this.radioButton31 = new System.Windows.Forms.RadioButton();
-            this.radioButton33 = new System.Windows.Forms.RadioButton();
-            this.radioButton34 = new System.Windows.Forms.RadioButton();
-            this.radioButton35 = new System.Windows.Forms.RadioButton();
-            this.radioButton37 = new System.Windows.Forms.RadioButton();
-            this.radioButton38 = new System.Windows.Forms.RadioButton();
-            this.radioButton39 = new System.Windows.Forms.RadioButton();
-            this.radioButtonPanel1 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel2 = new System.Windows.Forms.Panel();
-            this.skill4 = new System.Windows.Forms.TextBox();
-            this.radioButtonPanel3 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel4 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel5 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel6 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel7 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel8 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel10 = new System.Windows.Forms.Panel();
-            this.radioButtonPanel9 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.radioButtonPanel1.SuspendLayout();
-            this.radioButtonPanel2.SuspendLayout();
-            this.radioButtonPanel3.SuspendLayout();
-            this.radioButtonPanel4.SuspendLayout();
-            this.radioButtonPanel5.SuspendLayout();
-            this.radioButtonPanel6.SuspendLayout();
-            this.radioButtonPanel7.SuspendLayout();
-            this.radioButtonPanel8.SuspendLayout();
-            this.radioButtonPanel10.SuspendLayout();
-            this.radioButtonPanel9.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(661, 431);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // skillsetHeaderLabel
-            // 
-            this.skillsetHeaderLabel.AutoSize = true;
-            this.skillsetHeaderLabel.BackColor = System.Drawing.Color.DarkGreen;
-            this.skillsetHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillsetHeaderLabel.ForeColor = System.Drawing.Color.White;
-            this.skillsetHeaderLabel.Location = new System.Drawing.Point(257, 106);
-            this.skillsetHeaderLabel.Name = "skillsetHeaderLabel";
-            this.skillsetHeaderLabel.Size = new System.Drawing.Size(286, 20);
-            this.skillsetHeaderLabel.TabIndex = 13;
-            this.skillsetHeaderLabel.Text = "Enter Your Skillset and Proficiency";
-            // 
-            // skillLabel
-            // 
-            this.skillLabel.AutoSize = true;
-            this.skillLabel.BackColor = System.Drawing.Color.DarkGreen;
-            this.skillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillLabel.ForeColor = System.Drawing.Color.White;
-            this.skillLabel.Location = new System.Drawing.Point(234, 135);
-            this.skillLabel.Name = "skillLabel";
-            this.skillLabel.Size = new System.Drawing.Size(51, 20);
-            this.skillLabel.TabIndex = 14;
-            this.skillLabel.Text = "Skills";
-            // 
-            // proficiencyLabel
-            // 
-            this.proficiencyLabel.AutoSize = true;
-            this.proficiencyLabel.BackColor = System.Drawing.Color.DarkGreen;
-            this.proficiencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proficiencyLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.proficiencyLabel.Location = new System.Drawing.Point(497, 135);
-            this.proficiencyLabel.Name = "proficiencyLabel";
-            this.proficiencyLabel.Size = new System.Drawing.Size(92, 20);
-            this.proficiencyLabel.TabIndex = 15;
-            this.proficiencyLabel.Text = "Proficency";
-            // 
-            // skill1
-            // 
-            this.skill1.Location = new System.Drawing.Point(138, 170);
-            this.skill1.Name = "skill1";
-            this.skill1.Size = new System.Drawing.Size(252, 20);
-            this.skill1.TabIndex = 16;
-            // 
-            // skill2
-            // 
-            this.skill2.Location = new System.Drawing.Point(138, 200);
-            this.skill2.Name = "skill2";
-            this.skill2.Size = new System.Drawing.Size(252, 20);
-            this.skill2.TabIndex = 17;
-            // 
-            // skill3
-            // 
-            this.skill3.Location = new System.Drawing.Point(138, 230);
-            this.skill3.Name = "skill3";
-            this.skill3.Size = new System.Drawing.Size(252, 20);
-            this.skill3.TabIndex = 18;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(0, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Master";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(91, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Proficient";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(183, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 17);
-            this.radioButton3.TabIndex = 21;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Beginner";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.ForeColor = System.Drawing.Color.White;
-            this.radioButton5.Location = new System.Drawing.Point(0, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(57, 17);
-            this.radioButton5.TabIndex = 23;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Master";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.ForeColor = System.Drawing.Color.White;
-            this.radioButton6.Location = new System.Drawing.Point(91, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(69, 17);
-            this.radioButton6.TabIndex = 24;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Proficient";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.ForeColor = System.Drawing.Color.White;
-            this.radioButton7.Location = new System.Drawing.Point(183, 3);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(67, 17);
-            this.radioButton7.TabIndex = 25;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Beginner";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.ForeColor = System.Drawing.Color.White;
-            this.radioButton9.Location = new System.Drawing.Point(0, 3);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(57, 17);
-            this.radioButton9.TabIndex = 27;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Master";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // skill5
-            // 
-            this.skill5.Location = new System.Drawing.Point(138, 290);
-            this.skill5.Name = "skill5";
-            this.skill5.Size = new System.Drawing.Size(252, 20);
-            this.skill5.TabIndex = 29;
-            // 
-            // skill6
-            // 
-            this.skill6.Location = new System.Drawing.Point(138, 320);
-            this.skill6.Name = "skill6";
-            this.skill6.Size = new System.Drawing.Size(252, 20);
-            this.skill6.TabIndex = 30;
-            // 
-            // skill7
-            // 
-            this.skill7.Location = new System.Drawing.Point(138, 350);
-            this.skill7.Name = "skill7";
-            this.skill7.Size = new System.Drawing.Size(252, 20);
-            this.skill7.TabIndex = 31;
-            // 
-            // skill8
-            // 
-            this.skill8.Location = new System.Drawing.Point(138, 380);
-            this.skill8.Name = "skill8";
-            this.skill8.Size = new System.Drawing.Size(252, 20);
-            this.skill8.TabIndex = 32;
-            // 
-            // skill9
-            // 
-            this.skill9.Location = new System.Drawing.Point(138, 410);
-            this.skill9.Name = "skill9";
-            this.skill9.Size = new System.Drawing.Size(252, 20);
-            this.skill9.TabIndex = 33;
-            // 
-            // skill10
-            // 
-            this.skill10.Location = new System.Drawing.Point(138, 440);
-            this.skill10.Name = "skill10";
-            this.skill10.Size = new System.Drawing.Size(252, 20);
-            this.skill10.TabIndex = 34;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(349, 481);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 30);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Continue";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.ForeColor = System.Drawing.Color.White;
-            this.radioButton10.Location = new System.Drawing.Point(91, 3);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(69, 17);
-            this.radioButton10.TabIndex = 36;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Proficient";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.ForeColor = System.Drawing.Color.White;
-            this.radioButton11.Location = new System.Drawing.Point(183, 3);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(67, 17);
-            this.radioButton11.TabIndex = 37;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Beginner";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.ForeColor = System.Drawing.Color.White;
-            this.radioButton13.Location = new System.Drawing.Point(0, 3);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(57, 17);
-            this.radioButton13.TabIndex = 39;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Master";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // radioButton14
-            // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.ForeColor = System.Drawing.Color.White;
-            this.radioButton14.Location = new System.Drawing.Point(91, 3);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(69, 17);
-            this.radioButton14.TabIndex = 40;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Proficient";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // radioButton15
-            // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.ForeColor = System.Drawing.Color.White;
-            this.radioButton15.Location = new System.Drawing.Point(183, 3);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(67, 17);
-            this.radioButton15.TabIndex = 41;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "Beginner";
-            this.radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.ForeColor = System.Drawing.Color.White;
-            this.radioButton17.Location = new System.Drawing.Point(0, 3);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(57, 17);
-            this.radioButton17.TabIndex = 43;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "Master";
-            this.radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.ForeColor = System.Drawing.Color.White;
-            this.radioButton18.Location = new System.Drawing.Point(91, 3);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(69, 17);
-            this.radioButton18.TabIndex = 44;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Proficient";
-            this.radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // radioButton19
-            // 
-            this.radioButton19.AutoSize = true;
-            this.radioButton19.ForeColor = System.Drawing.Color.White;
-            this.radioButton19.Location = new System.Drawing.Point(183, 3);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(67, 17);
-            this.radioButton19.TabIndex = 45;
-            this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "Beginner";
-            this.radioButton19.UseVisualStyleBackColor = true;
-            // 
-            // radioButton21
-            // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.ForeColor = System.Drawing.Color.White;
-            this.radioButton21.Location = new System.Drawing.Point(0, 3);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(57, 17);
-            this.radioButton21.TabIndex = 47;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Master";
-            this.radioButton21.UseVisualStyleBackColor = true;
-            // 
-            // radioButton22
-            // 
-            this.radioButton22.AutoSize = true;
-            this.radioButton22.ForeColor = System.Drawing.Color.White;
-            this.radioButton22.Location = new System.Drawing.Point(91, 3);
-            this.radioButton22.Name = "radioButton22";
-            this.radioButton22.Size = new System.Drawing.Size(69, 17);
-            this.radioButton22.TabIndex = 48;
-            this.radioButton22.TabStop = true;
-            this.radioButton22.Text = "Proficient";
-            this.radioButton22.UseVisualStyleBackColor = true;
-            // 
-            // radioButton23
-            // 
-            this.radioButton23.AutoSize = true;
-            this.radioButton23.ForeColor = System.Drawing.Color.White;
-            this.radioButton23.Location = new System.Drawing.Point(183, 3);
-            this.radioButton23.Name = "radioButton23";
-            this.radioButton23.Size = new System.Drawing.Size(67, 17);
-            this.radioButton23.TabIndex = 49;
-            this.radioButton23.TabStop = true;
-            this.radioButton23.Text = "Beginner";
-            this.radioButton23.UseVisualStyleBackColor = true;
-            // 
-            // radioButton25
-            // 
-            this.radioButton25.AutoSize = true;
-            this.radioButton25.ForeColor = System.Drawing.Color.White;
-            this.radioButton25.Location = new System.Drawing.Point(0, 3);
-            this.radioButton25.Name = "radioButton25";
-            this.radioButton25.Size = new System.Drawing.Size(57, 17);
-            this.radioButton25.TabIndex = 51;
-            this.radioButton25.TabStop = true;
-            this.radioButton25.Text = "Master";
-            this.radioButton25.UseVisualStyleBackColor = true;
-            // 
-            // radioButton26
-            // 
-            this.radioButton26.AutoSize = true;
-            this.radioButton26.ForeColor = System.Drawing.Color.White;
-            this.radioButton26.Location = new System.Drawing.Point(91, 3);
-            this.radioButton26.Name = "radioButton26";
-            this.radioButton26.Size = new System.Drawing.Size(69, 17);
-            this.radioButton26.TabIndex = 52;
-            this.radioButton26.TabStop = true;
-            this.radioButton26.Text = "Proficient";
-            this.radioButton26.UseVisualStyleBackColor = true;
-            // 
-            // radioButton27
-            // 
-            this.radioButton27.AutoSize = true;
-            this.radioButton27.ForeColor = System.Drawing.Color.White;
-            this.radioButton27.Location = new System.Drawing.Point(183, 3);
-            this.radioButton27.Name = "radioButton27";
-            this.radioButton27.Size = new System.Drawing.Size(67, 17);
-            this.radioButton27.TabIndex = 53;
-            this.radioButton27.TabStop = true;
-            this.radioButton27.Text = "Beginner";
-            this.radioButton27.UseVisualStyleBackColor = true;
-            // 
-            // radioButton29
-            // 
-            this.radioButton29.AutoSize = true;
-            this.radioButton29.ForeColor = System.Drawing.Color.White;
-            this.radioButton29.Location = new System.Drawing.Point(0, 3);
-            this.radioButton29.Name = "radioButton29";
-            this.radioButton29.Size = new System.Drawing.Size(57, 17);
-            this.radioButton29.TabIndex = 55;
-            this.radioButton29.TabStop = true;
-            this.radioButton29.Text = "Master";
-            this.radioButton29.UseVisualStyleBackColor = true;
-            this.radioButton29.CheckedChanged += new System.EventHandler(this.radioButton29_CheckedChanged);
-            // 
-            // radioButton30
-            // 
-            this.radioButton30.AutoSize = true;
-            this.radioButton30.ForeColor = System.Drawing.Color.White;
-            this.radioButton30.Location = new System.Drawing.Point(91, 3);
-            this.radioButton30.Name = "radioButton30";
-            this.radioButton30.Size = new System.Drawing.Size(69, 17);
-            this.radioButton30.TabIndex = 56;
-            this.radioButton30.TabStop = true;
-            this.radioButton30.Text = "Proficient";
-            this.radioButton30.UseVisualStyleBackColor = true;
-            // 
-            // radioButton31
-            // 
-            this.radioButton31.AutoSize = true;
-            this.radioButton31.ForeColor = System.Drawing.Color.White;
-            this.radioButton31.Location = new System.Drawing.Point(183, 3);
-            this.radioButton31.Name = "radioButton31";
-            this.radioButton31.Size = new System.Drawing.Size(67, 17);
-            this.radioButton31.TabIndex = 57;
-            this.radioButton31.TabStop = true;
-            this.radioButton31.Text = "Beginner";
-            this.radioButton31.UseVisualStyleBackColor = true;
-            // 
-            // radioButton33
-            // 
-            this.radioButton33.AutoSize = true;
-            this.radioButton33.ForeColor = System.Drawing.Color.White;
-            this.radioButton33.Location = new System.Drawing.Point(0, 3);
-            this.radioButton33.Name = "radioButton33";
-            this.radioButton33.Size = new System.Drawing.Size(57, 17);
-            this.radioButton33.TabIndex = 59;
-            this.radioButton33.TabStop = true;
-            this.radioButton33.Text = "Master";
-            this.radioButton33.UseVisualStyleBackColor = true;
-            // 
-            // radioButton34
-            // 
-            this.radioButton34.AutoSize = true;
-            this.radioButton34.ForeColor = System.Drawing.Color.White;
-            this.radioButton34.Location = new System.Drawing.Point(91, 3);
-            this.radioButton34.Name = "radioButton34";
-            this.radioButton34.Size = new System.Drawing.Size(69, 17);
-            this.radioButton34.TabIndex = 60;
-            this.radioButton34.TabStop = true;
-            this.radioButton34.Text = "Proficient";
-            this.radioButton34.UseVisualStyleBackColor = true;
-            // 
-            // radioButton35
-            // 
-            this.radioButton35.AutoSize = true;
-            this.radioButton35.ForeColor = System.Drawing.Color.White;
-            this.radioButton35.Location = new System.Drawing.Point(183, 3);
-            this.radioButton35.Name = "radioButton35";
-            this.radioButton35.Size = new System.Drawing.Size(67, 17);
-            this.radioButton35.TabIndex = 61;
-            this.radioButton35.TabStop = true;
-            this.radioButton35.Text = "Beginner";
-            this.radioButton35.UseVisualStyleBackColor = true;
-            // 
-            // radioButton37
-            // 
-            this.radioButton37.AutoSize = true;
-            this.radioButton37.ForeColor = System.Drawing.Color.White;
-            this.radioButton37.Location = new System.Drawing.Point(0, 3);
-            this.radioButton37.Name = "radioButton37";
-            this.radioButton37.Size = new System.Drawing.Size(57, 17);
-            this.radioButton37.TabIndex = 63;
-            this.radioButton37.TabStop = true;
-            this.radioButton37.Text = "Master";
-            this.radioButton37.UseVisualStyleBackColor = true;
-            // 
-            // radioButton38
-            // 
-            this.radioButton38.AutoSize = true;
-            this.radioButton38.ForeColor = System.Drawing.Color.White;
-            this.radioButton38.Location = new System.Drawing.Point(91, 3);
-            this.radioButton38.Name = "radioButton38";
-            this.radioButton38.Size = new System.Drawing.Size(69, 17);
-            this.radioButton38.TabIndex = 64;
-            this.radioButton38.TabStop = true;
-            this.radioButton38.Text = "Proficient";
-            this.radioButton38.UseVisualStyleBackColor = true;
-            // 
-            // radioButton39
-            // 
-            this.radioButton39.AutoSize = true;
-            this.radioButton39.ForeColor = System.Drawing.Color.White;
-            this.radioButton39.Location = new System.Drawing.Point(183, 3);
-            this.radioButton39.Name = "radioButton39";
-            this.radioButton39.Size = new System.Drawing.Size(67, 17);
-            this.radioButton39.TabIndex = 65;
-            this.radioButton39.TabStop = true;
-            this.radioButton39.Text = "Beginner";
-            this.radioButton39.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonPanel1
-            // 
-            this.radioButtonPanel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.radioButtonPanel1.Controls.Add(this.radioButton1);
-            this.radioButtonPanel1.Controls.Add(this.radioButton3);
-            this.radioButtonPanel1.Controls.Add(this.radioButton2);
-            this.radioButtonPanel1.Location = new System.Drawing.Point(420, 170);
-            this.radioButtonPanel1.Name = "radioButtonPanel1";
-            this.radioButtonPanel1.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel1.TabIndex = 67;
-            // 
-            // radioButtonPanel2
-            // 
-            this.radioButtonPanel2.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel2.Controls.Add(this.radioButton5);
-            this.radioButtonPanel2.Controls.Add(this.radioButton6);
-            this.radioButtonPanel2.Controls.Add(this.radioButton7);
-            this.radioButtonPanel2.Location = new System.Drawing.Point(420, 200);
-            this.radioButtonPanel2.Name = "radioButtonPanel2";
-            this.radioButtonPanel2.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel2.TabIndex = 68;
-            // 
-            // skill4
-            // 
-            this.skill4.Location = new System.Drawing.Point(138, 260);
-            this.skill4.Name = "skill4";
-            this.skill4.Size = new System.Drawing.Size(252, 20);
-            this.skill4.TabIndex = 28;
-            // 
-            // radioButtonPanel3
-            // 
-            this.radioButtonPanel3.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel3.Controls.Add(this.radioButton9);
-            this.radioButtonPanel3.Controls.Add(this.radioButton10);
-            this.radioButtonPanel3.Controls.Add(this.radioButton11);
-            this.radioButtonPanel3.Location = new System.Drawing.Point(420, 230);
-            this.radioButtonPanel3.Name = "radioButtonPanel3";
-            this.radioButtonPanel3.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel3.TabIndex = 69;
-            // 
-            // radioButtonPanel4
-            // 
-            this.radioButtonPanel4.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel4.Controls.Add(this.radioButton13);
-            this.radioButtonPanel4.Controls.Add(this.radioButton14);
-            this.radioButtonPanel4.Controls.Add(this.radioButton15);
-            this.radioButtonPanel4.Location = new System.Drawing.Point(420, 260);
-            this.radioButtonPanel4.Name = "radioButtonPanel4";
-            this.radioButtonPanel4.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel4.TabIndex = 70;
-            // 
-            // radioButtonPanel5
-            // 
-            this.radioButtonPanel5.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel5.Controls.Add(this.radioButton17);
-            this.radioButtonPanel5.Controls.Add(this.radioButton18);
-            this.radioButtonPanel5.Controls.Add(this.radioButton19);
-            this.radioButtonPanel5.Location = new System.Drawing.Point(420, 290);
-            this.radioButtonPanel5.Name = "radioButtonPanel5";
-            this.radioButtonPanel5.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel5.TabIndex = 71;
-            // 
-            // radioButtonPanel6
-            // 
-            this.radioButtonPanel6.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel6.Controls.Add(this.radioButton21);
-            this.radioButtonPanel6.Controls.Add(this.radioButton22);
-            this.radioButtonPanel6.Controls.Add(this.radioButton23);
-            this.radioButtonPanel6.Location = new System.Drawing.Point(420, 320);
-            this.radioButtonPanel6.Name = "radioButtonPanel6";
-            this.radioButtonPanel6.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel6.TabIndex = 72;
-            // 
-            // radioButtonPanel7
-            // 
-            this.radioButtonPanel7.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel7.Controls.Add(this.radioButton25);
-            this.radioButtonPanel7.Controls.Add(this.radioButton26);
-            this.radioButtonPanel7.Controls.Add(this.radioButton27);
-            this.radioButtonPanel7.Location = new System.Drawing.Point(420, 350);
-            this.radioButtonPanel7.Name = "radioButtonPanel7";
-            this.radioButtonPanel7.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel7.TabIndex = 73;
-            // 
-            // radioButtonPanel8
-            // 
-            this.radioButtonPanel8.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel8.Controls.Add(this.radioButton29);
-            this.radioButtonPanel8.Controls.Add(this.radioButton30);
-            this.radioButtonPanel8.Controls.Add(this.radioButton31);
-            this.radioButtonPanel8.Location = new System.Drawing.Point(420, 380);
-            this.radioButtonPanel8.Name = "radioButtonPanel8";
-            this.radioButtonPanel8.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel8.TabIndex = 74;
-            // 
-            // radioButtonPanel10
-            // 
-            this.radioButtonPanel10.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel10.Controls.Add(this.radioButton37);
-            this.radioButtonPanel10.Controls.Add(this.radioButton38);
-            this.radioButtonPanel10.Controls.Add(this.radioButton39);
-            this.radioButtonPanel10.Location = new System.Drawing.Point(420, 440);
-            this.radioButtonPanel10.Name = "radioButtonPanel10";
-            this.radioButtonPanel10.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel10.TabIndex = 75;
-            // 
-            // radioButtonPanel9
-            // 
-            this.radioButtonPanel9.BackColor = System.Drawing.Color.DarkGreen;
-            this.radioButtonPanel9.Controls.Add(this.radioButton33);
-            this.radioButtonPanel9.Controls.Add(this.radioButton34);
-            this.radioButtonPanel9.Controls.Add(this.radioButton35);
-            this.radioButtonPanel9.Location = new System.Drawing.Point(420, 410);
-            this.radioButtonPanel9.Name = "radioButtonPanel9";
-            this.radioButtonPanel9.Size = new System.Drawing.Size(250, 20);
-            this.radioButtonPanel9.TabIndex = 76;
-            // 
-            // SkillSetForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.radioButtonPanel9);
-            this.Controls.Add(this.radioButtonPanel10);
-            this.Controls.Add(this.radioButtonPanel8);
-            this.Controls.Add(this.radioButtonPanel7);
-            this.Controls.Add(this.radioButtonPanel6);
-            this.Controls.Add(this.radioButtonPanel5);
-            this.Controls.Add(this.radioButtonPanel4);
-            this.Controls.Add(this.radioButtonPanel3);
-            this.Controls.Add(this.radioButtonPanel2);
-            this.Controls.Add(this.radioButtonPanel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.skill10);
-            this.Controls.Add(this.skill9);
-            this.Controls.Add(this.skill8);
-            this.Controls.Add(this.skill7);
-            this.Controls.Add(this.skill6);
-            this.Controls.Add(this.skill5);
-            this.Controls.Add(this.skill4);
-            this.Controls.Add(this.skill3);
-            this.Controls.Add(this.skill2);
-            this.Controls.Add(this.skill1);
-            this.Controls.Add(this.proficiencyLabel);
-            this.Controls.Add(this.skillLabel);
-            this.Controls.Add(this.skillsetHeaderLabel);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "SkillSetForm";
-            this.Text = "Agile Development Tools Suite";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.radioButtonPanel1.ResumeLayout(false);
-            this.radioButtonPanel1.PerformLayout();
-            this.radioButtonPanel2.ResumeLayout(false);
-            this.radioButtonPanel2.PerformLayout();
-            this.radioButtonPanel3.ResumeLayout(false);
-            this.radioButtonPanel3.PerformLayout();
-            this.radioButtonPanel4.ResumeLayout(false);
-            this.radioButtonPanel4.PerformLayout();
-            this.radioButtonPanel5.ResumeLayout(false);
-            this.radioButtonPanel5.PerformLayout();
-            this.radioButtonPanel6.ResumeLayout(false);
-            this.radioButtonPanel6.PerformLayout();
-            this.radioButtonPanel7.ResumeLayout(false);
-            this.radioButtonPanel7.PerformLayout();
-            this.radioButtonPanel8.ResumeLayout(false);
-            this.radioButtonPanel8.PerformLayout();
-            this.radioButtonPanel10.ResumeLayout(false);
-            this.radioButtonPanel10.PerformLayout();
-            this.radioButtonPanel9.ResumeLayout(false);
-            this.radioButtonPanel9.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label skillsetHeaderLabel;
-        private System.Windows.Forms.Label skillLabel;
-        private System.Windows.Forms.Label proficiencyLabel;
-        private System.Windows.Forms.TextBox skill1;
-        private System.Windows.Forms.TextBox skill2;
-        private System.Windows.Forms.TextBox skill3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.TextBox skill5;
-        private System.Windows.Forms.TextBox skill6;
-        private System.Windows.Forms.TextBox skill7;
-        private System.Windows.Forms.TextBox skill8;
-        private System.Windows.Forms.TextBox skill9;
-        private System.Windows.Forms.TextBox skill10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton18;
-        private System.Windows.Forms.RadioButton radioButton19;
-        private System.Windows.Forms.RadioButton radioButton21;
-        private System.Windows.Forms.RadioButton radioButton22;
-        private System.Windows.Forms.RadioButton radioButton23;
-        private System.Windows.Forms.RadioButton radioButton25;
-        private System.Windows.Forms.RadioButton radioButton26;
-        private System.Windows.Forms.RadioButton radioButton27;
-        private System.Windows.Forms.RadioButton radioButton29;
-        private System.Windows.Forms.RadioButton radioButton30;
-        private System.Windows.Forms.RadioButton radioButton31;
-        private System.Windows.Forms.RadioButton radioButton33;
-        private System.Windows.Forms.RadioButton radioButton34;
-        private System.Windows.Forms.RadioButton radioButton35;
-        private System.Windows.Forms.RadioButton radioButton37;
-        private System.Windows.Forms.RadioButton radioButton38;
-        private System.Windows.Forms.RadioButton radioButton39;
-        private System.Windows.Forms.Panel radioButtonPanel1;
-        private System.Windows.Forms.Panel radioButtonPanel2;
-        private System.Windows.Forms.TextBox skill4;
-        private System.Windows.Forms.Panel radioButtonPanel3;
-        private System.Windows.Forms.Panel radioButtonPanel4;
-        private System.Windows.Forms.Panel radioButtonPanel5;
-        private System.Windows.Forms.Panel radioButtonPanel6;
-        private System.Windows.Forms.Panel radioButtonPanel7;
-        private System.Windows.Forms.Panel radioButtonPanel8;
-        private System.Windows.Forms.Panel radioButtonPanel10;
-        private System.Windows.Forms.Panel radioButtonPanel9;
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
     }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkillSetForm));
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.skillsetHeaderLabel = new System.Windows.Forms.Label();
+      this.skillHeaderLabel = new System.Windows.Forms.Label();
+      this.proficiencyHeaderLabel = new System.Windows.Forms.Label();
+      this.skill1Box = new System.Windows.Forms.TextBox();
+      this.skill2Box = new System.Windows.Forms.TextBox();
+      this.skill3Box = new System.Windows.Forms.TextBox();
+      this.master1Button = new System.Windows.Forms.RadioButton();
+      this.proficient1Button = new System.Windows.Forms.RadioButton();
+      this.beginner1Button = new System.Windows.Forms.RadioButton();
+      this.master2Button = new System.Windows.Forms.RadioButton();
+      this.proficient2Button = new System.Windows.Forms.RadioButton();
+      this.beginner2Button = new System.Windows.Forms.RadioButton();
+      this.master3Button = new System.Windows.Forms.RadioButton();
+      this.skill5Box = new System.Windows.Forms.TextBox();
+      this.skill6Box = new System.Windows.Forms.TextBox();
+      this.skill7Box = new System.Windows.Forms.TextBox();
+      this.skill8Box = new System.Windows.Forms.TextBox();
+      this.skill9Box = new System.Windows.Forms.TextBox();
+      this.skill10Box = new System.Windows.Forms.TextBox();
+      this.button1 = new System.Windows.Forms.Button();
+      this.proficient3Button = new System.Windows.Forms.RadioButton();
+      this.beginner3Button = new System.Windows.Forms.RadioButton();
+      this.master4Button = new System.Windows.Forms.RadioButton();
+      this.proficient4Button = new System.Windows.Forms.RadioButton();
+      this.beginner4Button = new System.Windows.Forms.RadioButton();
+      this.master5Button = new System.Windows.Forms.RadioButton();
+      this.proficient5Button = new System.Windows.Forms.RadioButton();
+      this.beginner5Button = new System.Windows.Forms.RadioButton();
+      this.master6Button = new System.Windows.Forms.RadioButton();
+      this.proficient6Button = new System.Windows.Forms.RadioButton();
+      this.beginner6Button = new System.Windows.Forms.RadioButton();
+      this.master7Button = new System.Windows.Forms.RadioButton();
+      this.proficient7Button = new System.Windows.Forms.RadioButton();
+      this.beginner7Button = new System.Windows.Forms.RadioButton();
+      this.master8Button = new System.Windows.Forms.RadioButton();
+      this.proficient8Button = new System.Windows.Forms.RadioButton();
+      this.beginner8Button = new System.Windows.Forms.RadioButton();
+      this.master9Button = new System.Windows.Forms.RadioButton();
+      this.proficient9Button = new System.Windows.Forms.RadioButton();
+      this.beginner9Button = new System.Windows.Forms.RadioButton();
+      this.master10Button = new System.Windows.Forms.RadioButton();
+      this.proficient10Button = new System.Windows.Forms.RadioButton();
+      this.beginner10Button = new System.Windows.Forms.RadioButton();
+      this.skill1ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill2ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill4Box = new System.Windows.Forms.TextBox();
+      this.skill3ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill4ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill5ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill6ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill7ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill8ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill10ButtonPanel = new System.Windows.Forms.Panel();
+      this.skill9ButtonPanel = new System.Windows.Forms.Panel();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      this.skill1ButtonPanel.SuspendLayout();
+      this.skill2ButtonPanel.SuspendLayout();
+      this.skill3ButtonPanel.SuspendLayout();
+      this.skill4ButtonPanel.SuspendLayout();
+      this.skill5ButtonPanel.SuspendLayout();
+      this.skill6ButtonPanel.SuspendLayout();
+      this.skill7ButtonPanel.SuspendLayout();
+      this.skill8ButtonPanel.SuspendLayout();
+      this.skill10ButtonPanel.SuspendLayout();
+      this.skill9ButtonPanel.SuspendLayout();
+      this.SuspendLayout();
+      // 
+      // pictureBox1
+      // 
+      this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
+      this.pictureBox1.Location = new System.Drawing.Point(87, 117);
+      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(881, 530);
+      this.pictureBox1.TabIndex = 11;
+      this.pictureBox1.TabStop = false;
+      // 
+      // skillsetHeaderLabel
+      // 
+      this.skillsetHeaderLabel.AutoSize = true;
+      this.skillsetHeaderLabel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skillsetHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.skillsetHeaderLabel.ForeColor = System.Drawing.Color.White;
+      this.skillsetHeaderLabel.Location = new System.Drawing.Point(343, 130);
+      this.skillsetHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.skillsetHeaderLabel.Name = "skillsetHeaderLabel";
+      this.skillsetHeaderLabel.Size = new System.Drawing.Size(344, 25);
+      this.skillsetHeaderLabel.TabIndex = 13;
+      this.skillsetHeaderLabel.Text = "Enter Your Skillset and Proficiency";
+      // 
+      // skillHeaderLabel
+      // 
+      this.skillHeaderLabel.AutoSize = true;
+      this.skillHeaderLabel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skillHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.skillHeaderLabel.ForeColor = System.Drawing.Color.White;
+      this.skillHeaderLabel.Location = new System.Drawing.Point(312, 166);
+      this.skillHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.skillHeaderLabel.Name = "skillHeaderLabel";
+      this.skillHeaderLabel.Size = new System.Drawing.Size(64, 25);
+      this.skillHeaderLabel.TabIndex = 14;
+      this.skillHeaderLabel.Text = "Skills";
+      // 
+      // proficiencyHeaderLabel
+      // 
+      this.proficiencyHeaderLabel.AutoSize = true;
+      this.proficiencyHeaderLabel.BackColor = System.Drawing.Color.DarkGreen;
+      this.proficiencyHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.proficiencyHeaderLabel.ForeColor = System.Drawing.SystemColors.Window;
+      this.proficiencyHeaderLabel.Location = new System.Drawing.Point(663, 166);
+      this.proficiencyHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.proficiencyHeaderLabel.Name = "proficiencyHeaderLabel";
+      this.proficiencyHeaderLabel.Size = new System.Drawing.Size(113, 25);
+      this.proficiencyHeaderLabel.TabIndex = 15;
+      this.proficiencyHeaderLabel.Text = "Proficency";
+      // 
+      // skill1Box
+      // 
+      this.skill1Box.Location = new System.Drawing.Point(184, 209);
+      this.skill1Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill1Box.MaxLength = 50;
+      this.skill1Box.Name = "skill1Box";
+      this.skill1Box.Size = new System.Drawing.Size(335, 22);
+      this.skill1Box.TabIndex = 16;
+      this.skill1Box.Text = "Enter First Skill";
+      this.skill1Box.MouseClick += new System.Windows.Forms.MouseEventHandler(this.skill1Box_MouseClick);
+      this.skill1Box.TextChanged += new System.EventHandler(this.skill1Box_TextChanged);
+      // 
+      // skill2Box
+      // 
+      this.skill2Box.Location = new System.Drawing.Point(184, 246);
+      this.skill2Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill2Box.MaxLength = 50;
+      this.skill2Box.Name = "skill2Box";
+      this.skill2Box.Size = new System.Drawing.Size(335, 22);
+      this.skill2Box.TabIndex = 17;
+      this.skill2Box.Text = "Enter Second Skill";
+      // 
+      // skill3Box
+      // 
+      this.skill3Box.Location = new System.Drawing.Point(184, 283);
+      this.skill3Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill3Box.MaxLength = 50;
+      this.skill3Box.Name = "skill3Box";
+      this.skill3Box.Size = new System.Drawing.Size(335, 22);
+      this.skill3Box.TabIndex = 18;
+      this.skill3Box.Text = "Enter Third Skill";
+      // 
+      // master1Button
+      // 
+      this.master1Button.AutoSize = true;
+      this.master1Button.ForeColor = System.Drawing.Color.White;
+      this.master1Button.Location = new System.Drawing.Point(0, 4);
+      this.master1Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master1Button.Name = "master1Button";
+      this.master1Button.Size = new System.Drawing.Size(72, 21);
+      this.master1Button.TabIndex = 19;
+      this.master1Button.Text = "Master";
+      this.master1Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient1Button
+      // 
+      this.proficient1Button.AutoSize = true;
+      this.proficient1Button.ForeColor = System.Drawing.Color.White;
+      this.proficient1Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient1Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient1Button.Name = "proficient1Button";
+      this.proficient1Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient1Button.TabIndex = 20;
+      this.proficient1Button.Text = "Proficient";
+      this.proficient1Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner1Button
+      // 
+      this.beginner1Button.AutoSize = true;
+      this.beginner1Button.Checked = true;
+      this.beginner1Button.ForeColor = System.Drawing.Color.White;
+      this.beginner1Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner1Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner1Button.Name = "beginner1Button";
+      this.beginner1Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner1Button.TabIndex = 21;
+      this.beginner1Button.TabStop = true;
+      this.beginner1Button.Text = "Beginner";
+      this.beginner1Button.UseVisualStyleBackColor = true;
+      // 
+      // master2Button
+      // 
+      this.master2Button.AutoSize = true;
+      this.master2Button.ForeColor = System.Drawing.Color.White;
+      this.master2Button.Location = new System.Drawing.Point(0, 4);
+      this.master2Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master2Button.Name = "master2Button";
+      this.master2Button.Size = new System.Drawing.Size(72, 21);
+      this.master2Button.TabIndex = 23;
+      this.master2Button.Text = "Master";
+      this.master2Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient2Button
+      // 
+      this.proficient2Button.AutoSize = true;
+      this.proficient2Button.ForeColor = System.Drawing.Color.White;
+      this.proficient2Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient2Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient2Button.Name = "proficient2Button";
+      this.proficient2Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient2Button.TabIndex = 24;
+      this.proficient2Button.Text = "Proficient";
+      this.proficient2Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner2Button
+      // 
+      this.beginner2Button.AutoSize = true;
+      this.beginner2Button.Checked = true;
+      this.beginner2Button.ForeColor = System.Drawing.Color.White;
+      this.beginner2Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner2Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner2Button.Name = "beginner2Button";
+      this.beginner2Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner2Button.TabIndex = 25;
+      this.beginner2Button.TabStop = true;
+      this.beginner2Button.Text = "Beginner";
+      this.beginner2Button.UseVisualStyleBackColor = true;
+      // 
+      // master3Button
+      // 
+      this.master3Button.AutoSize = true;
+      this.master3Button.ForeColor = System.Drawing.Color.White;
+      this.master3Button.Location = new System.Drawing.Point(0, 4);
+      this.master3Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master3Button.Name = "master3Button";
+      this.master3Button.Size = new System.Drawing.Size(72, 21);
+      this.master3Button.TabIndex = 27;
+      this.master3Button.Text = "Master";
+      this.master3Button.UseVisualStyleBackColor = true;
+      // 
+      // skill5Box
+      // 
+      this.skill5Box.Location = new System.Drawing.Point(184, 357);
+      this.skill5Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill5Box.MaxLength = 50;
+      this.skill5Box.Name = "skill5Box";
+      this.skill5Box.Size = new System.Drawing.Size(335, 22);
+      this.skill5Box.TabIndex = 29;
+      this.skill5Box.Text = "Enter Fifth Skill";
+      // 
+      // skill6Box
+      // 
+      this.skill6Box.Location = new System.Drawing.Point(184, 394);
+      this.skill6Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill6Box.MaxLength = 50;
+      this.skill6Box.Name = "skill6Box";
+      this.skill6Box.Size = new System.Drawing.Size(335, 22);
+      this.skill6Box.TabIndex = 30;
+      this.skill6Box.Text = "Enter Sixth Skill";
+      // 
+      // skill7Box
+      // 
+      this.skill7Box.Location = new System.Drawing.Point(184, 431);
+      this.skill7Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill7Box.MaxLength = 50;
+      this.skill7Box.Name = "skill7Box";
+      this.skill7Box.Size = new System.Drawing.Size(335, 22);
+      this.skill7Box.TabIndex = 31;
+      this.skill7Box.Text = "Enter Seventh Skill";
+      // 
+      // skill8Box
+      // 
+      this.skill8Box.Location = new System.Drawing.Point(184, 468);
+      this.skill8Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill8Box.MaxLength = 50;
+      this.skill8Box.Name = "skill8Box";
+      this.skill8Box.Size = new System.Drawing.Size(335, 22);
+      this.skill8Box.TabIndex = 32;
+      this.skill8Box.Text = "Enter Eighth Skill";
+      // 
+      // skill9Box
+      // 
+      this.skill9Box.Location = new System.Drawing.Point(184, 505);
+      this.skill9Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill9Box.MaxLength = 50;
+      this.skill9Box.Name = "skill9Box";
+      this.skill9Box.Size = new System.Drawing.Size(335, 22);
+      this.skill9Box.TabIndex = 33;
+      this.skill9Box.Text = "Enter Ninth Skill";
+      // 
+      // skill10Box
+      // 
+      this.skill10Box.Location = new System.Drawing.Point(184, 542);
+      this.skill10Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill10Box.MaxLength = 50;
+      this.skill10Box.Name = "skill10Box";
+      this.skill10Box.Size = new System.Drawing.Size(335, 22);
+      this.skill10Box.TabIndex = 34;
+      this.skill10Box.Text = "Enter Tenth Skill";
+      // 
+      // button1
+      // 
+      this.button1.BackColor = System.Drawing.Color.DarkGray;
+      this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+      this.button1.ForeColor = System.Drawing.Color.White;
+      this.button1.Location = new System.Drawing.Point(465, 592);
+      this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(128, 37);
+      this.button1.TabIndex = 35;
+      this.button1.Text = "Continue";
+      this.button1.UseVisualStyleBackColor = false;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
+      // proficient3Button
+      // 
+      this.proficient3Button.AutoSize = true;
+      this.proficient3Button.ForeColor = System.Drawing.Color.White;
+      this.proficient3Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient3Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient3Button.Name = "proficient3Button";
+      this.proficient3Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient3Button.TabIndex = 36;
+      this.proficient3Button.Text = "Proficient";
+      this.proficient3Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner3Button
+      // 
+      this.beginner3Button.AutoSize = true;
+      this.beginner3Button.Checked = true;
+      this.beginner3Button.ForeColor = System.Drawing.Color.White;
+      this.beginner3Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner3Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner3Button.Name = "beginner3Button";
+      this.beginner3Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner3Button.TabIndex = 37;
+      this.beginner3Button.TabStop = true;
+      this.beginner3Button.Text = "Beginner";
+      this.beginner3Button.UseVisualStyleBackColor = true;
+      // 
+      // master4Button
+      // 
+      this.master4Button.AutoSize = true;
+      this.master4Button.ForeColor = System.Drawing.Color.White;
+      this.master4Button.Location = new System.Drawing.Point(0, 4);
+      this.master4Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master4Button.Name = "master4Button";
+      this.master4Button.Size = new System.Drawing.Size(72, 21);
+      this.master4Button.TabIndex = 39;
+      this.master4Button.Text = "Master";
+      this.master4Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient4Button
+      // 
+      this.proficient4Button.AutoSize = true;
+      this.proficient4Button.ForeColor = System.Drawing.Color.White;
+      this.proficient4Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient4Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient4Button.Name = "proficient4Button";
+      this.proficient4Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient4Button.TabIndex = 40;
+      this.proficient4Button.Text = "Proficient";
+      this.proficient4Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner4Button
+      // 
+      this.beginner4Button.AutoSize = true;
+      this.beginner4Button.Checked = true;
+      this.beginner4Button.ForeColor = System.Drawing.Color.White;
+      this.beginner4Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner4Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner4Button.Name = "beginner4Button";
+      this.beginner4Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner4Button.TabIndex = 41;
+      this.beginner4Button.TabStop = true;
+      this.beginner4Button.Text = "Beginner";
+      this.beginner4Button.UseVisualStyleBackColor = true;
+      // 
+      // master5Button
+      // 
+      this.master5Button.AutoSize = true;
+      this.master5Button.ForeColor = System.Drawing.Color.White;
+      this.master5Button.Location = new System.Drawing.Point(0, 4);
+      this.master5Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master5Button.Name = "master5Button";
+      this.master5Button.Size = new System.Drawing.Size(72, 21);
+      this.master5Button.TabIndex = 43;
+      this.master5Button.Text = "Master";
+      this.master5Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient5Button
+      // 
+      this.proficient5Button.AutoSize = true;
+      this.proficient5Button.ForeColor = System.Drawing.Color.White;
+      this.proficient5Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient5Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient5Button.Name = "proficient5Button";
+      this.proficient5Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient5Button.TabIndex = 44;
+      this.proficient5Button.Text = "Proficient";
+      this.proficient5Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner5Button
+      // 
+      this.beginner5Button.AutoSize = true;
+      this.beginner5Button.Checked = true;
+      this.beginner5Button.ForeColor = System.Drawing.Color.White;
+      this.beginner5Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner5Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner5Button.Name = "beginner5Button";
+      this.beginner5Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner5Button.TabIndex = 45;
+      this.beginner5Button.TabStop = true;
+      this.beginner5Button.Text = "Beginner";
+      this.beginner5Button.UseVisualStyleBackColor = true;
+      // 
+      // master6Button
+      // 
+      this.master6Button.AutoSize = true;
+      this.master6Button.ForeColor = System.Drawing.Color.White;
+      this.master6Button.Location = new System.Drawing.Point(0, 4);
+      this.master6Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master6Button.Name = "master6Button";
+      this.master6Button.Size = new System.Drawing.Size(72, 21);
+      this.master6Button.TabIndex = 47;
+      this.master6Button.Text = "Master";
+      this.master6Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient6Button
+      // 
+      this.proficient6Button.AutoSize = true;
+      this.proficient6Button.ForeColor = System.Drawing.Color.White;
+      this.proficient6Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient6Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient6Button.Name = "proficient6Button";
+      this.proficient6Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient6Button.TabIndex = 48;
+      this.proficient6Button.Text = "Proficient";
+      this.proficient6Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner6Button
+      // 
+      this.beginner6Button.AutoSize = true;
+      this.beginner6Button.Checked = true;
+      this.beginner6Button.ForeColor = System.Drawing.Color.White;
+      this.beginner6Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner6Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner6Button.Name = "beginner6Button";
+      this.beginner6Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner6Button.TabIndex = 49;
+      this.beginner6Button.TabStop = true;
+      this.beginner6Button.Text = "Beginner";
+      this.beginner6Button.UseVisualStyleBackColor = true;
+      // 
+      // master7Button
+      // 
+      this.master7Button.AutoSize = true;
+      this.master7Button.ForeColor = System.Drawing.Color.White;
+      this.master7Button.Location = new System.Drawing.Point(0, 4);
+      this.master7Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master7Button.Name = "master7Button";
+      this.master7Button.Size = new System.Drawing.Size(72, 21);
+      this.master7Button.TabIndex = 51;
+      this.master7Button.Text = "Master";
+      this.master7Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient7Button
+      // 
+      this.proficient7Button.AutoSize = true;
+      this.proficient7Button.ForeColor = System.Drawing.Color.White;
+      this.proficient7Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient7Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient7Button.Name = "proficient7Button";
+      this.proficient7Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient7Button.TabIndex = 52;
+      this.proficient7Button.Text = "Proficient";
+      this.proficient7Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner7Button
+      // 
+      this.beginner7Button.AutoSize = true;
+      this.beginner7Button.Checked = true;
+      this.beginner7Button.ForeColor = System.Drawing.Color.White;
+      this.beginner7Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner7Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner7Button.Name = "beginner7Button";
+      this.beginner7Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner7Button.TabIndex = 53;
+      this.beginner7Button.TabStop = true;
+      this.beginner7Button.Text = "Beginner";
+      this.beginner7Button.UseVisualStyleBackColor = true;
+      // 
+      // master8Button
+      // 
+      this.master8Button.AutoSize = true;
+      this.master8Button.ForeColor = System.Drawing.Color.White;
+      this.master8Button.Location = new System.Drawing.Point(0, 4);
+      this.master8Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master8Button.Name = "master8Button";
+      this.master8Button.Size = new System.Drawing.Size(72, 21);
+      this.master8Button.TabIndex = 55;
+      this.master8Button.Text = "Master";
+      this.master8Button.UseVisualStyleBackColor = true;
+      this.master8Button.CheckedChanged += new System.EventHandler(this.radioButton29_CheckedChanged);
+      // 
+      // proficient8Button
+      // 
+      this.proficient8Button.AutoSize = true;
+      this.proficient8Button.ForeColor = System.Drawing.Color.White;
+      this.proficient8Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient8Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient8Button.Name = "proficient8Button";
+      this.proficient8Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient8Button.TabIndex = 56;
+      this.proficient8Button.Text = "Proficient";
+      this.proficient8Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner8Button
+      // 
+      this.beginner8Button.AutoSize = true;
+      this.beginner8Button.Checked = true;
+      this.beginner8Button.ForeColor = System.Drawing.Color.White;
+      this.beginner8Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner8Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner8Button.Name = "beginner8Button";
+      this.beginner8Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner8Button.TabIndex = 57;
+      this.beginner8Button.TabStop = true;
+      this.beginner8Button.Text = "Beginner";
+      this.beginner8Button.UseVisualStyleBackColor = true;
+      // 
+      // master9Button
+      // 
+      this.master9Button.AutoSize = true;
+      this.master9Button.ForeColor = System.Drawing.Color.White;
+      this.master9Button.Location = new System.Drawing.Point(0, 4);
+      this.master9Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master9Button.Name = "master9Button";
+      this.master9Button.Size = new System.Drawing.Size(72, 21);
+      this.master9Button.TabIndex = 59;
+      this.master9Button.Text = "Master";
+      this.master9Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient9Button
+      // 
+      this.proficient9Button.AutoSize = true;
+      this.proficient9Button.ForeColor = System.Drawing.Color.White;
+      this.proficient9Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient9Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient9Button.Name = "proficient9Button";
+      this.proficient9Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient9Button.TabIndex = 60;
+      this.proficient9Button.Text = "Proficient";
+      this.proficient9Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner9Button
+      // 
+      this.beginner9Button.AutoSize = true;
+      this.beginner9Button.Checked = true;
+      this.beginner9Button.ForeColor = System.Drawing.Color.White;
+      this.beginner9Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner9Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner9Button.Name = "beginner9Button";
+      this.beginner9Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner9Button.TabIndex = 61;
+      this.beginner9Button.TabStop = true;
+      this.beginner9Button.Text = "Beginner";
+      this.beginner9Button.UseVisualStyleBackColor = true;
+      // 
+      // master10Button
+      // 
+      this.master10Button.AutoSize = true;
+      this.master10Button.ForeColor = System.Drawing.Color.White;
+      this.master10Button.Location = new System.Drawing.Point(0, 4);
+      this.master10Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.master10Button.Name = "master10Button";
+      this.master10Button.Size = new System.Drawing.Size(72, 21);
+      this.master10Button.TabIndex = 63;
+      this.master10Button.Text = "Master";
+      this.master10Button.UseVisualStyleBackColor = true;
+      // 
+      // proficient10Button
+      // 
+      this.proficient10Button.AutoSize = true;
+      this.proficient10Button.ForeColor = System.Drawing.Color.White;
+      this.proficient10Button.Location = new System.Drawing.Point(121, 4);
+      this.proficient10Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.proficient10Button.Name = "proficient10Button";
+      this.proficient10Button.Size = new System.Drawing.Size(88, 21);
+      this.proficient10Button.TabIndex = 64;
+      this.proficient10Button.Text = "Proficient";
+      this.proficient10Button.UseVisualStyleBackColor = true;
+      // 
+      // beginner10Button
+      // 
+      this.beginner10Button.AutoSize = true;
+      this.beginner10Button.Checked = true;
+      this.beginner10Button.ForeColor = System.Drawing.Color.White;
+      this.beginner10Button.Location = new System.Drawing.Point(244, 4);
+      this.beginner10Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.beginner10Button.Name = "beginner10Button";
+      this.beginner10Button.Size = new System.Drawing.Size(86, 21);
+      this.beginner10Button.TabIndex = 65;
+      this.beginner10Button.TabStop = true;
+      this.beginner10Button.Text = "Beginner";
+      this.beginner10Button.UseVisualStyleBackColor = true;
+      // 
+      // skill1ButtonPanel
+      // 
+      this.skill1ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill1ButtonPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.skill1ButtonPanel.Controls.Add(this.master1Button);
+      this.skill1ButtonPanel.Controls.Add(this.beginner1Button);
+      this.skill1ButtonPanel.Controls.Add(this.proficient1Button);
+      this.skill1ButtonPanel.Location = new System.Drawing.Point(560, 209);
+      this.skill1ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill1ButtonPanel.Name = "skill1ButtonPanel";
+      this.skill1ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill1ButtonPanel.TabIndex = 67;
+      // 
+      // skill2ButtonPanel
+      // 
+      this.skill2ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill2ButtonPanel.Controls.Add(this.master2Button);
+      this.skill2ButtonPanel.Controls.Add(this.proficient2Button);
+      this.skill2ButtonPanel.Controls.Add(this.beginner2Button);
+      this.skill2ButtonPanel.Location = new System.Drawing.Point(560, 246);
+      this.skill2ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill2ButtonPanel.Name = "skill2ButtonPanel";
+      this.skill2ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill2ButtonPanel.TabIndex = 68;
+      // 
+      // skill4Box
+      // 
+      this.skill4Box.Location = new System.Drawing.Point(184, 320);
+      this.skill4Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill4Box.MaxLength = 50;
+      this.skill4Box.Name = "skill4Box";
+      this.skill4Box.Size = new System.Drawing.Size(335, 22);
+      this.skill4Box.TabIndex = 28;
+      this.skill4Box.Text = "Enter Fourth Skill";
+      // 
+      // skill3ButtonPanel
+      // 
+      this.skill3ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill3ButtonPanel.Controls.Add(this.master3Button);
+      this.skill3ButtonPanel.Controls.Add(this.proficient3Button);
+      this.skill3ButtonPanel.Controls.Add(this.beginner3Button);
+      this.skill3ButtonPanel.Location = new System.Drawing.Point(560, 283);
+      this.skill3ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill3ButtonPanel.Name = "skill3ButtonPanel";
+      this.skill3ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill3ButtonPanel.TabIndex = 69;
+      // 
+      // skill4ButtonPanel
+      // 
+      this.skill4ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill4ButtonPanel.Controls.Add(this.master4Button);
+      this.skill4ButtonPanel.Controls.Add(this.proficient4Button);
+      this.skill4ButtonPanel.Controls.Add(this.beginner4Button);
+      this.skill4ButtonPanel.Location = new System.Drawing.Point(560, 320);
+      this.skill4ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill4ButtonPanel.Name = "skill4ButtonPanel";
+      this.skill4ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill4ButtonPanel.TabIndex = 70;
+      // 
+      // skill5ButtonPanel
+      // 
+      this.skill5ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill5ButtonPanel.Controls.Add(this.master5Button);
+      this.skill5ButtonPanel.Controls.Add(this.proficient5Button);
+      this.skill5ButtonPanel.Controls.Add(this.beginner5Button);
+      this.skill5ButtonPanel.Location = new System.Drawing.Point(560, 357);
+      this.skill5ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill5ButtonPanel.Name = "skill5ButtonPanel";
+      this.skill5ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill5ButtonPanel.TabIndex = 71;
+      // 
+      // skill6ButtonPanel
+      // 
+      this.skill6ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill6ButtonPanel.Controls.Add(this.master6Button);
+      this.skill6ButtonPanel.Controls.Add(this.proficient6Button);
+      this.skill6ButtonPanel.Controls.Add(this.beginner6Button);
+      this.skill6ButtonPanel.Location = new System.Drawing.Point(560, 394);
+      this.skill6ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill6ButtonPanel.Name = "skill6ButtonPanel";
+      this.skill6ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill6ButtonPanel.TabIndex = 72;
+      // 
+      // skill7ButtonPanel
+      // 
+      this.skill7ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill7ButtonPanel.Controls.Add(this.master7Button);
+      this.skill7ButtonPanel.Controls.Add(this.proficient7Button);
+      this.skill7ButtonPanel.Controls.Add(this.beginner7Button);
+      this.skill7ButtonPanel.Location = new System.Drawing.Point(560, 431);
+      this.skill7ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill7ButtonPanel.Name = "skill7ButtonPanel";
+      this.skill7ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill7ButtonPanel.TabIndex = 73;
+      // 
+      // skill8ButtonPanel
+      // 
+      this.skill8ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill8ButtonPanel.Controls.Add(this.master8Button);
+      this.skill8ButtonPanel.Controls.Add(this.proficient8Button);
+      this.skill8ButtonPanel.Controls.Add(this.beginner8Button);
+      this.skill8ButtonPanel.Location = new System.Drawing.Point(560, 468);
+      this.skill8ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill8ButtonPanel.Name = "skill8ButtonPanel";
+      this.skill8ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill8ButtonPanel.TabIndex = 74;
+      // 
+      // skill10ButtonPanel
+      // 
+      this.skill10ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill10ButtonPanel.Controls.Add(this.master10Button);
+      this.skill10ButtonPanel.Controls.Add(this.proficient10Button);
+      this.skill10ButtonPanel.Controls.Add(this.beginner10Button);
+      this.skill10ButtonPanel.Location = new System.Drawing.Point(560, 542);
+      this.skill10ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill10ButtonPanel.Name = "skill10ButtonPanel";
+      this.skill10ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill10ButtonPanel.TabIndex = 75;
+      // 
+      // skill9ButtonPanel
+      // 
+      this.skill9ButtonPanel.BackColor = System.Drawing.Color.DarkGreen;
+      this.skill9ButtonPanel.Controls.Add(this.master9Button);
+      this.skill9ButtonPanel.Controls.Add(this.proficient9Button);
+      this.skill9ButtonPanel.Controls.Add(this.beginner9Button);
+      this.skill9ButtonPanel.Location = new System.Drawing.Point(560, 505);
+      this.skill9ButtonPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.skill9ButtonPanel.Name = "skill9ButtonPanel";
+      this.skill9ButtonPanel.Size = new System.Drawing.Size(333, 25);
+      this.skill9ButtonPanel.TabIndex = 76;
+      // 
+      // SkillSetForm
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+      this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.ClientSize = new System.Drawing.Size(1045, 690);
+      this.Controls.Add(this.skill9ButtonPanel);
+      this.Controls.Add(this.skill10ButtonPanel);
+      this.Controls.Add(this.skill8ButtonPanel);
+      this.Controls.Add(this.skill7ButtonPanel);
+      this.Controls.Add(this.skill6ButtonPanel);
+      this.Controls.Add(this.skill5ButtonPanel);
+      this.Controls.Add(this.skill4ButtonPanel);
+      this.Controls.Add(this.skill3ButtonPanel);
+      this.Controls.Add(this.skill2ButtonPanel);
+      this.Controls.Add(this.skill1ButtonPanel);
+      this.Controls.Add(this.button1);
+      this.Controls.Add(this.skill10Box);
+      this.Controls.Add(this.skill9Box);
+      this.Controls.Add(this.skill8Box);
+      this.Controls.Add(this.skill7Box);
+      this.Controls.Add(this.skill6Box);
+      this.Controls.Add(this.skill5Box);
+      this.Controls.Add(this.skill4Box);
+      this.Controls.Add(this.skill3Box);
+      this.Controls.Add(this.skill2Box);
+      this.Controls.Add(this.skill1Box);
+      this.Controls.Add(this.proficiencyHeaderLabel);
+      this.Controls.Add(this.skillHeaderLabel);
+      this.Controls.Add(this.skillsetHeaderLabel);
+      this.Controls.Add(this.pictureBox1);
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Name = "SkillSetForm";
+      this.Text = "Agile Development Tools Suite";
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      this.skill1ButtonPanel.ResumeLayout(false);
+      this.skill1ButtonPanel.PerformLayout();
+      this.skill2ButtonPanel.ResumeLayout(false);
+      this.skill2ButtonPanel.PerformLayout();
+      this.skill3ButtonPanel.ResumeLayout(false);
+      this.skill3ButtonPanel.PerformLayout();
+      this.skill4ButtonPanel.ResumeLayout(false);
+      this.skill4ButtonPanel.PerformLayout();
+      this.skill5ButtonPanel.ResumeLayout(false);
+      this.skill5ButtonPanel.PerformLayout();
+      this.skill6ButtonPanel.ResumeLayout(false);
+      this.skill6ButtonPanel.PerformLayout();
+      this.skill7ButtonPanel.ResumeLayout(false);
+      this.skill7ButtonPanel.PerformLayout();
+      this.skill8ButtonPanel.ResumeLayout(false);
+      this.skill8ButtonPanel.PerformLayout();
+      this.skill10ButtonPanel.ResumeLayout(false);
+      this.skill10ButtonPanel.PerformLayout();
+      this.skill9ButtonPanel.ResumeLayout(false);
+      this.skill9ButtonPanel.PerformLayout();
+      this.ResumeLayout(false);
+      this.PerformLayout();
+
+    }
+
+    #endregion
+
+    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.Label skillsetHeaderLabel;
+    private System.Windows.Forms.Label skillHeaderLabel;
+    private System.Windows.Forms.Label proficiencyHeaderLabel;
+    private System.Windows.Forms.TextBox skill1Box;
+    private System.Windows.Forms.TextBox skill2Box;
+    private System.Windows.Forms.TextBox skill3Box;
+    private System.Windows.Forms.RadioButton master1Button;
+    private System.Windows.Forms.RadioButton proficient1Button;
+    private System.Windows.Forms.RadioButton beginner1Button;
+    private System.Windows.Forms.RadioButton master2Button;
+    private System.Windows.Forms.RadioButton proficient2Button;
+    private System.Windows.Forms.RadioButton beginner2Button;
+    private System.Windows.Forms.RadioButton master3Button;
+    private System.Windows.Forms.TextBox skill5Box;
+    private System.Windows.Forms.TextBox skill6Box;
+    private System.Windows.Forms.TextBox skill7Box;
+    private System.Windows.Forms.TextBox skill8Box;
+    private System.Windows.Forms.TextBox skill9Box;
+    private System.Windows.Forms.TextBox skill10Box;
+    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.RadioButton proficient3Button;
+    private System.Windows.Forms.RadioButton beginner3Button;
+    private System.Windows.Forms.RadioButton master4Button;
+    private System.Windows.Forms.RadioButton proficient4Button;
+    private System.Windows.Forms.RadioButton beginner4Button;
+    private System.Windows.Forms.RadioButton master5Button;
+    private System.Windows.Forms.RadioButton proficient5Button;
+    private System.Windows.Forms.RadioButton beginner5Button;
+    private System.Windows.Forms.RadioButton master6Button;
+    private System.Windows.Forms.RadioButton proficient6Button;
+    private System.Windows.Forms.RadioButton beginner6Button;
+    private System.Windows.Forms.RadioButton master7Button;
+    private System.Windows.Forms.RadioButton proficient7Button;
+    private System.Windows.Forms.RadioButton beginner7Button;
+    private System.Windows.Forms.RadioButton master8Button;
+    private System.Windows.Forms.RadioButton proficient8Button;
+    private System.Windows.Forms.RadioButton beginner8Button;
+    private System.Windows.Forms.RadioButton master9Button;
+    private System.Windows.Forms.RadioButton proficient9Button;
+    private System.Windows.Forms.RadioButton beginner9Button;
+    private System.Windows.Forms.RadioButton master10Button;
+    private System.Windows.Forms.RadioButton proficient10Button;
+    private System.Windows.Forms.RadioButton beginner10Button;
+    private System.Windows.Forms.Panel skill1ButtonPanel;
+    private System.Windows.Forms.Panel skill2ButtonPanel;
+    private System.Windows.Forms.TextBox skill4Box;
+    private System.Windows.Forms.Panel skill3ButtonPanel;
+    private System.Windows.Forms.Panel skill4ButtonPanel;
+    private System.Windows.Forms.Panel skill5ButtonPanel;
+    private System.Windows.Forms.Panel skill6ButtonPanel;
+    private System.Windows.Forms.Panel skill7ButtonPanel;
+    private System.Windows.Forms.Panel skill8ButtonPanel;
+    private System.Windows.Forms.Panel skill10ButtonPanel;
+    private System.Windows.Forms.Panel skill9ButtonPanel;
+  }
 }

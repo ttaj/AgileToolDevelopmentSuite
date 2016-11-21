@@ -31,7 +31,7 @@ namespace AgileDevelopmentToolsSuite
 
     }
 
-    char importance = 'T';
+    string importance = "To-Do";
     String userName = "[Not specified]";
 
     private void submitButton_Click(object sender, EventArgs e)
@@ -41,8 +41,8 @@ namespace AgileDevelopmentToolsSuite
 
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -51,7 +51,7 @@ namespace AgileDevelopmentToolsSuite
         MessageBox.Show("Task uploaded database! ");
         try
         {
-          SqlCommand cmd = new SqlCommand("INSERT INTO [Tasks] ([TaskName] ,[UserAssigned], [DateSubmitted], [Importance], [TaskDescription]) VALUES (@TaskName, @UserAssigned, @DateSubmitted, @Importance, @TaskDescription)");
+          SqlCommand cmd = new SqlCommand("INSERT INTO [Tasks] ([TaskName] ,[UserAssigned], [DateSubmitted], [Importance], [TaskDescription], [ProjectGroup]) VALUES (@TaskName, @UserAssigned, @DateSubmitted, @Importance, @TaskDescription, @ProjectGroup)");
           cmd.Connection = db;
           cmd.Parameters.AddWithValue("@TaskName", taskNameTxtBox.Text);
           if(userDesigTxtBox.Text != "")
@@ -61,6 +61,10 @@ namespace AgileDevelopmentToolsSuite
           cmd.Parameters.AddWithValue("@Importance", importance);
           cmd.Parameters.AddWithValue("@DateSubmitted", DateTime.Now);
           cmd.Parameters.AddWithValue("@TaskDescription", taskDescTxtBox.Text);
+          if (userDesigTxtBox.Text != "")
+            cmd.Parameters.AddWithValue("@ProjectGroup", projectGroupTxt.Text);
+          else
+            cmd.Parameters.AddWithValue("@ProjectGroup", "[No Group]");
           cmd.ExecuteNonQuery();
           db.Close();
         }
@@ -85,17 +89,17 @@ namespace AgileDevelopmentToolsSuite
 
     private void curTasksRadio1_CheckedChanged(object sender, EventArgs e)
     {
-      importance = 'U';
+      importance = "Urgent";
     }
 
     private void curTasksRadio2_CheckedChanged(object sender, EventArgs e)
     {
-      importance = 'T';
+      importance = "To-Do";
     }
 
     private void curTasksRadio3_CheckedChanged(object sender, EventArgs e)
     {
-      importance = 'C';
+      importance = "Completed";
     }
 
     private void taskDescTxtBox_TextChanged(object sender, EventArgs e)

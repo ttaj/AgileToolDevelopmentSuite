@@ -49,11 +49,11 @@
       // usernameBox
       // 
       this.usernameBox.Location = new System.Drawing.Point(469, 198);
-      this.usernameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.usernameBox.Margin = new System.Windows.Forms.Padding(4);
       this.usernameBox.MaxLength = 32;
       this.usernameBox.Name = "usernameBox";
       this.usernameBox.Size = new System.Drawing.Size(163, 22);
-      this.usernameBox.TabIndex = 10;
+      this.usernameBox.TabIndex = 0;
       this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
       // 
       // usernameLabel
@@ -73,11 +73,11 @@
       // passwordBox
       // 
       this.passwordBox.Location = new System.Drawing.Point(469, 254);
-      this.passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.passwordBox.Margin = new System.Windows.Forms.Padding(4);
       this.passwordBox.MaxLength = 32;
       this.passwordBox.Name = "passwordBox";
       this.passwordBox.Size = new System.Drawing.Size(163, 22);
-      this.passwordBox.TabIndex = 12;
+      this.passwordBox.TabIndex = 1;
       // 
       // passwordLabel
       // 
@@ -109,7 +109,7 @@
       // profileLinkBox
       // 
       this.profileLinkBox.Location = new System.Drawing.Point(469, 422);
-      this.profileLinkBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.profileLinkBox.Margin = new System.Windows.Forms.Padding(4);
       this.profileLinkBox.MaxLength = 2000;
       this.profileLinkBox.Name = "profileLinkBox";
       this.profileLinkBox.Size = new System.Drawing.Size(163, 22);
@@ -122,7 +122,7 @@
       this.yesProfileButton.AutoSize = true;
       this.yesProfileButton.Checked = true;
       this.yesProfileButton.Location = new System.Drawing.Point(511, 372);
-      this.yesProfileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.yesProfileButton.Margin = new System.Windows.Forms.Padding(4);
       this.yesProfileButton.Name = "yesProfileButton";
       this.yesProfileButton.Size = new System.Drawing.Size(53, 21);
       this.yesProfileButton.TabIndex = 16;
@@ -135,7 +135,7 @@
       // 
       this.noProfileButton.AutoSize = true;
       this.noProfileButton.Location = new System.Drawing.Point(576, 372);
-      this.noProfileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.noProfileButton.Margin = new System.Windows.Forms.Padding(4);
       this.noProfileButton.Name = "noProfileButton";
       this.noProfileButton.Size = new System.Drawing.Size(47, 21);
       this.noProfileButton.TabIndex = 17;
@@ -162,7 +162,7 @@
       this.continueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.continueButton.ForeColor = System.Drawing.Color.White;
       this.continueButton.Location = new System.Drawing.Point(476, 468);
-      this.continueButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.continueButton.Margin = new System.Windows.Forms.Padding(4);
       this.continueButton.Name = "continueButton";
       this.continueButton.Size = new System.Drawing.Size(125, 37);
       this.continueButton.TabIndex = 19;
@@ -174,7 +174,7 @@
       // 
       this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
       this.pictureBox1.Location = new System.Drawing.Point(279, 175);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(429, 350);
       this.pictureBox1.TabIndex = 9;
@@ -188,7 +188,7 @@
       this.nickNameTxt.MaxLength = 32;
       this.nickNameTxt.Name = "nickNameTxt";
       this.nickNameTxt.Size = new System.Drawing.Size(163, 22);
-      this.nickNameTxt.TabIndex = 20;
+      this.nickNameTxt.TabIndex = 2;
       // 
       // nickNameLbl
       // 
@@ -237,7 +237,7 @@
       this.Controls.Add(this.usernameLabel);
       this.Controls.Add(this.usernameBox);
       this.Controls.Add(this.pictureBox1);
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.Name = "DeveloperForm";
       this.Text = "Agile Development Tools Suite";
       this.Load += new System.EventHandler(this.DeveloperForm_Load);

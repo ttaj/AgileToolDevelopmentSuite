@@ -24,10 +24,6 @@ C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\AgileToolDevelo
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\AgileDevelopmentToolsSuite.exe.config
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.exe
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.pdb
-C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDLoginInfo.mdf
-C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDLoginInfo_log.ldf
-C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDatabase.mdf
-C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDatabase_log.ldf
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\AgileDevelopmentToolsSuite.exe
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\AgileDevelopmentToolsSuite.pdb
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.csprojResolveAssemblyReference.cache
@@ -49,3 +45,7 @@ C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\Agile
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\NetworkCommsDotNetComplete.pdb
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\NetworkCommsDotNetComplete.xml
 C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.GroupProfileForm.resources
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDInfo.mdf
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\bin\Release\ADTSDInfo_log.ldf
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.EditProfileForm.resources
+C:\Users\Jon\Documents\Visual Studio 2015\Projects\_Git Projects\Third Try\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.ProfileForm.resources

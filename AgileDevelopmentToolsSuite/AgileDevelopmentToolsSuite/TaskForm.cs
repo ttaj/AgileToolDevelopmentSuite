@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net;
+using System.Drawing;
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class TaskForm : Form
+    public partial class TaskForm : Form
   {
     static int selectedItem = 0; //Global variable
-    static char importance = 'T'; //Global variable
+    static string importance = "To-Do"; //Global variable
     static int sortBy = 0; //Global variable, 0 = date issued, 1 = importance, 2 = taskname, 3 = ID, 4 = Date modified, 5 = User Assigned
+
+    string currentUser = "";
 
     public TaskForm()
     {
@@ -30,7 +27,18 @@ namespace AgileDevelopmentToolsSuite
       this.curTasksComboBox.SelectedIndex = 0;
     }
 
+    public TaskForm(string curUser)
+    {
+      InitializeComponent();
 
+
+      listView1.FullRowSelect = true;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+      curTasksSaveButton.Enabled = false;
+
+      this.curTasksComboBox.SelectedIndex = 0;
+      currentUser = curUser;
+    }
 
 
     private void label1_Click(object sender, EventArgs e)
@@ -80,10 +88,15 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      MainMenuForm m = new MainMenuForm();
-      this.Visible = false;
-      m.ShowDialog();
-      this.Visible = true;
+      MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+      mainMenuForm.Width = this.Width;
+      mainMenuForm.Height = this.Height;
+
+      mainMenuForm.StartPosition = FormStartPosition.Manual;
+      mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+
+      this.Hide();
+      mainMenuForm.Show();
     }
 
     private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,21 +113,21 @@ namespace AgileDevelopmentToolsSuite
 
       if (curTasksRadio1.Checked)  //URGENT CHECKED
       {
-        importance = 'U';
+        importance = "Urgent";
       }
       else if (curTasksRadio2.Checked) //TODO
       {
-        importance = 'T';
+        importance = "To-Do";
       }
       else   //COMPLETED
       {
-        importance = 'C';
+        importance = "Completed";
       }
 
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -156,7 +169,7 @@ namespace AgileDevelopmentToolsSuite
     private void TaskForm_Load(object sender, EventArgs e)
     {
       // TODO: This line of code loads data into the 'aDTSDLoginInfoDataSet.Tasks' table. You can move, or remove it, as needed.
-      this.tasksTableAdapter.Fill(this.aDTSDLoginInfoDataSet.Tasks);
+      //this.tasksTableAdapter.Fill(this.aDTSDLoginInfoDataSet.Tasks);
 
       /*  //PictureLoader from URL
       var request = WebRequest.Create("");
@@ -185,15 +198,15 @@ namespace AgileDevelopmentToolsSuite
         selectedIDLbl.Text = "Selected FORM ID: " + item.SubItems[0].Text;
         curTasksSaveButton.Text = "Save Changes to: " + item.SubItems[0].Text;
         selectedItem = Int32.Parse(item.SubItems[0].Text);
-        importance = Char.Parse(item.SubItems[4].Text);
+        importance = item.SubItems[4].Text;
 
 
 
-        if (item.SubItems[4].Text == "U")  //Listview to modify the radio buttons.
+        if (item.SubItems[4].Text == "Urgent")  //Listview to modify the radio buttons.
         {
           curTasksRadio1.PerformClick();
         }
-        else if (item.SubItems[4].Text == "T") //TODO
+        else if (item.SubItems[4].Text == "To-Do") //TODO
         {
           curTasksRadio2.PerformClick();
         }
@@ -273,8 +286,8 @@ namespace AgileDevelopmentToolsSuite
     {
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -498,6 +511,10 @@ namespace AgileDevelopmentToolsSuite
     }
 
     private void TaskForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      Application.Exit();
+    }
+    private void TaskForm_FormClosed(object sender, FormClosingEventArgs e)
     {
       Application.Exit();
     }

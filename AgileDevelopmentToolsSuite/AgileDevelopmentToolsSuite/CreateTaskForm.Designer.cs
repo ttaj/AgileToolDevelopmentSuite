@@ -41,6 +41,8 @@
       this.taskDescTxtBox = new System.Windows.Forms.RichTextBox();
       this.userDesigLbl = new System.Windows.Forms.Label();
       this.userDesigTxtBox = new System.Windows.Forms.TextBox();
+      this.projectGroupLbl = new System.Windows.Forms.Label();
+      this.projectGroupTxt = new System.Windows.Forms.TextBox();
       this.curTasksRadioGroup.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -50,7 +52,7 @@
       this.submitButton.Location = new System.Drawing.Point(251, 478);
       this.submitButton.Name = "submitButton";
       this.submitButton.Size = new System.Drawing.Size(226, 42);
-      this.submitButton.TabIndex = 0;
+      this.submitButton.TabIndex = 5;
       this.submitButton.Text = "Submit";
       this.submitButton.UseVisualStyleBackColor = true;
       this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -61,7 +63,7 @@
       this.taskNameLbl.BackColor = System.Drawing.Color.Transparent;
       this.taskNameLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.taskNameLbl.ForeColor = System.Drawing.Color.White;
-      this.taskNameLbl.Location = new System.Drawing.Point(12, 120);
+      this.taskNameLbl.Location = new System.Drawing.Point(14, 100);
       this.taskNameLbl.Name = "taskNameLbl";
       this.taskNameLbl.Size = new System.Drawing.Size(110, 24);
       this.taskNameLbl.TabIndex = 1;
@@ -93,10 +95,10 @@
       // 
       // taskNameTxtBox
       // 
-      this.taskNameTxtBox.Location = new System.Drawing.Point(198, 120);
+      this.taskNameTxtBox.Location = new System.Drawing.Point(198, 102);
       this.taskNameTxtBox.Name = "taskNameTxtBox";
       this.taskNameTxtBox.Size = new System.Drawing.Size(356, 22);
-      this.taskNameTxtBox.TabIndex = 4;
+      this.taskNameTxtBox.TabIndex = 0;
       this.taskNameTxtBox.TextChanged += new System.EventHandler(this.taskNameTxtBox_TextChanged);
       // 
       // curTasksRadioGroup
@@ -145,7 +147,7 @@
       this.curTasksRadio2.Location = new System.Drawing.Point(91, 10);
       this.curTasksRadio2.Name = "curTasksRadio2";
       this.curTasksRadio2.Size = new System.Drawing.Size(75, 21);
-      this.curTasksRadio2.TabIndex = 10;
+      this.curTasksRadio2.TabIndex = 2;
       this.curTasksRadio2.TabStop = true;
       this.curTasksRadio2.Text = "TO-DO";
       this.curTasksRadio2.UseVisualStyleBackColor = true;
@@ -156,7 +158,7 @@
       this.taskDescTxtBox.Location = new System.Drawing.Point(134, 291);
       this.taskDescTxtBox.Name = "taskDescTxtBox";
       this.taskDescTxtBox.Size = new System.Drawing.Size(551, 166);
-      this.taskDescTxtBox.TabIndex = 14;
+      this.taskDescTxtBox.TabIndex = 4;
       this.taskDescTxtBox.Text = "(Insert Description)";
       this.taskDescTxtBox.TextChanged += new System.EventHandler(this.taskDescTxtBox_TextChanged);
       // 
@@ -177,7 +179,26 @@
       this.userDesigTxtBox.Location = new System.Drawing.Point(198, 219);
       this.userDesigTxtBox.Name = "userDesigTxtBox";
       this.userDesigTxtBox.Size = new System.Drawing.Size(356, 22);
-      this.userDesigTxtBox.TabIndex = 16;
+      this.userDesigTxtBox.TabIndex = 3;
+      // 
+      // projectGroupLbl
+      // 
+      this.projectGroupLbl.AutoSize = true;
+      this.projectGroupLbl.BackColor = System.Drawing.Color.Transparent;
+      this.projectGroupLbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.projectGroupLbl.ForeColor = System.Drawing.Color.White;
+      this.projectGroupLbl.Location = new System.Drawing.Point(14, 133);
+      this.projectGroupLbl.Name = "projectGroupLbl";
+      this.projectGroupLbl.Size = new System.Drawing.Size(149, 24);
+      this.projectGroupLbl.TabIndex = 17;
+      this.projectGroupLbl.Text = "Project Group #:";
+      // 
+      // projectGroupTxt
+      // 
+      this.projectGroupTxt.Location = new System.Drawing.Point(198, 135);
+      this.projectGroupTxt.Name = "projectGroupTxt";
+      this.projectGroupTxt.Size = new System.Drawing.Size(102, 22);
+      this.projectGroupTxt.TabIndex = 1;
       // 
       // CreateTaskForm
       // 
@@ -186,6 +207,8 @@
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(717, 532);
+      this.Controls.Add(this.projectGroupTxt);
+      this.Controls.Add(this.projectGroupLbl);
       this.Controls.Add(this.userDesigTxtBox);
       this.Controls.Add(this.userDesigLbl);
       this.Controls.Add(this.taskDescTxtBox);
@@ -219,5 +242,7 @@
     private System.Windows.Forms.RichTextBox taskDescTxtBox;
     private System.Windows.Forms.Label userDesigLbl;
     private System.Windows.Forms.TextBox userDesigTxtBox;
+    private System.Windows.Forms.Label projectGroupLbl;
+    private System.Windows.Forms.TextBox projectGroupTxt;
   }
 }

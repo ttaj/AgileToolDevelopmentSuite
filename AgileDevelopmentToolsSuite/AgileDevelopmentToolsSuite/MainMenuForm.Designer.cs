@@ -46,8 +46,31 @@
       this.tabPage1SandBox = new System.Windows.Forms.TabPage();
       this.tabPage2TimeLine = new System.Windows.Forms.TabPage();
       this.tabControlLabel = new System.Windows.Forms.Label();
+      this.createSuggestionButton = new System.Windows.Forms.Button();
+      this.deleteSuggestionButton = new System.Windows.Forms.Button();
+      this.suggestionTxtBox = new System.Windows.Forms.RichTextBox();
+      this.listView2 = new System.Windows.Forms.ListView();
+      this.sandBoxDescLabel = new System.Windows.Forms.Label();
+      this.upvoteButton = new System.Windows.Forms.Button();
+      this.sandBoxVoteLabel = new System.Windows.Forms.Label();
+      this.downvoteButton = new System.Windows.Forms.Button();
+      this.createSuggestionPanel = new System.Windows.Forms.Panel();
+      this.cancelCreationButton = new System.Windows.Forms.Button();
+      this.suggestionNameLabel = new System.Windows.Forms.Label();
+      this.suggestionNameTextBox = new System.Windows.Forms.TextBox();
+      this.suggestionDescLabel = new System.Windows.Forms.Label();
+      this.createSuggestionDescTextBox = new System.Windows.Forms.RichTextBox();
+      this.acceptSuggestionButton = new System.Windows.Forms.Button();
+      this.createSuggestionLabel = new System.Windows.Forms.Label();
+      this.confirmDeletePanel = new System.Windows.Forms.Panel();
+      this.confirmationDeleteLabel = new System.Windows.Forms.Label();
+      this.yesButton = new System.Windows.Forms.Button();
+      this.noButton = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
       this.tabControl1.SuspendLayout();
+      this.tabPage1SandBox.SuspendLayout();
+      this.createSuggestionPanel.SuspendLayout();
+      this.confirmDeletePanel.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuGroupNameLabel
@@ -229,17 +252,28 @@
       // tabPage1SandBox
       // 
       this.tabPage1SandBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+      this.tabPage1SandBox.Controls.Add(this.confirmDeletePanel);
+      this.tabPage1SandBox.Controls.Add(this.createSuggestionPanel);
+      this.tabPage1SandBox.Controls.Add(this.downvoteButton);
+      this.tabPage1SandBox.Controls.Add(this.sandBoxVoteLabel);
+      this.tabPage1SandBox.Controls.Add(this.upvoteButton);
+      this.tabPage1SandBox.Controls.Add(this.sandBoxDescLabel);
+      this.tabPage1SandBox.Controls.Add(this.listView2);
+      this.tabPage1SandBox.Controls.Add(this.suggestionTxtBox);
+      this.tabPage1SandBox.Controls.Add(this.deleteSuggestionButton);
+      this.tabPage1SandBox.Controls.Add(this.createSuggestionButton);
       this.tabPage1SandBox.Location = new System.Drawing.Point(4, 28);
       this.tabPage1SandBox.Name = "tabPage1SandBox";
       this.tabPage1SandBox.Size = new System.Drawing.Size(615, 406);
       this.tabPage1SandBox.TabIndex = 0;
       this.tabPage1SandBox.Text = "Sandbox             ";
+      this.tabPage1SandBox.Click += new System.EventHandler(this.tabPage1SandBox_Click);
       // 
       // tabPage2TimeLine
       // 
       this.tabPage2TimeLine.Location = new System.Drawing.Point(4, 28);
       this.tabPage2TimeLine.Name = "tabPage2TimeLine";
-      this.tabPage2TimeLine.Size = new System.Drawing.Size(675, 406);
+      this.tabPage2TimeLine.Size = new System.Drawing.Size(615, 406);
       this.tabPage2TimeLine.TabIndex = 1;
       this.tabPage2TimeLine.Text = "Timeline             ";
       this.tabPage2TimeLine.UseVisualStyleBackColor = true;
@@ -250,11 +284,227 @@
       this.tabControlLabel.BackColor = System.Drawing.Color.Transparent;
       this.tabControlLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tabControlLabel.ForeColor = System.Drawing.Color.White;
-      this.tabControlLabel.Location = new System.Drawing.Point(347, 124);
+      this.tabControlLabel.Location = new System.Drawing.Point(407, 124);
       this.tabControlLabel.Name = "tabControlLabel";
       this.tabControlLabel.Size = new System.Drawing.Size(100, 18);
       this.tabControlLabel.TabIndex = 14;
       this.tabControlLabel.Text = "Select View:";
+      // 
+      // createSuggestionButton
+      // 
+      this.createSuggestionButton.BackColor = System.Drawing.Color.GreenYellow;
+      this.createSuggestionButton.Location = new System.Drawing.Point(3, 366);
+      this.createSuggestionButton.Name = "createSuggestionButton";
+      this.createSuggestionButton.Size = new System.Drawing.Size(310, 37);
+      this.createSuggestionButton.TabIndex = 0;
+      this.createSuggestionButton.Text = "Create Suggestion";
+      this.createSuggestionButton.UseVisualStyleBackColor = false;
+      this.createSuggestionButton.Click += new System.EventHandler(this.createSuggestionButton_Click_1);
+      // 
+      // deleteSuggestionButton
+      // 
+      this.deleteSuggestionButton.BackColor = System.Drawing.Color.Firebrick;
+      this.deleteSuggestionButton.ForeColor = System.Drawing.Color.White;
+      this.deleteSuggestionButton.Location = new System.Drawing.Point(313, 366);
+      this.deleteSuggestionButton.Name = "deleteSuggestionButton";
+      this.deleteSuggestionButton.Size = new System.Drawing.Size(302, 37);
+      this.deleteSuggestionButton.TabIndex = 1;
+      this.deleteSuggestionButton.Text = "Delete Selected Suggestion";
+      this.deleteSuggestionButton.UseVisualStyleBackColor = false;
+      this.deleteSuggestionButton.Click += new System.EventHandler(this.deleteSuggestionButton_Click);
+      // 
+      // suggestionTxtBox
+      // 
+      this.suggestionTxtBox.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.suggestionTxtBox.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.suggestionTxtBox.Location = new System.Drawing.Point(3, 227);
+      this.suggestionTxtBox.Name = "suggestionTxtBox";
+      this.suggestionTxtBox.Size = new System.Drawing.Size(609, 133);
+      this.suggestionTxtBox.TabIndex = 2;
+      this.suggestionTxtBox.Text = "";
+      this.suggestionTxtBox.TextChanged += new System.EventHandler(this.suggestionTxtBox_TextChanged);
+      // 
+      // listView2
+      // 
+      this.listView2.BackColor = System.Drawing.SystemColors.Control;
+      this.listView2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.listView2.Location = new System.Drawing.Point(3, 3);
+      this.listView2.Name = "listView2";
+      this.listView2.Size = new System.Drawing.Size(480, 193);
+      this.listView2.TabIndex = 3;
+      this.listView2.UseCompatibleStateImageBehavior = false;
+      this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged_1);
+      // 
+      // sandBoxDescLabel
+      // 
+      this.sandBoxDescLabel.AutoSize = true;
+      this.sandBoxDescLabel.Location = new System.Drawing.Point(4, 204);
+      this.sandBoxDescLabel.Name = "sandBoxDescLabel";
+      this.sandBoxDescLabel.Size = new System.Drawing.Size(175, 19);
+      this.sandBoxDescLabel.TabIndex = 4;
+      this.sandBoxDescLabel.Text = "Suggestion Description:";
+      // 
+      // upvoteButton
+      // 
+      this.upvoteButton.BackColor = System.Drawing.Color.GreenYellow;
+      this.upvoteButton.Location = new System.Drawing.Point(489, 30);
+      this.upvoteButton.Name = "upvoteButton";
+      this.upvoteButton.Size = new System.Drawing.Size(122, 89);
+      this.upvoteButton.TabIndex = 5;
+      this.upvoteButton.Text = "Upvote";
+      this.upvoteButton.UseVisualStyleBackColor = false;
+      this.upvoteButton.Click += new System.EventHandler(this.upvoteButton_Click);
+      // 
+      // sandBoxVoteLabel
+      // 
+      this.sandBoxVoteLabel.AutoSize = true;
+      this.sandBoxVoteLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sandBoxVoteLabel.Location = new System.Drawing.Point(489, 8);
+      this.sandBoxVoteLabel.Name = "sandBoxVoteLabel";
+      this.sandBoxVoteLabel.Size = new System.Drawing.Size(106, 19);
+      this.sandBoxVoteLabel.TabIndex = 6;
+      this.sandBoxVoteLabel.Text = "Vote on Idea";
+      // 
+      // downvoteButton
+      // 
+      this.downvoteButton.BackColor = System.Drawing.Color.Firebrick;
+      this.downvoteButton.ForeColor = System.Drawing.Color.White;
+      this.downvoteButton.Location = new System.Drawing.Point(489, 119);
+      this.downvoteButton.Name = "downvoteButton";
+      this.downvoteButton.Size = new System.Drawing.Size(122, 77);
+      this.downvoteButton.TabIndex = 7;
+      this.downvoteButton.Text = "DownVote";
+      this.downvoteButton.UseVisualStyleBackColor = false;
+      this.downvoteButton.Click += new System.EventHandler(this.downvoteButton_Click);
+      // 
+      // createSuggestionPanel
+      // 
+      this.createSuggestionPanel.BackColor = System.Drawing.Color.YellowGreen;
+      this.createSuggestionPanel.Controls.Add(this.createSuggestionLabel);
+      this.createSuggestionPanel.Controls.Add(this.acceptSuggestionButton);
+      this.createSuggestionPanel.Controls.Add(this.createSuggestionDescTextBox);
+      this.createSuggestionPanel.Controls.Add(this.suggestionDescLabel);
+      this.createSuggestionPanel.Controls.Add(this.suggestionNameTextBox);
+      this.createSuggestionPanel.Controls.Add(this.suggestionNameLabel);
+      this.createSuggestionPanel.Controls.Add(this.cancelCreationButton);
+      this.createSuggestionPanel.Location = new System.Drawing.Point(3, 202);
+      this.createSuggestionPanel.Name = "createSuggestionPanel";
+      this.createSuggestionPanel.Size = new System.Drawing.Size(609, 201);
+      this.createSuggestionPanel.TabIndex = 8;
+      this.createSuggestionPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.createSuggestionPanel_Paint);
+      // 
+      // cancelCreationButton
+      // 
+      this.cancelCreationButton.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.cancelCreationButton.Location = new System.Drawing.Point(517, 3);
+      this.cancelCreationButton.Name = "cancelCreationButton";
+      this.cancelCreationButton.Size = new System.Drawing.Size(91, 31);
+      this.cancelCreationButton.TabIndex = 0;
+      this.cancelCreationButton.Text = "Cancel";
+      this.cancelCreationButton.UseVisualStyleBackColor = false;
+      this.cancelCreationButton.Click += new System.EventHandler(this.cancelCreationButton_Click);
+      // 
+      // suggestionNameLabel
+      // 
+      this.suggestionNameLabel.AutoSize = true;
+      this.suggestionNameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.suggestionNameLabel.Location = new System.Drawing.Point(3, 48);
+      this.suggestionNameLabel.Name = "suggestionNameLabel";
+      this.suggestionNameLabel.Size = new System.Drawing.Size(137, 19);
+      this.suggestionNameLabel.TabIndex = 9;
+      this.suggestionNameLabel.Text = "Suggestion Name:";
+      // 
+      // suggestionNameTextBox
+      // 
+      this.suggestionNameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.suggestionNameTextBox.Location = new System.Drawing.Point(185, 42);
+      this.suggestionNameTextBox.Name = "suggestionNameTextBox";
+      this.suggestionNameTextBox.Size = new System.Drawing.Size(365, 27);
+      this.suggestionNameTextBox.TabIndex = 10;
+      // 
+      // suggestionDescLabel
+      // 
+      this.suggestionDescLabel.AutoSize = true;
+      this.suggestionDescLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+      this.suggestionDescLabel.Location = new System.Drawing.Point(3, 91);
+      this.suggestionDescLabel.Name = "suggestionDescLabel";
+      this.suggestionDescLabel.Size = new System.Drawing.Size(175, 19);
+      this.suggestionDescLabel.TabIndex = 11;
+      this.suggestionDescLabel.Text = "Suggestion Description:";
+      // 
+      // createSuggestionDescTextBox
+      // 
+      this.createSuggestionDescTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.createSuggestionDescTextBox.Location = new System.Drawing.Point(185, 91);
+      this.createSuggestionDescTextBox.Name = "createSuggestionDescTextBox";
+      this.createSuggestionDescTextBox.Size = new System.Drawing.Size(365, 107);
+      this.createSuggestionDescTextBox.TabIndex = 11;
+      this.createSuggestionDescTextBox.Text = "";
+      // 
+      // acceptSuggestionButton
+      // 
+      this.acceptSuggestionButton.BackColor = System.Drawing.Color.Chartreuse;
+      this.acceptSuggestionButton.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.acceptSuggestionButton.Location = new System.Drawing.Point(556, 92);
+      this.acceptSuggestionButton.Name = "acceptSuggestionButton";
+      this.acceptSuggestionButton.Size = new System.Drawing.Size(49, 106);
+      this.acceptSuggestionButton.TabIndex = 12;
+      this.acceptSuggestionButton.Text = "✔";
+      this.acceptSuggestionButton.UseVisualStyleBackColor = false;
+      this.acceptSuggestionButton.Click += new System.EventHandler(this.acceptSuggestionButton_Click);
+      // 
+      // createSuggestionLabel
+      // 
+      this.createSuggestionLabel.AutoSize = true;
+      this.createSuggestionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.createSuggestionLabel.Location = new System.Drawing.Point(7, 8);
+      this.createSuggestionLabel.Name = "createSuggestionLabel";
+      this.createSuggestionLabel.Size = new System.Drawing.Size(204, 26);
+      this.createSuggestionLabel.TabIndex = 13;
+      this.createSuggestionLabel.Text = "Create a Suggestion";
+      // 
+      // confirmDeletePanel
+      // 
+      this.confirmDeletePanel.Controls.Add(this.noButton);
+      this.confirmDeletePanel.Controls.Add(this.yesButton);
+      this.confirmDeletePanel.Controls.Add(this.confirmationDeleteLabel);
+      this.confirmDeletePanel.Location = new System.Drawing.Point(188, 102);
+      this.confirmDeletePanel.Name = "confirmDeletePanel";
+      this.confirmDeletePanel.Size = new System.Drawing.Size(232, 134);
+      this.confirmDeletePanel.TabIndex = 9;
+      // 
+      // confirmationDeleteLabel
+      // 
+      this.confirmationDeleteLabel.AutoSize = true;
+      this.confirmationDeleteLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.confirmationDeleteLabel.Location = new System.Drawing.Point(26, 17);
+      this.confirmationDeleteLabel.Name = "confirmationDeleteLabel";
+      this.confirmationDeleteLabel.Size = new System.Drawing.Size(184, 26);
+      this.confirmationDeleteLabel.TabIndex = 0;
+      this.confirmationDeleteLabel.Text = "Confirm deletion?";
+      // 
+      // yesButton
+      // 
+      this.yesButton.BackColor = System.Drawing.Color.GreenYellow;
+      this.yesButton.Location = new System.Drawing.Point(14, 73);
+      this.yesButton.Name = "yesButton";
+      this.yesButton.Size = new System.Drawing.Size(82, 48);
+      this.yesButton.TabIndex = 1;
+      this.yesButton.Text = "Yes";
+      this.yesButton.UseVisualStyleBackColor = false;
+      this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
+      // 
+      // noButton
+      // 
+      this.noButton.BackColor = System.Drawing.Color.Firebrick;
+      this.noButton.ForeColor = System.Drawing.Color.White;
+      this.noButton.Location = new System.Drawing.Point(102, 73);
+      this.noButton.Name = "noButton";
+      this.noButton.Size = new System.Drawing.Size(117, 48);
+      this.noButton.TabIndex = 2;
+      this.noButton.Text = "No";
+      this.noButton.UseVisualStyleBackColor = false;
+      this.noButton.Click += new System.EventHandler(this.noButton_Click);
       // 
       // MainMenuForm
       // 
@@ -283,6 +533,12 @@
       this.Load += new System.EventHandler(this.MainMenuForm_Load);
       this.panel1.ResumeLayout(false);
       this.tabControl1.ResumeLayout(false);
+      this.tabPage1SandBox.ResumeLayout(false);
+      this.tabPage1SandBox.PerformLayout();
+      this.createSuggestionPanel.ResumeLayout(false);
+      this.createSuggestionPanel.PerformLayout();
+      this.confirmDeletePanel.ResumeLayout(false);
+      this.confirmDeletePanel.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -307,5 +563,25 @@
     private System.Windows.Forms.TabPage tabPage1SandBox;
     private System.Windows.Forms.TabPage tabPage2TimeLine;
     private System.Windows.Forms.Label tabControlLabel;
+    private System.Windows.Forms.RichTextBox suggestionTxtBox;
+    private System.Windows.Forms.Button deleteSuggestionButton;
+    private System.Windows.Forms.Button createSuggestionButton;
+    private System.Windows.Forms.ListView listView2;
+    private System.Windows.Forms.Button downvoteButton;
+    private System.Windows.Forms.Label sandBoxVoteLabel;
+    private System.Windows.Forms.Button upvoteButton;
+    private System.Windows.Forms.Label sandBoxDescLabel;
+    private System.Windows.Forms.Panel createSuggestionPanel;
+    private System.Windows.Forms.Label suggestionNameLabel;
+    private System.Windows.Forms.Button cancelCreationButton;
+    private System.Windows.Forms.Label createSuggestionLabel;
+    private System.Windows.Forms.Button acceptSuggestionButton;
+    private System.Windows.Forms.RichTextBox createSuggestionDescTextBox;
+    private System.Windows.Forms.Label suggestionDescLabel;
+    private System.Windows.Forms.TextBox suggestionNameTextBox;
+    private System.Windows.Forms.Panel confirmDeletePanel;
+    private System.Windows.Forms.Button noButton;
+    private System.Windows.Forms.Button yesButton;
+    private System.Windows.Forms.Label confirmationDeleteLabel;
   }
 }

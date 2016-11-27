@@ -14,11 +14,14 @@ namespace AgileDevelopmentToolsSuite
 {
   public partial class MainMenuForm : Form
   {
+    String listView2SelectedName = "";
     String currentUser = "";
+    int listView2SelectedID = 0;
+    
+
     public MainMenuForm()
     {
       InitializeComponent();
-      listView1.FullRowSelect = true;
     }
 
     public MainMenuForm(String curUser)
@@ -26,7 +29,7 @@ namespace AgileDevelopmentToolsSuite
       InitializeComponent();
       currentUser = curUser;
       loggedInTextBox.Text = curUser;
-      listView1.FullRowSelect = true;
+      
     }
 
     string numUrgentTasks = "";
@@ -35,8 +38,14 @@ namespace AgileDevelopmentToolsSuite
     {
       panel1.Hide();
       resetListView();
-
-
+      resetListView2();
+      listView1.FullRowSelect = true;
+      listView2.FullRowSelect = true;
+      createSuggestionPanel.Visible = false;
+      confirmDeletePanel.Visible = false;
+      deleteSuggestionButton.Enabled = false;
+      upvoteButton.Enabled = false;
+      downvoteButton.Enabled = false;
 
       SqlConnection db;
       String version = "MSSQLLocalDB";
@@ -49,8 +58,6 @@ namespace AgileDevelopmentToolsSuite
         db.Open();
         try
         {
-
-          DataSet ds = new DataSet();
 
           string saveChanges = @"SELECT COUNT(Importance) FROM [Tasks] Where Importance = 'Urgent'";
 
@@ -276,6 +283,82 @@ namespace AgileDevelopmentToolsSuite
       t.Show();
     }
 
+    private void resetListView2()
+    {
+      SqlConnection db;
+      String version = "MSSQLLocalDB";
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+      db = new SqlConnection(connectionString);
+      try
+      {
+        db.Open();
+        //MessageBox.Show("Connection Successful! ");
+        try
+        {
+
+          DataSet ds = new DataSet();
+          string listTasksCmd = "";
+
+
+          listTasksCmd = "SELECT SuggestionName, Suggestion, Votes, ID FROM [Sandbox]";
+
+
+
+          SqlCommand cmd = new SqlCommand();
+          cmd.Connection = db;
+
+
+          cmd.CommandText = listTasksCmd;
+          var reader = cmd.ExecuteReader();
+
+          // Use list to generate a display for the listbox (to carry info)
+          List<string[]> listTasks = new List<string[]>();
+
+          //Iterate through all the values of listed values from query
+          int index = 0;
+          while (reader.Read())
+          {
+            String[] colFields = { reader.GetString(0), reader.GetString(1), reader.GetInt32(2).ToString(), reader.GetInt32(3).ToString() };
+
+            listTasks.Add(colFields);
+          }
+
+          // Clear the ListView control
+          listView2.Items.Clear();
+          listView2.Columns.Clear();
+
+          // Set the view to show details.
+          listView2.View = View.Details;
+          listView2.Columns.Add("Suggestion", 300, HorizontalAlignment.Left);    //Add columns to listview1
+          listView2.Columns.Add("", 0, HorizontalAlignment.Left);
+          listView2.Columns.Add("Votes", 50, HorizontalAlignment.Left);
+          listView2.Columns.Add("", 0, HorizontalAlignment.Left);
+
+
+          for (int i = 0; i < listTasks.Count; i++)      //Add items into listView box
+          {
+            var listViewItem = new ListViewItem(listTasks[i]);
+
+            listView2.Items.Add(listViewItem);
+          }
+
+          reader.Close();
+          db.Close();
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.Message);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+    }
+
+
     private void groupProfileButton_Click(object sender, EventArgs e)
     {
       this.Hide();
@@ -308,5 +391,315 @@ namespace AgileDevelopmentToolsSuite
       t.Closed += (s, args) => this.Close();
       t.Show();
     }
-  }
+
+    private void suggestionTxtBox_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void listView2_SelectedIndexChanged_1(object sender, EventArgs e)
+    {
+      //Get the value of the listview
+      if (listView2.SelectedItems.Count > 0)  //Make sure we do not crash as the count cannot be <= 0 aka null
+      {
+        ListViewItem item = listView2.SelectedItems[0];
+        listView2SelectedID = Int32.Parse(item.SubItems[3].Text); //Get suggestion id (not seeable to user)
+        listView2SelectedName = item.SubItems[0].Text;
+
+        suggestionTxtBox.Text = item.SubItems[1].Text;
+        deleteSuggestionButton.Enabled = true;
+        upvoteButton.Enabled = true;
+        downvoteButton.Enabled = true;
+      }
+      else
+      {
+        deleteSuggestionButton.Enabled = false;
+        upvoteButton.Enabled = false;
+        downvoteButton.Enabled = false;
+      }
+
+      }
+
+    private void cancelCreationButton_Click(object sender, EventArgs e)
+    {
+      createSuggestionPanel.Hide();
+      suggestionNameTextBox.Text = "";
+      createSuggestionDescTextBox.Text = "";
+    }
+
+    private void createSuggestionPanel_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void tabPage1SandBox_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void createSuggestionButton_Click_1(object sender, EventArgs e)
+    {
+      createSuggestionPanel.Visible = true;
+    }
+
+    private void deleteSuggestionButton_Click(object sender, EventArgs e)
+    {
+      confirmDeletePanel.Visible = true;
+      createSuggestionButton.Enabled = false;
+      upvoteButton.Enabled = false;
+      downvoteButton.Enabled = false;
+      listView2.Enabled = false;
+      deleteSuggestionButton.Enabled = false;
+    }
+
+    private void acceptSuggestionButton_Click(object sender, EventArgs e)
+    {
+      createSuggestionPanel.Hide();
+
+      SqlConnection db;
+      String version = "MSSQLLocalDB";
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+      db = new SqlConnection(connectionString);
+      try
+      {
+        db.Open();
+        try
+        {
+
+          SqlCommand cmd = new SqlCommand("INSERT INTO [Sandbox] ([SuggestionName] ,[Suggestion], [Votes]) VALUES (@name, @desc, @votes)");
+          cmd.Connection = db;
+
+          cmd.Parameters.AddWithValue("@name", suggestionNameTextBox.Text);
+          cmd.Parameters.AddWithValue("@desc", createSuggestionDescTextBox.Text);
+          cmd.Parameters.AddWithValue("@votes", 0);
+          cmd.ExecuteNonQuery();
+
+          db.Close();
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.Message);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+
+      resetListView2();
+    }
+
+    private void yesButton_Click(object sender, EventArgs e)
+    {
+      SqlConnection db;
+      String version = "MSSQLLocalDB";
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+      db = new SqlConnection(connectionString);
+      try
+      {
+        db.Open();
+        try
+        {
+
+          SqlCommand cmd = new SqlCommand("DELETE FROM Sandbox WHERE ID = @id");
+          cmd.Connection = db;
+
+          cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+
+          cmd.ExecuteNonQuery();
+
+          db.Close();
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.Message);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+
+
+
+      confirmDeletePanel.Visible = false;
+      createSuggestionButton.Enabled = true;
+      upvoteButton.Enabled = true;
+      downvoteButton.Enabled = true;
+      listView2.Enabled = true;
+      deleteSuggestionButton.Enabled = true;
+
+      resetListView2();
+    }
+
+    private void noButton_Click(object sender, EventArgs e)
+    {
+      confirmDeletePanel.Visible = false;
+      createSuggestionButton.Enabled = true;
+      upvoteButton.Enabled = true;
+      downvoteButton.Enabled = true;
+      listView2.Enabled = true;
+      deleteSuggestionButton.Enabled = true;
+    }
+
+    private void upvoteButton_Click(object sender, EventArgs e)
+    {
+      SqlConnection db;
+      String version = "MSSQLLocalDB";
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+      db = new SqlConnection(connectionString);
+      try
+      {
+        db.Open();
+        try
+        {
+          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = 1 AND SuggestionName = @suggestionname");
+          checkIfVoted.Connection = db;
+          checkIfVoted.Parameters.AddWithValue("@username", currentUser);
+          checkIfVoted.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
+          object didVote = checkIfVoted.ExecuteScalar();
+
+          string result = Convert.ToString(didVote);
+
+          if (!result.Equals(""))
+          {
+            MessageBox.Show("You upvoted already!");
+          }
+          else
+          {
+            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username");
+            checkIfVotedNo.Connection = db;
+            checkIfVotedNo.Parameters.AddWithValue("@username", currentUser);
+            object didVoteNo = checkIfVotedNo.ExecuteScalar();
+            string result2 = Convert.ToString(didVoteNo);
+            if (result2.Equals("-1")) //You voted no, but changed your mind
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes + 2) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+            else
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes + 1) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("INSERT INTO [SandboxVote] ([Username] ,[SuggestionName], [Voted]) VALUES (@username,@suggestionname,@voted)");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@voted", 1);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+
+            
+          }
+
+          db.Close();
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.Message);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+
+      resetListView2();
+    }
+
+    private void downvoteButton_Click(object sender, EventArgs e)
+    {
+      SqlConnection db;
+      String version = "MSSQLLocalDB";
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+      db = new SqlConnection(connectionString);
+      try
+      {
+        db.Open();
+        try
+        {
+          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = -1 AND SuggestionName = @suggestionname");
+          checkIfVoted.Connection = db;
+          checkIfVoted.Parameters.AddWithValue("@username", currentUser);
+          checkIfVoted.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
+          object didVote = checkIfVoted.ExecuteScalar();
+
+          string result = Convert.ToString(didVote);
+
+          if (!result.Equals(""))
+          {
+            MessageBox.Show("You downvoted already!");
+          }
+          else
+          {
+            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username");
+            checkIfVotedNo.Connection = db;
+            checkIfVotedNo.Parameters.AddWithValue("@username", currentUser);
+            object didVoteNo = checkIfVotedNo.ExecuteScalar();
+            string result2 = Convert.ToString(didVoteNo);
+            if (result2.Equals("1")) //You voted yes, but changed your mind
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes - 2) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+            else
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes - 1) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("INSERT INTO [SandboxVote] ([Username] ,[SuggestionName], [Voted]) VALUES (@username,@suggestionname,@voted)");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@voted", -1);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+
+
+          }
+
+          db.Close();
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.Message);
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+
+      resetListView2();
+    }
+
+
+  } //End of class
 }

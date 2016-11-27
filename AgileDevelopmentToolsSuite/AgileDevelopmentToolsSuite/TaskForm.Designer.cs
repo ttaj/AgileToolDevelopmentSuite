@@ -49,6 +49,7 @@
             this.curTaskDescLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.curTasksLabel = new System.Windows.Forms.Label();
+            this.testLabel = new System.Windows.Forms.Label();
             this.curTasksRadioGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setSprintNumBox)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             "(Show All Tasks)",
             "(Show Non-Sprints)"});
             this.curTasksComboBox.Location = new System.Drawing.Point(206, 62);
-            this.curTasksComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksComboBox.MaxDropDownItems = 99;
             this.curTasksComboBox.Name = "curTasksComboBox";
             this.curTasksComboBox.Size = new System.Drawing.Size(102, 21);
@@ -104,7 +105,7 @@
             this.curTaskDescriptions.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.curTaskDescriptions.ForeColor = System.Drawing.Color.Black;
             this.curTaskDescriptions.Location = new System.Drawing.Point(9, 374);
-            this.curTaskDescriptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTaskDescriptions.Margin = new System.Windows.Forms.Padding(2);
             this.curTaskDescriptions.Name = "curTaskDescriptions";
             this.curTaskDescriptions.Size = new System.Drawing.Size(766, 177);
             this.curTaskDescriptions.TabIndex = 6;
@@ -118,7 +119,7 @@
             this.curTasksSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.curTasksSaveButton.ForeColor = System.Drawing.Color.White;
             this.curTasksSaveButton.Location = new System.Drawing.Point(536, 348);
-            this.curTasksSaveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksSaveButton.Name = "curTasksSaveButton";
             this.curTasksSaveButton.Size = new System.Drawing.Size(239, 24);
             this.curTasksSaveButton.TabIndex = 8;
@@ -132,7 +133,7 @@
             this.curTasksRadio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.curTasksRadio1.ForeColor = System.Drawing.Color.Snow;
             this.curTasksRadio1.Location = new System.Drawing.Point(4, 8);
-            this.curTasksRadio1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksRadio1.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksRadio1.Name = "curTasksRadio1";
             this.curTasksRadio1.Size = new System.Drawing.Size(63, 17);
             this.curTasksRadio1.TabIndex = 9;
@@ -146,7 +147,7 @@
             this.curTasksRadio2.AutoSize = true;
             this.curTasksRadio2.ForeColor = System.Drawing.Color.Snow;
             this.curTasksRadio2.Location = new System.Drawing.Point(68, 8);
-            this.curTasksRadio2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksRadio2.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksRadio2.Name = "curTasksRadio2";
             this.curTasksRadio2.Size = new System.Drawing.Size(59, 17);
             this.curTasksRadio2.TabIndex = 10;
@@ -160,7 +161,7 @@
             this.curTasksRadio3.AutoSize = true;
             this.curTasksRadio3.ForeColor = System.Drawing.Color.Snow;
             this.curTasksRadio3.Location = new System.Drawing.Point(129, 8);
-            this.curTasksRadio3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksRadio3.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksRadio3.Name = "curTasksRadio3";
             this.curTasksRadio3.Size = new System.Drawing.Size(75, 17);
             this.curTasksRadio3.TabIndex = 11;
@@ -176,9 +177,9 @@
             this.curTasksRadioGroup.Controls.Add(this.curTasksRadio3);
             this.curTasksRadioGroup.Controls.Add(this.curTasksRadio2);
             this.curTasksRadioGroup.Location = new System.Drawing.Point(113, 342);
-            this.curTasksRadioGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksRadioGroup.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksRadioGroup.Name = "curTasksRadioGroup";
-            this.curTasksRadioGroup.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.curTasksRadioGroup.Padding = new System.Windows.Forms.Padding(2);
             this.curTasksRadioGroup.Size = new System.Drawing.Size(206, 29);
             this.curTasksRadioGroup.TabIndex = 12;
             this.curTasksRadioGroup.TabStop = false;
@@ -188,7 +189,7 @@
             this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listView1.Location = new System.Drawing.Point(9, 88);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(767, 232);
             this.listView1.TabIndex = 0;
@@ -212,7 +213,7 @@
             // setSprintNumBox
             // 
             this.setSprintNumBox.Location = new System.Drawing.Point(113, 325);
-            this.setSprintNumBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.setSprintNumBox.Margin = new System.Windows.Forms.Padding(2);
             this.setSprintNumBox.Maximum = new decimal(new int[] {
             99,
             0,
@@ -274,18 +275,19 @@
             this.createTaskButton.TabIndex = 23;
             this.createTaskButton.Text = "Create Task";
             this.createTaskButton.UseVisualStyleBackColor = false;
+            this.createTaskButton.Click += new System.EventHandler(this.createTaskButton_Click_1);
             // 
             // instructionsButton
             // 
             this.instructionsButton.BackColor = System.Drawing.Color.DarkGray;
             this.instructionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.instructionsButton.ForeColor = System.Drawing.Color.White;
-            this.instructionsButton.Location = new System.Drawing.Point(349, 52);
+            this.instructionsButton.Location = new System.Drawing.Point(453, 50);
             this.instructionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.instructionsButton.Name = "instructionsButton";
-            this.instructionsButton.Size = new System.Drawing.Size(206, 31);
+            this.instructionsButton.Size = new System.Drawing.Size(165, 31);
             this.instructionsButton.TabIndex = 24;
-            this.instructionsButton.Text = "?      Click for Instructions      ?";
+            this.instructionsButton.Text = "?  Click for Instructions  ?";
             this.instructionsButton.UseVisualStyleBackColor = false;
             // 
             // curTaskDescLabel
@@ -329,6 +331,19 @@
             this.curTasksLabel.TabIndex = 27;
             this.curTasksLabel.Text = "Current Tasks";
             // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.BackColor = System.Drawing.Color.Transparent;
+            this.testLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testLabel.ForeColor = System.Drawing.Color.White;
+            this.testLabel.Location = new System.Drawing.Point(312, 62);
+            this.testLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(118, 19);
+            this.testLabel.TabIndex = 28;
+            this.testLabel.Text = "(Select an Item)";
+            // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +351,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.curTasksLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.curTaskDescLabel);
@@ -353,7 +369,7 @@
             this.Controls.Add(this.curTasksSortLabel);
             this.Controls.Add(this.curTasksComboBox);
             this.Controls.Add(this.taskFormLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TaskForm";
             this.Text = "Agile Development Tools Suite";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TaskForm_FormClosing);
@@ -387,5 +403,6 @@
         private System.Windows.Forms.Label curTaskDescLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label curTasksLabel;
+        private System.Windows.Forms.Label testLabel;
     }
 }

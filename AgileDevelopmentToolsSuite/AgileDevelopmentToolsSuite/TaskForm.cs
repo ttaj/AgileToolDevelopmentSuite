@@ -104,7 +104,6 @@ namespace AgileDevelopmentToolsSuite
 
     private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-      //sortBy = curTasksComboBox.SelectedIndex;
       selectedSprint = curTasksComboBox.SelectedIndex;
       testLabel.Text = curTasksComboBox.Text;
       resetListView();
@@ -607,5 +606,10 @@ namespace AgileDevelopmentToolsSuite
     {
       Application.Exit();
     }
-  }
+
+        private void createTaskButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

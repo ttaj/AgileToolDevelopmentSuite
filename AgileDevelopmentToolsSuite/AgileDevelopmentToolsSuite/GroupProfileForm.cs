@@ -6,14 +6,21 @@ namespace AgileDevelopmentToolsSuite
 {
     public partial class GroupProfileForm : Form
     {
+        string currentUser = "";
         public GroupProfileForm()
         {
             InitializeComponent();
         }
 
+        public GroupProfileForm(string curUser)
+        {
+            InitializeComponent();
+            currentUser = curUser;
+        }
+
         private void menuButton_Click(object sender, EventArgs e)
         {
-            MainMenuForm mainMenuForm = new MainMenuForm();
+            MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 
@@ -25,6 +32,10 @@ namespace AgileDevelopmentToolsSuite
         }
 
         private void GroupProfileForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+        private void GroupProfileForm_FormClosed(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

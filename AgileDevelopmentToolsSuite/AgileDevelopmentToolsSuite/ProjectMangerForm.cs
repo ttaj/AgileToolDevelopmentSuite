@@ -40,136 +40,157 @@ namespace AgileDevelopmentToolsSuite
 
     private void createUser()
     {
-      SqlConnection db;
+        SqlConnection db;
 
-      String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
-
-      db = new SqlConnection(connectionString);
-
-      if (String.Compare(usernameBox.Text, "") == 0)
-      {
-        MessageBox.Show("Please input a username.");
-        return;
-      }
-
-      if (String.Compare(passwordBox.Text, "") == 0)
-      {
-        MessageBox.Show("Please input a password.");
-        return;
-      }
-
-      object queryResult;
-      SqlCommand insert;
-      SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
-      if (yesProfileButton.Checked == true)
-      {
-        insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Nickname], [ProfileLink]) VALUES (@Username, @Password, @Nickname, @ProfileLink)");
-      }
-      else  //No profile link
-      {
-        insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Nickname]) VALUES (@Username, @Password, @Nickname)");
-      }
-      insert.Connection = db;
-      userCheck.Connection = db;
+        String version = "MSSQLLocalDB";
+        String fileName = "ADTSDInfo.mdf";
+        String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
 
-      try
-      {
-        db.Open();
+        db = new SqlConnection(connectionString);
+
+        if (String.Compare(usernameBox.Text, "") == 0)
+        {
+            MessageBox.Show("Please input a username.");
+            return;
+        }
+
+        if (String.Compare(passwordBox.Text, "") == 0)
+        {
+            MessageBox.Show("Please input a password.");
+            return;
+        }
+
+        object queryResult;
+
+        SqlCommand insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Developer]) VALUES (@Username, @Password, @Developer)");
+        SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
+        SqlCommand insertUserSkills = new SqlCommand("INSERT INTO UserSkills ([Username]) VALUES (@Username)");
+        SqlCommand insertUsersInformation;
+
+        if (yesProfileButton.Checked == true)
+        {
+            insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname], [ProfileLink]) VALUES (@Username, @Nickname, @ProfileLink)");
+        }
+        else
+        {
+            insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname]) VALUES (@Username, @Nickname)");
+        }
+
+        insert.Connection = db;
+        userCheck.Connection = db;
+        insertUsersInformation.Connection = db;
+        insertUserSkills.Connection = db;
 
         try
         {
-          userCheck.Parameters.AddWithValue("@Username", usernameBox.Text);
-          queryResult = userCheck.ExecuteScalar();
-          String res = "Not Found";
+            db.Open();
 
-          res = Convert.ToString(queryResult);
-          if (!res.Equals(""))
-          {
-            MessageBox.Show("Username already exists!");
-          }
-          else
-          {
-            if (usernameBox.Text.Length >= 8 && passwordBox.Text.Length >= 8)
+            try
             {
-              bool capital = false;
-              bool number = false;
+                userCheck.Parameters.AddWithValue("@Username", usernameBox.Text);
+                queryResult = userCheck.ExecuteScalar();
+                String res = "Not Found";
 
-              int passwordCounter = 0;
-
-              String password = passwordBox.Text;
-
-              while (passwordCounter < passwordBox.Text.Length)
-              {
-
-                if (password[passwordCounter] >= 65 && password[passwordCounter] <= 90)
+                res = Convert.ToString(queryResult);
+                if (!res.Equals(""))
                 {
-                  capital = true;
+                    MessageBox.Show("Username already exists!");
+                }
+                else
+                {
+                    if (usernameBox.Text.Length >= 8 && passwordBox.Text.Length >= 8)
+                    {
+                        bool capital = false;
+                        bool number = false;
+
+                        int passwordCounter = 0;
+
+                        String password = passwordBox.Text;
+
+                        while (passwordCounter < passwordBox.Text.Length)
+                        {
+
+                            if (password[passwordCounter] >= 65 && password[passwordCounter] <= 90)
+                            {
+                                capital = true;
+                            }
+
+                            if (password[passwordCounter] >= 48 && password[passwordCounter] <= 57)
+                            {
+                                number = true;
+                            }
+
+                            passwordCounter++;
+                        }
+
+                        if (capital == true && number == true)
+                        {
+                            insert.Parameters.AddWithValue("@Username", usernameBox.Text);
+                            insert.Parameters.AddWithValue("@Password", passwordBox.Text);
+                            insert.Parameters.AddWithValue("@Developer", 1);
+
+                            insertUsersInformation.Parameters.AddWithValue("@Username", usernameBox.Text);
+                            insertUsersInformation.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
+
+                            insertUserSkills.Parameters.AddWithValue("@Username", usernameBox.Text);
+
+                            if (yesProfileButton.Checked == true)
+                            {
+                                insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+                                insertUsersInformation.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+                            }
+
+                            ProjectManagerApprovalForm projectManagerApprovalForm = new ProjectManagerApprovalForm();
+                            
+                            while(projectManagerApprovalForm.returnApproval() != 1)
+                            {
+                                    //continue waiting for approval
+                            }   
+                            
+                            insert.ExecuteNonQuery();
+                            insertUsersInformation.ExecuteNonQuery();
+                            insertUserSkills.ExecuteNonQuery();
+
+                            //direct to skillset form to fill out skills
+                            this.Hide();
+                            SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
+                            skillSetForm.Width = this.Width;
+                            skillSetForm.Height = this.Height;
+
+                            skillSetForm.StartPosition = FormStartPosition.Manual;
+                            skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
+
+                            skillSetForm.Closed += (s, args) => this.Close();
+                            skillSetForm.Show();       
+                        }
+                        else
+                        {
+                            MessageBox.Show("Password is missing some of the criteria: Must be greater than 8 characters, have a capital letter, and a number.");
+                        }
+                    }
+                    else
+                    {
+                        if (usernameBox.Text.Length <= 8 || passwordBox.Text.Length <= 8)
+                        {
+                            MessageBox.Show("Error, username or password is less than 8 characters.");
+                            return;
+                        }
+                    }
                 }
 
-                if (password[passwordCounter] >= 48 && password[passwordCounter] <= 57)
-                {
-                  number = true;
-                }
+                db.Close();
 
-                passwordCounter++;
-              }
-
-              if (capital == true && number == true)
-              {
-                MessageBox.Show("Inserting : " + usernameBox.Text + " into the list");
-                insert.Parameters.AddWithValue("@Username", usernameBox.Text);
-                insert.Parameters.AddWithValue("@Password", passwordBox.Text);
-                insert.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-                if (yesProfileButton.Checked == true)
-                  insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
-                insert.ExecuteNonQuery();
-
-                MainMenuForm mainMenuForm = new MainMenuForm();
-                mainMenuForm.Width = this.Width;
-                mainMenuForm.Height = this.Height;
-
-                mainMenuForm.StartPosition = FormStartPosition.Manual;
-                mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
-
-                this.Hide();
-                mainMenuForm.Show();
-              }
-              else
-              {
-                MessageBox.Show("Password is missing some of the criteria: Must be > 8 characters, have a CAPITAL letter, AND a number.");
-              }
             }
-            else
+            catch (Exception ex)
             {
-              if (usernameBox.Text.Length <= 8)
-              {
-                MessageBox.Show("Error, username is less than 8 characters.");
-                return;
-              }
-
-              if (passwordBox.Text.Length <= 8)
-              {
-                MessageBox.Show("Error, password is less than 8 characters.");
-              }
+                MessageBox.Show(ex.Message);
             }
-          }
-
-          db.Close();
-
         }
         catch (Exception ex)
         {
-          MessageBox.Show(ex.Message);
-        }
-      }
-      catch (Exception ex)
-      {
         MessageBox.Show("Connection unsuccessful, please try again. ");
-      }
-
+        }
     }
 
     private void usernameBox_TextChanged(object sender, EventArgs e)

@@ -99,7 +99,6 @@
             this.profileLinkLabel.Size = new System.Drawing.Size(103, 20);
             this.profileLinkLabel.TabIndex = 14;
             this.profileLinkLabel.Text = "Profile Link:";
-            this.profileLinkLabel.Visible = false;
             // 
             // profileLinkBox
             // 
@@ -108,7 +107,6 @@
             this.profileLinkBox.Name = "profileLinkBox";
             this.profileLinkBox.Size = new System.Drawing.Size(123, 20);
             this.profileLinkBox.TabIndex = 15;
-            this.profileLinkBox.Visible = false;
             this.profileLinkBox.TextChanged += new System.EventHandler(this.profileLinkBox_TextChanged);
             // 
             // yesProfileButton
@@ -173,7 +171,7 @@
             // nickNameTxt
             // 
             this.nickNameTxt.Location = new System.Drawing.Point(352, 249);
-            this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nickNameTxt.MaxLength = 32;
             this.nickNameTxt.Name = "nickNameTxt";
             this.nickNameTxt.Size = new System.Drawing.Size(123, 20);

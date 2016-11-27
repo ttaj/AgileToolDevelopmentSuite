@@ -66,6 +66,7 @@
             this.createSuggestionButton = new System.Windows.Forms.Button();
             this.tabPage2TimeLine = new System.Windows.Forms.TabPage();
             this.tabControlLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1SandBox.SuspendLayout();
@@ -91,7 +92,7 @@
             this.menuGroupNameTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.menuGroupNameTxt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuGroupNameTxt.Location = new System.Drawing.Point(107, 6);
-            this.menuGroupNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuGroupNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.menuGroupNameTxt.Name = "menuGroupNameTxt";
             this.menuGroupNameTxt.ReadOnly = true;
             this.menuGroupNameTxt.Size = new System.Drawing.Size(231, 20);
@@ -130,7 +131,7 @@
             this.chatButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chatButton.ForeColor = System.Drawing.Color.White;
             this.chatButton.Location = new System.Drawing.Point(12, 520);
-            this.chatButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chatButton.Margin = new System.Windows.Forms.Padding(2);
             this.chatButton.Name = "chatButton";
             this.chatButton.Size = new System.Drawing.Size(217, 31);
             this.chatButton.TabIndex = 6;
@@ -143,7 +144,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Location = new System.Drawing.Point(233, 520);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(254, 31);
             this.panel1.TabIndex = 7;
@@ -155,7 +156,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(122, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 26);
             this.button3.TabIndex = 1;
@@ -169,7 +170,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(3, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 26);
             this.button2.TabIndex = 0;
@@ -183,7 +184,7 @@
             this.urgentTaskButton.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.urgentTaskButton.ForeColor = System.Drawing.Color.White;
             this.urgentTaskButton.Location = new System.Drawing.Point(11, 115);
-            this.urgentTaskButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.urgentTaskButton.Margin = new System.Windows.Forms.Padding(2);
             this.urgentTaskButton.Name = "urgentTaskButton";
             this.urgentTaskButton.Size = new System.Drawing.Size(292, 30);
             this.urgentTaskButton.TabIndex = 8;
@@ -195,7 +196,7 @@
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listView1.Location = new System.Drawing.Point(12, 141);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(292, 331);
             this.listView1.TabIndex = 9;
@@ -208,7 +209,7 @@
             this.toTaskFormButton.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toTaskFormButton.ForeColor = System.Drawing.Color.White;
             this.toTaskFormButton.Location = new System.Drawing.Point(12, 444);
-            this.toTaskFormButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toTaskFormButton.Margin = new System.Windows.Forms.Padding(2);
             this.toTaskFormButton.Name = "toTaskFormButton";
             this.toTaskFormButton.Size = new System.Drawing.Size(291, 30);
             this.toTaskFormButton.TabIndex = 10;
@@ -234,7 +235,7 @@
             this.loggedInTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.loggedInTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.loggedInTextBox.Location = new System.Drawing.Point(590, 6);
-            this.loggedInTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loggedInTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.loggedInTextBox.Name = "loggedInTextBox";
             this.loggedInTextBox.Size = new System.Drawing.Size(186, 20);
             this.loggedInTextBox.TabIndex = 12;
@@ -245,7 +246,7 @@
             this.tabControl1.Controls.Add(this.tabPage2TimeLine);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(308, 118);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(467, 356);
@@ -265,7 +266,7 @@
             this.tabPage1SandBox.Controls.Add(this.deleteSuggestionButton);
             this.tabPage1SandBox.Controls.Add(this.createSuggestionButton);
             this.tabPage1SandBox.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1SandBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1SandBox.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1SandBox.Name = "tabPage1SandBox";
             this.tabPage1SandBox.Size = new System.Drawing.Size(459, 328);
             this.tabPage1SandBox.TabIndex = 0;
@@ -278,7 +279,7 @@
             this.confirmDeletePanel.Controls.Add(this.yesButton);
             this.confirmDeletePanel.Controls.Add(this.confirmationDeleteLabel);
             this.confirmDeletePanel.Location = new System.Drawing.Point(141, 83);
-            this.confirmDeletePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmDeletePanel.Margin = new System.Windows.Forms.Padding(2);
             this.confirmDeletePanel.Name = "confirmDeletePanel";
             this.confirmDeletePanel.Size = new System.Drawing.Size(174, 109);
             this.confirmDeletePanel.TabIndex = 9;
@@ -287,10 +288,10 @@
             // 
             this.noButton.BackColor = System.Drawing.Color.Firebrick;
             this.noButton.ForeColor = System.Drawing.Color.White;
-            this.noButton.Location = new System.Drawing.Point(76, 59);
-            this.noButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.noButton.Location = new System.Drawing.Point(94, 59);
+            this.noButton.Margin = new System.Windows.Forms.Padding(2);
             this.noButton.Name = "noButton";
-            this.noButton.Size = new System.Drawing.Size(88, 39);
+            this.noButton.Size = new System.Drawing.Size(75, 39);
             this.noButton.TabIndex = 2;
             this.noButton.Text = "No";
             this.noButton.UseVisualStyleBackColor = false;
@@ -300,9 +301,9 @@
             // 
             this.yesButton.BackColor = System.Drawing.Color.GreenYellow;
             this.yesButton.Location = new System.Drawing.Point(10, 59);
-            this.yesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.yesButton.Margin = new System.Windows.Forms.Padding(2);
             this.yesButton.Name = "yesButton";
-            this.yesButton.Size = new System.Drawing.Size(62, 39);
+            this.yesButton.Size = new System.Drawing.Size(75, 39);
             this.yesButton.TabIndex = 1;
             this.yesButton.Text = "Yes";
             this.yesButton.UseVisualStyleBackColor = false;
@@ -312,6 +313,7 @@
             // 
             this.confirmationDeleteLabel.AutoSize = true;
             this.confirmationDeleteLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationDeleteLabel.ForeColor = System.Drawing.Color.Black;
             this.confirmationDeleteLabel.Location = new System.Drawing.Point(20, 14);
             this.confirmationDeleteLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.confirmationDeleteLabel.Name = "confirmationDeleteLabel";
@@ -322,6 +324,7 @@
             // createSuggestionPanel
             // 
             this.createSuggestionPanel.BackColor = System.Drawing.Color.YellowGreen;
+            this.createSuggestionPanel.Controls.Add(this.button1);
             this.createSuggestionPanel.Controls.Add(this.createSuggestionLabel);
             this.createSuggestionPanel.Controls.Add(this.acceptSuggestionButton);
             this.createSuggestionPanel.Controls.Add(this.createSuggestionDescTextBox);
@@ -330,7 +333,7 @@
             this.createSuggestionPanel.Controls.Add(this.suggestionNameLabel);
             this.createSuggestionPanel.Controls.Add(this.cancelCreationButton);
             this.createSuggestionPanel.Location = new System.Drawing.Point(2, 164);
-            this.createSuggestionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createSuggestionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.createSuggestionPanel.Name = "createSuggestionPanel";
             this.createSuggestionPanel.Size = new System.Drawing.Size(457, 163);
             this.createSuggestionPanel.TabIndex = 8;
@@ -340,6 +343,7 @@
             // 
             this.createSuggestionLabel.AutoSize = true;
             this.createSuggestionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createSuggestionLabel.ForeColor = System.Drawing.Color.Black;
             this.createSuggestionLabel.Location = new System.Drawing.Point(5, 6);
             this.createSuggestionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.createSuggestionLabel.Name = "createSuggestionLabel";
@@ -349,32 +353,32 @@
             // 
             // acceptSuggestionButton
             // 
-            this.acceptSuggestionButton.BackColor = System.Drawing.Color.Chartreuse;
-            this.acceptSuggestionButton.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acceptSuggestionButton.Location = new System.Drawing.Point(417, 75);
-            this.acceptSuggestionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.acceptSuggestionButton.BackColor = System.Drawing.Color.GreenYellow;
+            this.acceptSuggestionButton.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptSuggestionButton.Location = new System.Drawing.Point(365, 85);
+            this.acceptSuggestionButton.Margin = new System.Windows.Forms.Padding(2);
             this.acceptSuggestionButton.Name = "acceptSuggestionButton";
-            this.acceptSuggestionButton.Size = new System.Drawing.Size(37, 86);
+            this.acceptSuggestionButton.Size = new System.Drawing.Size(86, 29);
             this.acceptSuggestionButton.TabIndex = 12;
-            this.acceptSuggestionButton.Text = "✔";
+            this.acceptSuggestionButton.Text = "Submit";
             this.acceptSuggestionButton.UseVisualStyleBackColor = false;
             this.acceptSuggestionButton.Click += new System.EventHandler(this.acceptSuggestionButton_Click);
             // 
             // createSuggestionDescTextBox
             // 
             this.createSuggestionDescTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createSuggestionDescTextBox.Location = new System.Drawing.Point(139, 74);
-            this.createSuggestionDescTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createSuggestionDescTextBox.Location = new System.Drawing.Point(5, 74);
+            this.createSuggestionDescTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.createSuggestionDescTextBox.Name = "createSuggestionDescTextBox";
-            this.createSuggestionDescTextBox.Size = new System.Drawing.Size(275, 87);
+            this.createSuggestionDescTextBox.Size = new System.Drawing.Size(356, 87);
             this.createSuggestionDescTextBox.TabIndex = 11;
             this.createSuggestionDescTextBox.Text = "";
             // 
             // suggestionDescLabel
             // 
             this.suggestionDescLabel.AutoSize = true;
-            this.suggestionDescLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.suggestionDescLabel.Location = new System.Drawing.Point(2, 74);
+            this.suggestionDescLabel.ForeColor = System.Drawing.Color.White;
+            this.suggestionDescLabel.Location = new System.Drawing.Point(6, 59);
             this.suggestionDescLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.suggestionDescLabel.Name = "suggestionDescLabel";
             this.suggestionDescLabel.Size = new System.Drawing.Size(138, 16);
@@ -385,7 +389,7 @@
             // 
             this.suggestionNameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suggestionNameTextBox.Location = new System.Drawing.Point(139, 34);
-            this.suggestionNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suggestionNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.suggestionNameTextBox.Name = "suggestionNameTextBox";
             this.suggestionNameTextBox.Size = new System.Drawing.Size(275, 23);
             this.suggestionNameTextBox.TabIndex = 10;
@@ -393,8 +397,8 @@
             // suggestionNameLabel
             // 
             this.suggestionNameLabel.AutoSize = true;
-            this.suggestionNameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.suggestionNameLabel.Location = new System.Drawing.Point(2, 39);
+            this.suggestionNameLabel.ForeColor = System.Drawing.Color.White;
+            this.suggestionNameLabel.Location = new System.Drawing.Point(6, 38);
             this.suggestionNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.suggestionNameLabel.Name = "suggestionNameLabel";
             this.suggestionNameLabel.Size = new System.Drawing.Size(107, 16);
@@ -403,9 +407,10 @@
             // 
             // cancelCreationButton
             // 
-            this.cancelCreationButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cancelCreationButton.BackColor = System.Drawing.Color.DarkGray;
+            this.cancelCreationButton.ForeColor = System.Drawing.Color.White;
             this.cancelCreationButton.Location = new System.Drawing.Point(388, 2);
-            this.cancelCreationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelCreationButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelCreationButton.Name = "cancelCreationButton";
             this.cancelCreationButton.Size = new System.Drawing.Size(68, 25);
             this.cancelCreationButton.TabIndex = 0;
@@ -418,7 +423,7 @@
             this.downvoteButton.BackColor = System.Drawing.Color.Firebrick;
             this.downvoteButton.ForeColor = System.Drawing.Color.White;
             this.downvoteButton.Location = new System.Drawing.Point(367, 97);
-            this.downvoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.downvoteButton.Margin = new System.Windows.Forms.Padding(2);
             this.downvoteButton.Name = "downvoteButton";
             this.downvoteButton.Size = new System.Drawing.Size(92, 63);
             this.downvoteButton.TabIndex = 7;
@@ -441,7 +446,7 @@
             // 
             this.upvoteButton.BackColor = System.Drawing.Color.GreenYellow;
             this.upvoteButton.Location = new System.Drawing.Point(367, 24);
-            this.upvoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.upvoteButton.Margin = new System.Windows.Forms.Padding(2);
             this.upvoteButton.Name = "upvoteButton";
             this.upvoteButton.Size = new System.Drawing.Size(92, 72);
             this.upvoteButton.TabIndex = 5;
@@ -464,7 +469,7 @@
             this.listView2.BackColor = System.Drawing.SystemColors.Control;
             this.listView2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.Location = new System.Drawing.Point(2, 2);
-            this.listView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView2.Margin = new System.Windows.Forms.Padding(2);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(361, 158);
             this.listView2.TabIndex = 3;
@@ -476,7 +481,7 @@
             this.suggestionTxtBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.suggestionTxtBox.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suggestionTxtBox.Location = new System.Drawing.Point(2, 184);
-            this.suggestionTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suggestionTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.suggestionTxtBox.Name = "suggestionTxtBox";
             this.suggestionTxtBox.Size = new System.Drawing.Size(458, 109);
             this.suggestionTxtBox.TabIndex = 2;
@@ -488,7 +493,7 @@
             this.deleteSuggestionButton.BackColor = System.Drawing.Color.Firebrick;
             this.deleteSuggestionButton.ForeColor = System.Drawing.Color.White;
             this.deleteSuggestionButton.Location = new System.Drawing.Point(235, 297);
-            this.deleteSuggestionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteSuggestionButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteSuggestionButton.Name = "deleteSuggestionButton";
             this.deleteSuggestionButton.Size = new System.Drawing.Size(226, 30);
             this.deleteSuggestionButton.TabIndex = 1;
@@ -500,7 +505,7 @@
             // 
             this.createSuggestionButton.BackColor = System.Drawing.Color.GreenYellow;
             this.createSuggestionButton.Location = new System.Drawing.Point(2, 297);
-            this.createSuggestionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createSuggestionButton.Margin = new System.Windows.Forms.Padding(2);
             this.createSuggestionButton.Name = "createSuggestionButton";
             this.createSuggestionButton.Size = new System.Drawing.Size(232, 30);
             this.createSuggestionButton.TabIndex = 0;
@@ -511,7 +516,7 @@
             // tabPage2TimeLine
             // 
             this.tabPage2TimeLine.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2TimeLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2TimeLine.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2TimeLine.Name = "tabPage2TimeLine";
             this.tabPage2TimeLine.Size = new System.Drawing.Size(459, 328);
             this.tabPage2TimeLine.TabIndex = 1;
@@ -530,6 +535,20 @@
             this.tabControlLabel.Size = new System.Drawing.Size(85, 15);
             this.tabControlLabel.TabIndex = 14;
             this.tabControlLabel.Text = "Select View:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(365, 118);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 29);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Clear";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainMenuForm
             // 
@@ -551,7 +570,7 @@
             this.Controls.Add(this.menuSelfNameLabel);
             this.Controls.Add(this.menuGroupNameTxt);
             this.Controls.Add(this.menuGroupNameLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "Agile Development Tools Suite";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);
@@ -608,5 +627,6 @@
     private System.Windows.Forms.Button noButton;
     private System.Windows.Forms.Button yesButton;
     private System.Windows.Forms.Label confirmationDeleteLabel;
-  }
+        private System.Windows.Forms.Button button1;
+    }
 }

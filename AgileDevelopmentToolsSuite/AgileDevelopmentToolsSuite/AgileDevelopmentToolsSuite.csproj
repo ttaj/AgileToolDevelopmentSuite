@@ -111,6 +111,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADTSDInfoDataSet.cs">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADTSDInfoDataSet.Designer.cs">
+      <DependentUpon>ADTSDInfoDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADTSDInfoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +286,17 @@
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ADTSDInfoDataSet.xsc">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ADTSDInfoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ADTSDInfoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADTSDInfoDataSet.xss">
+      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

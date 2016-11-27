@@ -700,6 +700,10 @@ namespace AgileDevelopmentToolsSuite
       resetListView2();
     }
 
-
-  } //End of class
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            suggestionNameTextBox.Text = "";
+            createSuggestionDescTextBox.Text = "";
+        }
+    }
 }

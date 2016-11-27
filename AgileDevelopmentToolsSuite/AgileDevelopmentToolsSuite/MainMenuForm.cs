@@ -18,6 +18,7 @@ namespace AgileDevelopmentToolsSuite
     public MainMenuForm()
     {
       InitializeComponent();
+      listView1.FullRowSelect = true;
     }
 
     public MainMenuForm(String curUser)
@@ -25,6 +26,7 @@ namespace AgileDevelopmentToolsSuite
       InitializeComponent();
       currentUser = curUser;
       loggedInTextBox.Text = curUser;
+      listView1.FullRowSelect = true;
     }
 
     string numUrgentTasks = "";
@@ -150,7 +152,15 @@ namespace AgileDevelopmentToolsSuite
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
     {
+      this.Hide();
+      TaskForm t = new TaskForm(currentUser);
+      t.Width = this.Width;
+      t.Height = this.Height;
 
+      t.StartPosition = FormStartPosition.Manual;
+      t.Location = new Point(this.Location.X, this.Location.Y);
+      t.Closed += (s, args) => this.Close();
+      t.Show();
     }
 
     int sortBy = 0;
@@ -173,7 +183,7 @@ namespace AgileDevelopmentToolsSuite
           string listTasksCmd = "";
 
 
-          listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY Importance Desc";
+          listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified, ProjectGroup FROM [Tasks] ORDER BY Importance Desc";
 
 
 
@@ -203,7 +213,7 @@ namespace AgileDevelopmentToolsSuite
               dateModifyTemp = reader.GetDateTime(6).ToString();
             }
 
-            String[] colFields = { reader.GetInt32(0).ToString(), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3).ToString(), reader.GetString(4), reader.GetString(5), dateModifyTemp };
+            String[] colFields = { reader.GetInt32(0).ToString(), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3).ToString(), reader.GetString(4), reader.GetString(5), dateModifyTemp, reader.GetInt32(7).ToString() };
 
 
             listTasks.Add(colFields);
@@ -224,6 +234,7 @@ namespace AgileDevelopmentToolsSuite
           listView1.Columns.Add("Importance", 65, HorizontalAlignment.Left);
           listView1.Columns.Add("", 0, HorizontalAlignment.Left);
           listView1.Columns.Add("", 0, HorizontalAlignment.Left);
+          listView1.Columns.Add("Sprint #", 50, HorizontalAlignment.Left);
 
           for (int i = 0; i < listTasks.Count; i++)      //Add items into listView box
           {

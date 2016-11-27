@@ -42,8 +42,9 @@
       this.userDesigLbl = new System.Windows.Forms.Label();
       this.userDesigTxtBox = new System.Windows.Forms.TextBox();
       this.projectGroupLbl = new System.Windows.Forms.Label();
-      this.projectGroupTxt = new System.Windows.Forms.TextBox();
+      this.projectGroupTxt = new System.Windows.Forms.NumericUpDown();
       this.curTasksRadioGroup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.projectGroupTxt)).BeginInit();
       this.SuspendLayout();
       // 
       // submitButton
@@ -110,7 +111,7 @@
       this.curTasksRadioGroup.Location = new System.Drawing.Point(134, 159);
       this.curTasksRadioGroup.Name = "curTasksRadioGroup";
       this.curTasksRadioGroup.Size = new System.Drawing.Size(274, 36);
-      this.curTasksRadioGroup.TabIndex = 13;
+      this.curTasksRadioGroup.TabIndex = 2;
       this.curTasksRadioGroup.TabStop = false;
       this.curTasksRadioGroup.Enter += new System.EventHandler(this.curTasksRadioGroup_Enter);
       // 
@@ -195,10 +196,15 @@
       // 
       // projectGroupTxt
       // 
-      this.projectGroupTxt.Location = new System.Drawing.Point(198, 135);
+      this.projectGroupTxt.Location = new System.Drawing.Point(198, 133);
+      this.projectGroupTxt.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
       this.projectGroupTxt.Name = "projectGroupTxt";
-      this.projectGroupTxt.Size = new System.Drawing.Size(102, 22);
-      this.projectGroupTxt.TabIndex = 1;
+      this.projectGroupTxt.Size = new System.Drawing.Size(120, 22);
+      this.projectGroupTxt.TabIndex = 2;
       // 
       // CreateTaskForm
       // 
@@ -223,6 +229,7 @@
       this.Load += new System.EventHandler(this.CreateTaskForm_Load);
       this.curTasksRadioGroup.ResumeLayout(false);
       this.curTasksRadioGroup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.projectGroupTxt)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -243,6 +250,6 @@
     private System.Windows.Forms.Label userDesigLbl;
     private System.Windows.Forms.TextBox userDesigTxtBox;
     private System.Windows.Forms.Label projectGroupLbl;
-    private System.Windows.Forms.TextBox projectGroupTxt;
+    private System.Windows.Forms.NumericUpDown projectGroupTxt;
   }
 }

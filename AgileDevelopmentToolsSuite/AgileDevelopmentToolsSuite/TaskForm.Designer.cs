@@ -45,7 +45,13 @@
       this.listView1 = new System.Windows.Forms.ListView();
       this.selectedIDLbl = new System.Windows.Forms.Label();
       this.instructionsButton = new System.Windows.Forms.Button();
+      this.setSprintNumBox = new System.Windows.Forms.NumericUpDown();
+      this.setSprintLbl = new System.Windows.Forms.Label();
+      this.setImportanceLbl = new System.Windows.Forms.Label();
+      this.testLabel = new System.Windows.Forms.Label();
+      this.sortByUpOrDown = new System.Windows.Forms.Label();
       this.curTasksRadioGroup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.setSprintNumBox)).BeginInit();
       this.SuspendLayout();
       // 
       // taskFormLabel
@@ -94,15 +100,12 @@
       this.curTasksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.curTasksComboBox.FormattingEnabled = true;
       this.curTasksComboBox.Items.AddRange(new object[] {
-            "Date Issued",
-            "Importance",
-            "Task Name",
-            "ID",
-            "Date Modified",
-            "User Assigned"});
-      this.curTasksComboBox.Location = new System.Drawing.Point(275, 76);
+            "(Show All Tasks)",
+            "(Show Non-Sprints)"});
+      this.curTasksComboBox.Location = new System.Drawing.Point(267, 52);
+      this.curTasksComboBox.MaxDropDownItems = 99;
       this.curTasksComboBox.Name = "curTasksComboBox";
-      this.curTasksComboBox.Size = new System.Drawing.Size(150, 24);
+      this.curTasksComboBox.Size = new System.Drawing.Size(135, 24);
       this.curTasksComboBox.TabIndex = 4;
       this.curTasksComboBox.SelectedIndexChanged += new System.EventHandler(this.curTasksComboBox_SelectedIndexChanged);
       // 
@@ -111,12 +114,12 @@
       this.curTasksSortLabel.AutoSize = true;
       this.curTasksSortLabel.BackColor = System.Drawing.Color.Transparent;
       this.curTasksSortLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.curTasksSortLabel.ForeColor = System.Drawing.SystemColors.Control;
-      this.curTasksSortLabel.Location = new System.Drawing.Point(179, 76);
+      this.curTasksSortLabel.ForeColor = System.Drawing.Color.White;
+      this.curTasksSortLabel.Location = new System.Drawing.Point(179, 81);
       this.curTasksSortLabel.Name = "curTasksSortLabel";
-      this.curTasksSortLabel.Size = new System.Drawing.Size(77, 24);
+      this.curTasksSortLabel.Size = new System.Drawing.Size(82, 24);
       this.curTasksSortLabel.TabIndex = 5;
-      this.curTasksSortLabel.Text = "Sort By:";
+      this.curTasksSortLabel.Text = "Sprint #:";
       this.curTasksSortLabel.Click += new System.EventHandler(this.curTasksSortLabel_Click);
       // 
       // curTaskDescriptions
@@ -191,7 +194,7 @@
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio1);
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio3);
       this.curTasksRadioGroup.Controls.Add(this.curTasksRadio2);
-      this.curTasksRadioGroup.Location = new System.Drawing.Point(24, 418);
+      this.curTasksRadioGroup.Location = new System.Drawing.Point(151, 421);
       this.curTasksRadioGroup.Name = "curTasksRadioGroup";
       this.curTasksRadioGroup.Size = new System.Drawing.Size(274, 36);
       this.curTasksRadioGroup.TabIndex = 12;
@@ -201,17 +204,17 @@
       // 
       this.curTaskDescLabel.AutoSize = true;
       this.curTaskDescLabel.BackColor = System.Drawing.Color.Transparent;
-      this.curTaskDescLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.curTaskDescLabel.Font = new System.Drawing.Font("Microsoft YaHei", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.curTaskDescLabel.ForeColor = System.Drawing.Color.White;
-      this.curTaskDescLabel.Location = new System.Drawing.Point(304, 428);
+      this.curTaskDescLabel.Location = new System.Drawing.Point(427, 400);
       this.curTaskDescLabel.Name = "curTaskDescLabel";
-      this.curTaskDescLabel.Size = new System.Drawing.Size(273, 26);
+      this.curTaskDescLabel.Size = new System.Drawing.Size(269, 30);
       this.curTaskDescLabel.TabIndex = 13;
-      this.curTaskDescLabel.Text = "↓ Modify task description ↓";
+      this.curTaskDescLabel.Text = "↓ Set task description ↓";
       // 
       // createTaskButton
       // 
-      this.createTaskButton.BackColor = System.Drawing.Color.DarkGray;
+      this.createTaskButton.BackColor = System.Drawing.Color.GreenYellow;
       this.createTaskButton.Cursor = System.Windows.Forms.Cursors.Hand;
       this.createTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.createTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -229,7 +232,7 @@
       this.listView1.Cursor = System.Windows.Forms.Cursors.Hand;
       this.listView1.Location = new System.Drawing.Point(12, 108);
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(1021, 314);
+      this.listView1.Size = new System.Drawing.Size(1021, 285);
       this.listView1.TabIndex = 0;
       this.listView1.UseCompatibleStateImageBehavior = false;
       this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
@@ -259,6 +262,65 @@
       this.instructionsButton.UseVisualStyleBackColor = false;
       this.instructionsButton.Click += new System.EventHandler(this.instructionsButton_Click);
       // 
+      // setSprintNumBox
+      // 
+      this.setSprintNumBox.Location = new System.Drawing.Point(151, 400);
+      this.setSprintNumBox.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+      this.setSprintNumBox.Name = "setSprintNumBox";
+      this.setSprintNumBox.Size = new System.Drawing.Size(120, 22);
+      this.setSprintNumBox.TabIndex = 18;
+      // 
+      // setSprintLbl
+      // 
+      this.setSprintLbl.AutoSize = true;
+      this.setSprintLbl.BackColor = System.Drawing.Color.Transparent;
+      this.setSprintLbl.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.setSprintLbl.ForeColor = System.Drawing.Color.White;
+      this.setSprintLbl.Location = new System.Drawing.Point(7, 400);
+      this.setSprintLbl.Name = "setSprintLbl";
+      this.setSprintLbl.Size = new System.Drawing.Size(124, 19);
+      this.setSprintLbl.TabIndex = 19;
+      this.setSprintLbl.Text = "Set to Sprint #: ";
+      // 
+      // setImportanceLbl
+      // 
+      this.setImportanceLbl.AutoSize = true;
+      this.setImportanceLbl.BackColor = System.Drawing.Color.Transparent;
+      this.setImportanceLbl.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.setImportanceLbl.ForeColor = System.Drawing.Color.White;
+      this.setImportanceLbl.Location = new System.Drawing.Point(7, 430);
+      this.setImportanceLbl.Name = "setImportanceLbl";
+      this.setImportanceLbl.Size = new System.Drawing.Size(133, 19);
+      this.setImportanceLbl.TabIndex = 20;
+      this.setImportanceLbl.Text = "Set Importance: ";
+      // 
+      // testLabel
+      // 
+      this.testLabel.AutoSize = true;
+      this.testLabel.BackColor = System.Drawing.Color.Transparent;
+      this.testLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.testLabel.ForeColor = System.Drawing.Color.White;
+      this.testLabel.Location = new System.Drawing.Point(267, 79);
+      this.testLabel.Name = "testLabel";
+      this.testLabel.Size = new System.Drawing.Size(146, 24);
+      this.testLabel.TabIndex = 21;
+      this.testLabel.Text = "(Select an Item)";
+      // 
+      // sortByUpOrDown
+      // 
+      this.sortByUpOrDown.AutoSize = true;
+      this.sortByUpOrDown.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+      this.sortByUpOrDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.sortByUpOrDown.Location = new System.Drawing.Point(1000, 112);
+      this.sortByUpOrDown.Name = "sortByUpOrDown";
+      this.sortByUpOrDown.Size = new System.Drawing.Size(19, 20);
+      this.sortByUpOrDown.TabIndex = 22;
+      this.sortByUpOrDown.Text = "↓";
+      // 
       // TaskForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,6 +328,11 @@
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(1045, 690);
+      this.Controls.Add(this.sortByUpOrDown);
+      this.Controls.Add(this.testLabel);
+      this.Controls.Add(this.setImportanceLbl);
+      this.Controls.Add(this.setSprintLbl);
+      this.Controls.Add(this.setSprintNumBox);
       this.Controls.Add(this.instructionsButton);
       this.Controls.Add(this.selectedIDLbl);
       this.Controls.Add(this.listView1);
@@ -285,6 +352,7 @@
       this.Load += new System.EventHandler(this.TaskForm_Load);
       this.curTasksRadioGroup.ResumeLayout(false);
       this.curTasksRadioGroup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.setSprintNumBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -307,5 +375,10 @@
     private System.Windows.Forms.ListView listView1;
     private System.Windows.Forms.Label selectedIDLbl;
     private System.Windows.Forms.Button instructionsButton;
+    private System.Windows.Forms.NumericUpDown setSprintNumBox;
+    private System.Windows.Forms.Label setSprintLbl;
+    private System.Windows.Forms.Label setImportanceLbl;
+    private System.Windows.Forms.Label testLabel;
+    private System.Windows.Forms.Label sortByUpOrDown;
   }
 }

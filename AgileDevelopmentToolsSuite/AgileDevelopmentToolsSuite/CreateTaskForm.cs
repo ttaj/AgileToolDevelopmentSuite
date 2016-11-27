@@ -61,10 +61,7 @@ namespace AgileDevelopmentToolsSuite
           cmd.Parameters.AddWithValue("@Importance", importance);
           cmd.Parameters.AddWithValue("@DateSubmitted", DateTime.Now);
           cmd.Parameters.AddWithValue("@TaskDescription", taskDescTxtBox.Text);
-          if (userDesigTxtBox.Text != "")
-            cmd.Parameters.AddWithValue("@ProjectGroup", projectGroupTxt.Text);
-          else
-            cmd.Parameters.AddWithValue("@ProjectGroup", "[No Group]");
+          cmd.Parameters.AddWithValue("@ProjectGroup", projectGroupTxt.Value);
           cmd.ExecuteNonQuery();
           db.Close();
         }

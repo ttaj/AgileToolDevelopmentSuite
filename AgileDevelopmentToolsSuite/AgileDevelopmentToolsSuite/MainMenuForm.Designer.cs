@@ -42,7 +42,12 @@
       this.toTaskFormButton = new System.Windows.Forms.Button();
       this.groupProfileButton = new System.Windows.Forms.Button();
       this.loggedInTextBox = new System.Windows.Forms.TextBox();
+      this.tabControl1 = new System.Windows.Forms.TabControl();
+      this.tabPage1SandBox = new System.Windows.Forms.TabPage();
+      this.tabPage2TimeLine = new System.Windows.Forms.TabPage();
+      this.tabControlLabel = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
+      this.tabControl1.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuGroupNameLabel
@@ -87,7 +92,7 @@
       this.profileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.profileButton.ForeColor = System.Drawing.Color.White;
       this.profileButton.Location = new System.Drawing.Point(844, 38);
-      this.profileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.profileButton.Margin = new System.Windows.Forms.Padding(4);
       this.profileButton.Name = "profileButton";
       this.profileButton.Size = new System.Drawing.Size(149, 28);
       this.profileButton.TabIndex = 5;
@@ -153,10 +158,10 @@
       this.urgentTaskButton.BackColor = System.Drawing.Color.Firebrick;
       this.urgentTaskButton.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.urgentTaskButton.ForeColor = System.Drawing.Color.White;
-      this.urgentTaskButton.Location = new System.Drawing.Point(16, 126);
+      this.urgentTaskButton.Location = new System.Drawing.Point(15, 142);
       this.urgentTaskButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.urgentTaskButton.Name = "urgentTaskButton";
-      this.urgentTaskButton.Size = new System.Drawing.Size(328, 37);
+      this.urgentTaskButton.Size = new System.Drawing.Size(389, 37);
       this.urgentTaskButton.TabIndex = 8;
       this.urgentTaskButton.UseVisualStyleBackColor = false;
       this.urgentTaskButton.Click += new System.EventHandler(this.urgentTaskButton_Click);
@@ -165,10 +170,10 @@
       // listView1
       // 
       this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-      this.listView1.Location = new System.Drawing.Point(16, 158);
+      this.listView1.Location = new System.Drawing.Point(16, 173);
       this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(327, 404);
+      this.listView1.Size = new System.Drawing.Size(388, 406);
       this.listView1.TabIndex = 9;
       this.listView1.UseCompatibleStateImageBehavior = false;
       this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -181,7 +186,7 @@
       this.toTaskFormButton.Location = new System.Drawing.Point(16, 546);
       this.toTaskFormButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.toTaskFormButton.Name = "toTaskFormButton";
-      this.toTaskFormButton.Size = new System.Drawing.Size(328, 37);
+      this.toTaskFormButton.Size = new System.Drawing.Size(388, 37);
       this.toTaskFormButton.TabIndex = 10;
       this.toTaskFormButton.Text = "Go To Current Tasks";
       this.toTaskFormButton.UseVisualStyleBackColor = false;
@@ -193,7 +198,7 @@
       this.groupProfileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupProfileButton.ForeColor = System.Drawing.Color.White;
       this.groupProfileButton.Location = new System.Drawing.Point(184, 38);
-      this.groupProfileButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupProfileButton.Margin = new System.Windows.Forms.Padding(4);
       this.groupProfileButton.Name = "groupProfileButton";
       this.groupProfileButton.Size = new System.Drawing.Size(220, 28);
       this.groupProfileButton.TabIndex = 11;
@@ -210,6 +215,47 @@
       this.loggedInTextBox.Size = new System.Drawing.Size(246, 22);
       this.loggedInTextBox.TabIndex = 12;
       // 
+      // tabControl1
+      // 
+      this.tabControl1.Controls.Add(this.tabPage1SandBox);
+      this.tabControl1.Controls.Add(this.tabPage2TimeLine);
+      this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tabControl1.Location = new System.Drawing.Point(410, 145);
+      this.tabControl1.Name = "tabControl1";
+      this.tabControl1.SelectedIndex = 0;
+      this.tabControl1.Size = new System.Drawing.Size(623, 438);
+      this.tabControl1.TabIndex = 13;
+      // 
+      // tabPage1SandBox
+      // 
+      this.tabPage1SandBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+      this.tabPage1SandBox.Location = new System.Drawing.Point(4, 28);
+      this.tabPage1SandBox.Name = "tabPage1SandBox";
+      this.tabPage1SandBox.Size = new System.Drawing.Size(615, 406);
+      this.tabPage1SandBox.TabIndex = 0;
+      this.tabPage1SandBox.Text = "Sandbox             ";
+      // 
+      // tabPage2TimeLine
+      // 
+      this.tabPage2TimeLine.Location = new System.Drawing.Point(4, 28);
+      this.tabPage2TimeLine.Name = "tabPage2TimeLine";
+      this.tabPage2TimeLine.Size = new System.Drawing.Size(675, 406);
+      this.tabPage2TimeLine.TabIndex = 1;
+      this.tabPage2TimeLine.Text = "Timeline             ";
+      this.tabPage2TimeLine.UseVisualStyleBackColor = true;
+      // 
+      // tabControlLabel
+      // 
+      this.tabControlLabel.AutoSize = true;
+      this.tabControlLabel.BackColor = System.Drawing.Color.Transparent;
+      this.tabControlLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tabControlLabel.ForeColor = System.Drawing.Color.White;
+      this.tabControlLabel.Location = new System.Drawing.Point(347, 124);
+      this.tabControlLabel.Name = "tabControlLabel";
+      this.tabControlLabel.Size = new System.Drawing.Size(100, 18);
+      this.tabControlLabel.TabIndex = 14;
+      this.tabControlLabel.Text = "Select View:";
+      // 
       // MainMenuForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +263,8 @@
       this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(1045, 690);
+      this.Controls.Add(this.tabControlLabel);
+      this.Controls.Add(this.tabControl1);
       this.Controls.Add(this.loggedInTextBox);
       this.Controls.Add(this.groupProfileButton);
       this.Controls.Add(this.toTaskFormButton);
@@ -234,6 +282,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);
       this.Load += new System.EventHandler(this.MainMenuForm_Load);
       this.panel1.ResumeLayout(false);
+      this.tabControl1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -254,5 +303,9 @@
     private System.Windows.Forms.Button toTaskFormButton;
     private System.Windows.Forms.Button groupProfileButton;
     private System.Windows.Forms.TextBox loggedInTextBox;
+    private System.Windows.Forms.TabControl tabControl1;
+    private System.Windows.Forms.TabPage tabPage1SandBox;
+    private System.Windows.Forms.TabPage tabPage2TimeLine;
+    private System.Windows.Forms.Label tabControlLabel;
   }
 }

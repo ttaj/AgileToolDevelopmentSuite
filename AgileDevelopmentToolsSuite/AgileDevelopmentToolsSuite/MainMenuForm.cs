@@ -294,7 +294,7 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-        //MessageBox.Show("Connection Successful! ");
+
         try
         {
 

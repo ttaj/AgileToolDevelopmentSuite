@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class PositionForm : Form
+    public partial class PositionForm : Form
   {
     public PositionForm()
     {
@@ -21,6 +15,7 @@ namespace AgileDevelopmentToolsSuite
     {
       this.Hide();
 
+      //check if user registering for developer position or project manager
       if (positionBox.SelectedItem.Equals("Developer"))
       {
         this.Hide();
@@ -33,7 +28,7 @@ namespace AgileDevelopmentToolsSuite
 
         developerForm.Closed += (s, args) => this.Close();
         developerForm.Show();
-        }
+      }
       else
       {
         this.Hide();

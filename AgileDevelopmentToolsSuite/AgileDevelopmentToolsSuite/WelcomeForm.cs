@@ -24,7 +24,7 @@ namespace AgileDevelopmentToolsSuite
       loginForm.Location = new Point(this.Location.X, this.Location.Y);
       loginForm.Show();
 
-      loginForm.Closed += (s, args) => this.Close(); //Allow creation of new window before closing the last
+      loginForm.Closed += (s, args) => this.Close();
       loginForm.Show();
     }
 

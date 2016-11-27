@@ -44,9 +44,7 @@ namespace AgileDevelopmentToolsSuite
       SqlConnection db;
 
       String version = "MSSQLLocalDB";
-      //String fileName = "ADTSDLoginInfo.mdf";
       String fileName = "ADTSDInfo.mdf";
-      //String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
       String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
 
@@ -65,21 +63,20 @@ namespace AgileDevelopmentToolsSuite
       }
 
       object queryResult;
+
       SqlCommand insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Developer]) VALUES (@Username, @Password, @Developer)");
       SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
-
-      SqlCommand insertUsersInformation;
       SqlCommand insertUserSkills = new SqlCommand("INSERT INTO UserSkills ([Username]) VALUES (@Username)");
+      SqlCommand insertUsersInformation;
+
       if (yesProfileButton.Checked == true)
       {
         insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname], [ProfileLink]) VALUES (@Username, @Nickname, @ProfileLink)");
       }
-      else  //No profile link
+      else
       {
         insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname]) VALUES (@Username, @Nickname)");
       }
-
-
 
       insert.Connection = db;
       userCheck.Connection = db;
@@ -130,7 +127,6 @@ namespace AgileDevelopmentToolsSuite
 
               if (capital == true && number == true)
               {
-                MessageBox.Show("User successfully created!");
                 insert.Parameters.AddWithValue("@Username", usernameBox.Text);
                 insert.Parameters.AddWithValue("@Password", passwordBox.Text);
                 insert.Parameters.AddWithValue("@Developer", 1);
@@ -139,6 +135,7 @@ namespace AgileDevelopmentToolsSuite
                 insertUsersInformation.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
 
                 insertUserSkills.Parameters.AddWithValue("@Username", usernameBox.Text);
+
                 if (yesProfileButton.Checked == true)
                 {
                   insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
@@ -149,51 +146,29 @@ namespace AgileDevelopmentToolsSuite
                 insertUsersInformation.ExecuteNonQuery();
                 insertUserSkills.ExecuteNonQuery();
 
+                //direct to skillset form to fill out skills
+                this.Hide();
+                SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
+                skillSetForm.Width = this.Width;
+                skillSetForm.Height = this.Height;
 
-                if (yesProfileButton.Checked == false)
-                {
-                  this.Hide();
-                  SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
-                  skillSetForm.Width = this.Width;
-                  skillSetForm.Height = this.Height;
+                skillSetForm.StartPosition = FormStartPosition.Manual;
+                skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
 
-                  skillSetForm.StartPosition = FormStartPosition.Manual;
-                  skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
-
-                  skillSetForm.Closed += (s, args) => this.Close();
-                  skillSetForm.Show();
-                }
-                else
-                {
-                  this.Hide();
-                  MainMenuForm mainMenu = new MainMenuForm();
-                  mainMenu.Width = this.Width;
-                  mainMenu.Height = this.Height;
-
-                  mainMenu.StartPosition = FormStartPosition.Manual;
-                  mainMenu.Location = new Point(this.Location.X, this.Location.Y);
-
-                  mainMenu.Closed += (s, args) => this.Close();
-                  mainMenu.Show();
-                }
-                  
+                skillSetForm.Closed += (s, args) => this.Close();
+                skillSetForm.Show();      
               }
               else
               {
-                MessageBox.Show("Password is missing some of the criteria: Must be > 8 characters, have a CAPITAL letter, AND a number.");
+                MessageBox.Show("Password is missing some of the criteria: Must be greater than 8 characters, have a capital letter, and a number.");
               }
             }
             else
             {
-              if (usernameBox.Text.Length <= 8)
+              if (usernameBox.Text.Length <= 8 || passwordBox.Text.Length <= 8)
               {
-                MessageBox.Show("Error, username is less than 8 characters.");
+                MessageBox.Show("Error, username or password is less than 8 characters.");
                 return;
-              }
-
-              if (passwordBox.Text.Length <= 8)
-              {
-                MessageBox.Show("Error, password is less than 8 characters.");
               }
             }
           }

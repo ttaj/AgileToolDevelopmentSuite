@@ -294,7 +294,7 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-
+        //MessageBox.Show("Connection Successful! ");
         try
         {
 
@@ -476,6 +476,14 @@ namespace AgileDevelopmentToolsSuite
           cmd.Parameters.AddWithValue("@votes", 0);
           cmd.ExecuteNonQuery();
 
+          SqlCommand insertSandboxVote = new SqlCommand("INSERT INTO [SandboxVote] ([Username] ,[SuggestionName], [Voted]) VALUES (@username,@suggestionname,@voted)");
+          insertSandboxVote.Connection = db;
+          insertSandboxVote.Parameters.AddWithValue("@suggestionname", suggestionNameTextBox.Text);
+          insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+          insertSandboxVote.Parameters.AddWithValue("@voted", 0);
+          insertSandboxVote.ExecuteNonQuery();
+
+
           db.Close();
         }
         catch (Exception ex)
@@ -507,10 +515,15 @@ namespace AgileDevelopmentToolsSuite
 
           SqlCommand cmd = new SqlCommand("DELETE FROM Sandbox WHERE ID = @id");
           cmd.Connection = db;
-
           cmd.Parameters.AddWithValue("@id", listView2SelectedID);
-
           cmd.ExecuteNonQuery();
+
+          SqlCommand cmd2 = new SqlCommand("DELETE FROM SandboxVote WHERE Username = @currentuser AND SuggestionName = @suggestionname");
+          cmd2.Connection = db;
+          cmd2.Parameters.AddWithValue("@currentuser", currentUser);
+          cmd2.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
+          cmd2.ExecuteNonQuery();
+
 
           db.Close();
         }
@@ -559,23 +572,23 @@ namespace AgileDevelopmentToolsSuite
         db.Open();
         try
         {
-          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = 1 AND SuggestionName = @suggestionname");
+          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = 1 AND SuggestionName = @suggestionname AND Username = @username");
           checkIfVoted.Connection = db;
           checkIfVoted.Parameters.AddWithValue("@username", currentUser);
           checkIfVoted.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
           object didVote = checkIfVoted.ExecuteScalar();
 
           string result = Convert.ToString(didVote);
-
           if (!result.Equals(""))
           {
             MessageBox.Show("You upvoted already!");
           }
           else
           {
-            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username");
+            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username AND SuggestionName = @name");
             checkIfVotedNo.Connection = db;
             checkIfVotedNo.Parameters.AddWithValue("@username", currentUser);
+            checkIfVotedNo.Parameters.AddWithValue("@name", listView2SelectedName);
             object didVoteNo = checkIfVotedNo.ExecuteScalar();
             string result2 = Convert.ToString(didVoteNo);
             if (result2.Equals("-1")) //You voted no, but changed your mind
@@ -585,12 +598,26 @@ namespace AgileDevelopmentToolsSuite
               cmd.Parameters.AddWithValue("@id", listView2SelectedID);
               cmd.ExecuteNonQuery();
 
-              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username");
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username AND SuggestionName = @name");
               insertSandboxVote.Connection = db;
               insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@name", listView2SelectedName);
               insertSandboxVote.ExecuteNonQuery();
             }
-            else
+            else if (result2.Equals("0"))
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes + 1) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted + 1) WHERE Username = @Username AND SuggestionName = @name");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@name", listView2SelectedName);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+            else if (result2.Equals(""))
             {
               SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes + 1) WHERE ID = @id");
               cmd.Connection = db;
@@ -605,7 +632,6 @@ namespace AgileDevelopmentToolsSuite
               insertSandboxVote.ExecuteNonQuery();
             }
 
-            
           }
 
           db.Close();
@@ -636,23 +662,24 @@ namespace AgileDevelopmentToolsSuite
         db.Open();
         try
         {
-          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = -1 AND SuggestionName = @suggestionname");
+          SqlCommand checkIfVoted = new SqlCommand("Select Username FROM SandboxVote Where [Voted] = -1 AND SuggestionName = @suggestionname AND Username = @username");
           checkIfVoted.Connection = db;
           checkIfVoted.Parameters.AddWithValue("@username", currentUser);
           checkIfVoted.Parameters.AddWithValue("@suggestionname", listView2SelectedName);
           object didVote = checkIfVoted.ExecuteScalar();
 
           string result = Convert.ToString(didVote);
-
           if (!result.Equals(""))
           {
             MessageBox.Show("You downvoted already!");
+            
           }
           else
           {
-            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username");
+            SqlCommand checkIfVotedNo = new SqlCommand("Select Voted FROM SandboxVote Where Username = @username AND SuggestionName = @name");
             checkIfVotedNo.Connection = db;
             checkIfVotedNo.Parameters.AddWithValue("@username", currentUser);
+            checkIfVotedNo.Parameters.AddWithValue("@name", listView2SelectedName);
             object didVoteNo = checkIfVotedNo.ExecuteScalar();
             string result2 = Convert.ToString(didVoteNo);
             if (result2.Equals("1")) //You voted yes, but changed your mind
@@ -662,12 +689,26 @@ namespace AgileDevelopmentToolsSuite
               cmd.Parameters.AddWithValue("@id", listView2SelectedID);
               cmd.ExecuteNonQuery();
 
-              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username");
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted * -1) WHERE Username = @Username AND SuggestionName = @name");
               insertSandboxVote.Connection = db;
               insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@name", listView2SelectedName);
               insertSandboxVote.ExecuteNonQuery();
             }
-            else
+            else if (result2.Equals("0")) //You created the suggestion, but didn't vote
+            {
+              SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes - 1) WHERE ID = @id");
+              cmd.Connection = db;
+              cmd.Parameters.AddWithValue("@id", listView2SelectedID);
+              cmd.ExecuteNonQuery();
+
+              SqlCommand insertSandboxVote = new SqlCommand("UPDATE [SandboxVote] SET [Voted] = (Voted - 1) WHERE Username = @Username AND SuggestionName = @name");
+              insertSandboxVote.Connection = db;
+              insertSandboxVote.Parameters.AddWithValue("@username", currentUser);
+              insertSandboxVote.Parameters.AddWithValue("@name", listView2SelectedName);
+              insertSandboxVote.ExecuteNonQuery();
+            }
+            else if(result2.Equals(""))
             {
               SqlCommand cmd = new SqlCommand("UPDATE [Sandbox] SET [Votes] = (Votes - 1) WHERE ID = @id");
               cmd.Connection = db;
@@ -681,8 +722,6 @@ namespace AgileDevelopmentToolsSuite
               insertSandboxVote.Parameters.AddWithValue("@voted", -1);
               insertSandboxVote.ExecuteNonQuery();
             }
-
-
           }
 
           db.Close();
@@ -700,10 +739,10 @@ namespace AgileDevelopmentToolsSuite
       resetListView2();
     }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void clearSuggestionButton_Click(object sender, EventArgs e)
         {
             suggestionNameTextBox.Text = "";
             createSuggestionDescTextBox.Text = "";
         }
-    }
+    } //End of class
 }

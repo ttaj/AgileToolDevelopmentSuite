@@ -222,6 +222,7 @@
             this.setSprintNumBox.Name = "setSprintNumBox";
             this.setSprintNumBox.Size = new System.Drawing.Size(90, 20);
             this.setSprintNumBox.TabIndex = 18;
+            this.setSprintNumBox.ValueChanged += new System.EventHandler(this.setSprintNumBox_ValueChanged);
             // 
             // setSprintLbl
             // 
@@ -260,6 +261,7 @@
             this.sortByUpOrDown.Size = new System.Drawing.Size(16, 17);
             this.sortByUpOrDown.TabIndex = 22;
             this.sortByUpOrDown.Text = "↓";
+            this.sortByUpOrDown.Click += new System.EventHandler(this.sortByUpOrDown_Click);
             // 
             // createTaskButton
             // 
@@ -289,6 +291,7 @@
             this.instructionsButton.TabIndex = 24;
             this.instructionsButton.Text = "?  Click for Instructions  ?";
             this.instructionsButton.UseVisualStyleBackColor = false;
+            this.instructionsButton.Click += new System.EventHandler(this.instructionsButton_Click_1);
             // 
             // curTaskDescLabel
             // 
@@ -317,6 +320,7 @@
             this.backButton.TabIndex = 26;
             this.backButton.Text = "Back to Menu";
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
             // 
             // curTasksLabel
             // 
@@ -343,6 +347,7 @@
             this.testLabel.Size = new System.Drawing.Size(118, 19);
             this.testLabel.TabIndex = 28;
             this.testLabel.Text = "(Select an Item)";
+            this.testLabel.Click += new System.EventHandler(this.testLabel_Click);
             // 
             // TaskForm
             // 

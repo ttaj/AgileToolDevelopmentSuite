@@ -111,68 +111,68 @@ namespace AgileDevelopmentToolsSuite
 
     private void curTasksSaveButton_Click(object sender, EventArgs e)
     {
-      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+        curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
 
-      if (curTasksRadio1.Checked)  //URGENT CHECKED
-      {
-        importance = "Urgent";
-      }
-      else if (curTasksRadio2.Checked) //TODO
-      {
-        importance = "To-Do";
-      }
-      else   //COMPLETED
-      {
-        importance = "Completed";
-      }
+        if (curTasksRadio1.Checked)  //URGENT CHECKED
+        {
+            importance = "Urgent";
+        }
+        else if (curTasksRadio2.Checked) //TODO
+        {
+            importance = "To-Do";
+        }
+        else   //COMPLETED
+        {
+            importance = "Completed";
+        }
 
-      SqlConnection db;
-      String version = "MSSQLLocalDB";
-      String fileName = "ADTSDInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+        SqlConnection db;
+        String version = "MSSQLLocalDB";
+        String fileName = "ADTSDInfo.mdf";
+        String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
-      db = new SqlConnection(connectionString);
-      try
-      {
-        db.Open();
-        MessageBox.Show("Changes successfully saved!");
+        db = new SqlConnection(connectionString);
         try
         {
+            db.Open();
+            MessageBox.Show("Changes successfully saved!");
+            try
+            {
 
-          DataSet ds = new DataSet();
-          string saveChanges = @"UPDATE [Tasks] SET 
-                            [Importance] =  @importance, 
-                            [DateModified] = @datemodified,
-                            [TaskDescription] = @taskdescription,
-                            [ProjectGroup] = @projectgroup
-                            WHERE ID = @selectedItem";
+                DataSet ds = new DataSet();
+                string saveChanges = @"UPDATE [Tasks] SET 
+                        [Importance] =  @importance, 
+                        [DateModified] = @datemodified,
+                        [TaskDescription] = @taskdescription,
+                        [ProjectGroup] = @projectgroup
+                        WHERE ID = @selectedItem";
 
-          SqlCommand cmd = new SqlCommand();
-          cmd.Connection = db;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
 
-          cmd.CommandText = saveChanges;
+                cmd.CommandText = saveChanges;
 
 
-          cmd.Parameters.AddWithValue("@importance", importance);
-          cmd.Parameters.AddWithValue("@datemodified", DateTime.Now);
-          cmd.Parameters.AddWithValue("@taskdescription", curTaskDescriptions.Text);
-          cmd.Parameters.AddWithValue("@selectedItem", selectedItem);
-          cmd.Parameters.AddWithValue("@projectgroup", setSprintNumBox.Value);
-          cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@importance", importance);
+                cmd.Parameters.AddWithValue("@datemodified", DateTime.Now);
+                cmd.Parameters.AddWithValue("@taskdescription", curTaskDescriptions.Text);
+                cmd.Parameters.AddWithValue("@selectedItem", selectedItem);
+                cmd.Parameters.AddWithValue("@projectgroup", setSprintNumBox.Value);
+                cmd.ExecuteNonQuery();
 
-          db.Close();
+                db.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         catch (Exception ex)
         {
-          MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
         }
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show(ex.Message);
-      }
 
-      resetListView();
+        resetListView();
     }
 
     private void TaskForm_Load(object sender, EventArgs e)
@@ -195,91 +195,41 @@ namespace AgileDevelopmentToolsSuite
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      curTaskDescriptions.Enabled = true;
-      //Get the value of the listview
-      if (listView1.SelectedItems.Count > 0)  //Make sure we do not crash as the count cannot be <= 0 aka null
-      {
-        curTasksSaveButton.Enabled = true;
-        ListViewItem item = listView1.SelectedItems[0];
-        //MessageBox.Show(item.SubItems[4].ToString());
-        curTaskDescriptions.Text = item.SubItems[5].Text; //Get task descriptions
-
-        selectedIDLbl.Text = "Selected FORM ID: " + item.SubItems[0].Text;
-        curTasksSaveButton.Text = "Save Changes to: " + item.SubItems[0].Text;
-        selectedItem = Int32.Parse(item.SubItems[0].Text);
-        importance = item.SubItems[4].Text;
-
-
-
-        if (item.SubItems[4].Text == "Urgent")  //Listview to modify the radio buttons.
+        curTaskDescriptions.Enabled = true;
+        //Get the value of the listview
+        if (listView1.SelectedItems.Count > 0)  //Make sure we do not crash as the count cannot be <= 0 aka null
         {
-          curTasksRadio1.PerformClick();
-        }
-        else if (item.SubItems[4].Text == "To-Do") //TODO
-        {
-          curTasksRadio2.PerformClick();
+            curTasksSaveButton.Enabled = true;
+            ListViewItem item = listView1.SelectedItems[0];
+            //MessageBox.Show(item.SubItems[4].ToString());
+            curTaskDescriptions.Text = item.SubItems[5].Text; //Get task descriptions
+
+            selectedIDLbl.Text = "Selected FORM ID: " + item.SubItems[0].Text;
+            curTasksSaveButton.Text = "Save Changes to: " + item.SubItems[0].Text;
+            selectedItem = Int32.Parse(item.SubItems[0].Text);
+            importance = item.SubItems[4].Text;
+
+
+
+            if (item.SubItems[4].Text == "Urgent")  //Listview to modify the radio buttons.
+            {
+                curTasksRadio1.PerformClick();
+            }
+            else if (item.SubItems[4].Text == "To-Do") //TODO
+            {
+                curTasksRadio2.PerformClick();
+            }
+            else
+            {
+                curTasksRadio3.PerformClick();  //COMPLETED
+            }
+
         }
         else
         {
-          curTasksRadio3.PerformClick();  //COMPLETED
+            curTasksSaveButton.Enabled = false;
+            return;
         }
-
-      }
-      else
-      {
-        curTasksSaveButton.Enabled = false;
-        return;
-      }
-
-      /*
-      SqlConnection db;
-      String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
-
-      db = new SqlConnection(connectionString);
-      try
-      {
-        db.Open();
-        //MessageBox.Show("Connection Successful! ");
-        try
-        {
-
-          DataSet ds = new DataSet();
-          string listTasksCmd = "SELECT TaskName, TaskDescription FROM [Tasks] WHERE TaskName = '" + listView1.SelectedItems[0].SubItems[1].Text + "'";
-
-          SqlCommand cmd = new SqlCommand();
-          cmd.Connection = db;
-
-          cmd.CommandText = listTasksCmd;
-          var reader = cmd.ExecuteReader();
-
-          List<string[]> listTasks = new List<string[]>(); // Use list to generate a display for the listbox (to carry info)
-
-          int index = 0;
-          while (reader.Read()) //Iterate through all the values of listed values from query
-          {
-            // Concatenate years with the number of crimes occurence that year by Group By
-            //Math round(number, # of decimals)
-
-            curTaskDescriptions.Text = reader.GetString(2);
-          }
-
-          reader.Close();
-          db.Close();
-
-        }
-        catch (Exception ex)
-        {
-          MessageBox.Show(ex.Message);
-        }
-      }
-      catch (Exception ex)
-      {
-        MessageBox.Show(ex.Message);
-      }
-    
-    */
 
     }
 
@@ -608,6 +558,51 @@ namespace AgileDevelopmentToolsSuite
     }
 
         private void createTaskButton_Click_1(object sender, EventArgs e)
+        {
+            CreateTaskForm c = new CreateTaskForm();
+            c.StartPosition = FormStartPosition.Manual;
+            c.ShowDialog();
+            resetListView();
+        }
+
+        private void backButton_Click_1(object sender, EventArgs e)
+        {
+            MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+            mainMenuForm.Width = this.Width;
+            mainMenuForm.Height = this.Height;
+
+            mainMenuForm.StartPosition = FormStartPosition.Manual;
+            mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+
+            this.Hide();
+            mainMenuForm.Show();
+        }
+
+        private void instructionsButton_Click_1(object sender, EventArgs e)
+        {
+            curTaskDescriptions.Enabled = false;
+            curTasksSaveButton.Text = "Save Changes to: ";
+            curTaskDescriptions.Text = "1) Select your desired [Sprint #] category using the dropdown box above.\n" +
+                                       "2) Click on the [column tabs] to sort the listing order, click on the same tab again to reverse the order.\n" +
+                                       "3) Click any of [the rows of the List] below to select and view and modify its Task Description.\n" +
+                                       "4) You may modify the [Current Progress] of the task with the [Urgent, TO-DO, or Completed] radio buttons.\n" +
+                                       "5) Click on [Save Changes to: ##] button to save the changes made to that ID. A timestamp will additionally be made to that task on when it was modified." +
+                                       "\nNote: No Task shall ever be deleted, thus deleting tasks are not possible. Just mark it as complete when it is done.";
+            curTasksSaveButton.Enabled = false;
+            curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+        }
+
+        private void sortByUpOrDown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void setSprintNumBox_ValueChanged(object sender, EventArgs e)
         {
 
         }

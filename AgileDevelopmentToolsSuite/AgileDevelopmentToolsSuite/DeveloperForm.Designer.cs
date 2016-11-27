@@ -52,7 +52,7 @@
             this.usernameBox.MaxLength = 32;
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(123, 20);
-            this.usernameBox.TabIndex = 10;
+            this.usernameBox.TabIndex = 0;
             this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // usernameLabel
@@ -74,7 +74,7 @@
             this.passwordBox.MaxLength = 32;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(123, 20);
-            this.passwordBox.TabIndex = 12;
+            this.passwordBox.TabIndex = 1;
             // 
             // passwordLabel
             // 
@@ -109,10 +109,12 @@
             this.profileLinkBox.Size = new System.Drawing.Size(123, 20);
             this.profileLinkBox.TabIndex = 15;
             this.profileLinkBox.Visible = false;
+            this.profileLinkBox.TextChanged += new System.EventHandler(this.profileLinkBox_TextChanged);
             // 
             // yesProfileButton
             // 
             this.yesProfileButton.AutoSize = true;
+            this.yesProfileButton.Checked = true;
             this.yesProfileButton.Location = new System.Drawing.Point(383, 302);
             this.yesProfileButton.Name = "yesProfileButton";
             this.yesProfileButton.Size = new System.Drawing.Size(43, 17);
@@ -129,7 +131,6 @@
             this.noProfileButton.Name = "noProfileButton";
             this.noProfileButton.Size = new System.Drawing.Size(39, 17);
             this.noProfileButton.TabIndex = 17;
-            this.noProfileButton.TabStop = true;
             this.noProfileButton.Text = "No";
             this.noProfileButton.UseVisualStyleBackColor = true;
             this.noProfileButton.CheckedChanged += new System.EventHandler(this.noProfileButton_CheckedChanged);
@@ -172,11 +173,11 @@
             // nickNameTxt
             // 
             this.nickNameTxt.Location = new System.Drawing.Point(352, 249);
-            this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.nickNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nickNameTxt.MaxLength = 32;
             this.nickNameTxt.Name = "nickNameTxt";
             this.nickNameTxt.Size = new System.Drawing.Size(123, 20);
-            this.nickNameTxt.TabIndex = 20;
+            this.nickNameTxt.TabIndex = 2;
             // 
             // nickNameLbl
             // 
@@ -225,6 +226,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "DeveloperForm";
             this.Text = "Agile Development Tools Suite";
+            this.Load += new System.EventHandler(this.DeveloperForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

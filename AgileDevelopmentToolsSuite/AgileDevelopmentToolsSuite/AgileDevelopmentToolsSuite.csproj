@@ -111,24 +111,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADTSDInfoDataSet.cs">
-      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ADTSDInfoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChatForm.Designer.cs">
+    <Compile Include="ChatForm.designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConnectForm.Designer.cs">
+    <Compile Include="ConnectForm.designer.cs">
       <DependentUpon>ConnectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateTaskForm.cs">
@@ -146,7 +138,7 @@
     <Compile Include="EditGroupProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditGroupProfileForm.Designer.cs">
+    <Compile Include="EditGroupProfileForm.designer.cs">
       <DependentUpon>EditGroupProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditProfileForm.cs">
@@ -164,14 +156,8 @@
     <Compile Include="HostForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HostForm.Designer.cs">
+    <Compile Include="HostForm.designer.cs">
       <DependentUpon>HostForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProfileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProfileForm.Designer.cs">
-      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -184,6 +170,12 @@
     </Compile>
     <Compile Include="MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectManagerApprovalForm.cs">
@@ -241,6 +233,9 @@
     <EmbeddedResource Include="EditProfileForm.resx">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupProfileForm.resx">
+      <DependentUpon>GroupProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HostForm.resx">
       <DependentUpon>HostForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GroupProfileForm.resx">
-      <DependentUpon>GroupProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
@@ -283,17 +275,6 @@
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ADTSDInfoDataSet.xsc">
-      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ADTSDInfoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADTSDInfoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADTSDInfoDataSet.xss">
-      <DependentUpon>ADTSDInfoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -312,6 +293,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ADTSDInfo_log.ldf">
+      <DependentUpon>ADTSDInfo.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\%24this.BackgroundImage.jpg" />

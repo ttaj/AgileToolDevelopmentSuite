@@ -101,7 +101,6 @@
             this.approveButton.TabIndex = 14;
             this.approveButton.Text = "Approve Registration";
             this.approveButton.UseVisualStyleBackColor = false;
-            this.approveButton.Click += new System.EventHandler(this.approveButton_Click);
             // 
             // instructionLabel
             // 

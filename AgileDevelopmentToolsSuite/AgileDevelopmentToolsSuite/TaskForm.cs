@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace AgileDevelopmentToolsSuite
 {
     public partial class TaskForm : Form
   {
     static int selectedItem = 0; //Global variable
-    static char importance = 'T'; //Global variable
+    static string importance = "To-Do"; //Global variable
     static int sortBy = 0; //Global variable, 0 = date issued, 1 = importance, 2 = taskname, 3 = ID, 4 = Date modified, 5 = User Assigned
+
+    int selectedSprint = 0;
+    int tempSelectedIndex = 0;
+    int numberOfSprints = 0;
+    string currentUser = "";
 
     public TaskForm()
     {
@@ -20,11 +26,22 @@ namespace AgileDevelopmentToolsSuite
       listView1.FullRowSelect = true;
       curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
       curTasksSaveButton.Enabled = false;
-
+      sortByUpOrDown.Text = "↓";
       this.curTasksComboBox.SelectedIndex = 0;
     }
 
+    public TaskForm(string curUser)
+    {
+      InitializeComponent();
 
+
+      listView1.FullRowSelect = true;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+      curTasksSaveButton.Enabled = false;
+      sortByUpOrDown.Text = "↓";
+      this.curTasksComboBox.SelectedIndex = 0;
+      currentUser = curUser;
+    }
 
 
     private void label1_Click(object sender, EventArgs e)
@@ -74,18 +91,23 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      MainMenuForm m = new MainMenuForm();
-      this.Visible = false;
-      m.ShowDialog();
-      this.Visible = true;
+      MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+      mainMenuForm.Width = this.Width;
+      mainMenuForm.Height = this.Height;
+
+      mainMenuForm.StartPosition = FormStartPosition.Manual;
+      mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+
+      this.Hide();
+      mainMenuForm.Show();
     }
 
     private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-      sortBy = curTasksComboBox.SelectedIndex;
-
+      //sortBy = curTasksComboBox.SelectedIndex;
+      selectedSprint = curTasksComboBox.SelectedIndex;
+      testLabel.Text = curTasksComboBox.Text;
       resetListView();
-
     }
 
     private void curTasksSaveButton_Click(object sender, EventArgs e)
@@ -94,21 +116,21 @@ namespace AgileDevelopmentToolsSuite
 
       if (curTasksRadio1.Checked)  //URGENT CHECKED
       {
-        importance = 'U';
+        importance = "Urgent";
       }
       else if (curTasksRadio2.Checked) //TODO
       {
-        importance = 'T';
+        importance = "To-Do";
       }
       else   //COMPLETED
       {
-        importance = 'C';
+        importance = "Completed";
       }
 
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -119,17 +141,24 @@ namespace AgileDevelopmentToolsSuite
         {
 
           DataSet ds = new DataSet();
-
           string saveChanges = @"UPDATE [Tasks] SET 
-                            Importance = '" + importance + @"', 
-                            DateModified = '" + DateTime.Now + @"',
-                            TaskDescription = '" + curTaskDescriptions.Text + @"'
-                            WHERE ID = " + selectedItem + "";
+                            [Importance] =  @importance, 
+                            [DateModified] = @datemodified,
+                            [TaskDescription] = @taskdescription,
+                            [ProjectGroup] = @projectgroup
+                            WHERE ID = @selectedItem";
 
           SqlCommand cmd = new SqlCommand();
           cmd.Connection = db;
 
           cmd.CommandText = saveChanges;
+
+
+          cmd.Parameters.AddWithValue("@importance", importance);
+          cmd.Parameters.AddWithValue("@datemodified", DateTime.Now);
+          cmd.Parameters.AddWithValue("@taskdescription", curTaskDescriptions.Text);
+          cmd.Parameters.AddWithValue("@selectedItem", selectedItem);
+          cmd.Parameters.AddWithValue("@projectgroup", setSprintNumBox.Value);
           cmd.ExecuteNonQuery();
 
           db.Close();
@@ -150,7 +179,7 @@ namespace AgileDevelopmentToolsSuite
     private void TaskForm_Load(object sender, EventArgs e)
     {
       // TODO: This line of code loads data into the 'aDTSDLoginInfoDataSet.Tasks' table. You can move, or remove it, as needed.
-      this.tasksTableAdapter.Fill(this.aDTSDLoginInfoDataSet.Tasks);
+      //this.tasksTableAdapter.Fill(this.aDTSDLoginInfoDataSet.Tasks);
 
       /*  //PictureLoader from URL
       var request = WebRequest.Create("");
@@ -167,7 +196,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+      curTaskDescriptions.Enabled = true;
       //Get the value of the listview
       if (listView1.SelectedItems.Count > 0)  //Make sure we do not crash as the count cannot be <= 0 aka null
       {
@@ -179,15 +208,15 @@ namespace AgileDevelopmentToolsSuite
         selectedIDLbl.Text = "Selected FORM ID: " + item.SubItems[0].Text;
         curTasksSaveButton.Text = "Save Changes to: " + item.SubItems[0].Text;
         selectedItem = Int32.Parse(item.SubItems[0].Text);
-        importance = Char.Parse(item.SubItems[4].Text);
+        importance = item.SubItems[4].Text;
 
 
 
-        if (item.SubItems[4].Text == "U")  //Listview to modify the radio buttons.
+        if (item.SubItems[4].Text == "Urgent")  //Listview to modify the radio buttons.
         {
           curTasksRadio1.PerformClick();
         }
-        else if (item.SubItems[4].Text == "T") //TODO
+        else if (item.SubItems[4].Text == "To-Do") //TODO
         {
           curTasksRadio2.PerformClick();
         }
@@ -267,8 +296,8 @@ namespace AgileDevelopmentToolsSuite
     {
       SqlConnection db;
       String version = "MSSQLLocalDB";
-      String fileName = "ADTSDLoginInfo.mdf";
-      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDLoginInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+      String fileName = "ADTSDInfo.mdf";
+      String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
 
       db = new SqlConnection(connectionString);
       try
@@ -280,61 +309,114 @@ namespace AgileDevelopmentToolsSuite
 
           DataSet ds = new DataSet();
           string listTasksCmd = "";
+          string getMaxSprintsCmd = "SELECT MAX(ProjectGroup) FROM [Tasks]";
+
+          string additionalWhere = "";
+
+          if (curTasksComboBox.SelectedIndex == 0) //Show all tasks
+          {
+            //do nothing
+          }
+          else if (curTasksComboBox.SelectedIndex == 1) //Show all non-sprint related tasks (in db, where value of project group is <= 0
+          {
+            additionalWhere = " Where ProjectGroup <= @projectGroup";
+          }
+          else if (curTasksComboBox.SelectedIndex >= 2) //Show sprint #
+          {
+            additionalWhere = " Where ProjectGroup = @projectGroup";
+          }
+
+
 
           if (sortBy == 0) //DateSubmitted
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY DateSubmitted Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY DateSubmitted Asc";
           }
           else if (sortBy == 100) //DateSubmitted rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY DateSubmitted Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY DateSubmitted Desc";
           }
           else if (sortBy == 1) //Importance
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY Importance Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY Importance Desc";
           }
           else if (sortBy == -1) //Importance rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY Importance Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY Importance Asc";
           }
           else if (sortBy == 2) //TaskName
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY TaskName Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY TaskName Asc";
           }
           else if (sortBy == -2) //TaskName rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY TaskName Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY TaskName Desc";
           }
           else if (sortBy == 3) //ID
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY ID Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY ID Asc";
           }
           else if (sortBy == -3) //ID rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY ID Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY ID Desc";
           }
           else if (sortBy == 4) //Date Modified
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY DateModified Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY DateModified Asc";
           }
           else if (sortBy == -4) //Date Modified rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY DateModified Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY DateModified Desc";
           }
           else if (sortBy == 5) //User Assigned
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY UserAssigned Asc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + " ORDER BY UserAssigned Asc";
           }
           else if (sortBy == -5) //User Assigned rev
           {
-            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks] ORDER BY UserAssigned Desc";
+            listTasksCmd = "SELECT ID, TaskName, UserAssigned, DateSubmitted, Importance, TaskDescription, DateModified FROM [Tasks]" + additionalWhere + "ORDER BY UserAssigned Desc";
           }
-
+          
           SqlCommand cmd = new SqlCommand();
           cmd.Connection = db;
-
-
           cmd.CommandText = listTasksCmd;
+
+          SqlCommand cmd2 = new SqlCommand();
+          cmd2.Connection = db;
+          cmd2.CommandText = getMaxSprintsCmd;
+          int numSprints = (Int32)cmd2.ExecuteScalar();
+
+          numberOfSprints = numSprints;
+
+
+
+
+          curTasksComboBox.Items.Clear();
+          curTasksComboBox.Items.Add("(Show All Tasks)");
+          curTasksComboBox.Items.Add("(Show Non-Sprints)");
+
+          for (int i = 1; i < numberOfSprints + 1; i++)
+          {
+            curTasksComboBox.Items.Add(i);
+          }
+
+          if (curTasksComboBox.SelectedIndex == 0) //Show all tasks
+          {
+            //do nothing
+          }
+          else if (curTasksComboBox.SelectedIndex == 1) //Show all non-sprint related tasks (in db, where value of project group is <= 0
+          {
+            cmd.Parameters.AddWithValue("@projectGroup", 0);
+          }
+          else //Show sprint #
+          {
+            cmd.Parameters.AddWithValue("@projectGroup", selectedSprint-1);
+          }
+          
+
+
+
+
           var reader = cmd.ExecuteReader();
 
           List<string[]> listTasks = new List<string[]>(); // Use list to generate a display for the listbox (to carry info)
@@ -403,39 +485,46 @@ namespace AgileDevelopmentToolsSuite
       {
         MessageBox.Show(ex.Message);
       }
+
+      
     }
 
-    int toggle = -1;
     private void listView1_ColumnClick(object sender, System.Windows.Forms.ColumnClickEventArgs e)
     {
       //sortBy: 0 = date issued, 1 = importance, 2 = taskname, 3 = ID, 4 = Date modified, 5 = User Assigned
       if (e.Column == 0)
       {
-        curTasksComboBox.SelectedIndex = 3;
+        //curTasksComboBox.SelectedIndex = 3;
         if (sortBy == -3)
           sortBy = 3;
         else if (sortBy == 3)
           sortBy = -3;
+        else
+          sortBy = 3;
       }
       else if (e.Column == 1)
       {
-        curTasksComboBox.SelectedIndex = 2;
+        //curTasksComboBox.SelectedIndex = 2;
         if (sortBy == -2)
           sortBy = 2;
         else if (sortBy == 2)
           sortBy = -2;
+        else
+          sortBy = 2;
       }
       else if (e.Column == 2)
       {
-        curTasksComboBox.SelectedIndex = 5;
+        //curTasksComboBox.SelectedIndex = 5;
         if (sortBy == -5)
           sortBy = 5;
         else if (sortBy == 5)
           sortBy = -5;
+        else
+          sortBy = 5;
       }
       else if (e.Column == 3)
       {
-        curTasksComboBox.SelectedIndex = 0;
+        //curTasksComboBox.SelectedIndex = 0;
         if (sortBy == 0)
         {
           sortBy = 100;
@@ -444,23 +533,39 @@ namespace AgileDevelopmentToolsSuite
         {
           sortBy = 0;
         }
+        else
+        {
+          sortBy = 0;
+        }
 
       }
       else if (e.Column == 4)
       {
-        curTasksComboBox.SelectedIndex = 1;
+        //curTasksComboBox.SelectedIndex = 1;
         if (sortBy == -1)
           sortBy = 1;
         else if (sortBy == 1)
           sortBy = -1;
+        else
+          sortBy = 1;
       }
       else
       {
-        curTasksComboBox.SelectedIndex = 4;
+        //curTasksComboBox.SelectedIndex = 4;
         if (sortBy == -4)
           sortBy = 4;
         else if (sortBy == 4)
           sortBy = -4;
+        else
+          sortBy = 4;
+      }
+      if(sortBy > 0)
+      {
+        sortByUpOrDown.Text = "↓";
+      }
+      else
+      {
+        sortByUpOrDown.Text = "↑";
       }
       resetListView();
     }
@@ -482,16 +587,23 @@ namespace AgileDevelopmentToolsSuite
 
     private void instructionsButton_Click(object sender, EventArgs e)
     {
-      curTaskDescriptions.Text = "1) Click on the [Sort By: Combobox] to select sorting order (or click on column tabs).\n" +
-                                 "2) Click any of [the rows of the List] below to select and view and modify its Task Description.\n" +
-                                 "3) You may modify the [Current Progress] of the task with the [Urgent, TO-DO, or Completed] radio buttons.\n" +
-                                 "4) Click on [Save Changes to: ##] to save the changes made to that ID. A timestamp will additionally be made to that task on when it was modified." +
+      curTaskDescriptions.Enabled = false;
+      curTasksSaveButton.Text = "Save Changes to: ";
+      curTaskDescriptions.Text = "1) Select your desired [Sprint #] category using the dropdown box above.\n" +
+                                 "2) Click on the [column tabs] to sort the listing order, click on the same tab again to reverse the order.\n" +
+                                 "3) Click any of [the rows of the List] below to select and view and modify its Task Description.\n" +
+                                 "4) You may modify the [Current Progress] of the task with the [Urgent, TO-DO, or Completed] radio buttons.\n" +
+                                 "5) Click on [Save Changes to: ##] button to save the changes made to that ID. A timestamp will additionally be made to that task on when it was modified." +
                                  "\nNote: No Task shall ever be deleted, thus deleting tasks are not possible. Just mark it as complete when it is done.";
       curTasksSaveButton.Enabled = false;
       curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
     }
 
     private void TaskForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      Application.Exit();
+    }
+    private void TaskForm_FormClosed(object sender, FormClosingEventArgs e)
     {
       Application.Exit();
     }

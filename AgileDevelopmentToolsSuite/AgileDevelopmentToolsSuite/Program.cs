@@ -16,7 +16,10 @@ namespace AgileDevelopmentToolsSuite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WelcomeForm());
-        }
+      Application.Run(new WelcomeForm());
+      //Application.Run(new TaskForm("FinalJonTest"));
+      //Application.Run(new MainMenuForm());
+      //Application.Run(new SkillSetForm("Jonathan"));
+    }
     }
 }

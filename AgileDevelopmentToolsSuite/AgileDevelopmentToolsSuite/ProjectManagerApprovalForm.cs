@@ -21,10 +21,5 @@ namespace AgileDevelopmentToolsSuite
         {
 
         }
-
-        private void approveButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

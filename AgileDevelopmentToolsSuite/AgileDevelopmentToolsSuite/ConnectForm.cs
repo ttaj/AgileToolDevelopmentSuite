@@ -16,8 +16,10 @@ namespace AgileDevelopmentToolsSuite
 {
 	public partial class ConnectForm : Form
 	{
-		public ConnectForm()
+		String curUser;
+		public ConnectForm(String name)
 		{
+			curUser = name;
 			InitializeComponent();
 		}
 
@@ -67,7 +69,7 @@ namespace AgileDevelopmentToolsSuite
 			}
 			this.Hide();
 
-			ChatForm chatForm = new ChatForm(newTCPConn);
+			ChatForm chatForm = new ChatForm(curUser, newTCPConn);
 			chatForm.Show();
 		}
 

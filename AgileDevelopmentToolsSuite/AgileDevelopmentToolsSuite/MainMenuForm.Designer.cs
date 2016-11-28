@@ -141,7 +141,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DarkGray;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(122, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
@@ -155,7 +155,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(3, 2);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
@@ -551,6 +551,7 @@
             this.groupProfileListBox.Name = "groupProfileListBox";
             this.groupProfileListBox.Size = new System.Drawing.Size(186, 21);
             this.groupProfileListBox.TabIndex = 16;
+            this.groupProfileListBox.SelectedIndexChanged += new System.EventHandler(this.groupProfileListBox_SelectedIndexChanged);
             // 
             // MainMenuForm
             // 

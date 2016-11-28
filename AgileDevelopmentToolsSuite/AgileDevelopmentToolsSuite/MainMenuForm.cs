@@ -803,5 +803,10 @@ namespace AgileDevelopmentToolsSuite
             suggestionNameTextBox.Text = "";
             createSuggestionDescTextBox.Text = "";
         }
+
+        private void groupProfileListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentGroup = groupProfileListBox.SelectedText;
+        }
     } //End of class
 }

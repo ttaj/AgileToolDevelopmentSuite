@@ -66,7 +66,7 @@
             this.createSuggestionButton = new System.Windows.Forms.Button();
             this.tabPage2TimeLine = new System.Windows.Forms.TabPage();
             this.tabControlLabel = new System.Windows.Forms.Label();
-            this.groupProfileListBox = new System.Windows.Forms.ListBox();
+            this.groupProfileListBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1SandBox.SuspendLayout();
@@ -543,13 +543,14 @@
             // groupProfileListBox
             // 
             this.groupProfileListBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupProfileListBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupProfileListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupProfileListBox.ForeColor = System.Drawing.Color.Black;
             this.groupProfileListBox.FormattingEnabled = true;
-            this.groupProfileListBox.Location = new System.Drawing.Point(108, 9);
+            this.groupProfileListBox.Location = new System.Drawing.Point(108, 7);
+            this.groupProfileListBox.MaxDropDownItems = 50;
             this.groupProfileListBox.Name = "groupProfileListBox";
-            this.groupProfileListBox.Size = new System.Drawing.Size(186, 17);
-            this.groupProfileListBox.TabIndex = 15;
+            this.groupProfileListBox.Size = new System.Drawing.Size(186, 21);
+            this.groupProfileListBox.TabIndex = 16;
             // 
             // MainMenuForm
             // 
@@ -628,6 +629,6 @@
     private System.Windows.Forms.Button yesButton;
     private System.Windows.Forms.Label confirmationDeleteLabel;
         private System.Windows.Forms.Button clearSuggestionButton;
-        private System.Windows.Forms.ListBox groupProfileListBox;
+        private System.Windows.Forms.ComboBox groupProfileListBox;
     }
 }

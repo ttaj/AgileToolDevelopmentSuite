@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class MainMenuForm : Form
+    public partial class MainMenuForm : Form
   {
     String listView2SelectedName = "";
     String currentUser = "";
+    String currentGroup = "";
     int listView2SelectedID = 0;
     
 
@@ -39,6 +36,7 @@ namespace AgileDevelopmentToolsSuite
       panel1.Hide();
       resetListView();
       resetListView2();
+      populateGroupProfileList();
       listView1.FullRowSelect = true;
       listView2.FullRowSelect = true;
       createSuggestionPanel.Visible = false;
@@ -106,16 +104,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void menuGroupNameTxt_TextChanged(object sender, EventArgs e)
     {
-      LoginForm loginForm = new LoginForm();
+        this.Hide();
 
-      loginForm.Width = this.Width;
-      loginForm.Height = this.Height;
+        LoginForm loginForm = new LoginForm();
 
-      loginForm.StartPosition = FormStartPosition.Manual;
-      loginForm.Location = new Point(this.Location.X, this.Location.Y);
+        loginForm.Width = this.Width;
+        loginForm.Height = this.Height;
 
-      this.Hide();
-      loginForm.Show();
+        loginForm.StartPosition = FormStartPosition.Manual;
+        loginForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        loginForm.Closed += (s, args) => this.Close();
+        loginForm.Show();
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -159,15 +159,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     int sortBy = 0;
@@ -272,15 +275,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void toTaskFormButton_Click(object sender, EventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     private void resetListView2()
@@ -294,7 +300,7 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-        //MessageBox.Show("Connection Successful! ");
+        
         try
         {
 
@@ -362,7 +368,7 @@ namespace AgileDevelopmentToolsSuite
     private void groupProfileButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      GroupProfileForm groupProfileForm = new GroupProfileForm(currentUser);
+      GroupProfileForm groupProfileForm = new GroupProfileForm(currentUser, currentGroup);
 
       groupProfileForm.Width = this.Width;
       groupProfileForm.Height = this.Height;
@@ -381,15 +387,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void urgentTaskButton_MouseClick(object sender, MouseEventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     private void suggestionTxtBox_TextChanged(object sender, EventArgs e)
@@ -739,15 +748,65 @@ namespace AgileDevelopmentToolsSuite
       resetListView2();
     }
 
+    private void populateGroupProfileList()
+    {
+            SqlConnection db;
+            String version = "MSSQLLocalDB";
+            String fileName = "ADTSDInfo.mdf";
+            String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+            db = new SqlConnection(connectionString);
+
+            try
+            {
+                db.Open();
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string listGroupsCmd = "";
+
+
+                    listGroupsCmd = "SELECT [GroupName] FROM GroupMembers WHERE [Username] = @Username";
+
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = db;
+
+
+                    cmd.CommandText = listGroupsCmd;
+                    cmd.Parameters.AddWithValue("@Username", currentUser);
+                    var reader = cmd.ExecuteReader();
+
+                    //Iterate through all the values of listed values from query
+                    int index = 0;
+                    while (reader.Read())
+                    {
+                        groupProfileListBox.Items.Add(reader.GetString(0));
+                    }
+
+                    reader.Close();
+                    db.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void clearSuggestionButton_Click(object sender, EventArgs e)
         {
             suggestionNameTextBox.Text = "";
             createSuggestionDescTextBox.Text = "";
         }
 
-		private void loggedInTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-	} //End of class
+        private void groupProfileListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentGroup = groupProfileListBox.SelectedText;
+        }
+    } //End of class
 }

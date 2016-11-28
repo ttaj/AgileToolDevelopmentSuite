@@ -12,6 +12,7 @@ namespace AgileDevelopmentToolsSuite
   {
     String listView2SelectedName = "";
     String currentUser = "";
+    String currentGroup = "";
     int listView2SelectedID = 0;
     
 
@@ -35,6 +36,7 @@ namespace AgileDevelopmentToolsSuite
       panel1.Hide();
       resetListView();
       resetListView2();
+      populateGroupProfileList();
       listView1.FullRowSelect = true;
       listView2.FullRowSelect = true;
       createSuggestionPanel.Visible = false;
@@ -366,7 +368,7 @@ namespace AgileDevelopmentToolsSuite
     private void groupProfileButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      GroupProfileForm groupProfileForm = new GroupProfileForm(currentUser);
+      GroupProfileForm groupProfileForm = new GroupProfileForm(currentUser, currentGroup);
 
       groupProfileForm.Width = this.Width;
       groupProfileForm.Height = this.Height;
@@ -744,6 +746,56 @@ namespace AgileDevelopmentToolsSuite
       }
 
       resetListView2();
+    }
+
+    private void populateGroupProfileList()
+    {
+            SqlConnection db;
+            String version = "MSSQLLocalDB";
+            String fileName = "ADTSDInfo.mdf";
+            String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+            db = new SqlConnection(connectionString);
+
+            try
+            {
+                db.Open();
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string listGroupsCmd = "";
+
+
+                    listGroupsCmd = "SELECT [GroupName] FROM GroupMembers WHERE [Username] = @Username";
+
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = db;
+
+
+                    cmd.CommandText = listGroupsCmd;
+                    cmd.Parameters.AddWithValue("@Username", currentUser);
+                    var reader = cmd.ExecuteReader();
+
+                    //Iterate through all the values of listed values from query
+                    int index = 0;
+                    while (reader.Read())
+                    {
+                        groupProfileListBox.Items.Add(reader.GetString(0));
+                    }
+
+                    reader.Close();
+                    db.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
     }
 
         private void clearSuggestionButton_Click(object sender, EventArgs e)

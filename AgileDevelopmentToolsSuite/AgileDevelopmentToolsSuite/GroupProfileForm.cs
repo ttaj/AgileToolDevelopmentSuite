@@ -7,15 +7,17 @@ namespace AgileDevelopmentToolsSuite
     public partial class GroupProfileForm : Form
     {
         string currentUser = "";
+        string currentGroup = "";
         public GroupProfileForm()
         {
             InitializeComponent();
         }
 
-        public GroupProfileForm(string curUser)
+        public GroupProfileForm(string curUser, string curGroup)
         {
             InitializeComponent();
             currentUser = curUser;
+            currentGroup = curGroup;
         }
 
         private void menuButton_Click(object sender, EventArgs e)

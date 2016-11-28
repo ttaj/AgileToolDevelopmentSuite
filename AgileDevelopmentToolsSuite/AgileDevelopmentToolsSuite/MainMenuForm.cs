@@ -796,12 +796,17 @@ namespace AgileDevelopmentToolsSuite
             {
                 MessageBox.Show(ex.Message);
             }
-    }
+        }
 
         private void clearSuggestionButton_Click(object sender, EventArgs e)
         {
             suggestionNameTextBox.Text = "";
             createSuggestionDescTextBox.Text = "";
+        }
+
+        private void groupProfileListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentGroup = groupProfileListBox.SelectedText;
         }
     } //End of class
 }

@@ -1,16 +1,30 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
     public partial class ProjectManagerApprovalForm : Form
     {
-        int approved = 0;
+        String user = "";
+        String pass = "";
+        String nickname = "";
+        String profileLink = "";
 
         public ProjectManagerApprovalForm()
         {
             InitializeComponent();
+        }
+
+        public ProjectManagerApprovalForm(String givenUser, String givenPass, String givenNick, String givenProfile)
+        {
+            InitializeComponent();
+
+            user = givenUser;
+            pass = givenPass;
+            nickname = givenNick;
+            profileLink = givenProfile;
         }
 
         private void instructionLabel_Click(object sender, EventArgs e)
@@ -47,11 +61,17 @@ namespace AgileDevelopmentToolsSuite
 
             object queryResult;
 
-            SqlCommand userCheck = new SqlCommand("SELECT Username FROM [Users] WHERE (Username = @Username AND ProjectManger = @ProjectManager) OR (Username = @Username AND Administrator = @Administrator) ");
-            SqlCommand passwordCheck = new SqlCommand("SELECT Password FROM [Users] WHERE (Password = @Password AND ProjectManger = @ProjectManager) OR (Password = @Password AND Administrator = @Administrator)");
+            SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username AND ([ProjectManager] = @ProjectManager OR [Administrator] = @Administrator)");
+            SqlCommand passwordCheck = new SqlCommand("SELECT [Password] FROM Users WHERE [Password] = @Password AND ([ProjectManager] = @ProjectManager OR [Administrator] = @Administrator)");
+            SqlCommand insertUser = new SqlCommand("INSERT INTO Users ([Username], [Password], [ProjectManager]) VALUES (@Username, @Password, @ProjectManager)");
+            SqlCommand insertUserSkills = new SqlCommand("INSERT INTO UserSkills ([Username]) VALUES (@Username)");
+            SqlCommand insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname], [ProfileLink]) VALUES (@Username, @Nickname, @ProfileLink)");
 
             userCheck.Connection = db;
             passwordCheck.Connection = db;
+            insertUser.Connection = db;
+            insertUserSkills.Connection = db;
+            insertUsersInformation.Connection = db;
 
             try
             {
@@ -61,8 +81,8 @@ namespace AgileDevelopmentToolsSuite
                 {
                     //check for user being correct
                     userCheck.Parameters.AddWithValue("@Username", usernameBox.Text);
-                    userCheck.Parameters.AddWithValue("@ProjectManager", 1);
-                    userCheck.Parameters.AddWithValue("@Administrator", 1);
+                    userCheck.Parameters.AddWithValue("@ProjectManager", true);
+                    userCheck.Parameters.AddWithValue("@Administrator", true);
                     queryResult = userCheck.ExecuteScalar();
                     String res = "Not Found";
 
@@ -83,8 +103,8 @@ namespace AgileDevelopmentToolsSuite
 
                     //check for password being correct
                     passwordCheck.Parameters.AddWithValue("@Password", passwordBox.Text);
-                    passwordCheck.Parameters.AddWithValue("@ProjectManager", 1);
-                    passwordCheck.Parameters.AddWithValue("@Administrator", 1);
+                    passwordCheck.Parameters.AddWithValue("@ProjectManager", true);
+                    passwordCheck.Parameters.AddWithValue("@Administrator", true);
                     queryResult = passwordCheck.ExecuteScalar();
                     res = "Not Found";
 
@@ -102,9 +122,32 @@ namespace AgileDevelopmentToolsSuite
                         }
                         else
                         {
+                            insertUser.Parameters.AddWithValue("@Username", user);
+                            insertUser.Parameters.AddWithValue("@Password", pass);
+                            insertUser.Parameters.AddWithValue("@ProjectManager", 1);
+
+                            insertUserSkills.Parameters.AddWithValue("@Username", user);
+
+                            insertUsersInformation.Parameters.AddWithValue("@Username", user);
+                            insertUsersInformation.Parameters.AddWithValue("@Nickname", nickname);
+                            insertUsersInformation.Parameters.AddWithValue("@ProfileLink", profileLink);
+
+                            insertUser.ExecuteNonQuery();
+                            insertUserSkills.ExecuteNonQuery();
+                            insertUsersInformation.ExecuteNonQuery();
+
                             MessageBox.Show("New Project Manager has been approved!");
-                            approved = 1;
+
                             this.Hide();
+                            SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
+                            skillSetForm.Width = this.Width;
+                            skillSetForm.Height = this.Height;
+
+                            skillSetForm.StartPosition = FormStartPosition.Manual;
+                            skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
+
+                            skillSetForm.Closed += (s, args) => this.Close();
+                            skillSetForm.Show();
                         }
                     }
                 }
@@ -117,11 +160,6 @@ namespace AgileDevelopmentToolsSuite
             {
                 MessageBox.Show("Connection unsuccessful, please try again. ");
             }
-        }
-
-        public int returnApproval()
-        {
-            return approved;
         }
     }
 }

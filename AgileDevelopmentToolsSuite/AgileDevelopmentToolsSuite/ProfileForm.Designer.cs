@@ -493,6 +493,7 @@
             // groupProfileListView
             // 
             this.groupProfileListView.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupProfileListView.Enabled = false;
             this.groupProfileListView.Location = new System.Drawing.Point(401, 296);
             this.groupProfileListView.Name = "groupProfileListView";
             this.groupProfileListView.Size = new System.Drawing.Size(342, 246);

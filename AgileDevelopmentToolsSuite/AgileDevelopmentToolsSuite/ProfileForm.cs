@@ -216,7 +216,7 @@ namespace AgileDevelopmentToolsSuite
                     var reader = cmd.ExecuteReader();
 
                     groupProfileListView.View = View.Details;
-                    groupProfileListView.Columns.Add("Group Name", groupProfileListView.Width);
+                    groupProfileListView.Columns.Add("Group Name", 338);
 
                     //Iterate through all the values of listed values from query
                     int index = 0;

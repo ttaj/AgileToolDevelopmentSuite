@@ -36,6 +36,7 @@ namespace AgileDevelopmentToolsSuite
       panel1.Hide();
       resetListView();
       resetListView2();
+      resetListView3();
       populateGroupProfileList();
       listView1.FullRowSelect = true;
       listView2.FullRowSelect = true;
@@ -362,6 +363,79 @@ namespace AgileDevelopmentToolsSuite
       {
         MessageBox.Show(ex.Message);
       }
+    }
+
+    private void resetListView3()
+    {
+        SqlConnection db;
+        String version = "MSSQLLocalDB";
+        String fileName = "ADTSDInfo.mdf";
+        String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+        db = new SqlConnection(connectionString);
+
+        db.Open();
+        string sql = string.Format(@"Select Max(ProjectGroup) as total from Tasks");
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = db;
+        cmd.CommandText = sql;
+        object result = cmd.ExecuteScalar();
+        int numcolum = 0;
+        if (result == null)
+        {
+            // nothing
+        }
+        // 
+        else if (result == DBNull.Value)
+        {
+            // value is nulll
+        }
+        else
+        {
+            numcolum = Convert.ToInt32(result);
+        }
+
+        String sql2 = string.Format(@"Select ProjectGroup,TaskName 
+From Tasks
+order by  ProjectGroup , DateSubmitted");
+
+        cmd = new SqlCommand();
+        cmd.Connection = db;
+        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        DataSet ds = new DataSet();
+        cmd.CommandText = sql2;
+        adapter.Fill(ds);
+        db.Close();
+        string msg = "";
+        string temp;
+        int oldi = 0;
+
+        string header = "Sprint || first submitted to last submitted";
+        this.listView3.Items.Add(header);
+        foreach (DataRow row in ds.Tables["Table"].Rows)
+        {
+            int i = Convert.ToInt32(row["ProjectGroup"]);
+            temp = (Convert.ToString(row["TaskName"]));
+            if (i == 0)
+            {
+
+            }
+            else if ( i !=oldi || i == numcolum )
+            {
+                this.listView3.Items.Add(msg);
+                msg =   i + "||";
+                msg =  msg + temp;
+                oldi = i;
+            }
+            else if ( i == oldi)
+            {
+                msg = msg + " || " + temp; 
+            }
+
+                
+        }
+
+            
     }
 
 

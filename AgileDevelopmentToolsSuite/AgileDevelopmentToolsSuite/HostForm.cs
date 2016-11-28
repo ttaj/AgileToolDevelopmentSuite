@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NetworkCommsDotNet;
+using NetworkCommsDotNet.Connections;
+using NetworkCommsDotNet.Connections.TCP;
+using System.Net;
 
 namespace AgileDevelopmentToolsSuite
 {
 	public partial class HostForm : Form
 	{
-		public HostForm()
+		String curUser;
+		public HostForm(String name)
 		{
+			this.curUser = name;
 			InitializeComponent();
 		}
 
@@ -30,14 +36,27 @@ namespace AgileDevelopmentToolsSuite
 		{
 			string portStr = textBox1.Text;
 			int port;
-			if (portStr.Length == 0 || int.TryParse(portStr, out port) == false)
+
+			string IPStr = textBox2.Text;
+			IPAddress theAddress;
+
+
+			try
 			{
-				MessageBox.Show("ERR: Please check if the port is correct.");
+				theAddress = IPAddress.Parse(IPStr);
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("ERR: Please check if the IP is correctly typed.");
 				return;
 			}
-
+			if (portStr.Length == 0 || int.TryParse(portStr, out port) == false)
+			{
+				MessageBox.Show("ERR: Please check if the port is correctly typed.");
+				return;
+			}
 			this.Hide();
-			ChatForm chatForm = new ChatForm(port);
+			ChatForm chatForm = new ChatForm(IPStr, port, curUser);
 			chatForm.Show();
 		}
 
@@ -50,5 +69,10 @@ namespace AgileDevelopmentToolsSuite
         {
             Application.Exit();
         }
-    }
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

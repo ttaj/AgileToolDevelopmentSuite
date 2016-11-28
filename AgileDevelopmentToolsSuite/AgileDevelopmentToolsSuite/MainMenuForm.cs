@@ -148,7 +148,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void button2_Click_1(object sender, EventArgs e)
     {
-      HostForm h = new HostForm();
+      HostForm h = new HostForm(currentUser);
       h.Show();
     }
 
@@ -269,7 +269,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void button3_Click(object sender, EventArgs e)
     {
-      ChatForm c = new ChatForm();
+      ConnectForm c = new ConnectForm(currentUser);
       c.Show();
     }
 

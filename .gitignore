@@ -290,6 +290,11 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Other stuff
+*.suo
+*.exe
+*.pdb
+
 # Cake - Uncomment if you are using it
 <<<<<<< HEAD
 # tools/

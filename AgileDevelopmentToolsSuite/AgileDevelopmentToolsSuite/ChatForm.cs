@@ -15,64 +15,95 @@ namespace AgileDevelopmentToolsSuite
 		private int port;
 		private string ip;
 		private bool isHost = false;
-		private string name;
 		private Connection newTCPConn;
-		ArrayList clientList;
-		clientInfoServ host;
-		clientInfo chost;
-		clientInfo cinfo;
+		ArrayList s_clientList;
+		ArrayList c_clientList;
+		int s_idTick = 0;
+		int c_listTick = 0;
+		clientInfo you;
 
 		public ChatForm()
 		{
 			InitializeComponent();
-			clientList = new ArrayList();
 		}
 
-		//server
-		public ChatForm(int port)
+		//server - todo: add a textbox for ip.
+		public ChatForm(String incip, int port, string name)
 		{
-			clientList = new ArrayList();
+			s_clientList = new ArrayList();
 			InitializeComponent();
 
 			this.port = port;
-			this.ip = "192.168.1.123";
+			this.ip = incip;
 			isHost = true;
 
 			// [ttaj] Setup the server, if the object being sent is a string then run the function PrintIncMsg
-			NetworkComms.AppendGlobalIncomingPacketHandler<clientInfo>("ClientInfo", addClient);
-			NetworkComms.AppendGlobalIncomingPacketHandler<messageHolder>("Message", addMessage);
+			NetworkComms.AppendGlobalIncomingPacketHandler<clientInfo>("ClientInfo", s_addClient);
+			NetworkComms.AppendGlobalIncomingPacketHandler<messageHolder>("Message", s_addMessage);
 
 			// [ttaj] Start the server.
 			TCPConnection.StartListening(ConnectionType.TCP, new System.Net.IPEndPoint(IPAddress.Parse(ip), port));
-			host = new clientInfoServ("Host", null, "H");
-			chost = new clientInfo("Host", "H");
+			clientInfoServ host = new clientInfoServ(name, null, "Host", 0);
+			s_idTick++;
+
 			ChatLog.Items.Add("Server successfully started!");
 
-			clientList.Add(host);
+			s_clientList.Add(host);
 			Users.Items.Add(host.name);
 			Rank.Items.Add(host.rank);
 
+			you = new clientInfo(host, 0);
 		}
 
-		private void addMessage(PacketHeader packetHeader, Connection connection, messageHolder incomingObject)
+		private void s_addMessage(PacketHeader packetHeader, Connection connection, messageHolder incomingObject)
 		{
 
+			
 			ChatLog.Invoke(new MethodInvoker(delegate ()
 			{
 				ChatLog.Items.Add(incomingObject.message);
 			}));
 
-			foreach (clientInfoServ cinfo in clientList)
+			//int count = 0;
+			// If the id is 0, which is always the host, then dont send the msg.
+			foreach (clientInfoServ cinfo in s_clientList)
 			{
 				Connection conn = cinfo.conn;
-				if (conn == null || conn.Equals(conn)) continue;
+				if (conn.Equals(connection) || cinfo.id == 0) continue;
 				conn.SendObject("Message", incomingObject);
+				//count++;
 			}
+			//MessageBox.Show("s_addmessage: " + count);
 		}
 
-		public void addUser(clientInfoServ user)
+		private void c_addMessage(PacketHeader packetHeader, Connection connection, messageHolder incomingObject)
 		{
-			clientList.Add(user);
+			ChatLog.Invoke(new MethodInvoker(delegate ()
+			{
+				ChatLog.Items.Add(incomingObject.message);
+			}));
+		}
+
+		// Heavy work of server to notify all users of this guys connection
+		public void s_addUser(clientInfoServ user, Connection connection)
+		{
+
+			// Send user every person in the server currently.
+			try
+			{
+				foreach (clientInfoServ x in s_clientList)
+				{
+					clientInfo toSend = new clientInfo(x, 0);
+					connection.SendObject("ClientInfo", toSend);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("ERR: " + ex.Message + "; SIZE: " + s_clientList.Count);
+			}
+
+			// Add this guy to server list.
+			s_clientList.Add(user);
 
 			Users.Invoke(new MethodInvoker(delegate ()
 			{
@@ -103,13 +134,9 @@ namespace AgileDevelopmentToolsSuite
 
 		private void NotifyServer(Connection conn, string v)
 		{
-			ChatLog.Invoke(new MethodInvoker(delegate ()
-			{
-				ChatLog.Items.Add(v);
-			}));
 			messageHolder toSend = new messageHolder(v);
 
-			foreach(clientInfoServ cinfo in clientList)
+			foreach(clientInfoServ cinfo in s_clientList)
 			{
 				Connection connection = cinfo.conn;
 				if (connection == null || connection.Equals(conn)) continue;
@@ -117,19 +144,17 @@ namespace AgileDevelopmentToolsSuite
 			}
 		}
 
-		private void addClient(PacketHeader packetHeader, Connection connection, clientInfo incomingObject)
+		public int generateServerID()
 		{
-			clientInfoServ toAdd = new clientInfoServ(incomingObject.name, connection);
-			//MessageBox.Show("Name: " + incomingObject.name);
-			addUser(toAdd);
-			try
-			{
-				TCPConnection.GetConnection(connection.ConnectionInfo).SendObject("ClientInfo", chost);
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}		
+			s_idTick++;
+			return s_idTick;
+		}
+
+		// Adds client to server list.
+		private void s_addClient(PacketHeader packetHeader, Connection connection, clientInfo incomingObject)
+		{
+			clientInfoServ toAdd = new clientInfoServ(incomingObject.name, connection, incomingObject.rank, generateServerID());
+			s_addUser(toAdd, connection);
 		}
 
 		[ProtoContract]
@@ -139,16 +164,18 @@ namespace AgileDevelopmentToolsSuite
 			public String name { get; private set; }
 			[ProtoMember(2)]
 			public String rank { get; private set; } //g stands for guest.
+			[ProtoMember(3)]
+			public int listPos { get; private set; }
+			[ProtoMember(4)]
+			public int id { get; private set; }
 			protected clientInfo() { }
-			public clientInfo(String name)
+
+			public clientInfo(clientInfoServ info, int listPos)
 			{
-				this.name = name; // todo: set name to sql name and not ip
-				this.rank = "G";
-			}
-			public clientInfo(String name, String rank)
-			{
-				this.name = name; // todo: set name to sql name and not ip
-				this.rank = rank;
+				this.name = info.name;
+				this.rank = info.rank;
+				this.id = info.id;
+				this.listPos = listPos;
 			}
 		}
 
@@ -161,33 +188,62 @@ namespace AgileDevelopmentToolsSuite
 			public String rank { get; private set; }  //g stands for guest.
 			[ProtoMember(3)]
 			public Connection conn { get; private set; }
+			[ProtoMember(4)]
+			public int id { get; private set; }
+
 
 			// needed for proto
 			protected clientInfoServ() { }
-			public clientInfoServ(String name, Connection conn)
-			{
-				this.name = name; // todo: set name to sql name and not ip
-				this.conn = conn;
-				this.rank = "G";
-			}
-
-			public clientInfoServ(String name, Connection conn, String rank)
+			public clientInfoServ(String name, Connection conn, String rank, int id)
 			{
 				this.name = name; // todo: set name to sql name and not ip
 				this.conn = conn;
 				this.rank = rank;
+				this.id = id;
 			}
 		}
 
+		public int generateListPos()
+		{
+			c_listTick++;
+			return c_listTick;
+		}
+
+		public int c_getListPos()
+		{
+			return c_clientList.Count;	
+		}
+
+		// Adds the received user to the client.
+		private void c_addClient(PacketHeader packetHeader, Connection connection, clientInfoServ incomingObject)
+		{
+			// First we add him to the list...
+			clientInfo toAdd = new clientInfo(incomingObject, c_getListPos());
+
+			// Now we're good, so add him to the listbox.
+			Rank.Invoke(new MethodInvoker(delegate ()
+			{
+				Rank.Items.Add(incomingObject.rank);
+			}));
+
+			Users.Invoke(new MethodInvoker(delegate ()
+			{
+				Users.Items.Add(incomingObject.name);
+			}));
+
+		}
 		private void c_addClient(PacketHeader packetHeader, Connection connection, clientInfo incomingObject)
 		{
-			foreach (clientInfoServ cinfo in clientList)
+			// First we check if we already have someone with that id...
+			foreach (clientInfo x in c_clientList)
 			{
-				Connection conn = cinfo.conn;
-				if (connection == null || connection.Equals(conn)) continue;
-				connection.SendObject("Message", incomingObject);
+				if (x.id == incomingObject.id) return;
 			}
 
+			// We add him to the list...
+			c_clientList.Add(incomingObject);
+
+			// Now we're good, so add him to the listbox.
 			Rank.Invoke(new MethodInvoker(delegate ()
 			{
 				Rank.Items.Add(incomingObject.rank);
@@ -200,19 +256,23 @@ namespace AgileDevelopmentToolsSuite
 
 		}
 
+
 		// client
-		public ChatForm(Connection newTCPConn)
+		public ChatForm(String name, Connection newTCPConn)
 		{
-			NetworkComms.AppendGlobalIncomingPacketHandler<messageHolder>("Message", addMessage);
+			NetworkComms.AppendGlobalIncomingPacketHandler<messageHolder>("Message", c_addMessage);
+			NetworkComms.AppendGlobalIncomingPacketHandler<clientInfoServ>("clientInfoServ", c_addClient);
 			NetworkComms.AppendGlobalIncomingPacketHandler<clientInfo>("ClientInfo", c_addClient);
 
-			clientList = new ArrayList();
+			c_clientList = new ArrayList();
 			this.newTCPConn = newTCPConn;
 
 			InitializeComponent();
 			isHost = false;
-			cinfo = new clientInfo("Anonymous");
 
+			clientInfoServ toGen = new clientInfoServ(name, this.newTCPConn, "Guest", 0);
+			clientInfo cinfo = new clientInfo(toGen, c_listTick);
+			you = cinfo;
 			try
 			{
 				newTCPConn.SendObject("ClientInfo", cinfo);
@@ -225,8 +285,10 @@ namespace AgileDevelopmentToolsSuite
 
 			String msg = "Connection successful.";
 			ChatLog.Items.Add(msg);
-			Users.Items.Add(cinfo.name);
-			Rank.Items.Add("G");
+
+			Users.Items.Add(you.name);
+			Rank.Items.Add(you.rank);
+
 		}
 
 		private void PrintConnectedMsg(PacketHeader packetHeader, Connection connection, Connection incomingObject)
@@ -237,6 +299,7 @@ namespace AgileDevelopmentToolsSuite
 		}
 
 		// Print msg via ip for now.
+		/* Deprecated.
 		private void PrintIncMsg(PacketHeader packetHeader, Connection connection, string incomingObject)
 		{
 			String msg = connection.ToString() + ": " + incomingObject + "";
@@ -250,6 +313,7 @@ namespace AgileDevelopmentToolsSuite
 			}
 
 		}
+		*/
 
 		private void ChatForm_Load(object sender, EventArgs e)
 		{
@@ -301,19 +365,21 @@ namespace AgileDevelopmentToolsSuite
 
 			if (isHost == true)
 			{
-				messageHolder toSend = new messageHolder(host.name + ": " + textBox1.Text);
-				ChatLog.Items.Add(host.name + ": " + textBox1.Text);
-				List<ConnectionInfo> l = NetworkComms.AllConnectionInfo();
-
-				foreach (ConnectionInfo i in l)
+				messageHolder toSend = new messageHolder(you.name + ": " + textBox1.Text);
+				ChatLog.Items.Add(you.name + ": " + textBox1.Text);
+				//int count = 0;
+				foreach (clientInfoServ x in s_clientList)
 				{
-						TCPConnection.GetConnection(i).SendObject("Message", toSend);
+					if (x.id == 0 || x.conn == null) continue;
+						x.conn.SendObject("Message", toSend);
+					//count++;
 				}
+				//MessageBox.Show("sendMsg: " + count);
 			}
 			else
 			{
-				messageHolder toSend = new messageHolder(cinfo.name + ": " + textBox1.Text);
-				ChatLog.Items.Add(cinfo.name + ": " + textBox1.Text);
+				messageHolder toSend = new messageHolder(you.name + ": " + textBox1.Text);
+				ChatLog.Items.Add(you.name + ": " + textBox1.Text);
 				newTCPConn.SendObject("Message", toSend);
 			}
 			textBox1.Clear();

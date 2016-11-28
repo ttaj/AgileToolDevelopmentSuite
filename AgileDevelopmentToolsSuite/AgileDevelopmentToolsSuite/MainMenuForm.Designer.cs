@@ -67,11 +67,13 @@
             this.tabPage2TimeLine = new System.Windows.Forms.TabPage();
             this.tabControlLabel = new System.Windows.Forms.Label();
             this.groupProfileListBox = new System.Windows.Forms.ComboBox();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1SandBox.SuspendLayout();
             this.confirmDeletePanel.SuspendLayout();
             this.createSuggestionPanel.SuspendLayout();
+            this.tabPage2TimeLine.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuGroupNameLabel
@@ -519,6 +521,7 @@
             // 
             // tabPage2TimeLine
             // 
+            this.tabPage2TimeLine.Controls.Add(this.listView3);
             this.tabPage2TimeLine.Location = new System.Drawing.Point(4, 24);
             this.tabPage2TimeLine.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2TimeLine.Name = "tabPage2TimeLine";
@@ -553,6 +556,17 @@
             this.groupProfileListBox.TabIndex = 16;
             this.groupProfileListBox.SelectedIndexChanged += new System.EventHandler(this.groupProfileListBox_SelectedIndexChanged);
             // 
+            // listView3
+            // 
+            this.listView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView3.Location = new System.Drawing.Point(0, 0);
+            this.listView3.Margin = new System.Windows.Forms.Padding(2);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(459, 328);
+            this.listView3.TabIndex = 1;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,6 +600,7 @@
             this.confirmDeletePanel.PerformLayout();
             this.createSuggestionPanel.ResumeLayout(false);
             this.createSuggestionPanel.PerformLayout();
+            this.tabPage2TimeLine.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,5 +646,6 @@
     private System.Windows.Forms.Label confirmationDeleteLabel;
         private System.Windows.Forms.Button clearSuggestionButton;
         private System.Windows.Forms.ComboBox groupProfileListBox;
+        private System.Windows.Forms.ListView listView3;
     }
 }

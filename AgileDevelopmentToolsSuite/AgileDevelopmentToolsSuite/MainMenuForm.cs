@@ -796,7 +796,7 @@ namespace AgileDevelopmentToolsSuite
             {
                 MessageBox.Show(ex.Message);
             }
-    }
+        }
 
         private void clearSuggestionButton_Click(object sender, EventArgs e)
         {

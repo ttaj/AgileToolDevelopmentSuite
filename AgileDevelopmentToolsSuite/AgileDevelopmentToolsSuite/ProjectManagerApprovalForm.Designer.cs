@@ -63,7 +63,7 @@
             // usernameBox
             // 
             this.usernameBox.Location = new System.Drawing.Point(348, 210);
-            this.usernameBox.MaxLength = 10;
+            this.usernameBox.MaxLength = 40;
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(123, 20);
             this.usernameBox.TabIndex = 11;
@@ -83,7 +83,7 @@
             // passwordBox
             // 
             this.passwordBox.Location = new System.Drawing.Point(348, 253);
-            this.passwordBox.MaxLength = 10;
+            this.passwordBox.MaxLength = 40;
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(123, 20);

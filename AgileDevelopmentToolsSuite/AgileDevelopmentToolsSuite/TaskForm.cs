@@ -24,7 +24,7 @@ namespace AgileDevelopmentToolsSuite
 
 
       listView1.FullRowSelect = true;
-      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
       curTasksSaveButton.Enabled = false;
       sortByUpOrDown.Text = "↓";
       this.curTasksComboBox.SelectedIndex = 0;
@@ -34,9 +34,8 @@ namespace AgileDevelopmentToolsSuite
     {
       InitializeComponent();
 
-
       listView1.FullRowSelect = true;
-      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
       curTasksSaveButton.Enabled = false;
       sortByUpOrDown.Text = "↓";
       this.curTasksComboBox.SelectedIndex = 0;
@@ -61,7 +60,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void richTextBox1_TextChanged(object sender, EventArgs e)
     {
-      curTasksSaveButton.BackColor = System.Drawing.Color.Yellow;
+      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
     }
 
     private void curTasksSortLabel_Click(object sender, EventArgs e)
@@ -91,15 +90,19 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
-      mainMenuForm.Width = this.Width;
-      mainMenuForm.Height = this.Height;
+        this.Hide();
 
-      mainMenuForm.StartPosition = FormStartPosition.Manual;
-      mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+        MainMenuForm mainMenuForm = new MainMenuForm();
 
-      this.Hide();
-      mainMenuForm.Show();
+        mainMenuForm.Width = this.Width;
+        mainMenuForm.Height = this.Height;
+
+        mainMenuForm.StartPosition = FormStartPosition.Manual;
+        mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+        mainMenuForm.Show();
+
+        mainMenuForm.Closed += (s, args) => this.Close();
+        mainMenuForm.Show();
     }
 
     private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,7 +114,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void curTasksSaveButton_Click(object sender, EventArgs e)
     {
-        curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+        curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
 
         if (curTasksRadio1.Checked)  //URGENT CHECKED
         {
@@ -545,7 +548,7 @@ namespace AgileDevelopmentToolsSuite
                                  "5) Click on [Save Changes to: ##] button to save the changes made to that ID. A timestamp will additionally be made to that task on when it was modified." +
                                  "\nNote: No Task shall ever be deleted, thus deleting tasks are not possible. Just mark it as complete when it is done.";
       curTasksSaveButton.Enabled = false;
-      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
     }
 
     private void TaskForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -567,14 +570,18 @@ namespace AgileDevelopmentToolsSuite
 
         private void backButton_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
+
             MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 
             mainMenuForm.StartPosition = FormStartPosition.Manual;
             mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+            mainMenuForm.Show();
 
-            this.Hide();
+            mainMenuForm.Closed += (s, args) => this.Close();
             mainMenuForm.Show();
         }
 

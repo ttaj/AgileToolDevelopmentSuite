@@ -19,7 +19,9 @@ namespace AgileDevelopmentToolsSuite
       if (positionBox.SelectedItem.Equals("Developer"))
       {
         this.Hide();
+
         DeveloperForm developerForm = new DeveloperForm();
+
         developerForm.Width = this.Width;
         developerForm.Height = this.Height;
 
@@ -32,7 +34,9 @@ namespace AgileDevelopmentToolsSuite
       else
       {
         this.Hide();
+
         ProjectMangerForm projectMangerForm = new ProjectMangerForm();
+
         projectMangerForm.Width = this.Width;
         projectMangerForm.Height = this.Height;
 

@@ -61,26 +61,16 @@ namespace AgileDevelopmentToolsSuite
             return;
         }
 
+        String username = "";
+        String pass = "";
+        String nickname = "";
+        String profileLink = "";
+
         object queryResult;
 
-        SqlCommand insert = new SqlCommand("INSERT INTO Users ([Username], [Password], [Developer]) VALUES (@Username, @Password, @Developer)");
         SqlCommand userCheck = new SqlCommand("SELECT [Username] FROM Users WHERE [Username] = @Username");
-        SqlCommand insertUserSkills = new SqlCommand("INSERT INTO UserSkills ([Username]) VALUES (@Username)");
-        SqlCommand insertUsersInformation;
 
-        if (yesProfileButton.Checked == true)
-        {
-            insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname], [ProfileLink]) VALUES (@Username, @Nickname, @ProfileLink)");
-        }
-        else
-        {
-            insertUsersInformation = new SqlCommand("INSERT INTO UserInformation ([Username], [Nickname]) VALUES (@Username, @Nickname)");
-        }
-
-        insert.Connection = db;
         userCheck.Connection = db;
-        insertUsersInformation.Connection = db;
-        insertUserSkills.Connection = db;
 
         try
         {
@@ -126,43 +116,26 @@ namespace AgileDevelopmentToolsSuite
 
                         if (capital == true && number == true)
                         {
-                            insert.Parameters.AddWithValue("@Username", usernameBox.Text);
-                            insert.Parameters.AddWithValue("@Password", passwordBox.Text);
-                            insert.Parameters.AddWithValue("@Developer", 1);
-
-                            insertUsersInformation.Parameters.AddWithValue("@Username", usernameBox.Text);
-                            insertUsersInformation.Parameters.AddWithValue("@Nickname", nickNameTxt.Text);
-
-                            insertUserSkills.Parameters.AddWithValue("@Username", usernameBox.Text);
+                            username =  usernameBox.Text;
+                            pass = passwordBox.Text;
+                            nickname = nickNameTxt.Text;
 
                             if (yesProfileButton.Checked == true)
                             {
-                                insert.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
-                                insertUsersInformation.Parameters.AddWithValue("@ProfileLink", profileLinkBox.Text);
+                                    profileLink = profileLinkBox.Text;
                             }
 
-                            ProjectManagerApprovalForm projectManagerApprovalForm = new ProjectManagerApprovalForm();
-                            
-                            while(projectManagerApprovalForm.returnApproval() != 1)
-                            {
-                                    //continue waiting for approval
-                            }   
-                            
-                            insert.ExecuteNonQuery();
-                            insertUsersInformation.ExecuteNonQuery();
-                            insertUserSkills.ExecuteNonQuery();
-
-                            //direct to skillset form to fill out skills
+                            //direct to project manager approval form to get approval
                             this.Hide();
-                            SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
-                            skillSetForm.Width = this.Width;
-                            skillSetForm.Height = this.Height;
+                            ProjectManagerApprovalForm projectManagerApprovalForm = new ProjectManagerApprovalForm(username, pass, nickname, profileLink);
+                            projectManagerApprovalForm.Width = this.Width;
+                            projectManagerApprovalForm.Height = this.Height;
 
-                            skillSetForm.StartPosition = FormStartPosition.Manual;
-                            skillSetForm.Location = new Point(this.Location.X, this.Location.Y);
+                            projectManagerApprovalForm.StartPosition = FormStartPosition.Manual;
+                            projectManagerApprovalForm.Location = new Point(this.Location.X, this.Location.Y);
 
-                            skillSetForm.Closed += (s, args) => this.Close();
-                            skillSetForm.Show();       
+                            projectManagerApprovalForm.Closed += (s, args) => this.Close();
+                            projectManagerApprovalForm.Show();       
                         }
                         else
                         {

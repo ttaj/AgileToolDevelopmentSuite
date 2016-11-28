@@ -746,6 +746,35 @@ namespace AgileDevelopmentToolsSuite
       resetListView2();
     }
 
+    private void populateGroupProfileList()
+    {
+            SqlConnection db;
+            String version = "MSSQLLocalDB";
+            String fileName = "ADTSDInfo.mdf";
+            String connectionString = String.Format(@"Data Source=(LocalDB)\{0};AttachDbFilename=|DataDirectory|\{1};Initial Catalog=ADSTDInfo;Integrated Security=True;MultipleActiveResultSets=True", version, fileName);
+
+            db = new SqlConnection(connectionString);
+
+            try
+            {
+                db.Open();
+                try
+                {
+                    SqlCommand findGroups = new SqlCommand("SELECT ");
+                    db.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+    }
+
         private void clearSuggestionButton_Click(object sender, EventArgs e)
         {
             suggestionNameTextBox.Text = "";

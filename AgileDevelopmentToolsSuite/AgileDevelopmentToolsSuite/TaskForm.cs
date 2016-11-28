@@ -24,7 +24,7 @@ namespace AgileDevelopmentToolsSuite
 
 
       listView1.FullRowSelect = true;
-      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
       curTasksSaveButton.Enabled = false;
       sortByUpOrDown.Text = "↓";
       this.curTasksComboBox.SelectedIndex = 0;
@@ -34,8 +34,9 @@ namespace AgileDevelopmentToolsSuite
     {
       InitializeComponent();
 
+
       listView1.FullRowSelect = true;
-      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
       curTasksSaveButton.Enabled = false;
       sortByUpOrDown.Text = "↓";
       this.curTasksComboBox.SelectedIndex = 0;
@@ -60,7 +61,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void richTextBox1_TextChanged(object sender, EventArgs e)
     {
-      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Yellow;
     }
 
     private void curTasksSortLabel_Click(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace AgileDevelopmentToolsSuite
 
     private void curTasksSaveButton_Click(object sender, EventArgs e)
     {
-        curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
+        curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
 
         if (curTasksRadio1.Checked)  //URGENT CHECKED
         {
@@ -548,7 +549,7 @@ namespace AgileDevelopmentToolsSuite
                                  "5) Click on [Save Changes to: ##] button to save the changes made to that ID. A timestamp will additionally be made to that task on when it was modified." +
                                  "\nNote: No Task shall ever be deleted, thus deleting tasks are not possible. Just mark it as complete when it is done.";
       curTasksSaveButton.Enabled = false;
-      curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
+      curTasksSaveButton.BackColor = System.Drawing.Color.Gray;
     }
 
     private void TaskForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -572,7 +573,7 @@ namespace AgileDevelopmentToolsSuite
         {
             this.Hide();
 
-            MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+            MainMenuForm mainMenuForm = new MainMenuForm();
 
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;

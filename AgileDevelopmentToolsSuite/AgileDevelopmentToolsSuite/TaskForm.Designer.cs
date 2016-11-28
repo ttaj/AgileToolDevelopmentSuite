@@ -117,7 +117,7 @@
             this.curTasksSaveButton.BackColor = System.Drawing.Color.LimeGreen;
             this.curTasksSaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.curTasksSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.curTasksSaveButton.ForeColor = System.Drawing.Color.Black;
+            this.curTasksSaveButton.ForeColor = System.Drawing.Color.White;
             this.curTasksSaveButton.Location = new System.Drawing.Point(536, 348);
             this.curTasksSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.curTasksSaveButton.Name = "curTasksSaveButton";
@@ -284,12 +284,12 @@
             this.instructionsButton.BackColor = System.Drawing.Color.DarkGray;
             this.instructionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.instructionsButton.ForeColor = System.Drawing.Color.White;
-            this.instructionsButton.Location = new System.Drawing.Point(464, 50);
+            this.instructionsButton.Location = new System.Drawing.Point(453, 50);
             this.instructionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.instructionsButton.Name = "instructionsButton";
-            this.instructionsButton.Size = new System.Drawing.Size(154, 31);
+            this.instructionsButton.Size = new System.Drawing.Size(165, 31);
             this.instructionsButton.TabIndex = 24;
-            this.instructionsButton.Text = "? Click for Instructions ?";
+            this.instructionsButton.Text = "?  Click for Instructions  ?";
             this.instructionsButton.UseVisualStyleBackColor = false;
             this.instructionsButton.Click += new System.EventHandler(this.instructionsButton_Click_1);
             // 

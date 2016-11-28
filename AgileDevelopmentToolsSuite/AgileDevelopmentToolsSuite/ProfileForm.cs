@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class ProfileForm : Form
-  {
+    public partial class ProfileForm : Form
+    {
     String currentUser = "";
     public ProfileForm()
     {
@@ -38,7 +34,7 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-        //MessageBox.Show("Connection Successful! ");
+
         try
         {
 
@@ -91,7 +87,9 @@ namespace AgileDevelopmentToolsSuite
     private void menuButton_Click(object sender, EventArgs e)
     {
       this.Hide();
+
       MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+
       mainMenuForm.Width = this.Width;
       mainMenuForm.Height = this.Height;
 
@@ -104,15 +102,19 @@ namespace AgileDevelopmentToolsSuite
 
     private void button2_Click(object sender, EventArgs e)
     {
-      EditProfileForm editProfileForm = new EditProfileForm();
-      editProfileForm.Width = this.Width;
-      editProfileForm.Height = this.Height;
+        this.Hide();
 
-      editProfileForm.StartPosition = FormStartPosition.Manual;
-      editProfileForm.Location = new Point(this.Location.X, this.Location.Y);
+        EditProfileForm editProfileForm = new EditProfileForm(currentUser);
 
-      this.Hide();
-      editProfileForm.Show();
+        editProfileForm.Width = this.Width;
+        editProfileForm.Height = this.Height;
+
+        editProfileForm.StartPosition = FormStartPosition.Manual;
+        editProfileForm.Location = new Point(this.Location.X, this.Location.Y);
+        editProfileForm.Show();
+
+        editProfileForm.Closed += (s, args) => this.Close();
+        editProfileForm.Show();
     }
 
     private void skillLabel1_Click(object sender, EventArgs e)

@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace AgileDevelopmentToolsSuite
 {
-  public partial class MainMenuForm : Form
+    public partial class MainMenuForm : Form
   {
     String listView2SelectedName = "";
     String currentUser = "";
@@ -106,16 +102,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void menuGroupNameTxt_TextChanged(object sender, EventArgs e)
     {
-      LoginForm loginForm = new LoginForm();
+        this.Hide();
 
-      loginForm.Width = this.Width;
-      loginForm.Height = this.Height;
+        LoginForm loginForm = new LoginForm();
 
-      loginForm.StartPosition = FormStartPosition.Manual;
-      loginForm.Location = new Point(this.Location.X, this.Location.Y);
+        loginForm.Width = this.Width;
+        loginForm.Height = this.Height;
 
-      this.Hide();
-      loginForm.Show();
+        loginForm.StartPosition = FormStartPosition.Manual;
+        loginForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        loginForm.Closed += (s, args) => this.Close();
+        loginForm.Show();
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -159,15 +157,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     int sortBy = 0;
@@ -272,15 +273,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void toTaskFormButton_Click(object sender, EventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     private void resetListView2()
@@ -294,7 +298,7 @@ namespace AgileDevelopmentToolsSuite
       try
       {
         db.Open();
-        //MessageBox.Show("Connection Successful! ");
+        
         try
         {
 
@@ -381,15 +385,18 @@ namespace AgileDevelopmentToolsSuite
 
     private void urgentTaskButton_MouseClick(object sender, MouseEventArgs e)
     {
-      this.Hide();
-      TaskForm t = new TaskForm(currentUser);
-      t.Width = this.Width;
-      t.Height = this.Height;
+        this.Hide();
 
-      t.StartPosition = FormStartPosition.Manual;
-      t.Location = new Point(this.Location.X, this.Location.Y);
-      t.Closed += (s, args) => this.Close();
-      t.Show();
+        TaskForm taskForm = new TaskForm(currentUser);
+
+        taskForm.Width = this.Width;
+        taskForm.Height = this.Height;
+
+        taskForm.StartPosition = FormStartPosition.Manual;
+        taskForm.Location = new Point(this.Location.X, this.Location.Y);
+
+        taskForm.Closed += (s, args) => this.Close();
+        taskForm.Show();
     }
 
     private void suggestionTxtBox_TextChanged(object sender, EventArgs e)

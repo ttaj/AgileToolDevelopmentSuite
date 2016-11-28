@@ -139,7 +139,7 @@ namespace AgileDevelopmentToolsSuite
                             MessageBox.Show("New Project Manager has been approved!");
 
                             this.Hide();
-                            SkillSetForm skillSetForm = new SkillSetForm(usernameBox.Text);
+                            SkillSetForm skillSetForm = new SkillSetForm(user);
                             skillSetForm.Width = this.Width;
                             skillSetForm.Height = this.Height;
 

@@ -91,15 +91,19 @@ namespace AgileDevelopmentToolsSuite
 
     private void backButton_Click(object sender, EventArgs e)
     {
-      MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
-      mainMenuForm.Width = this.Width;
-      mainMenuForm.Height = this.Height;
+        this.Hide();
 
-      mainMenuForm.StartPosition = FormStartPosition.Manual;
-      mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+        MainMenuForm mainMenuForm = new MainMenuForm();
 
-      this.Hide();
-      mainMenuForm.Show();
+        mainMenuForm.Width = this.Width;
+        mainMenuForm.Height = this.Height;
+
+        mainMenuForm.StartPosition = FormStartPosition.Manual;
+        mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+        mainMenuForm.Show();
+
+        mainMenuForm.Closed += (s, args) => this.Close();
+        mainMenuForm.Show();
     }
 
     private void curTasksComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -567,14 +571,18 @@ namespace AgileDevelopmentToolsSuite
 
         private void backButton_Click_1(object sender, EventArgs e)
         {
-            MainMenuForm mainMenuForm = new MainMenuForm(currentUser);
+            this.Hide();
+
+            MainMenuForm mainMenuForm = new MainMenuForm();
+
             mainMenuForm.Width = this.Width;
             mainMenuForm.Height = this.Height;
 
             mainMenuForm.StartPosition = FormStartPosition.Manual;
             mainMenuForm.Location = new Point(this.Location.X, this.Location.Y);
+            mainMenuForm.Show();
 
-            this.Hide();
+            mainMenuForm.Closed += (s, args) => this.Close();
             mainMenuForm.Show();
         }
 

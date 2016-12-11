@@ -61,93 +61,160 @@ namespace AgileDevelopmentToolsSuite
           insertSkills.Parameters.AddWithValue("@s9", skill9Box.Text);
           insertSkills.Parameters.AddWithValue("@s10", skill10Box.Text);
 
-
           insertSkills.Parameters.AddWithValue("@Username", currentUser);
           insertSkills.ExecuteNonQuery();
 
-          //check skill 1 proficiency
-          if (master1Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp1", "Master");
-          else if (proficient1Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp1", "Proficient");
-          else if (beginner1Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp1", "Beginner");
+            //check skill 1 proficiency
+            if (skill1Box.Text != "")
+            {
+                if (master1Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp1", "Master");
+                else if (proficient1Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp1", "Proficient");
+                else if (beginner1Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp1", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp1", "N/A");
+            }
 
-          //check skill 2 proficiency
-          if (master2Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp2", "Master");
-          else if (proficient2Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp2", "Proficient");
-          else if (beginner2Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp2", "Beginner");
+            //check skill 2 proficiency
+            if (skill2Box.Text != "")
+            {
+                if (master2Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp2", "Master");
+                else if (proficient2Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp2", "Proficient");
+                else if (beginner2Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp2", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp2", "N/A");
+            }
 
-          //check skill 3 proficiency
-          if (master3Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp3", "Master");
-          else if (proficient3Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp3", "Proficient");
-          else if (beginner3Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp3", "Beginner");
+            //check skill 3 proficiency
+            if (skill3Box.Text != "")
+            {
+                if (master3Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp3", "Master");
+                else if (proficient3Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp3", "Proficient");
+                else if (beginner3Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp3", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp3", "N/A");
+            }
 
-          //check skill 4 proficiency
-          if (master4Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp4", "Master");
-          else if (proficient4Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp4", "Proficient");
-          else if (beginner4Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp4", "Beginner");
+            //check skill 4 proficiency
+            if (skill4Box.Text != "")
+            {
+                if (master4Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp4", "Master");
+                else if (proficient4Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp4", "Proficient");
+                else if (beginner4Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp4", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp4", "N/A");
+            }
 
-          //check skill 5 proficiency
-          if (master5Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp5", "Master");
-          else if (proficient5Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp5", "Proficient");
-          else if (beginner5Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp5", "Beginner");
+            //check skill 5 proficiency
+            if (skill5Box.Text != "")
+            {
+                if (master5Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp5", "Master");
+                else if (proficient5Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp5", "Proficient");
+                else if (beginner5Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp5", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp5", "N/A");
+            }
 
-          //check skill 6 proficiency
-          if (master6Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp6", "Master");
-          else if (proficient6Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp6", "Proficient");
-          else if (beginner6Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp6", "Beginner");
+            //check skill 6 proficiency
+            if (skill6Box.Text != "")
+            {
+                if (master6Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp6", "Master");
+                else if (proficient6Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp6", "Proficient");
+                else if (beginner6Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp6", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp6", "N/A");
+            }
 
-          //check skill 7 proficiency
-          if (master7Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp7", "Master");
-          else if (proficient7Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp7", "Proficient");
-          else if (beginner7Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp7", "Beginner");
+            //check skill 7 proficiency
+            if (skill7Box.Text != "")
+            {
+                if (master7Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp7", "Master");
+                else if (proficient7Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp7", "Proficient");
+                else if (beginner7Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp7", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp7", "N/A");
+            }
 
-          //check skill 8 proficiency
-          if (master8Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp8", "Master");
-          else if (proficient8Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp8", "Proficient");
-          else if (beginner8Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp8", "Beginner");
+            //check skill 8 proficiency
+            if (skill8Box.Text != "")
+            {
+                if (master8Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp8", "Master");
+                else if (proficient8Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp8", "Proficient");
+                else if (beginner8Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp8", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp8", "N/A");
+            }
 
-          //check skill 9 proficiency
-          if (master9Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp9", "Master");
-          else if (proficient9Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp9", "Proficient");
-          else if (beginner9Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp9", "Beginner");
+            //check skill 9 proficiency
+            if (skill9Box.Text != "")
+            {
+                if (master9Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp9", "Master");
+                else if (proficient9Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp9", "Proficient");
+                else if (beginner9Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp9", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp9", "N/A");
+            }
 
-          //check skill 10 proficiency
-          if (master10Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp10", "Master");
-          else if (proficient10Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp10", "Proficient");
-          else if (beginner10Button.Checked == true)
-            insertProficiencies.Parameters.AddWithValue("@sp10", "Beginner");
-
+            //check skill 10 proficiency
+            if (skill10Box.Text != "")
+            {
+                if (master10Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp10", "Master");
+                else if (proficient10Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp10", "Proficient");
+                else if (beginner10Button.Checked == true)
+                    insertProficiencies.Parameters.AddWithValue("@sp10", "Beginner");
+            }
+            else
+            {
+                insertProficiencies.Parameters.AddWithValue("@sp10", "N/A");
+            }
           
           insertProficiencies.Parameters.AddWithValue("@Username", currentUser);
-
           insertProficiencies.ExecuteNonQuery();
 
           this.Hide();

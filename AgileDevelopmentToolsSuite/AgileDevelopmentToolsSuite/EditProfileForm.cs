@@ -63,11 +63,6 @@ namespace AgileDevelopmentToolsSuite
 
         }
 
-        private void ProfileForm_Load(object sender, EventArgs e)
-        {
-            setView();
-        }
-
         private void setView()
         {
             SqlConnection db;
@@ -83,8 +78,8 @@ namespace AgileDevelopmentToolsSuite
                 try
                 {
                     SqlCommand getUserInfo = new SqlCommand("SELECT Name, Nickname, ProfileLink, ProfilePictureLink, Workplace, PhoneNumber, Email FROM [UserInformation] WHERE [Username] = @Username");
-                    SqlCommand getSkillInfo = new SqlCommand("Select Skill1, Skill2, Skill3, Skill4, Skill5, Skill6, Skill7, Skill8, Skill9, Skill10 FROM [UserSkills] WHERE [Username] = @Username");
-                    SqlCommand getSkillProficiency = new SqlCommand("Select SkillProficiency1, SkillProficiency2, SkillProficiency3, SkillProficiency4, SkillProficiency5, SkillProficiency6, SkillProficiency7, SkillProficiency8, SkillProficiency9, SkillProficiency10 FROM [UserSkills] WHERE [Username] = @Username");
+                    SqlCommand getSkillInfo = new SqlCommand("SELECT Skill1, Skill2, Skill3, Skill4, Skill5, Skill6, Skill7, Skill8, Skill9, Skill10 FROM [UserSkills] WHERE [Username] = @Username");
+                    SqlCommand getSkillProficiency = new SqlCommand("SELECT SkillProficiency1, SkillProficiency2, SkillProficiency3, SkillProficiency4, SkillProficiency5, SkillProficiency6, SkillProficiency7, SkillProficiency8, SkillProficiency9, SkillProficiency10 FROM [UserSkills] WHERE [Username] = @Username");
 
                     getUserInfo.Connection = db;
                     getSkillInfo.Connection = db;
@@ -293,6 +288,10 @@ namespace AgileDevelopmentToolsSuite
                         {
                             proficient1Button.Checked = true;
                         }
+                        else if (reader.GetString(0).Equals("Beginner"))
+                        {
+                            beginner1Button.Checked = true;
+                        }
 
                         if (reader.GetString(1).Equals("Master"))
                         {
@@ -301,6 +300,10 @@ namespace AgileDevelopmentToolsSuite
                         else if (reader.GetString(1).Equals("Proficient"))
                         {
                             proficient2Button.Checked = true;
+                        }
+                        else if (reader.GetString(1).Equals("Beginner"))
+                        {
+                            beginner2Button.Checked = true;
                         }
 
                         if (reader.GetString(2).Equals("Master"))
@@ -311,6 +314,10 @@ namespace AgileDevelopmentToolsSuite
                         {
                             proficient3Button.Checked = true;
                         }
+                        else if (reader.GetString(2).Equals("Beginner"))
+                        {
+                            beginner3Button.Checked = true;
+                        }
 
                         if (reader.GetString(3).Equals("Master"))
                         {
@@ -319,6 +326,10 @@ namespace AgileDevelopmentToolsSuite
                         else if (reader.GetString(3).Equals("Proficient"))
                         {
                             proficient4Button.Checked = true;
+                        }
+                        else if (reader.GetString(3).Equals("Beginner"))
+                        {
+                            beginner4Button.Checked = true;
                         }
 
                         if (reader.GetString(4).Equals("Master"))
@@ -329,6 +340,10 @@ namespace AgileDevelopmentToolsSuite
                         {
                             proficient5Button.Checked = true;
                         }
+                        else if (reader.GetString(4).Equals("Beginner"))
+                        {
+                            beginner5Button.Checked = true;
+                        }
 
                         if (reader.GetString(5).Equals("Master"))
                         {
@@ -337,6 +352,10 @@ namespace AgileDevelopmentToolsSuite
                         else if (reader.GetString(5).Equals("Proficient"))
                         {
                             proficient6Button.Checked = true;
+                        }
+                        else if (reader.GetString(5).Equals("Beginner"))
+                        {
+                            beginner6Button.Checked = true;
                         }
 
                         if (reader.GetString(6).Equals("Master"))
@@ -347,6 +366,10 @@ namespace AgileDevelopmentToolsSuite
                         {
                             proficient7Button.Checked = true;
                         }
+                        else if (reader.GetString(6).Equals("Beginner"))
+                        {
+                            beginner7Button.Checked = true;
+                        }
 
                         if (reader.GetString(7).Equals("Master"))
                         {
@@ -355,6 +378,10 @@ namespace AgileDevelopmentToolsSuite
                         else if (reader.GetString(7).Equals("Proficient"))
                         {
                             proficient8Button.Checked = true;
+                        }
+                        else if (reader.GetString(7).Equals("Beginner"))
+                        {
+                            beginner8Button.Checked = true;
                         }
 
                         if (reader.GetString(8).Equals("Master"))
@@ -365,6 +392,10 @@ namespace AgileDevelopmentToolsSuite
                         {
                             proficient9Button.Checked = true;
                         }
+                        else if (reader.GetString(8).Equals("Beginner"))
+                        {
+                            beginner9Button.Checked = true;
+                        }
 
                         if (reader.GetString(9).Equals("Master"))
                         {
@@ -373,6 +404,10 @@ namespace AgileDevelopmentToolsSuite
                         else if (reader.GetString(9).Equals("Proficient"))
                         {
                             proficient10Button.Checked = true;
+                        }
+                        else if (reader.GetString(9).Equals("Beginner"))
+                        {
+                            beginner10Button.Checked = true;
                         }
 
                         break;
@@ -442,7 +477,7 @@ namespace AgileDevelopmentToolsSuite
                     updateSkillProficiency.Parameters.AddWithValue("@Username", currentUser);
 
                     //check skill 1 proficiency
-                    if (skill1Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill1Box.Text) && !skill1Box.Text.Equals("N/A"))
                     {
                         if (master1Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp1", "Master");
@@ -450,6 +485,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp1", "Proficient");
                         else if (beginner1Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp1", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp1", "N/A");
                     }
                     else
                     {
@@ -457,7 +494,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 2 proficiency
-                    if (skill2Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill2Box.Text) && !skill2Box.Text.Equals("N/A"))
                     {
                         if (master2Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp2", "Master");
@@ -465,6 +502,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp2", "Proficient");
                         else if (beginner2Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp2", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp2", "N/A");
                     }
                     else
                     {
@@ -472,7 +511,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 3 proficiency
-                    if (skill3Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill3Box.Text) && !skill3Box.Text.Equals("N/A"))
                     {
                         if (master3Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp3", "Master");
@@ -480,6 +519,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp3", "Proficient");
                         else if (beginner3Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp3", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp3", "N/A");
                     }
                     else
                     {
@@ -487,7 +528,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 4 proficiency
-                    if (skill4Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill4Box.Text) && !skill4Box.Text.Equals("N/A"))
                     {
                         if (master4Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp4", "Master");
@@ -495,6 +536,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp4", "Proficient");
                         else if (beginner4Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp4", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp4", "N/A");
                     }
                     else
                     {
@@ -502,7 +545,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 5 proficiency
-                    if (skill5Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill5Box.Text) && !skill5Box.Text.Equals("N/A"))
                     {
                         if (master5Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp5", "Master");
@@ -510,6 +553,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp5", "Proficient");
                         else if (beginner5Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp5", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp5", "N/A");
                     }
                     else
                     {
@@ -517,7 +562,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 6 proficiency
-                    if (skill6Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill6Box.Text) && !skill6Box.Text.Equals("N/A"))
                     {
                         if (master6Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp6", "Master");
@@ -525,6 +570,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp6", "Proficient");
                         else if (beginner6Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp6", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp6", "N/A");
                     }
                     else
                     {
@@ -532,7 +579,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 7 proficiency
-                    if (skill7Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill7Box.Text) && !skill7Box.Text.Equals("N/A"))
                     {
                         if (master7Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp7", "Master");
@@ -540,6 +587,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp7", "Proficient");
                         else if (beginner7Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp7", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp7", "N/A");
                     }
                     else
                     {
@@ -547,7 +596,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 8 proficiency
-                    if (skill8Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill8Box.Text) && !skill8Box.Text.Equals("N/A"))
                     {
                         if (master8Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp8", "Master");
@@ -555,6 +604,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp8", "Proficient");
                         else if (beginner8Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp8", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp8", "N/A");
                     }
                     else
                     {
@@ -562,7 +613,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 9 proficiency
-                    if (skill9Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill9Box.Text) && !skill9Box.Text.Equals("N/A"))
                     {
                         if (master9Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp9", "Master");
@@ -570,6 +621,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp9", "Proficient");
                         else if (beginner9Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp9", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp9", "N/A");
                     }
                     else
                     {
@@ -577,7 +630,7 @@ namespace AgileDevelopmentToolsSuite
                     }
 
                     //check skill 10 proficiency
-                    if (skill10Box.Text != "")
+                    if (!string.IsNullOrWhiteSpace(skill10Box.Text) && !skill10Box.Text.Equals("N/A"))
                     {
                         if (master10Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp10", "Master");
@@ -585,6 +638,8 @@ namespace AgileDevelopmentToolsSuite
                             updateSkillProficiency.Parameters.AddWithValue("@sp10", "Proficient");
                         else if (beginner10Button.Checked == true)
                             updateSkillProficiency.Parameters.AddWithValue("@sp10", "Beginner");
+                        else
+                            updateSkillProficiency.Parameters.AddWithValue("@sp10", "N/A");
                     }
                     else
                     {
@@ -615,6 +670,11 @@ namespace AgileDevelopmentToolsSuite
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void EditProfileForm_Load(object sender, EventArgs e)
+        {
+            setView();
         }
     }
 }

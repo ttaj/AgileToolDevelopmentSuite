@@ -362,13 +362,11 @@
             // beginner1Button
             // 
             this.beginner1Button.AutoSize = true;
-            this.beginner1Button.Checked = true;
             this.beginner1Button.ForeColor = System.Drawing.Color.White;
             this.beginner1Button.Location = new System.Drawing.Point(138, 3);
             this.beginner1Button.Name = "beginner1Button";
             this.beginner1Button.Size = new System.Drawing.Size(67, 17);
             this.beginner1Button.TabIndex = 21;
-            this.beginner1Button.TabStop = true;
             this.beginner1Button.Text = "Beginner";
             this.beginner1Button.UseVisualStyleBackColor = true;
             // 
@@ -409,13 +407,11 @@
             // beginner2Button
             // 
             this.beginner2Button.AutoSize = true;
-            this.beginner2Button.Checked = true;
             this.beginner2Button.ForeColor = System.Drawing.Color.White;
             this.beginner2Button.Location = new System.Drawing.Point(138, 3);
             this.beginner2Button.Name = "beginner2Button";
             this.beginner2Button.Size = new System.Drawing.Size(67, 17);
             this.beginner2Button.TabIndex = 21;
-            this.beginner2Button.TabStop = true;
             this.beginner2Button.Text = "Beginner";
             this.beginner2Button.UseVisualStyleBackColor = true;
             // 
@@ -456,13 +452,11 @@
             // beginner3Button
             // 
             this.beginner3Button.AutoSize = true;
-            this.beginner3Button.Checked = true;
             this.beginner3Button.ForeColor = System.Drawing.Color.White;
             this.beginner3Button.Location = new System.Drawing.Point(138, 3);
             this.beginner3Button.Name = "beginner3Button";
             this.beginner3Button.Size = new System.Drawing.Size(67, 17);
             this.beginner3Button.TabIndex = 21;
-            this.beginner3Button.TabStop = true;
             this.beginner3Button.Text = "Beginner";
             this.beginner3Button.UseVisualStyleBackColor = true;
             // 
@@ -503,13 +497,11 @@
             // beginner4Button
             // 
             this.beginner4Button.AutoSize = true;
-            this.beginner4Button.Checked = true;
             this.beginner4Button.ForeColor = System.Drawing.Color.White;
             this.beginner4Button.Location = new System.Drawing.Point(138, 3);
             this.beginner4Button.Name = "beginner4Button";
             this.beginner4Button.Size = new System.Drawing.Size(67, 17);
             this.beginner4Button.TabIndex = 21;
-            this.beginner4Button.TabStop = true;
             this.beginner4Button.Text = "Beginner";
             this.beginner4Button.UseVisualStyleBackColor = true;
             // 
@@ -550,13 +542,11 @@
             // beginner5Button
             // 
             this.beginner5Button.AutoSize = true;
-            this.beginner5Button.Checked = true;
             this.beginner5Button.ForeColor = System.Drawing.Color.White;
             this.beginner5Button.Location = new System.Drawing.Point(138, 3);
             this.beginner5Button.Name = "beginner5Button";
             this.beginner5Button.Size = new System.Drawing.Size(67, 17);
             this.beginner5Button.TabIndex = 21;
-            this.beginner5Button.TabStop = true;
             this.beginner5Button.Text = "Beginner";
             this.beginner5Button.UseVisualStyleBackColor = true;
             // 
@@ -597,13 +587,11 @@
             // beginner6Button
             // 
             this.beginner6Button.AutoSize = true;
-            this.beginner6Button.Checked = true;
             this.beginner6Button.ForeColor = System.Drawing.Color.White;
             this.beginner6Button.Location = new System.Drawing.Point(138, 3);
             this.beginner6Button.Name = "beginner6Button";
             this.beginner6Button.Size = new System.Drawing.Size(67, 17);
             this.beginner6Button.TabIndex = 21;
-            this.beginner6Button.TabStop = true;
             this.beginner6Button.Text = "Beginner";
             this.beginner6Button.UseVisualStyleBackColor = true;
             // 
@@ -644,13 +632,11 @@
             // beginner7Button
             // 
             this.beginner7Button.AutoSize = true;
-            this.beginner7Button.Checked = true;
             this.beginner7Button.ForeColor = System.Drawing.Color.White;
             this.beginner7Button.Location = new System.Drawing.Point(138, 3);
             this.beginner7Button.Name = "beginner7Button";
             this.beginner7Button.Size = new System.Drawing.Size(67, 17);
             this.beginner7Button.TabIndex = 21;
-            this.beginner7Button.TabStop = true;
             this.beginner7Button.Text = "Beginner";
             this.beginner7Button.UseVisualStyleBackColor = true;
             // 
@@ -691,13 +677,11 @@
             // beginner8Button
             // 
             this.beginner8Button.AutoSize = true;
-            this.beginner8Button.Checked = true;
             this.beginner8Button.ForeColor = System.Drawing.Color.White;
             this.beginner8Button.Location = new System.Drawing.Point(138, 3);
             this.beginner8Button.Name = "beginner8Button";
             this.beginner8Button.Size = new System.Drawing.Size(67, 17);
             this.beginner8Button.TabIndex = 21;
-            this.beginner8Button.TabStop = true;
             this.beginner8Button.Text = "Beginner";
             this.beginner8Button.UseVisualStyleBackColor = true;
             // 
@@ -738,13 +722,11 @@
             // beginner9Button
             // 
             this.beginner9Button.AutoSize = true;
-            this.beginner9Button.Checked = true;
             this.beginner9Button.ForeColor = System.Drawing.Color.White;
             this.beginner9Button.Location = new System.Drawing.Point(138, 3);
             this.beginner9Button.Name = "beginner9Button";
             this.beginner9Button.Size = new System.Drawing.Size(67, 17);
             this.beginner9Button.TabIndex = 21;
-            this.beginner9Button.TabStop = true;
             this.beginner9Button.Text = "Beginner";
             this.beginner9Button.UseVisualStyleBackColor = true;
             // 
@@ -785,13 +767,11 @@
             // beginner10Button
             // 
             this.beginner10Button.AutoSize = true;
-            this.beginner10Button.Checked = true;
             this.beginner10Button.ForeColor = System.Drawing.Color.White;
             this.beginner10Button.Location = new System.Drawing.Point(138, 3);
             this.beginner10Button.Name = "beginner10Button";
             this.beginner10Button.Size = new System.Drawing.Size(67, 17);
             this.beginner10Button.TabIndex = 21;
-            this.beginner10Button.TabStop = true;
             this.beginner10Button.Text = "Beginner";
             this.beginner10Button.UseVisualStyleBackColor = true;
             // 
@@ -911,6 +891,7 @@
             this.Name = "EditProfileForm";
             this.Text = "Agile Development Tools Suite";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditProfileForm_FormClosing);
+            this.Load += new System.EventHandler(this.EditProfileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.skill1ButtonPanel.ResumeLayout(false);
             this.skill1ButtonPanel.PerformLayout();

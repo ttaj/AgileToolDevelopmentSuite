@@ -71,6 +71,9 @@
             // profilePictureBox
             // 
             this.profilePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.profilePictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("profilePictureBox.ErrorImage")));
+            this.profilePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("profilePictureBox.Image")));
+            this.profilePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("profilePictureBox.InitialImage")));
             this.profilePictureBox.Location = new System.Drawing.Point(25, 25);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(100, 100);

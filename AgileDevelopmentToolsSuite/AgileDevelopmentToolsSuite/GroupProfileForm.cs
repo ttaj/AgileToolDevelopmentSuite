@@ -60,5 +60,10 @@ namespace AgileDevelopmentToolsSuite
             editGroupProfileForm.Closed += (s, args) => this.Close();
             editGroupProfileForm.Show();
         }
+
+        private void GroupProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -79,13 +79,28 @@ namespace AgileDevelopmentToolsSuite
             {
                   var request = WebRequest.Create(reader.GetString(2));
 
-                  using (var response = request.GetResponse())
-                  using (var stream = response.GetResponseStream())
-                  {
-                    Bitmap original = (Bitmap) Bitmap.FromStream(stream);
-                    Bitmap resized = new Bitmap(original, new Size(100, 100));
-                    profilePictureBox.Image = resized;
-                  }
+                    if (request != null)
+                    {
+                        using (var response = request.GetResponse())
+                        using (var stream = response.GetResponseStream())
+                        {
+                            Bitmap original = (Bitmap)Bitmap.FromStream(stream);
+                            Bitmap resized;
+
+                            double ratio = (double) original.Width / (double)original.Height;
+
+                            if((int)((double)100*ratio) <= 100)
+                            {
+                                resized = new Bitmap(original, (int)((double)100 * ratio), 100);
+                            }
+                            else
+                            {
+                                resized = new Bitmap(original, 100, (int)((double)100 / ratio));
+                            }
+
+                            profilePictureBox.Image = resized;
+                        }
+                    }
             }
 
             if (reader.GetString(3) != "")

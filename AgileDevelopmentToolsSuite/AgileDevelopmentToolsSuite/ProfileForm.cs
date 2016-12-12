@@ -36,12 +36,8 @@ namespace AgileDevelopmentToolsSuite
         db.Open();
 
         try
-        {
-
-          DataSet ds = new DataSet();
-
-          
-          SqlCommand getUserInfo = new SqlCommand("SELECT Nickname, ProfileLink, ProfilePictureLink, Workplace, PhoneNumber, Email FROM [UserInformation] WHERE [Username] = @Username");
+        {       
+          SqlCommand getUserInfo = new SqlCommand("SELECT Nickname, ProfileLink, ProfilePictureLink, Workplace, PhoneNumber, Email, Name FROM [UserInformation] WHERE [Username] = @Username");
           SqlCommand getSkillInfo = new SqlCommand("Select Skill1, Skill2, Skill3, Skill4, Skill5, Skill6, Skill7, Skill8, Skill9, Skill10 FROM [UserSkills] WHERE [Username] = @Username");
           SqlCommand getSkillProficiency = new SqlCommand("Select SkillProficiency1, SkillProficiency2, SkillProficiency3, SkillProficiency4, SkillProficiency5, SkillProficiency6, SkillProficiency7, SkillProficiency8, SkillProficiency9, SkillProficiency10 FROM [UserSkills] WHERE [Username] = @Username");
 
@@ -128,6 +124,15 @@ namespace AgileDevelopmentToolsSuite
             else
             {
                 emailLabel.Text = "N/A";
+            }
+
+            if (reader.GetString(6) != "")
+            {
+                nameLabel.Text = reader.GetString(6);
+            }
+            else
+            {
+                nameLabel.Text = "N/A";
             }
 
             break;

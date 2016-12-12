@@ -93,6 +93,11 @@
             this.master10Button = new System.Windows.Forms.RadioButton();
             this.beginner10Button = new System.Windows.Forms.RadioButton();
             this.proficient10Button = new System.Windows.Forms.RadioButton();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.nicknameLabel = new System.Windows.Forms.Label();
+            this.profileLinkLabel = new System.Windows.Forms.Label();
+            this.profilePictureLinkHeaderLabel = new System.Windows.Forms.Label();
+            this.profilePictureLinkBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.skill1ButtonPanel.SuspendLayout();
             this.skill2ButtonPanel.SuspendLayout();
@@ -219,7 +224,7 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(131, 25);
+            this.nameBox.Location = new System.Drawing.Point(216, 27);
             this.nameBox.MaxLength = 32;
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(154, 20);
@@ -228,7 +233,7 @@
             // 
             // nicknameBox
             // 
-            this.nicknameBox.Location = new System.Drawing.Point(131, 64);
+            this.nicknameBox.Location = new System.Drawing.Point(259, 64);
             this.nicknameBox.MaxLength = 32;
             this.nicknameBox.Name = "nicknameBox";
             this.nicknameBox.Size = new System.Drawing.Size(154, 20);
@@ -236,11 +241,12 @@
             // 
             // profileLinkBox
             // 
-            this.profileLinkBox.Location = new System.Drawing.Point(131, 100);
+            this.profileLinkBox.Location = new System.Drawing.Point(275, 105);
             this.profileLinkBox.MaxLength = 32;
             this.profileLinkBox.Name = "profileLinkBox";
             this.profileLinkBox.Size = new System.Drawing.Size(154, 20);
             this.profileLinkBox.TabIndex = 50;
+            this.profileLinkBox.TextChanged += new System.EventHandler(this.profileLinkBox_TextChanged);
             // 
             // skill3Box
             // 
@@ -800,6 +806,62 @@
             this.proficient10Button.Text = "Proficient";
             this.proficient10Button.UseVisualStyleBackColor = true;
             // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.White;
+            this.nameLabel.Location = new System.Drawing.Point(131, 22);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(79, 25);
+            this.nameLabel.TabIndex = 77;
+            this.nameLabel.Text = "Name:";
+            // 
+            // nicknameLabel
+            // 
+            this.nicknameLabel.AutoSize = true;
+            this.nicknameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nicknameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nicknameLabel.ForeColor = System.Drawing.Color.White;
+            this.nicknameLabel.Location = new System.Drawing.Point(131, 59);
+            this.nicknameLabel.Name = "nicknameLabel";
+            this.nicknameLabel.Size = new System.Drawing.Size(122, 25);
+            this.nicknameLabel.TabIndex = 78;
+            this.nicknameLabel.Text = "Nickname:";
+            // 
+            // profileLinkLabel
+            // 
+            this.profileLinkLabel.AutoSize = true;
+            this.profileLinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profileLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileLinkLabel.ForeColor = System.Drawing.Color.White;
+            this.profileLinkLabel.Location = new System.Drawing.Point(131, 100);
+            this.profileLinkLabel.Name = "profileLinkLabel";
+            this.profileLinkLabel.Size = new System.Drawing.Size(138, 25);
+            this.profileLinkLabel.TabIndex = 79;
+            this.profileLinkLabel.Text = "Profile Link:";
+            // 
+            // profilePictureLinkHeaderLabel
+            // 
+            this.profilePictureLinkHeaderLabel.AutoSize = true;
+            this.profilePictureLinkHeaderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.profilePictureLinkHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profilePictureLinkHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.profilePictureLinkHeaderLabel.Location = new System.Drawing.Point(398, 255);
+            this.profilePictureLinkHeaderLabel.Name = "profilePictureLinkHeaderLabel";
+            this.profilePictureLinkHeaderLabel.Size = new System.Drawing.Size(219, 25);
+            this.profilePictureLinkHeaderLabel.TabIndex = 80;
+            this.profilePictureLinkHeaderLabel.Text = "Profile Picture Link:";
+            // 
+            // profilePictureLinkBox
+            // 
+            this.profilePictureLinkBox.Location = new System.Drawing.Point(401, 283);
+            this.profilePictureLinkBox.MaxLength = 32;
+            this.profilePictureLinkBox.Name = "profilePictureLinkBox";
+            this.profilePictureLinkBox.Size = new System.Drawing.Size(371, 20);
+            this.profilePictureLinkBox.TabIndex = 81;
+            // 
             // EditProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -807,6 +869,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.profilePictureLinkBox);
+            this.Controls.Add(this.profilePictureLinkHeaderLabel);
+            this.Controls.Add(this.profileLinkLabel);
+            this.Controls.Add(this.nicknameLabel);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.skill10ButtonPanel);
             this.Controls.Add(this.skill9ButtonPanel);
             this.Controls.Add(this.skill8ButtonPanel);
@@ -936,5 +1003,10 @@
     private System.Windows.Forms.RadioButton master10Button;
     private System.Windows.Forms.RadioButton beginner10Button;
     private System.Windows.Forms.RadioButton proficient10Button;
-  }
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label nicknameLabel;
+        private System.Windows.Forms.Label profileLinkLabel;
+        private System.Windows.Forms.Label profilePictureLinkHeaderLabel;
+        private System.Windows.Forms.TextBox profilePictureLinkBox;
+    }
 }

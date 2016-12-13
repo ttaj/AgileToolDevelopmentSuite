@@ -32,13 +32,13 @@
             this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nicknameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupNameHeaderLabel = new System.Windows.Forms.Label();
             this.groupGoalLabel = new System.Windows.Forms.Label();
             this.groupGoalTextBox = new System.Windows.Forms.RichTextBox();
             this.groupContactLabel = new System.Windows.Forms.Label();
-            this.groupContactListView = new System.Windows.Forms.ListView();
             this.menuButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupContactListView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +75,17 @@
             this.nicknameLabel.TabIndex = 3;
             this.nicknameLabel.Text = "(Nicknames List)";
             // 
-            // label1
+            // groupNameHeaderLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(131, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Group Name";
+            this.groupNameHeaderLabel.AutoSize = true;
+            this.groupNameHeaderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.groupNameHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupNameHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.groupNameHeaderLabel.Location = new System.Drawing.Point(131, 25);
+            this.groupNameHeaderLabel.Name = "groupNameHeaderLabel";
+            this.groupNameHeaderLabel.Size = new System.Drawing.Size(143, 25);
+            this.groupNameHeaderLabel.TabIndex = 4;
+            this.groupNameHeaderLabel.Text = "Group Name";
             // 
             // groupGoalLabel
             // 
@@ -121,15 +121,6 @@
             this.groupContactLabel.TabIndex = 40;
             this.groupContactLabel.Text = "Group Contact Information:";
             // 
-            // groupContactListView
-            // 
-            this.groupContactListView.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupContactListView.Location = new System.Drawing.Point(25, 376);
-            this.groupContactListView.Name = "groupContactListView";
-            this.groupContactListView.Size = new System.Drawing.Size(747, 173);
-            this.groupContactListView.TabIndex = 41;
-            this.groupContactListView.UseCompatibleStateImageBehavior = false;
-            // 
             // menuButton
             // 
             this.menuButton.BackColor = System.Drawing.Color.DarkGray;
@@ -156,24 +147,36 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupContactListView
+            // 
+            this.groupContactListView.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupContactListView.Location = new System.Drawing.Point(23, 375);
+            this.groupContactListView.Margin = new System.Windows.Forms.Padding(2);
+            this.groupContactListView.Name = "groupContactListView";
+            this.groupContactListView.Size = new System.Drawing.Size(749, 175);
+            this.groupContactListView.TabIndex = 44;
+            this.groupContactListView.UseCompatibleStateImageBehavior = false;
+            // 
             // GroupProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupContactListView);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuButton);
-            this.Controls.Add(this.groupContactListView);
             this.Controls.Add(this.groupContactLabel);
             this.Controls.Add(this.groupGoalTextBox);
             this.Controls.Add(this.groupGoalLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupNameHeaderLabel);
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.profilePictureBox);
             this.Name = "GroupProfileForm";
             this.Text = "Agile Development Tools Suite";
+            this.Load += new System.EventHandler(this.GroupProfileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,12 +188,12 @@
         private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label nicknameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label groupNameHeaderLabel;
         private System.Windows.Forms.Label groupGoalLabel;
         private System.Windows.Forms.RichTextBox groupGoalTextBox;
         private System.Windows.Forms.Label groupContactLabel;
-        private System.Windows.Forms.ListView groupContactListView;
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView groupContactListView;
     }
 }

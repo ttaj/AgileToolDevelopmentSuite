@@ -108,3 +108,4 @@ C:\Users\natha\Documents\GitHub\AgileToolDevelopmentSuite\AgileDevelopmentToolsS
 C:\Users\natha\Documents\GitHub\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.csproj.GenerateResource.Cache
 C:\Users\natha\Documents\GitHub\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.exe
 C:\Users\natha\Documents\GitHub\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.pdb
+C:\Users\natha\Documents\GitHub\AgileToolDevelopmentSuite\AgileDevelopmentToolsSuite\AgileDevelopmentToolsSuite\obj\Release\AgileDevelopmentToolsSuite.csprojResolveAssemblyReference.cache

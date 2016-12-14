@@ -53,7 +53,7 @@ namespace AgileDevelopmentToolsSuite
         {
             this.Hide();
 
-            EditGroupProfileForm editGroupProfileForm = new EditGroupProfileForm();
+            EditGroupProfileForm editGroupProfileForm = new EditGroupProfileForm(currentUser, currentGroup);
 
             editGroupProfileForm.Width = this.Width;
             editGroupProfileForm.Height = this.Height;

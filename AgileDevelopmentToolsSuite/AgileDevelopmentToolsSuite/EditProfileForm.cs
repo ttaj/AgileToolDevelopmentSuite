@@ -441,7 +441,7 @@ namespace AgileDevelopmentToolsSuite
 
                 try
                 {
-                    SqlCommand updateUserInfo = new SqlCommand("UPDATE UserInformation SET [Name] = @Name, [Nickname] = @Nickname, [ProfileLink] = @ProfileLink, [ProfilePictureLink] = @ProfilePictureLink, [Workplace] = @Workplace, [PhoneNumber] = @PhoneNumber, [Email] = @Email FROM [UserInformation] WHERE [Username] = @Username");
+                    SqlCommand updateUserInfo = new SqlCommand("UPDATE UserInformation SET [Name] = @Name, [Nickname] = @Nickname, [ProfileLink] = @ProfileLink, [ProfilePictureLink] = @ProfilePictureLink, [Workplace] = @Workplace, [PhoneNumber] = @PhoneNumber, [Email] = @Email WHERE [Username] = @Username");
                     SqlCommand updateSkillInfo = new SqlCommand("Update UserSkills Set [Skill1] = @s1, [Skill2] = @s2, [Skill3] = @s3, [Skill4] = @s4, [Skill5] = @s5, [Skill6] = @s6, [Skill7] = @s7, [Skill8] = @s8, [Skill9] = @s9, [Skill10] = @s10 WHERE [Username] = @Username");
                     SqlCommand updateSkillProficiency = new SqlCommand("Update UserSkills Set [SkillProficiency1] = @sp1, [SkillProficiency2] = @sp2, [SkillProficiency3] = @sp3, [SkillProficiency4] = @sp4, [SkillProficiency5] = @sp5, [SkillProficiency6] = @sp6, [SkillProficiency7] = @sp7, [SkillProficiency8] = @sp8, [SkillProficiency9] = @sp9, [SkillProficiency10] = @sp10 WHERE [Username] = @Username");
 

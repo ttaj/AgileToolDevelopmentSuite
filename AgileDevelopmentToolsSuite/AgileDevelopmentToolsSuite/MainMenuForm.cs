@@ -880,7 +880,7 @@ order by  ProjectGroup , DateSubmitted");
 
         private void groupProfileListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentGroup = groupProfileListBox.SelectedText;
+            currentGroup = this.groupProfileListBox.GetItemText(this.groupProfileListBox.SelectedItem); ;
         }
     } //End of class
 }

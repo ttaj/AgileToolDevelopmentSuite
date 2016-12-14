@@ -443,7 +443,6 @@ namespace AgileDevelopmentToolsSuite
                     groupProfileListView.Columns.Add("Group Name", 338);
 
                     //Iterate through all the values of listed values from query
-                    int index = 0;
                     while (reader.Read())
                     {
                         groupProfileListView.Items.Add(reader.GetString(0));
